@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    min-height: 10vh;
+}
+main{
+    min-height: 80vh;
+}
+footer{
+    min-height: 10vh;
+}
+.nav-link:hover{
+    scale: 1.2;
+    
+}
+
+li:hover{
+    color: blanchedalmond;
+}
+body {
+         font-family: 'Poppins', sans-serif;    
+         }

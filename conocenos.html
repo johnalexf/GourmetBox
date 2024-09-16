@@ -1,25 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conocenos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styleconocenos.css">
 </head>
 <body>
-
+    <!-- Menu de navegacion desplegable y responsive -->
     <header>
-
+        <nav class="navbar navbar-expand-lg" style="background-color: rgba(105, 91, 199, 0.534)">
+            <!-- contenedor fluid para abarcar todo el ancho disponible -->
+            <div class="container-fluid">
+                <!-- icono de la pagina -->
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/LOGO.png" alt="Bootstrap" width="70" height="54">
+                  </a>
+                  <!-- Titulo de la pagina -->
+              <a class="navbar-brand" href="#">Gourmet Box</a>
+    
+                     <!-- icono del carrito de compras -->
+                     <a class="navbar-brand ms-auto" href="#">
+                        <i class="bi bi-cart4"></i>
+                      </a>
+             
+              <!-- Boton de Colapsar para el responsive -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <!-- Link a Inicio -->
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- Link a Menu -->
+                    <a class="nav-link active" aria-current="page" href="#">Menú</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- Link a Suscripcion -->
+                    <a class="nav-link active" aria-current="page" href="#">Suscripción</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- Link a Conocenos -->
+                    <a class="nav-link active" aria-current="page" href="#">Conocenos</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- Link a contactenos -->
+                    <a class="nav-link active" aria-current="page" href="#">Contactenos</a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- Link a ingresar -->
+                    <a class="nav-link active" aria-current="page" href="#">Ingresar</a>
+                  </li>
+                  <li class="nav-item p-2">
+                     <!-- icono del carrito de compras -->
+              <a class="navbar-brand ms-auto" href="#">
+                <i class="bi bi-cart4"></i>
+              </a>
+                  </li>
+              </div>
+            </div>
+          </nav>
     </header>
     
     <main>
 
     </main>
 
-    <footer>
+    <footer class="border-top border-success p-2 border-opacity-12" style="background-color: rgba(105, 91, 199, 0.534)">
+        <div class="container-fluid row text-center align-middle">
+            <div class="col-4">&copy; Gorumet Box 2024 / Diseñado por Software Sinfoni
+            </div>
+        <div class="col-8">
+            <ul class="navbar-nav flex-row flex-wrap justify-content-md-end ">
+            <li class=" nav-item col-2 col-md-auto p-2">
+                <i class="bi bi-whatsapp"></i> 
+            <li class=" nav-item col-2 col-md-auto p-2">
+                <i class="bi bi-facebook"></i>
+            <li class=" nav-item col-2 col-md-auto p-2">
+                <i class="bi bi-youtube"></i>
+            </li>
+            <li class=" nav-item col-2 col-md-auto p-2">
+                <i class="bi bi-github"></i>
+            </li>
+        </ul>
+    </div>
+    </div>
 
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
