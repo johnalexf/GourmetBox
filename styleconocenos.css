@@ -39,16 +39,7 @@ body {
 }
 
 /* distribuir las cards en el area row y espacio */
-#perfiles {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px;
-}
 
-/* borde sombreado de las card del equipo */
-#perfiles .card{
-    box-shadow: 0 0 10px 0 #703493;
-}
 .card-title {
     color: #703493;
 }
