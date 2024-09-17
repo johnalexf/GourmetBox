@@ -23,6 +23,32 @@ li:hover{
 body {
     font-family: 'Poppins', sans-serif;    
 }
+
+/* configura border a tarjeta y alineado y redondez */
+.card {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-align: justify;
+    border-radius: 20px;
+}
+
+/* mision vision y valores flex y espacion entre cards y row  */
+#mision {
+    display: flex;
+    justify-content:space-around;  
+}
+
+/* distribuir las cards en el area row y espacio */
+#perfiles {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+/* borde sombreado de las card del equipo */
+#perfiles .card{
+    box-shadow: 0 0 10px 0 #703493;
+}
 /* Oculta la flecha y desactiva el botón en pantallas grandes */
 @media (min-width: 992px) { 
     .accordion-button::after {
