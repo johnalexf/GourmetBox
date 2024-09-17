@@ -1,6 +1,7 @@
+/* Elimina márgenes y rellenos predeterminados */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -15,9 +16,9 @@ footer {
   min-height: 10vh;
 }
 
+/* Aumenta el tamaño del elemento al pasar el mouse */
 .nav-link:hover {
-  scale: 1.2;
-
+  transform: scale(1.2);
 }
 
 li:hover {
@@ -26,33 +27,72 @@ li:hover {
 
 body {
   font-family: 'Poppins', sans-serif;
+  font-weight: 300;
   background: #FFFEF4;
 }
 
-/* configura border a tarjeta y alineado y redondez */
-.card {
-  margin: 0 2px;
-  text-align: justify;
-  border-radius: 10px;
-  padding: auto;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+h5 {
+  font-weight: 300;
 }
 
+.background-container {
+  background-image: url('./FONDO.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  /* Ajusta el espacio interno si es necesario */
+  margin: 0;
+  /* Elimina el margen superior e inferior */
+}
 
-/* mision vision y valores flex y espacion entre cards y row  */
+.img-fluid {
+  padding: 0;
+  /* Elimina el padding */
+  object-fit: cover;
+  /* Ajusta el contenido de la imagen para que cubra el área */
+  width: 800px;
+  height: auto;
+}
+
+/* Margen de la tarjeta de descripción */
+.card-body.text-center {
+  margin-top: 40px;
+}
+
+.card-text {
+  text-align: justify;
+  /* Justifica el texto */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Configura border, alineado y redondez de la tarjeta */
+.card {
+  margin: 0 0px;
+  text-align: justify;
+  border-radius: 0;
+  /* Establece borde sin redondear */
+  padding: 0;
+  /* Elimina el padding */
+  background: transparent;
+  border: none;
+}
+
+/* Misión, visión y valores con flexbox y espacio entre cards */
 #mision {
   display: flex;
   justify-content: space-around;
 }
 
-/* distribuir las cards en el area row y espacio */
+/* Distribuye las cards en el área de fila y espacio */
 #perfiles {
   display: flex;
   justify-content: space-around;
   margin: 10px;
 }
 
-/* borde sombreado de las card del equipo */
+/* Borde sombreado de las cards del equipo */
 #perfiles .card {
   box-shadow: 0 0 10px 0 #703493;
 }
@@ -69,7 +109,6 @@ body {
 
   .accordion-button {
     pointer-events: none;
-
   }
 }
 

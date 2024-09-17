@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conócenos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -19,11 +20,11 @@
       <div class="container-fluid">
         <!-- icono de la página -->
         <a class="navbar-brand" href="#">
-          <img src="./assets/LOGO.png" alt="Logo Gourmet Box" width="70" height="54">
+          <!-- <img src="./assets/LOGO.png" alt="Logo Gourmet Box" width="70" height="54"> -->
         </a>
         <!-- Título de la página -->
         <a class="navbar-brand" href="#">
-          <img src="./assets/LOGONEGRO.png" alt="Título Gourmet Box" width="200">
+          <img src="./assets/LOGONEGRO.png" alt="Título Gourmet Box" width="200" class="Logonegro ms-4">
         </a>
 
         <!-- Botón de Colapsar para el responsive -->
@@ -62,95 +63,46 @@
       </div>
     </nav>
   </header>
-
-  <main>
-    <div class="container">
-      <div class="row">
-        <!-- Card de nosotros -->
-        <div class="card" id="nosotros">
-          <div class="card-body">
-            <h5 class="card-title text-center">Sobre Nosotros</h5>
-            <p class="card-text">
-              En Software Sinfoni, somos un equipo apasionado de desarrolladores de software dedicados a innovar en el
-              mundo
-              digital. Hemos creado Gourmet Box, una plataforma de comidas por suscripción que transforma la experiencia
-              gastronómica en algo único y conveniente. Nuestra misión es ofrecerte una selección curada de delicias
-              culinarias, entregadas directamente a tu puerta. ¡Únete a nosotros y descubre una nueva forma de disfrutar
-              la buena comida!
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contenedor de Misión, Visión y Valores -->
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="accordion" id="accordionMision">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingMision">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseMision" aria-expanded="true" aria-controls="collapseMision">
-                  Misión
-                </button>
-              </h2>
-              <div id="collapseMision" class="accordion-collapse collapse show" aria-labelledby="headingMision"
-                data-bs-parent="#accordionMision">
-                <div class="accordion-body">
-                  En Software Sinfoni, nuestra misión es transformar la experiencia de la alimentación diaria mediante
-                  soluciones
-                  tecnológicas innovadoras. Nos dedicamos a diseñar y desarrollar un e-commerce de paquetes de comidas
-                  por
-                  suscripción que no solo simplifica el proceso de planificación y adquisición de alimentos, sino que
-                  también
-                  promueve una alimentación equilibrada y conveniente.
-                </div>
+  <!-- Contenedor del Hero Content -->
+  <main style="margin-top: -70px;">
+    <div class="background-container">
+      <div class="container">
+        <!-- Fila para el título -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card" id="nosotros-titulo">
+              <div class="card-body text-center">
+                <img src="\NUESTRAHISTORIA.png" class="img-fluid img-title" alt="Nuestra Historia">
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="accordion" id="accordionVision">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingVision">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseVision" aria-expanded="true" aria-controls="collapseVision">
-                  Visión
-                </button>
-              </h2>
-              <div id="collapseVision" class="accordion-collapse collapse show" aria-labelledby="headingVision"
-                data-bs-parent="#accordionVision">
-                <div class="accordion-body" style="padding: 6%">
-                  Revolucionar la forma en que disfrutas de la comida, ofreciendo una experiencia culinaria premium a
-                  través de una
-                  plataforma de suscripción innovadora. Queremos llevarte una selección exclusiva de comidas gourmet
-                  directamente a tu
-                  puerta, transformando cada comida en un momento especial.
-                </div>
+        <!-- Fila para el texto y la imagen -->
+        <div class="row">
+          <!-- Columna con la imagen -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="card" id="nosotros-texto">
+              <div class="card-body">
+                <img src="\PROGRAMER.png" class="img-fluid" alt="Imagen sobre nuestra historia">
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="accordion" id="accordionValores">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingValores">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseValores" aria-expanded="true" aria-controls="collapseValores">
-                  Valores
-                </button>
-              </h2>
-              <div id="collapseValores" class="accordion-collapse collapse show" aria-labelledby="headingValores"
-                data-bs-parent="#accordionValores">
-                <div class="accordion-body" style="padding: 8.5%">
-                  En Gourmet Box, valoramos la calidad y frescura en cada entrega, la conveniencia de una experiencia
-                  sin
-                  complicaciones y el compromiso con la satisfacción del cliente. Creemos en ofrecer una selección
-                  culinaria
-                  exquisita que eleva cada comida a un nivel superior, garantizando siempre excelencia y placer en cada
-                  bocado.
-                </div>
+          <!-- Columna con el texto -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-text mb-4">
+                  En Software Sinfoni, somos un equipo apasionado de desarrolladores de software dedicados a innovar en
+                  el mundo digital.
+                </h5>
+                <h5 class="card-text">
+                  Hemos creado Gourmet Box, una plataforma de comidas por suscripción que transforma la experiencia
+                  gastronómica en algo único y conveniente. Nuestra misión es ofrecerte una selección curada de delicias
+                  culinarias, entregadas directamente a tu puerta. ¡Únete a nosotros y descubre una nueva forma de
+                  disfrutar la buena comida!
+                </h5>
               </div>
             </div>
           </div>
@@ -158,28 +110,111 @@
       </div>
     </div>
   </main>
+  <!-- Fin del Contenedor del Hero Content -->
 
-  <footer class="border-top border-success p-2 border-opacity-12" style="background-color: rgba(105, 91, 199, 0.534)">
-    <div class="container-fluid row text-center align-middle">
-      <div class="col-4">&copy; Gourmet Box 2024 / Diseñado por Software Sinfoni</div>
-      <div class="col-8">
-        <ul class="navbar-nav flex-row flex-wrap justify-content-md-end">
-          <li class="nav-item col-2 col-md-auto p-2">
-            <i class="bi bi-whatsapp"></i>
-          </li>
-          <li class="nav-item col-2 col-md-auto p-2">
-            <i class="bi bi-facebook"></i>
-          </li>
-          <li class="nav-item col-2 col-md-auto p-2">
-            <i class="bi bi-youtube"></i>
-          </li>
-          <li class="nav-item col-2 col-md-auto p-2">
-            <i class="bi bi-github"></i>
-          </li>
-        </ul>
+  <!-- Contenedor de Misión, Visión y Valores -->
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="accordion" id="accordionMision">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingMision">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMision"
+              aria-expanded="true" aria-controls="collapseMision">
+              Misión
+            </button>
+          </h2>
+          <div id="collapseMision" class="accordion-collapse collapse show" aria-labelledby="headingMision"
+            data-bs-parent="#accordionMision">
+            <div class="accordion-body">
+              En Software Sinfoni, nuestra misión es transformar la experiencia de la alimentación diaria mediante
+              soluciones
+              tecnológicas innovadoras. Nos dedicamos a diseñar y desarrollar un e-commerce de paquetes de comidas
+              por
+              suscripción que no solo simplifica el proceso de planificación y adquisición de alimentos, sino que
+              también
+              promueve una alimentación equilibrada y conveniente.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="accordion" id="accordionVision">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingVision">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVision"
+              aria-expanded="true" aria-controls="collapseVision">
+              Visión
+            </button>
+          </h2>
+          <div id="collapseVision" class="accordion-collapse collapse show" aria-labelledby="headingVision"
+            data-bs-parent="#accordionVision">
+            <div class="accordion-body" style="padding: 6%">
+              Revolucionar la forma en que disfrutas de la comida, ofreciendo una experiencia culinaria premium a
+              través de una
+              plataforma de suscripción innovadora. Queremos llevarte una selección exclusiva de comidas gourmet
+              directamente a tu
+              puerta, transformando cada comida en un momento especial.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="accordion" id="accordionValores">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingValores">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseValores"
+              aria-expanded="true" aria-controls="collapseValores">
+              Valores
+            </button>
+          </h2>
+          <div id="collapseValores" class="accordion-collapse collapse show" aria-labelledby="headingValores"
+            data-bs-parent="#accordionValores">
+            <div class="accordion-body" style="padding: 8.5%">
+              En Gourmet Box, valoramos la calidad y frescura en cada entrega, la conveniencia de una experiencia
+              sin
+              complicaciones y el compromiso con la satisfacción del cliente. Creemos en ofrecer una selección
+              culinaria
+              exquisita que eleva cada comida a un nivel superior, garantizando siempre excelencia y placer en cada
+              bocado.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </main>
+
+  <footer class="border-top border-success p-4 border-opacity-12" style="background-color: rgba(105, 91, 199, 0.534);">
+    <div class="container-fluid text-center">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p class="mb-0">&copy; Gourmet Box 2024 / Diseñado por Software Sinfoni</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <ul class="navbar-nav d-flex justify-content-center flex-row flex-wrap">
+            <li class="nav-item p-2">
+              <i class="bi bi-whatsapp"></i>
+            </li>
+            <li class="nav-item p-2">
+              <i class="bi bi-facebook"></i>
+            </li>
+            <li class="nav-item p-2">
+              <i class="bi bi-youtube"></i>
+            </li>
+            <li class="nav-item p-2">
+              <i class="bi bi-github"></i>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
