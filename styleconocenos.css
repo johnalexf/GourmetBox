@@ -49,6 +49,9 @@ body {
 #perfiles .card{
     box-shadow: 0 0 10px 0 #703493;
 }
+.card-title {
+    color: #703493;
+}
 /* Oculta la flecha y desactiva el botón en pantallas grandes */
 @media (min-width: 992px) { 
     .accordion-button::after {
