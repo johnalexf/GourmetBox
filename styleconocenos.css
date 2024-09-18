@@ -142,7 +142,7 @@ h5 {
 
 .about-us {
   padding: 2rem;
-  max-width: 1200px;
+
   width: 100%;
   /* Asegura que el contenedor de las tarjetas no exceda el ancho del contenedor padre */
 }
