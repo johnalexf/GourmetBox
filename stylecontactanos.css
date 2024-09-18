@@ -1,0 +1,146 @@
+/* Paleta de colores
+#FFFEF4
+#D6CB4F
+#71B344
+#869639
+#6A5BC7
+#70349E
+*/
+
+
+body{
+    background-color: #FFFEF4;
+    /* margin: 2%;
+    padding: 8%; */
+}
+
+main{
+    margin: 2%;
+    padding: 0% 8%;
+}
+
+/* Asignacion de poppins regular 400 a parrafos */
+* {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+  }
+
+  /* Asignacion de roboto bold 700 a titulos */
+h1, h2, h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+/* h1{ font-size: 32px;} */
+
+.titulo{
+    text-align: center;
+}
+
+
+/* Estilos para hacer responsive el formulario de contáctenos */
+    /*  */
+.formulario, .informacion{
+    padding: 5%;
+    background-color:#D6CB4F; /* #FFFEF4 , #D6CB4F, #71B344, #869639, #6A5BC7, #70349E */
+    border: 2px solid   black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+}
+
+.formulario .boton-form{
+    align-items: center;
+    text-align: center;
+    grid-column: span 2;
+}
+
+    /*Espacio interno de distribucion de las columnas de la parte derecha e izquierda del formulario  */
+.formulario .izquierda , .formulario .derecha{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+.formulario .etiqueta{
+        padding: 0% 1%;
+        text-align: right;
+    }
+
+.formulario input{
+    width: 95%;
+}
+
+    /* tamaño de alto de la caja de texto de contenido del mensaje */
+.derecha .entrada input{
+    height: 220px;
+}
+
+
+/* Estilos para la seccion de ubicacion y datos de la empresa
+    El estilo principal del contenedor informacion es el mismo que el de formulario
+*/
+
+.ubicacion{
+    display: grid;
+    place-items: center;
+}
+
+.mapa{
+    width: 80%;
+    border:0;
+}
+
+
+    /* Cuando el tamaño de la pantalla sea menor a 900px cambia la vista a una columna y el boton se asigna un espacio de ocupacion de una columna */
+    @media(width < 900px){
+        .formulario, .informacion{
+            grid-template-columns: 1fr;
+        }
+        .formulario .boton-form{
+            grid-column: span 1;
+        } 
+        .formulario .etiqueta{
+            padding: 3% 0%;
+        }
+        .formulario .izquierda , .formulario .derecha{
+            grid-template-columns: 1fr 3fr;
+        }
+        *{
+            font-size: 18px;
+        }
+        .informacion .ubicacion{
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+
+        /* .mapa{
+            width: 40px;
+            height: 30px;
+            border:0;
+        } */
+    }
+    
+        /* Cuando la pantalla sea menor a 500px la distribucion interna de la parte izquierda y derecha pasa a ser de a una columna */
+    @media(width < 500px){
+        .formulario .izquierda , .formulario .derecha{
+            grid-template-columns: 1fr;
+        }
+        .formulario .etiqueta{
+            padding: 1% 0% 0% 0%;
+            text-align: left;
+        }
+        .formulario{
+            padding-left: 12%;
+        }
+    
+    }
+
+
+
+
+
+  
