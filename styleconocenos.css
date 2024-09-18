@@ -4,12 +4,28 @@
   padding: 0;
 }
 
-
+header {
+  min-height: 10vh;
+}
 
 main {
   min-height: 80vh;
 }
 
+footer {
+  min-height: 10vh;
+}
+
+/* Aumenta el tamaño del elemento al pasar el mouse */
+.nav-link:hover {
+  transform: scale(1.2);
+}
+#icon, #icon:visited{
+  color: black;
+}
+li:hover, #icon:hover {
+  color: blanchedalmond;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
