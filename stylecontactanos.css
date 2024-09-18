@@ -34,21 +34,30 @@ h1, h2, h3 {
     font-style: normal;
   }
 
-/* h1{ font-size: 32px;} */
+h1{ font-size: 32px;}
 
 .titulo{
     text-align: center;
+}
+
+.parrafo{
+    /* margin: 10px 0%; */
+    padding: 20px 0%;
+}
+
+.ajusteParrafo{
+    margin: 0%;
 }
 
 
 /* Estilos para hacer responsive el formulario de contáctenos */
     /*  */
 .formulario, .informacion{
-    padding: 5%;
-    background-color:#D6CB4F; /* #FFFEF4 , #D6CB4F, #71B344, #869639, #6A5BC7, #70349E */
+    padding: 40px 10px;
+    background-color:rgba(112, 179, 68, 0.2); /* #FFFEF4 , #D6CB4F, #71B344, #869639, #6A5BC7, #70349E */
     border: 2px solid   black;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 60%;
     grid-template-rows: 1fr;
     gap: 15px;
 }
@@ -60,22 +69,29 @@ h1, h2, h3 {
 }
 
     /*Espacio interno de distribucion de las columnas de la parte derecha e izquierda del formulario  */
-.formulario .izquierda , .formulario .derecha{
+.formulario .izquierda{
+        margin-left: 0%;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 3fr;
+    }
+
+.formulario .derecha{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
     }
 
 .formulario .etiqueta{
-        padding: 0% 1%;
-        text-align: right;
+    margin-right: 5px;
+    text-align: right;
     }
 
-.formulario input{
+
+.formulario input, textarea{
     width: 95%;
 }
 
     /* tamaño de alto de la caja de texto de contenido del mensaje */
-.derecha .entrada input{
+textarea{
     height: 220px;
 }
 
@@ -87,6 +103,10 @@ h1, h2, h3 {
 .ubicacion{
     display: grid;
     place-items: center;
+}
+
+.informacion .datos{
+    margin-left: 50px;
 }
 
 .mapa{
@@ -107,6 +127,7 @@ h1, h2, h3 {
             padding: 3% 0%;
         }
         .formulario .izquierda , .formulario .derecha{
+            margin-left: 0%;
             grid-template-columns: 1fr 3fr;
         }
         *{

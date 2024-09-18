@@ -34,38 +34,42 @@
         <form action="">
             <div class="formulario">
                 <div class="izquierda">
-                    <div class = "etiqueta"> <label for="name" > Nombre : </label> </div>
+                    <div class = "etiqueta"> <label for="name" > Nombre *</label> </div>
                     <div class = "entrada"> <input type="text" id="name" name="name" placeholder="Nombre aquí" required> </div>
-                    <div class = "etiqueta"> <label for="email"> Correo : </label> </div>
+                    <div class = "etiqueta"> <label for="email"> Correo *</label> </div>
                     <div class = "entrada"> <input type="email" id="email" name="email" placeholder="Email aquí" required> </div>
-                    <div class = "etiqueta"> <label for="telefono" > Teléfono : </label> </div>
-                    <div class = "entrada"> <input type="text" id="telefono" name="telefono" placeholder="Teléfono aquí" required> </div>
-                    <div class = "etiqueta"> <label for=""> Asunto : </label> </div>
-                    <div class = "entrada"> <input type="text" id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" required> </div>
-                    <!-- <div class = "entrada"> <input type="text" id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" required> </div> -->
+                    <div class = "etiqueta"> <label for="telefono" > Teléfono *</label> </div>
+                    <div class = "entrada"> <input type="number" id="telefono" name="telefono" placeholder="Teléfono aquí" required> </div>
+                    <div class = "etiqueta"> <label for=""> Asunto  *</label> </div>
+                    <div class = "entrada"> <input type="text" id="asunto" name="asunto" placeholder="Asunto aquí" required> </div>
                 </div>
                 <div class="derecha">
-                    <div class = "etiqueta"> <label for=""> Mensaje : </label> </div>
-                    <div class = "entrada"> <input type="text"> </div>
+                    <div class = "etiqueta"> <label for="contenidoMsm"> Contenido *</label> </div>
+                    <textarea id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" require ></textarea>
+                    <!-- <div class = "entrada"> <input type="text"> </div> -->
                 </div>
                 <div class="boton-form">
+                    <p> Los campos marcados con (*) son obligatorios </p>
                     <input type="submit" value="Enviar" style="width: 80px;">
                 </div>
             </div>
         </form>
 
-        <p>O si prefiere usar cualquier otro medio de comunicación, a continuación se muestran nuestros datos principales: </p>
+        <div class="parrafo">
+            <p>O si prefiere usar cualquier otro medio de comunicación, a continuación se muestran nuestros datos principales: </p>
+        </div>
+        
 
         <div class="informacion">
             <div class="datos">
-                <p>Ubicación : </p>
+                <p class = "ajusteParrafo">Ubicación : </p>
                 <p>Colombia, Medellin, Trinidad Carrera 65C Calle 25 -68</p>
-                <p>Teléfono : </p>
-                <p>555-55555</p>
-                <p>Correo : </p>
-                <p>softwaresinfoni@gmail.com</p>
-                <p>Horario : </p>
-                <p>Lunes a Domingo de 8:00 am a 2:00 pm</p>
+                <p class = "ajusteParrafo">Teléfono : </p>
+                <p >555-55555</p>
+                <p class = "ajusteParrafo">Correo : </p>
+                <p >softwaresinfoni@gmail.com</p>
+                <p class = "ajusteParrafo">Horario : </p>
+                <p >Lunes a Domingo de 8:00 am a 2:00 pm</p>
             </div>
             <div class="ubicacion">
                 <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.1413391990873!2d-75.58645609527545!3d6.227200389543579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429c80d129989%3A0x1110527907574dc6!2sCra.%2065C%20%2325-68%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1726643132966!5m2!1ses-419!2sco" 
