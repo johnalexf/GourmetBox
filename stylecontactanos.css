@@ -166,6 +166,9 @@ textarea{
         .informacion{
             grid-template-rows: 1fr 1fr;
         }
+        main{
+            padding: 10px 10%;
+        }
 
         /* .mapa{
             width: 40px;
@@ -189,7 +192,10 @@ textarea{
         .formulario .izquierda .etiqueta{
             margin-left: 0%;
         }
-    
+        main{
+            padding: 10px 5%;
+        }
+       
     }
 
 /* input:invalid{
