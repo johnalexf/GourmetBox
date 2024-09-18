@@ -40,9 +40,8 @@ h5 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 10px;
   /* Ajusta el espacio interno si es necesario */
-  margin: 0;
+  margin: 7vh 0;
   /* Elimina el margen superior e inferior */
 }
 
@@ -137,4 +136,82 @@ h5 {
 .row {
   margin-left: 40px;
   margin-right: 30px;
+}
+
+/* mafe cards */
+
+.about-us {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  /* Asegura que el contenedor de las tarjetas no exceda el ancho del contenedor padre */
+}
+
+.cardss-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+  /* Centra el contenedor dentro del área disponible */
+}
+
+
+.cardss {
+  background-color: #70349E;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada */
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.3s;
+  max-width: 360px;
+  /* Ajusta el ancho de la tarjeta */
+  margin: 0 auto;
+  /* Centra cada tarjeta dentro del contenedor */
+}
+
+.cardss:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  /* Sombra más pronunciada al hacer hover */
+}
+
+.cardss img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cardss h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 25px;
+  color: white;
+}
+
+.cardss p {
+  margin-bottom: 1rem;
+  color: white;
+  text-align: justify;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  margin: -1rem 0.2rem;
+  transition: opacity 0.4s;
+  border: 1px solid white;
+}
+
+.social-icons a img:hover {
+  opacity: 1;
+}
+
+.cardss p {
+  margin-top: 0.5rem;
+}
+
+.cardss#changecolor:hover {
+  background-color: #869639;
+  transition: background-color 0.4s ease;
 }
