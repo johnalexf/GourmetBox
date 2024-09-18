@@ -31,7 +31,7 @@
         <div class="parrafo" > Tienes dudas, sugerencias o reclamos, puedes llenar y enviar el siguiente formulario: </div>
 
 
-        <form action="">
+        <form action="https://formspree.io/f/mrbzwgpp" method="POST">
             <div class="formulario">
                 <div class="izquierda">
                     <div class = "etiqueta"> <label for="name" > Nombre *</label> </div>
@@ -45,12 +45,13 @@
                 </div>
                 <div class="derecha">
                     <div class = "etiqueta"> <label for="contenidoMsm"> Contenido *</label> </div>
-                    <textarea id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" require ></textarea>
+                    <textarea id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" required ></textarea>
                     <!-- <div class = "entrada"> <input type="text"> </div> -->
                 </div>
-                <div class="boton-form">
+                <div class="contenedorBoton">
                     <p> Los campos marcados con (*) son obligatorios </p>
-                    <input type="submit" value="Enviar" style="width: 80px;">
+                    <button class="boton" type="submit" >Enviar</button>
+                    <!-- <input class="boton"style=""> -->
                 </div>
             </div>
         </form>
