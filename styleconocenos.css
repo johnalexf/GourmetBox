@@ -21,10 +21,14 @@ footer {
   transform: scale(1.2);
   transform: translateX(-5px);
 }
-#icon, #icon:visited{
+
+#icon,
+#icon:visited {
   color: black;
 }
-li:hover, #icon:hover {
+
+li:hover,
+#icon:hover {
   color: blanchedalmond;
 }
 
@@ -219,7 +223,6 @@ h5 {
 }
 
 
-.contenido{
+.contenido {
   height: 300px;
 }
-
