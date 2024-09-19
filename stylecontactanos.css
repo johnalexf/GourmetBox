@@ -156,16 +156,14 @@ textarea {
 
 /* Estilo para el div que contiene el mapa */
 .ubicacion {
-    border: 2px solid black;
     border-radius: 30px;
-    border: 2px solid #70349E;
     display: grid;
     place-items: center;
 }
 
 .mapa {
     height: 100%;
-    width: 100%;
+    width: 110%;
     border-radius: 30px;
 
 }
