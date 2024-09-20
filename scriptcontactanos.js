@@ -111,4 +111,5 @@ let formulario = document.getElementById('formulario');
   formulario.addEventListener('submit', function(event) {
   localStorage.clear();
   localStorage.setItem('validacion','enviado');
+  modalMensajeExitoso.style.display = "block"
 });

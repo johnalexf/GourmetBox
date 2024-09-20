@@ -64,7 +64,9 @@ h3 {
 .parrafo {
     /* margin: 10px 0%; */
     padding: 20px 0%;
+    text-align: justify;
 }
+
 
 /* párrafos dentro de información de contacto */
 .ajusteParrafo {
@@ -161,7 +163,7 @@ textarea {
     height: 100%;
     width: 110%;
     border-radius: 30px;
-
+    border: 1px solid #70349E;
 }
 
 
@@ -240,11 +242,6 @@ textarea {
     main {
         padding: 10px 5%;
     }
-
-}
-
-.parrafo {
-    text-align: justify;
 
 }
 
