@@ -7,9 +7,6 @@
 #70349E
 */
 
-
-
-
 main {
     background-color: rgba(112, 179, 68, 0.2);
     padding: 10px 15%;
@@ -32,7 +29,7 @@ main {
     }
 }
 
-/* Asignacion de poppins regular 400 a parrafos */
+/* Asignación de poppins regular 400 a párrafos */
 * {
     font-family: "Poppins", system-ui;
     font-weight: 400;
@@ -63,20 +60,20 @@ h3 {
     text-align: center;
 }
 
-/* parrafos intermedios entre contenedores */
+/* párrafos intermedios entre contenedores */
 .parrafo {
     /* margin: 10px 0%; */
     padding: 20px 0%;
 }
 
-/* parrafos dentro de informacion de contacto */
+/* párrafos dentro de información de contacto */
 .ajusteParrafo {
     margin: 0%;
 }
 
 
 /* Estilos para hacer responsive el formulario de contáctenos */
-/*y tambien para aplicar estilos a el contenedor de la informacion de contacto  */
+/*y también para aplicar estilos a el contenedor de la información de contacto  */
 .formulario,
 .informacion {
     padding: 40px 10px;
@@ -102,7 +99,7 @@ h3 {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
-/*Espacio interno de distribucion de las columnas de la parte izquierda del formulario  */
+/*Espacio interno de distribución de las columnas de la parte izquierda del formulario  */
 .formulario .izquierda {
     margin-left: 0%;
     display: grid;
@@ -111,7 +108,6 @@ h3 {
 }
 
 .formulario .derecha {
-
     display: grid;
     grid-template-columns: 1fr;
     text-align: left;
@@ -142,8 +138,8 @@ textarea {
 }
 
 
-/* Estilos para la seccion de ubicacion y datos de la empresa
-    El estilo principal del contenedor informacion es el mismo que el de formulario
+/* Estilos para la sección de ubicación y datos de la empresa
+    El estilo principal del contenedor información es el mismo que el de formulario
 */
 
 .informacion .datos {
@@ -213,14 +209,14 @@ textarea {
         padding: 10px 10%;
     }
 
-    /* .mapa{
+        /* .mapa{
             width: 40px;
             height: 30px;
             border:0;
         } */
 }
 
-/* Cuando la pantalla sea menor a 500px la distribucion interna de la parte izquierda y derecha pasa a ser de a una columna */
+/* Cuando la pantalla sea menor a 500px la distribución interna de la parte izquierda y derecha pasa a ser de a una columna */
 @media(width < 600px) {
 
     .formulario .izquierda,
@@ -255,3 +251,83 @@ textarea {
 /* input:invalid{
     background-color: red;
 } */
+
+/* Estilos para la ventana modal */
+.modal1{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.208);
+}
+
+
+.modal1-contenedor{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid black;
+    max-width: 400px;
+    position: relative;
+}
+
+.cerrar{
+    color: rgb(231, 99, 99);
+    float: right; /* lo obliga a posicionarse a la derecha  */
+    position: absolute; /* elimina su posición normal en un documento */
+    top: 10px; 
+    right: 15px;
+    font-size: 25px; 
+    cursor: pointer;
+}
+
+.cerrar:hover{
+    color: rgb(174, 59, 59);
+    cursor: pointer;
+}
+
+.modal1-contenedor h5{
+    padding: 5px;;
+    text-align: center;
+}
+
+.modal1-contenedor .botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0% 20%;
+}
+
+#botonSi, #botonNo{
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 6px;
+    display: block;
+    margin: 10px auto 0 ;
+    width: 50px; 
+    text-align: center;
+    box-shadow: 3px 3px rgba(0,0,0,0.25);
+    transition: background-color .3s;
+}
+
+#botonSi:hover, #botonNo:hover{
+    background-color: rgba(112, 179, 68, 0.2)
+}
+
+
+/* Paleta de colores
+#FFFEF4
+#D6CB4F
+#71B344
+#869639
+#6A5BC7
+#70349E
+*/
+
+
