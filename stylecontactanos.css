@@ -120,6 +120,10 @@ h3 {
     margin-left: 10%;
 }
 
+::placeholder {
+    font-size: 15px;
+}
+
 /* Estilos para las cajas de entrada de texto */
 .formulario input,
 textarea {
@@ -303,7 +307,7 @@ textarea {
     background-color: white;
     color: black;
     padding: 10px 15px;
-    border: 1px solid black;
+    border: 2px solid #70349E;
     border-radius: 6px;
     display: block;
     margin: 10px auto 0 ;
