@@ -1,0 +1,68 @@
+main {
+    height: 100vh;
+    background-color: rgba(112, 179, 68, 0.2);
+    /* padding: 10px 15%; */
+    background-image: url('img/FONDOCONTACTANOS.jpg');
+    /* Ruta de la imagen */
+    background-size: cover;
+    /* Cubre todo el contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+
+    /* Mantiene tu padding original */
+}
+
+/* Para CEL (800px) */
+@media (max-width: 450px) {
+    main {
+        background-image: url('img/FONDOCELULAR.jpg');
+        /* Agregar la extensión correcta, como .jpg */
+    }
+}
+
+/* Asignación de poppins regular 400 a párrafos */
+* {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    justify-content: center;
+
+}
+
+/* Asignacion de roboto bold 700 a titulos */
+h1,
+h2,
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.titulo h1 {
+    margin-top: 20px;
+    color: #70349E;
+    font-size: 45px;
+    text-align: center;
+    /* Esto tendrá mayor especificidad */
+}
+
+.cuadroCompras{
+    flex: 1;
+}
+
+.tituloCuadroCompras{
+    background-color:  white;
+    border: 2px solid black;
+    padding: 5px 0;
+    display: grid;
+    grid-template-columns: repeat(6 , 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 15px;
+}
+.tituloCuadroCompras h4{
+    text-align: center;
+    border: 2px solid black;
+}

@@ -101,6 +101,10 @@ h3 {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
+.contenedorBoton .boton:hover{
+    background-color: rgba(105, 91, 199, 0.534);
+}
+
 /*Espacio interno de distribución de las columnas de la parte izquierda del formulario  */
 .formulario .izquierda {
     margin-left: 0%;
@@ -172,7 +176,7 @@ textarea {
 
 
 /* Cuando el tamaño de la pantalla sea menor a 900px cambia la vista a una columna y el boton se asigna un espacio de ocupacion de una columna */
-@media(width < 900px) {
+@media(width < 1100px) {
 
     .formulario,
     .informacion {
@@ -249,14 +253,10 @@ textarea {
 
 }
 
-/* input:invalid{
-    background-color: red;
-} */
-
 /* Estilos para la ventana modal */
 .modal1{
-    display: none;
-    position: fixed;
+    display: none; /* Desaparece el contenedor */
+    position: fixed; /*Mantiene la pantalla fija asi se haga scroll  */
     z-index: 1;
     top: 0;
     left: 0;
@@ -270,21 +270,25 @@ textarea {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
+    max-width: 400px;
     width: 80%;
     border-radius: 10px;
     border: 1px solid black;
-    max-width: 400px;
     position: relative;
 }
 
 .cerrar{
     color: rgb(231, 99, 99);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
     float: right; /* lo obliga a posicionarse a la derecha  */
-    position: absolute; /* elimina su posición normal en un documento */
+    position: absolute;/* elimina su posición normal en un documento */
     top: 10px; 
     right: 15px;
     font-size: 25px; 
     cursor: pointer;
+    box-shadow: 3px 8px rgba(0,0,0,0.25);
 }
 
 .cerrar:hover{
@@ -293,7 +297,7 @@ textarea {
 }
 
 .modal1-contenedor h5{
-    padding: 5px;;
+    padding: 5px;
     text-align: center;
 }
 
@@ -318,7 +322,7 @@ textarea {
 }
 
 #botonSi:hover, #botonNo:hover{
-    background-color: rgba(112, 179, 68, 0.2)
+    background-color: rgba(105, 91, 199, 0.534);
 }
 
 
