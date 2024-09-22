@@ -174,3 +174,25 @@ sale hacia la der */
     }
 
 }
+
+.modal1{
+    display: none; /* Desaparece el contenedor */
+    position: fixed; /*Mantiene la pantalla fija asi se haga scroll  */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.208);
+}
+
+.modal1-contenedor{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    max-width: 400px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+}

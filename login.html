@@ -47,19 +47,23 @@
         </div>
         <div class="contieneFormularios">
           <div class="formularioIngreso">
-            <form>
+            <form action="https://formspree.io/f/mrbzwgpp" method="POST" id="formulario" >
               <h3>Ingreso Sesion</h3>
               <input
+              title="Necesita Nombre Usuario"
                 type="text"
                 placeholder="Usuario"
                 name="usuario"
                 id="usuario"
+                required
               />
               <input
+                title="Ingrese Contrasena"
                 type="password"
                 name="contrasena"
                 id="contrasena"
                 placeholder="Contrasena"
+                required
               />
               <input type="submit" value="Ingreso" />
               <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
@@ -70,28 +74,36 @@
             <form>
               <h3>Registro</h3>
               <input
+                title="Necesita Nombre Usuario"
                 type="text"
-                placeholder="Usuario"
+                placeholder="Usuario "
                 name="usuario"
                 id="usuario"
+                required
               />
-              <input 
+              <input
+              title="Ingrese Correo"
               type="email" 
               name="correo" 
               id="correo" 
               placeholder="Correo"
+              required
               />
               <input
+                title="Ingrese Contrasena"
                 type="password"
                 name="Contrasena"
                 id="contrasena"
                 placeholder="Contrasena"
+                required
               />
               <input
+                title="Ingrese Nuevamente Contrasena"
                 type="password"
                 name="validarContrasena"
                 id="validarContrasena"
                 placeholder="Contrasena Nuevamente"
+                required
               />
               <input type="submit" value="Registrarme"
               />
@@ -107,6 +119,8 @@
         </div>
       </div>
     </div>
+
+
 
     <!-- Footer jalado con el javascript llamarNavFooter.js -->
     <footer>
