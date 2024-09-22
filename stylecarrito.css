@@ -1,16 +1,11 @@
 main {
-    height: 100vh;
-    background-color: rgba(112, 179, 68, 0.2);
-    /* padding: 10px 15%; */
+    /* height: 100vh; */
+    padding: 3% 12%;
+    background-color: #FFFEF4;
     background-image: url('img/FONDOCONTACTANOS.jpg');
-    /* Ruta de la imagen */
-    background-size: cover;
-    /* Cubre todo el contenedor */
-    background-position: center;
-    /* Centra la imagen */
-    background-repeat: no-repeat;
-
-    /* Mantiene tu padding original */
+    background-size: cover;   /* Cubre todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; 
 }
 
 /* Para CEL (800px) */
@@ -41,7 +36,7 @@ h3 {
 }
 
 .titulo h1 {
-    margin-top: 20px;
+    padding: 15px;
     color: #70349E;
     font-size: 45px;
     text-align: center;
@@ -49,20 +44,196 @@ h3 {
 }
 
 .cuadroCompras{
-    flex: 1;
+    /* flex: 1; */
 }
 
+/* Estilos para el titulo de compras, este se distribuye en cinco columnas la primera tiene el doble de tamaño que las demás */
 .tituloCuadroCompras{
-    background-color:  white;
-    border: 2px solid black;
-    padding: 5px 0;
+    /* margin: 3% 20%; */
+    margin-bottom: 10px ;
+    height: 38px ;
+    background-color: #FFFEF4;
+    border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(6 , 1fr);
+    grid-template-columns: 2fr repeat(3 , 1fr);
     grid-template-rows: 1fr;
-    align-items: center;
+    place-items: center;
     gap: 15px;
 }
-.tituloCuadroCompras h4{
+
+.tituloCuadroCompras h5{
+    width: 100%;
+    margin: auto;
     text-align: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
+
+/* Contenedor de todos los productos que se van agregando */
+.productosAgregados{
+    /* padding: 3% 20%; */
+    padding: 1px;
+    /* border: 1px solid black; */
+    background-color: #FFFEF4;
+}
+
+/* contenedor del primer producto */
+.primerProducto{
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
+}
+
+.primerProducto img{
+    border-radius: 20px;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.primerProducto p{
+    width: 100%;
+    /* border: 2px solid black; */
+    margin: auto;
+    /* background-color: blue; */
+    text-align: center;
+    place-items: center;
+    
+}
+
+/* Ya que en la parte de cantidad, necesitamos tres objetos, es necesario crear un div interno el cual permite centrarlos */
+.productoCantidad{
+    /* border: 2px solid black; */
+    display: grid;
+    place-items: center;
+}
+
+/* Div interno de productoCantidad */
+.cantidad{
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    place-items: center;
+}
+
+/* Estilos para la caja que muestra el numero de productos agregados */
+.cantidad input{
+    width: 40px;
+    height: 30px;
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #FFFEF4;
+    font-size: 20px;
+}
+
+/* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilos para los iconos dentro de cantidad */
+.cantidad i{
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    color: rgba(105, 91, 199);
+    cursor: pointer;
+    box-shadow: 3px 3px rgba(0,0,0,0.25);
+}
+
+.cantidad i:hover{
+    color: rgb(29, 26, 198);
+}
+
+.primerProducto span{
+    display: none;
+}
+
+/* EStilos para botón de eliminar */
+.botonEliminar{
+    position: absolute; /* Elimina su posición normal  */
+    top: 0px; /* Top y right determinan su ubicación en el primer contenedor que posea posición relativa */
+    right: 5px;
+    height: 30px;
+    width: 24px;
+    font-size: 20px;
+    color: rgb(231, 99, 99);
+    cursor: pointer;
+}
+
+.botonEliminar:hover{
+    color: rgb(174, 59, 59);
+}
+
+
+/*  */
+@media(width < 650px){
+    .tituloCuadroCompras{
+        display: none;
+    }
+
+    .productosAgregados{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* contenedor del primer producto */
+    .primerProducto{
+        padding: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+    }
+
+    .primerProducto p:first-of-type {
+        grid-column: 1/3;
+        
+    }
+
+    .primerProducto img{
+        margin: auto;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        width: 100px;
+        height: 100px;
+    }
+
+    .primerProducto div:first-of-type{
+        grid-row-start: 3;
+    }
+    .primerProducto p:nth-of-type(2){
+        grid-row-start: 4;
+    }
+    .primerProducto p:nth-of-type(3){
+        grid-row-start: 5;
+    }
+    .primerProducto span{
+        display: inline-block;
+    }
+}
+@media(width < 650px){
+    .productosAgregados{
+        display: block;
+        
+    }
+}
+/* 
+.primerProducto{
+    margin-bottom: 5px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
+} */

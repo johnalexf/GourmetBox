@@ -33,94 +33,96 @@
       <div id="Navbar"></div>
     </header>
 
-    <div class="bodyLogin">
-      <div class="container">
-        <div class="zonagris">
-          <div class="ingreso">
-            <h2>¿Ya Tienes Cuenta?</h2>
-            <button class="ingresoBoton">Ingresar</button>
-          </div>
-          <div class="registro">
-            <h2>¿No Tienes Cuenta?</h2>
-            <button class="registroBoton">Registrarse</button>
-          </div>
-        </div>
-        <div class="contieneFormularios">
-          <div class="formularioIngreso">
-            <form action="https://formspree.io/f/mrbzwgpp" method="POST" id="formulario" >
-              <h3>Ingreso Sesion</h3>
-              <input
-              title="Necesita Nombre Usuario"
-                type="text"
-                placeholder="Usuario"
-                name="usuario"
-                id="usuario"
-                required
-              />
-              <input
-                title="Ingrese Contrasena"
-                type="password"
-                name="contrasena"
-                id="contrasena"
-                placeholder="Contrasena"
-                required
-              />
-              <input type="submit" value="Ingreso" />
-              <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
-            </form>
-          </div>
+    <main>
 
-          <div class="formularioRegistro">
-            <form>
-              <h3>Registro</h3>
-              <input
+      <div class="bodyLogin">
+        <div class="containerLogin">
+          <div class="zonagris">
+            <div class="ingreso">
+              <h2>¿Ya Tienes Cuenta?</h2>
+              <button class="ingresoBoton">Ingresar</button>
+            </div>
+            <div class="registro">
+              <h2>¿No Tienes Cuenta?</h2>
+              <button class="registroBoton">Registrarse</button>
+            </div>
+          </div>
+          <div class="contieneFormularios">
+            <div class="formularioIngreso">
+              <form action="https://formspree.io/f/mrbzwgpp" method="POST" id="formulario" >
+                <h3>Ingreso Sesion</h3>
+                <input
                 title="Necesita Nombre Usuario"
-                type="text"
-                placeholder="Usuario "
-                name="usuario"
-                id="usuario"
+                  type="text"
+                  placeholder="Usuario"
+                  name="usuario"
+                  id="usuario"
+                  required
+                />
+                <input
+                  title="Ingrese Contrasena"
+                  type="password"
+                  name="contrasena"
+                  id="contrasena"
+                  placeholder="Contrasena"
+                  required
+                />
+                <input type="submit" value="Ingreso" />
+                <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
+              </form>
+            </div>
+
+            <div class="formularioRegistro">
+              <form>
+                <h3>Registro</h3>
+                <input
+                  title="Necesita Nombre Usuario"
+                  type="text"
+                  placeholder="Usuario "
+                  name="usuario"
+                  id="usuario"
+                  required
+                />
+                <input
+                title="Ingrese Correo"
+                type="email" 
+                name="correo" 
+                id="correo" 
+                placeholder="Correo"
                 required
-              />
-              <input
-              title="Ingrese Correo"
-              type="email" 
-              name="correo" 
-              id="correo" 
-              placeholder="Correo"
-              required
-              />
-              <input
-                title="Ingrese Contrasena"
-                type="password"
-                name="Contrasena"
-                id="contrasena"
-                placeholder="Contrasena"
-                required
-              />
-              <input
-                title="Ingrese Nuevamente Contrasena"
-                type="password"
-                name="validarContrasena"
-                id="validarContrasena"
-                placeholder="Contrasena Nuevamente"
-                required
-              />
-              <input type="submit" value="Registrarme"
-              />
-            </form>
+                />
+                <input
+                  title="Ingrese Contrasena"
+                  type="password"
+                  name="Contrasena"
+                  id="contrasena"
+                  placeholder="Contrasena"
+                  required
+                />
+                <input
+                  title="Ingrese Nuevamente Contrasena"
+                  type="password"
+                  name="validarContrasena"
+                  id="validarContrasena"
+                  placeholder="Contrasena Nuevamente"
+                  required
+                />
+                <input type="submit" value="Registrarme"
+                />
+              </form>
+            </div>
+
           </div>
-
-
-
-
-
-
-
         </div>
       </div>
-    </div>
 
 
+
+      <div class="usuarioRegistrado">
+
+      </div>
+
+    </main>
 
     <!-- Footer jalado con el javascript llamarNavFooter.js -->
     <footer>

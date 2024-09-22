@@ -108,7 +108,8 @@ function verificarEmail(){
 
 // función que se ejecuta cuando el usuario oprime en enviar y los datos son correctos
 let formulario = document.getElementById('formulario');
-  formulario.addEventListener('submit', function(event) {
+
+formulario.addEventListener('submit', function(event) {
   localStorage.clear();
   localStorage.setItem('validacion','enviado');
   modalMensajeExitoso.style.display = "block"

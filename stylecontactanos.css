@@ -39,7 +39,7 @@ main {
 
 }
 
-/* Asignacion de roboto bold 700 a titulos */
+/* Asignación de roboto bold 700 a títulos */
 h1,
 h2,
 h3 {
@@ -70,6 +70,10 @@ h3 {
 /* párrafos dentro de información de contacto */
 .ajusteParrafo {
     margin: 0%;
+}
+
+button {
+    font-weight: bold;
 }
 
 

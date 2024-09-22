@@ -9,14 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh;   
     background-color: rgba(8, 8, 8, 0.2);
     transform: 0.5s;
 }
 
 
 /* contiene toda la estructura */
-.container {
+.containerLogin {
     position: absolute;
     width: 800px;
     height: 500px;
@@ -129,7 +129,7 @@ sale hacia la der */
 @media (max-width: 991px){
 
     /* se le asigna una tamaño al contenedor */
-    .container{
+    .containerLogin {
         max-width: 400px;
         height: 500px;
         display: flex;
@@ -137,7 +137,7 @@ sale hacia la der */
         align-items: center;
     }
     /* se alienan los contenedore externos */
-    .container .zonagris {
+    .containerLogin .zonagris {
         top: 0;
         height: 100%;
     }
