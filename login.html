@@ -1,49 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sesion</title>
-    <link rel="stylesheet" href="stylelogin.css">
-</head>
-<body>
 
-    <div class="container">
-        <div class="blueBg">
-            <div class="boxLogin">
-                <h2>¿Ya tienes Cuenta? </h2>
-                <button class="loginBtn">Inicia Sesion</button>
-            </div>
-            <div class="boxRegistro">
-                <h2>¿No tienes Cuenta? </h2>
-                <button class="registroBtn">Registrate</button>
-            </div>
+    <!-- Poppins Regular 400 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Roboto Bold 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos del Navbar y Footer -->
+    <link rel="stylesheet" href="./styleNavFooter.css" />
+
+    <!-- Estilos propios de Login-->
+    <link rel="stylesheet" href="stylelogin.css" />
+  </head>
+  <body>
+    <!-- Navbar jalado con el javascript llamarNavFooter.js -->
+    <header>
+      <div id="Navbar"></div>
+    </header>
+
+    <div class="bodyLogin">
+      <div class="container">
+        <div class="zonagris">
+          <div class="ingreso">
+            <h2>¿Ya Tienes Cuenta?</h2>
+            <button class="ingresoBoton">Ingresar</button>
+          </div>
+          <div class="registro">
+            <h2>¿No Tienes Cuenta?</h2>
+            <button class="registroBoton">Registrarse</button>
+          </div>
         </div>
-        <div class="formBox">
-            <div class="formInicio">
-                <form action="">
-                    <h3>Inicio Sesion</h3>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
-                    <input type="submit" value="inicio">
-                    <a href="#" class="olvidar">¿Olvido Contraseña?</a>
-                </form>
-            </div>
+        <div class="contieneFormularios">
+          <div class="formularioIngreso">
+            <form>
+              <h3>Ingreso Sesion</h3>
+              <input
+                type="text"
+                placeholder="Usuario"
+                name="usuario"
+                id="usuario"
+              />
+              <input
+                type="password"
+                name="contrasena"
+                id="contrasena"
+                placeholder="Contrasena"
+              />
+              <input type="submit" value="Ingreso" />
+              <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
+            </form>
+          </div>
+
+          <div class="formularioRegistro">
+            <form>
+              <h3>Registro</h3>
+              <input
+                type="text"
+                placeholder="Usuario"
+                name="usuario"
+                id="usuario"
+              />
+              <input 
+              type="email" 
+              name="correo" 
+              id="correo" 
+              placeholder="Correo"
+              />
+              <input
+                type="password"
+                name="Contrasena"
+                id="contrasena"
+                placeholder="Contrasena"
+              />
+              <input
+                type="password"
+                name="validarContrasena"
+                id="validarContrasena"
+                placeholder="Contrasena Nuevamente"
+              />
+              <input type="submit" value="Registrarme"
+              />
+            </form>
+          </div>
+
+
+
+
+
+
+
         </div>
-        <div class="formRegistro">
-            <div class="form registro">
-                <form action="">
-                    <h3>Registro</h3>
-                    <input type="text" placeholder="Usuario">
-                    <input type="email" name="correo" id="Correo" placeholder="Correo">
-                    <input type="password" name="contrasena" id="password" placeholder="Contraseña">
-                    <input type="password" name="confirmarContrasena" id="conrmarC" placeholder="Confirmar Contraseña">
-                    <input type="submit" value="registro">
-                </form>
-            </div>
-        </div>
+      </div>
     </div>
 
+    <!-- Footer jalado con el javascript llamarNavFooter.js -->
+    <footer>
+      <div id="footer"></div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./llamarNavFooter.js"></script>
     <script src="scriptlogin.js"></script>
-</body>
+  </body>
 </html>

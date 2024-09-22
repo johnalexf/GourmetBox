@@ -1,40 +1,45 @@
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+/* este es el fondo se le puede colocar la imagen*/
+.bodyLogin {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #d6d8d8;
+    background-color: rgba(8, 8, 8, 0.2);
     transform: 0.5s;
 }
 
 
+/* contiene toda la estructura */
 .container {
-    position: relative;
+    position: absolute;
     width: 800px;
     height: 500px;
     margin: 20px;
+    background: rgba(128, 128, 236, 0.288);
 }
 
-.blueBg {
-    position: absolute;
+/* este contenedor funciona como estructura 
+de los titulos y botones de ingreso y registro */
+.zonagris {
+    position: relative;
     top: 40px;
     width: 100%;
     height: 420px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(116, 112, 112);
+    background: rgba(146, 143, 143, 0.418);
+    text-align: center;
 }
 
-.blueBg .boxLogin {
+/* se le da direccion y posicionamiento a titulos 
+y botones */
+.zonagris .ingreso,
+.zonagris .registro {
     position: relative;
     width: 50%;
     height: 100%;
@@ -44,71 +49,128 @@ body {
     flex-direction: column;
 }
 
-.blueBg .boxRegistro {
-    font-size: 1.2em;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.blueBg .boxLogin button,
-.blueBg .boxRegistro button{
-    cursor: pointer;
-    padding: 10px 20px;
-    background: #fff;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-}
-
-.formBox {
+/* se le da propiedad de estar sobrepuesto a todo
+el tamaño del container este seccion correra de un
+lado a otro suave */
+.contieneFormularios {
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-    background: #fff;
+    background: rgb(248, 247, 245);
     z-index: 1000;
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;/* tapa el texto fuera del contenedor */
 }
 
-.formBox.active {
+/* se le da el efecto de deslizarse cuando se oprime
+el boton de registro o ingreso */
+.contieneFormularios.active {
     left: 50%;
 }
 
-.formBox .form{
+/* se le da el cambio de color al dar en los botones
+de ingreso o registro */
+.bodyLogin.active {
+    background: rgba(137, 43, 226, 0.432);
+}
+
+/* se le otorga al formulario ingreso una posicion a la izq
+con sus elementos centrados y transiciones suaves */
+.contieneFormularios .formularioIngreso{
     position: absolute;
     left: 0;
     width: 100%;
     padding: 50px;
     transition: 0.5s;
+    transition-delay: 0.25s;
+    align-self: center;
 }
 
-.formBox .formInicio {
-    transition-delay: 0.25s ;
-}
-
-.formBox .form  form{
+/* posicion de los titulos e input y boton */
+.contieneFormularios .formularioIngreso form,
+.contieneFormularios .formularioRegistro form{
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 20px; /* tamaño de espaciado entre elementos */
 }
 
-.formBox .form form h3{
-    /* estilo formulario */
+/* cuando se realize click el formulario de ingreso
+sale hacia la izq */
+.contieneFormularios.active .formularioIngreso {
+    left: -100%;
+    transition-delay: 0s;
 }
 
-.formBox .form form input{
+/* se le otorga al formulario registro una posicion a la der
+con sus elementos centrados y transiciones suaves */
+.contieneFormularios .formularioRegistro{
+    position: absolute;
+    left: 100%;
     width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    outline: none;
-    border: 1px solid rebeccapurple;
+    padding: 50px;
+    transition: 0.5s;
+    transition-delay: 0s;
+    align-self: center;
 }
 
+/* cuando se realize click el formulario de registro
+sale hacia la der */
+.contieneFormularios.active .formularioRegistro {
+    left: 0;
+    transition-delay: 0.25s;
+}
 
+/* cuando la pantalla es pequeña  */
+@media (max-width: 991px){
 
+    /* se le asigna una tamaño al contenedor */
+    .container{
+        max-width: 400px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* se alienan los contenedore externos */
+    .container .zonagris {
+        top: 0;
+        height: 100%;
+    }
 
+    /* se asigna tamaño a los formularios */
+    .contieneFormularios{
+        width: 100%;
+        height: 400px;
+        top: 0;
+    }
+
+    /* los  botones de ingreso y registro se
+    posicionan en forma abosluta
+    y se les asigna un espacio*/
+    .zonagris .registro,
+    .zonagris .ingreso{
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        bottom: 0;
+    }
+
+   /* la posicion de la seccion ingreso sera
+   ajustada arriba no a laizq */
+    .ingreso{
+        position: absolute;
+        top: 0;
+    }
+
+    /* se desplaza de arriba a abajo 120px */
+    .contieneFormularios.active {
+        left: 0;
+        top: 120px;
+    }
+
+}
