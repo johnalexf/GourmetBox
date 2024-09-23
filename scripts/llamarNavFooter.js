@@ -1,5 +1,5 @@
 // Cargar el contenido del footer
-fetch('./navbar.html')
+fetch('../HTML/navbar.html')
     .then(response => response.text())
     .then(data => {
     document.getElementById('Navbar').innerHTML = data;
@@ -10,7 +10,7 @@ fetch('./navbar.html')
 
 
 // Cargar el contenido del footer
-fetch('./footer.html')
+fetch('../HTML/footer.html')
     .then(response => response.text())
     .then(data => {
     document.getElementById('footer').innerHTML = data;
