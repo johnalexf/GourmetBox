@@ -34,7 +34,6 @@
     </header>
 
     <main>
-
       <div class="bodyLogin">
         <div class="containerLogin">
           <div class="zonagris">
@@ -49,10 +48,14 @@
           </div>
           <div class="contieneFormularios">
             <div class="formularioIngreso">
-              <form action="https://formspree.io/f/mrbzwgpp" method="POST" id="formulario" >
+              <form
+                action="https://formspree.io/f/mrbzwgpp"
+                method="POST"
+                id="formulario"
+              >
                 <h3>Ingreso Sesion</h3>
                 <input
-                title="Necesita Nombre Usuario"
+                  title="Necesita Nombre Usuario"
                   type="text"
                   placeholder="Usuario"
                   name="usuario"
@@ -73,29 +76,29 @@
             </div>
 
             <div class="formularioRegistro">
-              <form>
+              <form id="formularioR">
                 <h3>Registro</h3>
                 <input
                   title="Necesita Nombre Usuario"
                   type="text"
                   placeholder="Usuario "
-                  name="usuario"
-                  id="usuario"
+                  name="usuarioR"
+                  id="usuarioR"
                   required
                 />
                 <input
-                title="Ingrese Correo"
-                type="email" 
-                name="correo" 
-                id="correo" 
-                placeholder="Correo"
-                required
+                  title="Ingrese Correo"
+                  type="email"
+                  name="correo"
+                  id="correo"
+                  placeholder="Correo"
+                  required
                 />
                 <input
                   title="Ingrese Contrasena"
                   type="password"
-                  name="Contrasena"
-                  id="contrasena"
+                  name="contrasenaR"
+                  id="contrasenaR"
                   placeholder="Contrasena"
                   required
                 />
@@ -107,21 +110,24 @@
                   placeholder="Contrasena Nuevamente"
                   required
                 />
-                <input type="submit" value="Registrarme"
-                />
+                <div class="mensaje" id="mensaje"></div>
+                <input type="submit" value="Registrarme" />
               </form>
             </div>
-
           </div>
         </div>
       </div>
 
-
-
-      <div class="usuarioRegistrado">
-
+      <!-- Ventana emergente mensaje enviado correctamente-->
+      <div id="modalMensajeExitoso" class="modal1">
+        <div class="modal1-contenedor">
+          <i class="bi bi-x-circle-fill cerrar"></i>
+          <!-- Icono sacado de Bootstrap-->
+          <h5>Bienvenido</h5>
+        </div>
       </div>
 
+      <div class="usuarioRegistrado"></div>
     </main>
 
     <!-- Footer jalado con el javascript llamarNavFooter.js -->

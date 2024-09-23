@@ -94,7 +94,7 @@ button {
     grid-column: span 2;
 }
 
-.contenedorBoton .boton {
+button {
     width: 200px;
     height: 40px;
     border-radius: 50px;
@@ -103,7 +103,7 @@ button {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
-.contenedorBoton .boton:hover{
+button:hover{
     background-color: rgba(105, 91, 199, 0.534);
 }
 
