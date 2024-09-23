@@ -315,6 +315,7 @@ sale hacia la der */
     }
 }
 
+/* Cambio de distribución para imagen en celular */
 @media (width < 600px){
     .usuarioRegistrado{
         height: auto;
@@ -327,7 +328,6 @@ sale hacia la der */
     .datosPerfil, .suscripcionYPLatos{
         display: grid;
         grid-template-columns: 1fr;
-        
     }
     .datosPerfil{
         gap: 5px;
