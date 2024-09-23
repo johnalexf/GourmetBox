@@ -2,7 +2,7 @@ main {
     /* height: 100vh; */
     padding: 3% 12%;
     background-color: #FFFEF4;
-    background-image: url('img/FONDOCONTACTANOS.jpg');
+    background-image: url('../img/FONDOCONTACTANOS.jpg');
     background-size: cover;   /* Cubre todo el contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; 
@@ -11,7 +11,7 @@ main {
 /* Para CEL (800px) */
 @media (max-width: 450px) {
     main {
-        background-image: url('img/FONDOCELULAR.jpg');
+        background-image: url('../img/FONDOCELULAR.jpg');
         /* Agregar la extensión correcta, como .jpg */
     }
 }

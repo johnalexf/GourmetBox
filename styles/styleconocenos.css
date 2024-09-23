@@ -45,7 +45,7 @@ h5 {
 
 
 .background-container {
-  background-image: url('./img/FONDO.png');
+  background-image: url('../img/FONDO.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

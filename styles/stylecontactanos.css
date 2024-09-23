@@ -10,7 +10,7 @@
 main {
     background-color: rgba(112, 179, 68, 0.2);
     padding: 10px 15%;
-    background-image: url('img/FONDOCONTACTANOS.jpg');
+    background-image: url('../img/FONDOCONTACTANOS.jpg');
     /* Ruta de la imagen */
     background-size: cover;
     /* Cubre todo el contenedor */
@@ -24,7 +24,7 @@ main {
 /* Para CEL (800px) */
 @media (max-width: 450px) {
     main {
-        background-image: url('img/FONDOCELULAR.jpg');
+        background-image: url('../img/FONDOCELULAR.jpg');
         /* Agregar la extensión correcta, como .jpg */
     }
 }
