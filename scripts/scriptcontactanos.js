@@ -11,6 +11,14 @@ var cerrarModalExitoso = document.getElementsByClassName("cerrar")[0]; //Esta in
 var botonSi = document.getElementById("botonSi");
 var botonNo = document.getElementById("botonNo");
 
+
+ //lista de los id de las cajas de texto y array con el contenido del formulario
+ let identificadores = ['nombre','email','telefono','asunto','contenidoMsm'];
+ let contenidoFormulario = ["","","","",""];
+
+ //variable que trae el contenido html del formulario de contáctenos
+ let formulario = document.getElementById('formulario');
+
 // instrucción donde valida si fue un éxito el envió del mensaje y muestra pantalla emergente confirmando al usuario el correcto envió
 // en caso de que fuera falso, muestra pantalla emergente de continuar formulario
 const validacion = localStorage.getItem('validacion');
@@ -18,7 +26,7 @@ const validacion = localStorage.getItem('validacion');
 if( validacion == 'enviado'){
   modalMensajeExitoso.style.display = "block"; //Abrir ventana Mensaje Exitoso
 }else{
-  if( localStorage.length != 0 ){
+  if( localStorage.getItem('contenidoFormulario') != undefined ){
     modalContinuarFormulario.style.display = "block"; //Abrir ventana Continuar Formulario
   }
 }
@@ -27,41 +35,41 @@ if( validacion == 'enviado'){
 cerrarModalExitoso.onclick = function() {
   modalMensajeExitoso.style.display = "none";
   formulario.reset();
-  localStorage.clear();
+  localStorage.removeItem('contenidoFormulario');
+  localStorage.removeItem('validacion')
 }
 
 botonNo.onclick = function() {
   modalContinuarFormulario.style.display = "none";
-  localStorage.clear();
+  localStorage.removeItem('contenidoFormulario');
 }
 botonSi.onclick = function() {
   modalContinuarFormulario.style.display = "none";
+  contenidoFormulario = JSON.parse(localStorage.getItem('contenidoFormulario'));
   rellenarFormulario();
 }
 
 
 // instrucciones para rellenar el formulario con datos anteriores
- //lista de los id de las cajas de texto
-let identificadores = ['nombre','email','telefono','asunto','contenidoMsm']
-
 //Función para asignar a cada cuadro de texto su ultimo contenido al recargar la pagina
 function rellenarFormulario(){
-  identificadores.forEach(element => {
-    if(localStorage.getItem(element) != null){
-      document.getElementById(element).value = localStorage.getItem(element)
-    }
-  });
+  for(i=0 ; i < 5 ; i++){
+    console.log(identificadores[i])
+    document.getElementById(identificadores[i]).value = contenidoFormulario[i];
+  }
 }
- 
 
   //evento de escucha cada vez que se salga de una caja guarda los datos
 document.addEventListener("change", (event) => {
   if(event.target.localName == 'input'){
-    localStorage.setItem(event.target.id,document.getElementById(event.target.id).value);
+    contenidoFormulario[identificadores.indexOf(event.target.id)] = document.getElementById(event.target.id).value; 
+    localStorage.setItem("contenidoFormulario",JSON.stringify(contenidoFormulario));
   }
   else if(event.target.localName == 'textarea'){
-    localStorage.setItem(event.target.id,document.getElementById(event.target.id).value);
+    contenidoFormulario[identificadores.indexOf(event.target.id)] = document.getElementById(event.target.id).value; 
+    localStorage.setItem("contenidoFormulario",JSON.stringify(contenidoFormulario));
   }
+  console.log(contenidoFormulario)
 });
 
 //objeto con las expresiones que se usaran para validar la información ingresada
@@ -107,10 +115,8 @@ function verificarEmail(){
 
 
 // función que se ejecuta cuando el usuario oprime en enviar y los datos son correctos
-let formulario = document.getElementById('formulario');
-
 formulario.addEventListener('submit', function(event) {
-  localStorage.clear();
+  localStorage.removeItem('contenidoFormulario');
   localStorage.setItem('validacion','enviado');
   modalMensajeExitoso.style.display = "block"
 });

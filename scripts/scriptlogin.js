@@ -151,17 +151,43 @@ document.getElementById('contrasenaR').addEventListener('input', function() {
 
 // Código para cambiar de visualización si el usuario hace un correcto login
 //ya hemos llamado al div class bodyLogin como body
-let usuarioRegistrado = document.querySelector(".usuarioRegistrado");
+let divUsuarioRegistrado = document.querySelector(".divUsuarioRegistrado");
 let botonRealizarIngreso = document.querySelector("#realizarIngreso");
 let botonCerrarSesion = document.querySelector("#cerrarSesion");
 const formularioIngreso = document.querySelector("#formulario");
-let nameUser1 =  document.getElementById('nameUser');
+let nameUser1 =  document.getElementById('sesion');
+
+function mostrarPerfil(){
+  bodyLogin.classList.remove('mostrar');
+  bodyLogin.classList.add('ocultar');
+  setTimeout( function(){
+      bodyLogin.style.display = 'none';
+      divUsuarioRegistrado.style.display = 'block';
+    },500 )
+  setTimeout(function(){
+      divUsuarioRegistrado.classList.remove('ocultar');
+      divUsuarioRegistrado.classList.add('mostrar');
+    },500)
+}
+
+function mostrarBodyLogin(){
+  divUsuarioRegistrado.classList.remove('mostrar');
+  divUsuarioRegistrado.classList.add('ocultar');
+  setTimeout( function(){
+    bodyLogin.style.display = 'flex';
+    divUsuarioRegistrado.style.display = 'none';
+  },500 )
+  setTimeout( function(){
+    bodyLogin.classList.remove('ocultar');
+    bodyLogin.classList.add('mostrar');
+  },500 );
+}
+
 
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
 if(localStorage.getItem('usuario') != undefined){
   if( localStorage.getItem('usuario').length != 0 ){
-    bodyLogin.style.display = "none";
-    usuarioRegistrado.style.display = "block";
+    mostrarPerfil();
   }
 }
 
@@ -170,16 +196,14 @@ botonRealizarIngreso.onclick = function(event) {
   event.preventDefault();
   if(formularioIngreso.usuario.value === "admin" && formularioIngreso.contrasena.value === "1234" ){
     localStorage.setItem( 'usuario', 'admin');
-    bodyLogin.style.display = "none";
-    usuarioRegistrado.style.display = "block";
+    mostrarPerfil();
     nameUser1.innerText = localStorage.getItem('usuario');
   }
 }
 
 //Cuando cierra sesión muestra los formularios y oculta el perfil
 botonCerrarSesion.onclick = function() {
-  bodyLogin.style.display = "flex";
-  usuarioRegistrado.style.display = "none";
+  mostrarBodyLogin();
   nameUser1.innerText = "Ingresar";
   localStorage.setItem( 'usuario', '');
 
