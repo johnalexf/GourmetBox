@@ -101,45 +101,43 @@ contrasenaRegistro.addEventListener('input', verificarContrasenaAdecuada)
 confirmacionContrasenaRegistro.addEventListener('input',verificarContrasenaIguales)
 
 
-// para Edward, al momento de activar el mensaje con correo.setCustomValidity("¡El correo que ingresaste no es valido!", ); hasta no cumplir esa condición
-//no te va dejar hacer submit, entonces ya no seria necesario ponerlo dentro de este evento de escucha
-document.getElementById('formularioR').addEventListener('submit', function(event) {
+// document.getElementById('formularioR').addEventListener('submit', function(event) {
    
-  event.preventDefault(); /* no se envía por defecto */
-  const correo = document.getElementById('correo').value; /* guardo el valor dentro de correo */
-  let validoCorreo = expresiones.correoE.test(correo); /* valido si tiene las característica de un correo */
+//   event.preventDefault(); /* no se envía por defecto */
+//   const correo = document.getElementById('correo').value; /* guardo el valor dentro de correo */
+//   let validoCorreo = expresiones.correoE.test(correo); /* valido si tiene las característica de un correo */
   
-  /* si el correo es valido continua evaluando */
-  if(!validoCorreo){
-    mensaje.textContent = 'Correo Incompleto';
-    mensaje.style.color = 'red';
-  }else{
+//   /* si el correo es valido continua evaluando */
+//   if(!validoCorreo){
+//     mensaje.textContent = 'Correo Incompleto';
+//     mensaje.style.color = 'red';
+//   }else{
 
-  /* guardo los contenidos de los inputs contrasena y validarContrasena*/
-    const contrasena = contrasenaRegistro.value;
-    const validarContrasena = confirmacionContrasenaRegistro.value;
-    const mensaje = document.getElementById('mensaje');
+//   /* guardo los contenidos de los inputs contrasena y validarContrasena*/
+//     const contrasena = contrasenaRegistro.value;
+//     const validarContrasena = confirmacionContrasenaRegistro.value;
+//     const mensaje = document.getElementById('mensaje');
 
-    /* Valido que la contrasena tenga una mayúscula y un numero y sea de al menos 6 caracteres */
-    const esValida = expresiones.contrasena.test(contrasena);
+//     /* Valido que la contrasena tenga una mayúscula y un numero y sea de al menos 6 caracteres */
+//     const esValida = expresiones.contrasena.test(contrasena);
     
-    /* si mi contraseñas con iguales y tienen una mayúscula y un numero y tiene al menos 6 caracteres
-    se envía un mensaje modal dando la Bienvenida */
-    if (esValida && contrasena == validarContrasena) {
-      modalMensajeExitoso.style.display = 'block';
+//     /* si mi contraseñas con iguales y tienen una mayúscula y un numero y tiene al menos 6 caracteres
+//     se envía un mensaje modal dando la Bienvenida */
+//     if (esValida && contrasena == validarContrasena) {
+//       modalMensajeExitoso.style.display = 'block';
 
-    /* en caso que la contrasena no sean iguales que le diga al usuario */
-    } else if(contrasena != validarContrasena){
-      mensaje.textContent = 'No Coinciden las Contraseñas';
-      mensaje.style.color = 'red';
-    /* en caso que la contrasena no cumpla con las condiciones se le informa al usuario */
-    }else{
-      mensaje.textContent = 'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.';
-      mensaje.style.color = 'red';
-    }
+//     /* en caso que la contrasena no sean iguales que le diga al usuario */
+//     } else if(contrasena != validarContrasena){
+//       mensaje.textContent = 'No Coinciden las Contraseñas';
+//       mensaje.style.color = 'red';
+//     /* en caso que la contrasena no cumpla con las condiciones se le informa al usuario */
+//     }else{
+//       mensaje.textContent = 'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.';
+//       mensaje.style.color = 'red';
+//     }
 
-  }
-});
+//   }
+// });
 
  // limpia el mensaje al ingresar nueva contraseña
 document.getElementById('contrasenaR').addEventListener('input', function() {
