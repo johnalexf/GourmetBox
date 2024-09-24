@@ -37,7 +37,6 @@ h3 {
 
 /* este es el fondo se le puede colocar la imagen*/
 .bodyLogin {
-    /* display: none; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,14 +261,17 @@ sale hacia la der */
 /* Estilos para la pantalla después de realizar un registro */
 
 /* Clase para el contenedor de toda la ilustración del perfil  */
-.usuarioRegistrado{
+.divUsuarioRegistrado{
     display: none;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 100px;
     height: auto;
+    width: 100%; */
+    
 }
 
-.usuarioRegistrado.active{
-    transition-delay: 3.5s;
-}
 
 .tituloPerfil {
     text-align: center;
@@ -363,7 +365,7 @@ sale hacia la der */
 
 
 @media (width < 900px){
-    .usuarioRegistrado{
+    .divUsuarioRegistrado{
         height: auto;
     }
     .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
@@ -376,7 +378,7 @@ sale hacia la der */
 
 /* Cambio de distribución para imagen en celular */
 @media (width < 600px){
-    .usuarioRegistrado{
+    .divUsuarioRegistrado{
         height: auto;
     }
     .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
@@ -435,3 +437,19 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.transicion-div {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+  }
+  
+  .transicion-div.mostrar {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .transicion-div.ocultar {
+    opacity: 0;
+    visibility: hidden;
+  }

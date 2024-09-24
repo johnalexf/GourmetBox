@@ -101,45 +101,43 @@ contrasenaRegistro.addEventListener('input', verificarContrasenaAdecuada)
 confirmacionContrasenaRegistro.addEventListener('input',verificarContrasenaIguales)
 
 
-// para Edward, al momento de activar el mensaje con correo.setCustomValidity("¡El correo que ingresaste no es valido!", ); hasta no cumplir esa condición
-//no te va dejar hacer submit, entonces ya no seria necesario ponerlo dentro de este evento de escucha
-document.getElementById('formularioR').addEventListener('submit', function(event) {
+// document.getElementById('formularioR').addEventListener('submit', function(event) {
    
-  event.preventDefault(); /* no se envía por defecto */
-  const correo = document.getElementById('correo').value; /* guardo el valor dentro de correo */
-  let validoCorreo = expresiones.correoE.test(correo); /* valido si tiene las característica de un correo */
+//   event.preventDefault(); /* no se envía por defecto */
+//   const correo = document.getElementById('correo').value; /* guardo el valor dentro de correo */
+//   let validoCorreo = expresiones.correoE.test(correo); /* valido si tiene las característica de un correo */
   
-  /* si el correo es valido continua evaluando */
-  if(!validoCorreo){
-    mensaje.textContent = 'Correo Incompleto';
-    mensaje.style.color = 'red';
-  }else{
+//   /* si el correo es valido continua evaluando */
+//   if(!validoCorreo){
+//     mensaje.textContent = 'Correo Incompleto';
+//     mensaje.style.color = 'red';
+//   }else{
 
-  /* guardo los contenidos de los inputs contrasena y validarContrasena*/
-    const contrasena = contrasenaRegistro.value;
-    const validarContrasena = confirmacionContrasenaRegistro.value;
-    const mensaje = document.getElementById('mensaje');
+//   /* guardo los contenidos de los inputs contrasena y validarContrasena*/
+//     const contrasena = contrasenaRegistro.value;
+//     const validarContrasena = confirmacionContrasenaRegistro.value;
+//     const mensaje = document.getElementById('mensaje');
 
-    /* Valido que la contrasena tenga una mayúscula y un numero y sea de al menos 6 caracteres */
-    const esValida = expresiones.contrasena.test(contrasena);
+//     /* Valido que la contrasena tenga una mayúscula y un numero y sea de al menos 6 caracteres */
+//     const esValida = expresiones.contrasena.test(contrasena);
     
-    /* si mi contraseñas con iguales y tienen una mayúscula y un numero y tiene al menos 6 caracteres
-    se envía un mensaje modal dando la Bienvenida */
-    if (esValida && contrasena == validarContrasena) {
-      modalMensajeExitoso.style.display = 'block';
+//     /* si mi contraseñas con iguales y tienen una mayúscula y un numero y tiene al menos 6 caracteres
+//     se envía un mensaje modal dando la Bienvenida */
+//     if (esValida && contrasena == validarContrasena) {
+//       modalMensajeExitoso.style.display = 'block';
 
-    /* en caso que la contrasena no sean iguales que le diga al usuario */
-    } else if(contrasena != validarContrasena){
-      mensaje.textContent = 'No Coinciden las Contraseñas';
-      mensaje.style.color = 'red';
-    /* en caso que la contrasena no cumpla con las condiciones se le informa al usuario */
-    }else{
-      mensaje.textContent = 'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.';
-      mensaje.style.color = 'red';
-    }
+//     /* en caso que la contrasena no sean iguales que le diga al usuario */
+//     } else if(contrasena != validarContrasena){
+//       mensaje.textContent = 'No Coinciden las Contraseñas';
+//       mensaje.style.color = 'red';
+//     /* en caso que la contrasena no cumpla con las condiciones se le informa al usuario */
+//     }else{
+//       mensaje.textContent = 'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.';
+//       mensaje.style.color = 'red';
+//     }
 
-  }
-});
+//   }
+// });
 
  // limpia el mensaje al ingresar nueva contraseña
 document.getElementById('contrasenaR').addEventListener('input', function() {
@@ -151,17 +149,43 @@ document.getElementById('contrasenaR').addEventListener('input', function() {
 
 // Código para cambiar de visualización si el usuario hace un correcto login
 //ya hemos llamado al div class bodyLogin como body
-let usuarioRegistrado = document.querySelector(".usuarioRegistrado");
+let divUsuarioRegistrado = document.querySelector(".divUsuarioRegistrado");
 let botonRealizarIngreso = document.querySelector("#realizarIngreso");
 let botonCerrarSesion = document.querySelector("#cerrarSesion");
 const formularioIngreso = document.querySelector("#formulario");
-let nameUser1 =  document.getElementById('nameUser');
+let nameUser1 =  document.getElementById('sesion');
+
+function mostrarPerfil(){
+  bodyLogin.classList.remove('mostrar');
+  bodyLogin.classList.add('ocultar');
+  setTimeout( function(){
+      bodyLogin.style.display = 'none';
+      divUsuarioRegistrado.style.display = 'block';
+    },500 )
+  setTimeout(function(){
+      divUsuarioRegistrado.classList.remove('ocultar');
+      divUsuarioRegistrado.classList.add('mostrar');
+    },500)
+}
+
+function mostrarBodyLogin(){
+  divUsuarioRegistrado.classList.remove('mostrar');
+  divUsuarioRegistrado.classList.add('ocultar');
+  setTimeout( function(){
+    bodyLogin.style.display = 'flex';
+    divUsuarioRegistrado.style.display = 'none';
+  },500 )
+  setTimeout( function(){
+    bodyLogin.classList.remove('ocultar');
+    bodyLogin.classList.add('mostrar');
+  },500 );
+}
+
 
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
 if(localStorage.getItem('usuario') != undefined){
   if( localStorage.getItem('usuario').length != 0 ){
-    bodyLogin.style.display = "none";
-    usuarioRegistrado.style.display = "block";
+    mostrarPerfil();
   }
 }
 
@@ -170,16 +194,14 @@ botonRealizarIngreso.onclick = function(event) {
   event.preventDefault();
   if(formularioIngreso.usuario.value === "admin" && formularioIngreso.contrasena.value === "1234" ){
     localStorage.setItem( 'usuario', 'admin');
-    bodyLogin.style.display = "none";
-    usuarioRegistrado.style.display = "block";
+    mostrarPerfil();
     nameUser1.innerText = localStorage.getItem('usuario');
   }
 }
 
 //Cuando cierra sesión muestra los formularios y oculta el perfil
 botonCerrarSesion.onclick = function() {
-  bodyLogin.style.display = "flex";
-  usuarioRegistrado.style.display = "none";
+  mostrarBodyLogin();
   nameUser1.innerText = "Ingresar";
   localStorage.setItem( 'usuario', '');
 
