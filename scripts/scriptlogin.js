@@ -102,17 +102,10 @@ confirmacionContrasenaRegistro.addEventListener('input',verificarContrasenaIgual
 
 
 document.getElementById('formularioR').addEventListener('submit', function(event) {
+    event.preventDefault();
     modalMensajeExitoso.style.display = 'block';
   })
    
-
- // limpia el mensaje al ingresar nueva contraseña
-document.getElementById('contrasenaR').addEventListener('input', function() {
-  const mensaje = document.getElementById('mensaje');
-  mensaje.textContent = '';
-});
-
-
 
 // Código para cambiar de visualización si el usuario hace un correcto login
 //ya hemos llamado al div class bodyLogin como body
