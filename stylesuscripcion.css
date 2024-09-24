@@ -1,0 +1,164 @@
+/* Estilos para el navbar */
+.navbar {
+    background-color: #703493;
+    padding: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ccc;
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
+    transform: translateX(-5px);
+}
+
+#icon,
+#icon:visited {
+    color: black;
+}
+
+li:hover,
+#icon:hover {
+    color: blanchedalmond;
+}
+
+
+/* Estilos para el main */
+main {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-template-rows: auto repeat(6, auto);
+    width: 95%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+}
+
+
+/* Estilos para el header */
+header {
+    grid-column: 1 / -1;
+    color: #ecf0f1;
+    padding: 0.5rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+}
+
+
+/* Estilos para el hero-content */
+.hero-content {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.hero-content img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Estilos para el subtitle */
+.subtitle {
+    grid-column: 1 / -1;
+    background-color: #3498db;
+    color: #ecf0f1;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.subtitle p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    overflow-wrap: break-word;
+}
+
+
+/* Estilos para el subscription-container */
+.subscription-container {
+    background: #733092;
+    padding: 1rem;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+article {
+    color: #ecf0f1;
+    padding: 1%;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+article h2 {
+    margin-bottom: 0.5rem;
+}
+
+article p {
+    font-size: 0.8rem;
+}
+
+
+/* Estilos para el footer */
+footer {
+    min-height: 10vh;
+    background-color: #703493;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+}
