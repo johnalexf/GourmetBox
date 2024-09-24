@@ -1,7 +1,51 @@
+/* Estilos para el navbar */
+.navbar {
+    background-color: #703493;
+    padding: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ccc;
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
+    transform: translateX(-5px);
+}
+
+#icon,
+#icon:visited {
+    color: black;
+}
+
+li:hover,
+#icon:hover {
+    color: blanchedalmond;
+}
+
+
+/* Estilos para el main */
 main {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
     grid-template-rows: auto repeat(6, auto);
     width: 95%;
     padding: 1rem;
@@ -10,9 +54,10 @@ main {
     margin: auto;
 }
 
+
+/* Estilos para el header */
 header {
     grid-column: 1 / -1;
-    background-color: #2c3e50;
     color: #ecf0f1;
     padding: 0.5rem;
     margin-top: 10px;
@@ -25,6 +70,8 @@ header h1 {
     overflow-wrap: break-word;
 }
 
+
+/* Estilos para el hero-content */
 .hero-content {
     padding: 0.5rem;
     text-align: center;
@@ -37,6 +84,8 @@ header h1 {
     border-radius: 8px;
 }
 
+
+/* Estilos para el subtitle */
 .subtitle {
     grid-column: 1 / -1;
     background-color: #3498db;
@@ -51,6 +100,8 @@ header h1 {
     overflow-wrap: break-word;
 }
 
+
+/* Estilos para el subscription-container */
 .subscription-container {
     background: #733092;
     padding: 1rem;
@@ -80,4 +131,34 @@ article h2 {
 
 article p {
     font-size: 0.8rem;
+}
+
+
+/* Estilos para el footer */
+footer {
+    min-height: 10vh;
+    background-color: #703493;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
 }
