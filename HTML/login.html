@@ -30,8 +30,63 @@
   <body>
     <!-- Navbar jalado con el javascript llamarNavFooter.js -->
     <header>
-      <div id="Navbar"></div>
-    </header>
+      <nav
+      class="navbar navbar-expand-lg"
+      style="background-color: rgba(105, 91, 199, 0.534)"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../img/logoo.png"
+            alt="Título Gourmet Box"
+            width="150"
+            class="Logonegro ms-4"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./menu.html">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./suscripcion.html">Suscripción</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./conocenos.html">Conócenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactanos.html">Contáctenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" id="nameUser">Ingresar</a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="navbar-brand ms-auto" href="./carrito.html">
+                <i class="bi bi-cart4"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+  </header>
+
 
     <main>
       <div class="bodyLogin">
@@ -39,17 +94,16 @@
           <div class="zonagris">
             <div class="ingreso">
               <h2>¿Ya Tienes Cuenta?</h2>
-              <button class="ingresoBoton">Ingresar</button>
+              <button class="ingresoBotonCambioVentana">Ingresar</button>
             </div>
             <div class="registro">
               <h2>¿No Tienes Cuenta?</h2>
-              <button class="registroBoton">Registrarse</button>
+              <button class="registroBotonCambioVentana">Registrarse</button>
             </div>
           </div>
           <div class="contieneFormularios">
             <div class="formularioIngreso">
               <form
-                action="https://formspree.io/f/mrbzwgpp"
                 method="POST"
                 id="formulario"
               >
@@ -70,7 +124,7 @@
                   placeholder="Contrasena"
                   required
                 />
-                <input type="submit" value="Ingreso" />
+                <input type="submit" value="Ingreso" id="realizarIngreso" />
                 <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
               </form>
             </div>
@@ -87,11 +141,27 @@
                   required
                 />
                 <input
+                  title="Necesita Nombre Completo"
+                  type="text"
+                  placeholder="Nombre completo"
+                  name="nombreR"
+                  id="nombreR"
+                  required
+                />
+                <input
                   title="Ingrese Correo"
                   type="email"
                   name="correo"
                   id="correo"
                   placeholder="Correo"
+                  required
+                />
+                <input
+                  title="Ingrese Teléfono"
+                  type="number"
+                  name="telefono"
+                  id="telefono"
+                  placeholder="Teléfono"
                   required
                 />
                 <input
@@ -111,7 +181,7 @@
                   required
                 />
                 <div class="mensaje" id="mensaje"></div>
-                <input type="submit" value="Registrarme" />
+                <input type="submit" value="Registrarme" id="realizarRegistro"/>
               </form>
             </div>
           </div>
@@ -128,12 +198,12 @@
 
           <form action="" id="informacionUsuario"></form>
             <div class="datosPerfil">
-              <label for="usuario">Usuario:</label>
-              <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" >
+              <label for="usuarioGuardado">Usuario:</label>
+              <input type="text" name="usuarioGuardado" id="usuarioGuardado" placeholder="Nombre de Usuario" disabled>
               <label for="nombre">Nombre:</label>
               <input type="text" name="nombre" id="nombre" placeholder="Nombre completo del usuario" disabled>
-              <label for="correo">Correo:</label>
-              <input type="email" name="correo" id="correo" placeholder="Correo registrado por el usuario" disabled>
+              <label for="correoGuardado">Correo:</label>
+              <input type="email" name="correoGuardado" id="correoGuardado" placeholder="Correo registrado por el usuario" disabled>
               <label for="telefono">Teléfono</label>
               <input type="number" name="telefono" id="telefono" placeholder="Numero de teléfono del usuario" disabled>
               <label for="suscripcion">Suscripción</label>
@@ -145,12 +215,12 @@
 
           <div class="botonesPerfil">
               <button> Editar Perfil </button>
-              <button> Cerrar Sesión </button>
+              <button id="cerrarSesion"> Cerrar Sesión </button>
           </div>
 
           <div class="suscripcionYPLatos">
             <div class="suscripciones">
-              <h5> Ir a suscripciones disponibles</h5>
+              <h5> Ver suscripciones</h5>
               <div class="planes">
                 <img class="imgIzquierda" src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826" alt="">
                 <img class="imgDerecha" src="https://img.freepik.com/foto-gratis/croissants-taza-cafe_144627-34824.jpg?t=st=1727055982~exp=1727059582~hmac=8e89bec88ab57efd01a0d0b8900729dbf1213954fac2fd24a1b161ac66b9b1b6&w=996" alt="">
@@ -158,14 +228,14 @@
             </div>
 
             <div class="platos">
-              <h5>Ir a platos disponibles</h5>
+              <h5>Ver menú</h5>
               <div  class="platosBasicos">
                 <img class="imgIzquierda"  src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826" alt="">
                 <img class="imgDerecha"  src="https://img.freepik.com/foto-gratis/croissants-taza-cafe_144627-34824.jpg?t=st=1727055982~exp=1727059582~hmac=8e89bec88ab57efd01a0d0b8900729dbf1213954fac2fd24a1b161ac66b9b1b6&w=996" alt="">
               </div>
             </div>
           </div>
-
+      </div>
 
       <!-- Ventana emergente mensaje enviado correctamente-->
       <div id="modalMensajeExitoso" class="modal1">
@@ -192,5 +262,6 @@
     ></script>
     <script src="../scripts/llamarNavFooter.js"></script>
     <script src="../scripts/scriptlogin.js"></script>
+    <script src="../scripts/usuarioRegistrado.js"></script>
   </body>
 </html>

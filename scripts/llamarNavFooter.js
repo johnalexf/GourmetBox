@@ -1,11 +1,11 @@
-// Cargar el contenido del footer
-fetch('../HTML/navbar.html')
-    .then(response => response.text())
-    .then(data => {
-    document.getElementById('Navbar').innerHTML = data;
-    
-    })
-    .catch(error => console.error('Error al cargar el footer:', error));
+// // Cargar el contenido del footer
+// fetch('../HTML/navbar.html')
+//     .then(response => response.text())
+//     .then(data => {
+//     document.getElementById('Navbar').innerHTML = data;
+//     console.log(data)
+//     })
+//     .catch(error => console.error('Error al cargar el footer:', error));
 
 
 
@@ -18,3 +18,8 @@ fetch('../HTML/footer.html')
     })
     .catch(error => console.error('Error al cargar el footer:', error));
  
+
+
+
+
+// nameUser.textContent = localStorage.getItem('usuario');
