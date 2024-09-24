@@ -3,19 +3,111 @@ main{
 padding: 10%;
 
 }
+.imgFondoBanner{
+    background-image: url(../img/Desayuno\ huevo\ 1.png);
+    background-size: 45%;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.contenidoMenuBanner{
+    width: 79vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns:  1fr 200px ;
+    gap: 20px;
+}
 .contenidoMenu{
     border: 2px solid black;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) ;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px
 }
 
 .producto{
-    border: 2px solid black;
+    position: relative;
+border: 2px solid rgb(73, 19, 57);
+border-radius: 30%;
+text-align: center;
+padding: 10px 0px;
+box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
+.producto button {
+padding: 2vh 1.2vw;
+border-radius: 50%;
+background-color: blueviolet;
+}
+
+
 .producto img{
-    height: 200px;
-    width: 200px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.tamañoIcono{
+   width: 50px;
+   border-radius: 50%;
+   background-color: grey;
+}
+
+.contenedorIcono{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textoCentrado{
+    text-align: center;
+}
+
+.fondo1{
+    display: grid;
+    grid-template-rows: 1fr 20px;
+}
+.fondo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.imgCarrusel{
+   
+}
+.tamañoCarrusel{
+    width: 79vw;
+    height: 30vh;
+}
+.botonMenu{
+    width: 11vw;
+    height: 5vh;
+    color: white;
+    font-size: 15px;
+    background-color: grey;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    border-radius: 30px;
+    
+}
+.contenedorBotonMenu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-left: 180px;
+    height: 5vh;
+}
+.iconoBotonCard{
+    font-size: 25px;
+}
+.contenedorBotonCard{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
