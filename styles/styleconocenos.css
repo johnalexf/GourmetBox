@@ -197,6 +197,7 @@ h5 {
 }
 
 #botonPersonalizado{
+  display: none;
   width: 30px;   /* Ajusta el tamaño del botón */
   height: 30px;  /* Ajusta el tamaño del botón */
   border-radius: 50%;
@@ -246,5 +247,8 @@ h5 {
    }
    .cardss{
     margin-bottom: 60px;
+   }
+   #botonPersonalizado{
+    display: block;
    }
 }
