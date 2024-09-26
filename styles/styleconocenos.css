@@ -196,6 +196,14 @@ h5 {
   height: 300px;
 }
 
+#botonPersonalizado{
+  width: 30px;   /* Ajusta el tamaño del botón */
+  height: 30px;  /* Ajusta el tamaño del botón */
+  border-radius: 50%;
+  background-color: #70349E;;
+  border: 1px solid black ;
+
+}
 
 /* Oculta la flecha y desactiva el botón en pantallas grandes */
 @media (min-width: 992px) {
@@ -237,6 +245,6 @@ h5 {
     grid-column: 1 /2;
    }
    .cardss{
-    margin-bottom: 30px;
+    margin-bottom: 60px;
    }
 }
