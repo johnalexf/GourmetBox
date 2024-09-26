@@ -19,6 +19,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../styles/styleconocenos.css" />
+    <link rel="stylesheet" href="../styles/styleNavFooter.css">
   </head>
 
   <body>
@@ -145,6 +146,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingMision">
                 <button
+                  id="botonMision"
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
@@ -181,6 +183,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingVision">
                 <button
+                  id="botonVision"
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
@@ -216,6 +219,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingValores">
                 <button
+                  id="botonValores"
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
@@ -248,9 +252,9 @@
         </div>
       </div>
 
-      <div class="row cards-container">
+      <div class="cards-container">
         <section class="about-us">
-          <div class="cardss-container">
+          <div class="cardss-container primero">
             <!-- Tarjeta 1 -->
             <article class="cardss">
               <img
@@ -327,8 +331,7 @@
               </footer>
             </article>
           </div>
-          <br /><br />
-          <div class="cardss-container">
+          <div class="cardss-container segundo">
             <!-- Tarjeta 4 -->
             <article class="cardss">
               <img src="../img/Jforero.jpeg" alt="Foto de perfil de Jhon" />
@@ -378,6 +381,169 @@
           </div>
         </section>
       </div>
+
+
+      <div id="carouselCards" data-bs-ride="carousel" ><!--Poner clase class="carousel carousel-dark slide" para carrusel en pantallas pequeñas  -->
+
+        <div class="carousel-indicators">
+          <button id="botonPersonalizado" type="button" data-bs-target="#carouselCards" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button id="botonPersonalizado" type="button" data-bs-target="#carouselCards" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button id="botonPersonalizado" type="button" data-bs-target="#carouselCards" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button id="botonPersonalizado" type="button" data-bs-target="#carouselCards" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button id="botonPersonalizado" type="button" data-bs-target="#carouselCards" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+
+        <div id="about-us" class="about-us"> <!--Quitar clase para carrusel en pantallas pequeñas y poner  class="carousel-inner"-->
+
+          <div class="cardss-container primero"><!--Quitar clase "primero" para carrusel en pantallas pequeñas  -->
+           
+            <div class="carousel-item active" data-bs-interval="5000">
+              <!-- Tarjeta 1 -->
+              <article class="cardss">
+                <img
+                  src="../img/Mafe.png"
+                  alt="Foto de perfil de Maria Fernanda"
+                  id="Mafe"
+                />
+                <h3>Maria Fernanda Saavedra</h3>
+                <p class="text-center">Desarrolladora Frontend</p>
+                <p class="contenido">
+                  Me especializo en desarrollar soluciones frontend que fusionan
+                  diseño atractivo con una experiencia de usuario fluida. Me
+                  apasiona crear interfaces intuitivas y visualmente impactantes
+                  que hagan que cada interacción sea memorable. Con un enfoque en
+                  las últimas tecnologías y tendencias, transformo ideas en
+                  aplicaciones funcionales y bellas.
+                </p>
+                <footer class="social-icons">
+                  <br />
+                  <a
+                    href="https://www.linkedin.com/in/mafesaavedra-biodeveloper"
+                    target="_blank"
+                  >
+                    <img src="../img/Linkedin.png" alt="Icono de LinkedIn" />
+                  </a>
+                </footer>
+              </article>
+            </div>
+
+            <div class="carousel-item active" ><!--Quitar clase active de aquí en adelante para carrusel en pantallas pequeñas  -->
+              <!-- Tarjeta 2 -->
+              <article class="cardss">
+                <img src="../img/Edd.jpeg" alt="Foto de perfil de Eduard" />
+                <h3>Eduard Idrobo</h3>
+                <p class="text-center">Desarrollador Frontend</p>
+                <p class="contenido">
+                  Como desarrollador fullstack con un enfoque en backend, me
+                  apasiona construir la arquitectura que impulsa aplicaciones
+                  sólidas y eficientes. Mi dedicación se refleja en cada línea de
+                  código que escribo, asegurando una integración perfecta y un
+                  rendimiento óptimo. Me enfoco en los detalles para garantizar
+                  que la lógica de negocio y la gestión de datos sean precisas y
+                  confiables.
+                </p>
+                <footer class="social-icons">
+                  <br />
+                  <a
+                    href="https://www.linkedin.com/in/eduard-andres-idrobo"
+                    target="_blank"
+                  >
+                    <img src="../img/Linkedin.png" alt="Icono de LinkedIn" />
+                  </a>
+                </footer>
+              </article>
+            </div>
+
+            <div class="carousel-item active corregir" ><!-- clase corregir para acomodar la tarjeta en dos columnas según la necesidad -->
+              <!-- Tarjeta 3 -->
+              <article class="cardss">
+                <img src="../img/Rafa.jpeg" alt="Foto de perfil de Rafael" />
+                <h3>Rafael Arteaga</h3>
+                <p class="text-center">Diseñador UX/UI</p>
+                <p class="contenido">
+                  Me especializo en construir y optimizar la infraestructura que
+                  impulsa aplicaciones robustas y escalables. Me apasiona resolver
+                  problemas complejos y asegurar que la lógica de negocio y los
+                  datos fluyan de manera eficiente. Mi objetivo es crear
+                  soluciones backend sólidas que respalden una experiencia de
+                  usuario impecable.
+                </p>
+                <footer class="social-icons">
+                  <br />
+                  <a
+                    href="https://www.linkedin.com/in/rafaelantonioarteaga/"
+                    target="_blank"
+                    ><img src="../img/Linkedin.png" alt="Icono de red social"
+                  /></a>
+                </footer>
+              </article>
+            </div>
+          </div>
+          <div class="cardss-container segundo"> <!--Quitar clase para carrusel en pantallas pequeñas  -->
+            <div class="carousel-item active" >
+              <!-- Tarjeta 4 -->
+              <article class="cardss">
+                <img src="../img/Jforero.jpeg" alt="Foto de perfil de Jhon" />
+                <h3>John Forero</h3>
+                <p class="text-center">Especialista en Marketing</p>
+                <p class="contenido">
+                  Como desarrollador fullstack, me dedico a crear soluciones
+                  integrales que combinan tanto el frontend como el backend con un
+                  enfoque creativo. Me apasiona transformar ideas complejas en
+                  aplicaciones funcionales y elegantes. Mi dedicación y
+                  creatividad me permiten construir experiencias digitales
+                  completas y eficientes que superan las expectativas.
+                </p>
+                <footer class="social-icons">
+                  <br />
+                  <a
+                    href="https://www.linkedin.com/in/johnalexfr/"
+                    target="_blank"
+                    ><img src="../img/Linkedin.png" alt="Icono de red social"
+                  /></a>
+                </footer>
+              </article>
+            </div>
+            <div class="carousel-item active">
+              <!-- Tarjeta 5 -->
+              <article class="cardss">
+                <img src="../img/Yordi.jpeg" alt="Foto de perfil de Yordy" />
+                <h3>Yordy Santos</h3>
+                <p class="text-center">Gerente de Proyectos</p>
+                <p class="contenido">
+                  Como ingeniero mecatrónico y desarrollador de backend, me
+                  apasiona construir sistemas robustos que combinan precisión y
+                  eficiencia. Mi objetivo es diseñar infraestructuras confiables
+                  que respalden aplicaciones innovadoras y optimicen el flujo de
+                  datos, asegurando al mismo tiempo la seguridad de la
+                  información. Disfruto enfrentar desafíos complejos y aprender
+                  nuevas tecnologías que mejoren la experiencia del usuario.
+                </p>
+                <footer class="social-icons">
+                  <br />
+                  <a
+                    href="https://www.linkedin.com/in/yordy-stiward-santos-torres"
+                    target="_blank"
+                    ><img src="../img/Linkedin.png" alt="Icono de red social"
+                  /></a>
+                </footer>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+
+
     </main>
 
     <footer
@@ -425,5 +591,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../scripts/usuarioRegistrado.js"></script>
+    <script src="../scripts/scriptconocenos.js"></script>
   </body>
 </html>
