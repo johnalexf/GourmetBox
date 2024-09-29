@@ -47,6 +47,8 @@ cerrarTerminos.addEventListener("click", () => {
 });
 
 
+
+
 //Código para validación de datos de correo y contraseña
 /* expresiones para validar correo y Contrasena */
 const expresiones = {
