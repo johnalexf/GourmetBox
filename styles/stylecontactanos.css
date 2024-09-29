@@ -212,15 +212,26 @@ textarea {
     border: 1px solid #70349E;
 }
 
+/* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 
 /* Cuando el tamaño de la pantalla sea menor a 1100px cambia la vista a una columna y el botón se asigna un espacio de ocupación de una columna */
 @media(width < 830px) {
-    .textoTitulo{
+    /* .textoTitulo{
        display: none;
     }
     
     .textoTituloOculto{
         display: inline-block;
+    } */
+
+    .textoParrafo h5{
+        line-height: auto; /* PAra controlar el espacio entre lineas verticalmente */
     }
 
     .divContenidoFormulario .texto{
@@ -271,7 +282,14 @@ textarea {
 
 /* Cuando la pantalla sea menor a 500px la distribución interna de la parte izquierda y derecha pasa a ser de a una columna */
 @media(width < 600px) {
-  
+    /* .textoTitulo{
+        display: block;
+     }
+     
+     .textoTituloOculto{
+         display: none;
+     } */
+
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
         width: 360px;
         grid-template-columns: 1fr;
