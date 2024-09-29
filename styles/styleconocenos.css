@@ -8,6 +8,10 @@
   font-size: 20px;
 }
 
+main{
+  background-image: url("../img/fondosn.jpg");
+  background-repeat: no-repeat;
+}
 
 #icon,
 #icon:visited {
@@ -167,6 +171,11 @@ transform: rotate(360deg);
     width: auto;
     padding: 0 50px 0 50px;
   }
+
+  .imgNosotros {
+    margin: auto;
+  }
+
 }
 
 
