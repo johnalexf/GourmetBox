@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "nombre": "plato1",
+        "descripcion": "plato 1 que contiene",
+        "categoria": "vegetariano",
+        "precio": 16000,
+        "url": "https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727327064~exp=1727330664~hmac=1ec0f3fcc286592d21b80df286ee8d0d539af4826fe3487c373e851318f5fcb5&w=826"
+    },
+    {
+        "id": 2,
+        "nombre": "plato2",
+        "descripcion": "plato 2 que contiene",
+        "categoria": "vegetariano",
+        "precio": 14000,
+        "url": "https://img.freepik.com/vector-premium/ilustracion-vectorial-platos-menus-comida-rapida-restaurantes_1253202-255113.jpg?w=740"
+    },
+    {
+        "id": 3,
+        "nombre": "plato3",
+        "descripcion": "plato 3 que contiene",
+        "categoria": "vegetariano",
+        "precio": 18000,
+        "url": "https://img.freepik.com/vector-premium/plato-pasta-plato-verde-verduras-plato-verdes-limon-el_917213-252315.jpg?w=740"
+    },
+    {
+        "id": 4,
+        "nombre": "plato4",
+        "descripcion": "plato 4 que contiene",
+        "categoria": "vegetariano",
+        "precio": 12000,
+        "url": "https://img.freepik.com/fotos-premium/ilustracion-vectorial-alimentos-salchichas-italianas_1029476-377039.jpg?w=740"
+    }
+
+
+]
