@@ -273,7 +273,7 @@ textarea {
 @media(width < 600px) {
   
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
-        width: auto;
+        width: 360px;
         grid-template-columns: 1fr;
     }
 
@@ -292,16 +292,16 @@ textarea {
         padding: 0%;
     }
 
-    main {
+    /* main {
         padding: 10px 5%;
-    }
+    } */
 
     .parrafo{
         padding: 20px;
     }
 
     .mapa{
-        width: 148%;
+        width: 110%;
     }
 }
 
