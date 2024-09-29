@@ -5,6 +5,7 @@ let html = "";
 //dependiendo del select escogido, ademas también se usan para guardar un nuevo producto dependiendo del caso
 let modificarCrearProducto = document.getElementById('modificarCrearProducto');
 let inputsProducto = modificarCrearProducto.querySelectorAll('input');
+let labelProducto = modificarCrearProducto.querySelectorAll('label');
 let indiceSeleccionado = 0;
 // variable que contiene el Select de productos disponibles del formulario
 let productosDisponibles = document.getElementById('productosDisponibles');
@@ -15,6 +16,13 @@ let categoriaProducto = document.getElementById('categoriaProducto');
 let divProducto = document.querySelector('.producto');
 let modalVistaPrevia = document.getElementById('modalVistaPrevia');
 let botonVistaPrevia = document.getElementById('botonVistaPreviaProducto');
+
+//variables para cada uno de los botones de modificar o crear producto
+let botonCargarProducto = document.getElementById('botonCargarProducto');
+let botonModificarProducto = document.getElementById('botonModificarProducto');
+let botonCancelarProducto = document.getElementById('botonCancelarProducto');
+let botonCrearProducto = document.getElementById('botonCrearProducto');
+let botonEliminarProducto = document.getElementById('botonEliminarProducto');
 
 
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
@@ -73,3 +81,59 @@ botonVistaPrevia.addEventListener('click', () => {
 function cerrarVistaPrevia(){
     modalVistaPrevia.style.display = 'none';
 }
+
+function cambioEditarProducto(){
+    inputsProducto.forEach(element => element.disabled = false);
+    inputsProducto[0].disabled = true;
+    categoriaProducto.disabled = false;
+    
+    //label y input de titulo de producto
+    labelProducto[1].style.display = "block"; 
+    inputsProducto[1].style.display = "block";
+
+    //label y select de titulo de producto
+    labelProducto[2].style.display = "none";
+    productosDisponibles.style.display = "none";
+
+    botonCargarProducto.style.display = "block";
+    botonModificarProducto.style.display = 'none';
+    botonCancelarProducto.style.display = 'block';
+    botonCrearProducto.style.display = 'none';
+    botonEliminarProducto.style.display = 'block';
+}
+
+function cambioMostrarProducto(){
+    inputsProducto.forEach(element => element.disabled = true);
+    categoriaProducto.disabled = true;
+   
+    //label y input de titulo de producto
+    labelProducto[1].style.display = "none"; 
+    inputsProducto[1].style.display = "none";
+
+    //label y select de titulo de producto
+    labelProducto[2].style.display = "block";
+    productosDisponibles.style.display = "block";
+
+
+    botonCargarProducto.style.display = "none";
+    botonModificarProducto.style.display = 'block';
+    botonCancelarProducto.style.display = 'none';
+    botonCrearProducto.style.display = 'block';
+    botonEliminarProducto.style.display = 'none';
+}
+
+botonModificarProducto.addEventListener('click', ()=>{
+    cambioEditarProducto();
+})
+
+botonCrearProducto.addEventListener('click',()=>{
+    cambioEditarProducto();
+})
+
+botonCancelarProducto.addEventListener('click', ()=>{
+    cambioMostrarProducto();
+})
+
+botonEliminarProducto.addEventListener('click', ()=>{
+    cambioMostrarProducto();
+})

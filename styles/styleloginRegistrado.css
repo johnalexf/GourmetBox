@@ -61,12 +61,21 @@
 }
 
 /* Estilos necesarios para que el select de categoría se asemeje a los estilos de un input desactivado  */
-.inputsProducto select:nth-of-type(2){
-    background-color: #efefef4d;
-    border-color: #7676764d;
+.inputsProducto select{
     border-width: 1.6px;
     border-style: inset;
+    
 }
+.inputsProducto select:disabled{
+    background-color: #efefef4d;
+    border-color: #7676764d;
+}
+
+.inputsProducto select:enabled{
+    border-color: black; 
+}
+
+
 
 
 .datosPerfil input::placeholder, .inputsProducto select{
@@ -85,10 +94,28 @@
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
+
 .botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover{
     cursor: pointer;
     background-color: white;
 }
+
+/* #botonCancelarProducto{
+    background-color: #6c1adf;
+}
+
+#botonCancelarProducto:hover{
+    background-color: #a68dc8;
+} */
+
+#botonEliminarProducto{
+    background-color: red;
+}
+
+#botonEliminarProducto:hover{
+    background-color: rgb(171, 44, 44);
+}
+
 
 /* Estilos para la sección de imágenes preliminares de platos y suscripciones */
 .suscripciones, .platos{
