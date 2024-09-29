@@ -104,10 +104,10 @@ function verificarContrasenaAdecuada(){
   if(expresiones.contrasena.test(contrasenaRegistro.value)){
     contrasenaRegistro.setCustomValidity('');
    }else{
-    contrasenaRegistro.reportValidity(); //habilita el mensaje de advertencia
     contrasenaRegistro.setCustomValidity(
       'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.'
     );
+    contrasenaRegistro.reportValidity(); //habilita el mensaje de advertencia
    }
 }
 
@@ -115,10 +115,10 @@ function verificarContrasenaIguales(){
   if(confirmacionContrasenaRegistro.value === contrasenaRegistro.value){
     confirmacionContrasenaRegistro.setCustomValidity('');
   }else{
-     confirmacionContrasenaRegistro.reportValidity();
      confirmacionContrasenaRegistro.setCustomValidity(
        'Las contraseñas no coinciden.'
-     );
+     ); //Se le asigna el mensaje de advertencia
+     confirmacionContrasenaRegistro.reportValidity(); //se muestra el mensaje
   }
 }
 
