@@ -1,6 +1,6 @@
 //import menu from './jsonproductos.json' with {type: 'json'};
-let url = "http://localhost:3000/productos";  //Variable para usar con un servidor local ACTIVADO
-//let url = "../scripts/jsonproductos.json"; //Variable para solo acceder a los datos del JSON
+//let url = "http://localhost:3000/productos";  //Variable para usar con un servidor local ACTIVADO
+let url = "../scripts/jsonproductos.json"; //Variable para solo acceder a los datos del JSON
 
 
 let menu;

@@ -55,6 +55,30 @@
       "categoria": "almuerzo",
       "precio": "34500",
       "url": "../img_comidas/ALMUERZOS/gourmet_romero.png"
+    },
+    {
+      "id": "8",
+      "nombre": "Rojo Escarlata",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/porstreescarlata.jpg"
+    },
+    {
+      "id": "9",
+      "nombre": "Vainilla Invierno",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/Postreinvierno.jpg"
+    },
+    {
+      "id": "10",
+      "nombre": "Verde Aguacate",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/postreverdeagucate.jpg"
     }
   ]
 }
