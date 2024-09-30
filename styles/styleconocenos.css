@@ -241,11 +241,18 @@ height: 30px;
 @media (width < 800px){
   .textoNosotros {
     width: auto;
-    padding: 0 50px 0 50px;
+    padding: 0 40px 0 40px;
+  }
+
+  .contenedorSesionTitulo .titulo {
+    width: auto;
+    padding: 0 20px 0 20px;
   }
 
   .imgNosotros {
     margin: auto;
+    padding-left: 30px;
+    transform: scale(90%);
   }
 
 }
@@ -323,7 +330,7 @@ height: 30px;
   }
 
   .acordion{
-    margin: 0 50px 0 50px;
+    margin: 0 38px 0 38px;
   }
   .accordion-button {
     pointer-events: auto;
