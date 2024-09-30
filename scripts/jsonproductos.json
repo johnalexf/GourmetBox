@@ -1,36 +1,60 @@
-[
+{
+  "productos": [
     {
-        "id": 1,
-        "nombre": "plato1",
-        "descripcion": "plato 1 que contiene",
-        "categoria": "desayuno",
-        "precio": 16000,
-        "url": "https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727327064~exp=1727330664~hmac=1ec0f3fcc286592d21b80df286ee8d0d539af4826fe3487c373e851318f5fcb5&w=826"
+      "id": "1",
+      "nombre": "Wafle Primavera",
+      "descripcion": "Lleva un waffle con crema dulce y naranja en conserva caramelizada",
+      "categoria": "desayuno",
+      "precio": "14000",
+      "url": "../img_comidas/DESAYUNOS/Wafle_primavera.png"
     },
     {
-        "id": 2,
-        "nombre": "plato2",
-        "descripcion": "plato 2 que contiene",
-        "categoria": "almuerzo",
-        "precio": 14000,
-        "url": "https://img.freepik.com/vector-premium/ilustracion-vectorial-platos-menus-comida-rapida-restaurantes_1253202-255113.jpg?w=740"
+      "id": "2",
+      "nombre": "Tostada Napolitana",
+      "descripcion": "Tostada de pan de masa madre, salsa napolitana, huevo estrellado y se acompaña con café con leche",
+      "categoria": "desayuno",
+      "precio": "16500",
+      "url": "../img_comidas/DESAYUNOS/Tostada_napolitana.png"
     },
     {
-        "id": 3,
-        "nombre": "plato3",
-        "descripcion": "plato 3 que contiene",
-        "categoria": "postre",
-        "precio": 18000,
-        "url": "https://img.freepik.com/vector-premium/plato-pasta-plato-verde-verduras-plato-verdes-limon-el_917213-252315.jpg?w=740"
+      "id": "3",
+      "nombre": "Bowl Exotic",
+      "descripcion": "Incluye mariscos salteados, una base de vegetales (Aguacate, lechuga y acelgas) y huevo estrellado",
+      "categoria": "desayuno",
+      "precio": "18500",
+      "url": "../img_comidas/DESAYUNOS/Bowl_exotic.png"
     },
     {
-        "id": 4,
-        "nombre": "plato4",
-        "descripcion": "plato 4 que contiene",
-        "categoria": "desayuno",
-        "precio": 12000,
-        "url": "https://img.freepik.com/fotos-premium/ilustracion-vectorial-alimentos-salchichas-italianas_1029476-377039.jpg?w=740"
+      "id": "4",
+      "nombre": "Solomito en Cerveza",
+      "descripcion": "Porción de 700g de solomito marinado en cerveza artesanal, acompañado de papas y ensalada.",
+      "categoria": "almuerzo",
+      "precio": "22500",
+      "url": "../img_comidas/ALMUERZOS/solomito_en_cerveza.png"
+    },
+    {
+      "id": "5",
+      "nombre": "Bowl Junior",
+      "descripcion": "Pollo crunchy con una base de huevo cocido y vegetales: aguacate, tomate cherry y lechuga iceberg.",
+      "categoria": "almuerzo",
+      "precio": "22500",
+      "url": "../img_comidas/ALMUERZOS/bowl_junior.png"
+    },
+    {
+      "id": "6",
+      "nombre": "Marinado Senior",
+      "descripcion": "Porción de pulpo de la casa acompañado de papas fileteadas al horno en salsa amarrilla",
+      "categoria": "almuerzo",
+      "precio": "34500",
+      "url": "../img_comidas/ALMUERZOS/marinado_senior.png"
+    },
+    {
+      "id": "7",
+      "nombre": "Gourmet Romero",
+      "descripcion": "Porción de costilla asada con papas criollas y base de salsa de champiñones",
+      "categoria": "almuerzo",
+      "precio": "34500",
+      "url": "../img_comidas/ALMUERZOS/gourmet_romero.png"
     }
-
-
-]
+  ]
+}

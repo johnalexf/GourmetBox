@@ -18,6 +18,10 @@
     text-align: center;
 }
 
+.modificarProducto h2{
+    margin-top: 30px;
+}
+
 .tituloPerfil h1{
     margin-top: 20px;
     color: #70349E;
@@ -28,9 +32,9 @@
 /* Estos son los contenedores principales del perfil  */
 .datosPerfil, .suscripcionYPLatos, .botonesPerfil, .inputsProducto, .botonesProducto{
     margin: auto;
-    margin-bottom: 30px; 
+    margin-bottom: 0px; 
     padding: 10px;
-    max-width: 800px;
+    max-width: 600px;
     border-radius: 20px;
     display: grid;
     gap: 10px;
@@ -45,7 +49,7 @@
 }
 
 .botonesProducto{
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Estilos para los contenidos de los datos del perfil */
@@ -60,6 +64,11 @@
     /* background-color: white; */
 }
 
+#botonCargarProducto{
+    padding: 0px 10px;
+    grid-column: span 2;
+}
+
 /* Estilos necesarios para que el select de categoría se asemeje a los estilos de un input desactivado  */
 .inputsProducto select{
     border-width: 1.6px;
@@ -72,6 +81,7 @@
 }
 
 .inputsProducto select:enabled{
+    background-color: white;
     border-color: black; 
 }
 
@@ -82,11 +92,11 @@
     color: black;
 }
 
-/* Estilos para los botones  */
-.botonesPerfil button, .botonesProducto button, #botonCargarProducto {
+/* Estilos para los botones #botonVistaPreviaProducto */
+.botonesPerfil button, .botonesProducto button, #botonCargarProducto  {
     margin: auto;
     width: 150px;
-    height: 40px;
+    height: 30px;
     font-weight: bold;
     border-radius: 50px;
     border: 2px solid #70349E;
@@ -94,8 +104,13 @@
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
+/* #botonVistaPreviaProducto{
+    font-size: 25px;
+    text-align: right;
+} */
 
-.botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover{
+
+.botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover, #botonVistaPreviaProducto:hover{
     cursor: pointer;
     background-color: white;
 }
@@ -108,13 +123,13 @@
     background-color: #a68dc8;
 } */
 
-#botonEliminarProducto{
+/* #botonEliminarProducto{
     background-color: red;
 }
 
 #botonEliminarProducto:hover{
     background-color: rgb(171, 44, 44);
-}
+} */
 
 
 /* Estilos para la sección de imágenes preliminares de platos y suscripciones */
@@ -184,8 +199,18 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Se oculta el label y input titulo ya que estos aparecerán cuando se de en la opción de 
 modificar o crear desapareciendo el select de productos disponibles*/
-.modificarProducto label:nth-of-type(2), .modificarProducto input:nth-of-type(2){
+.modificarProducto label:nth-of-type(2), .tituloProducto{
     display: none;
+}
+
+.acomodandoVistaPreliminar{
+    display: grid;
+    grid-template-columns: 3fr repeat(5, 1fr);
+}
+
+.acomodandoVistaPreliminar i {
+    font-size: 25px;
+    text-align: right;
 }
 
 
@@ -211,6 +236,12 @@ modificar o crear desapareciendo el select de productos disponibles*/
         max-width: auto;
         margin: 4%;
         padding-bottom: 4%;
+    }
+    .botonesProducto{
+        grid-template-columns: 1fr 1fr;
+    }
+    #botonCargarProducto{
+        grid-column: span 1;
     }
     .datosPerfil, .suscripcionYPLatos, .inputsProducto{
         grid-template-columns: 1fr;

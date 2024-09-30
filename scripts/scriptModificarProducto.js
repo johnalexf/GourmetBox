@@ -1,3 +1,6 @@
+//javascript que realiza las funciones necesarias para eliminar o modificar un producto
+import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+
 // variable para almacenar modificaciones que se van a insertar en HTML
 let html = "";
 
@@ -16,13 +19,17 @@ let categoriaProducto = document.getElementById('categoriaProducto');
 let divProducto = document.querySelector('.producto');
 let modalVistaPrevia = document.getElementById('modalVistaPrevia');
 let botonVistaPrevia = document.getElementById('botonVistaPreviaProducto');
+let cerrarVistaPrevia = document.getElementById('cerrarVistaPrevia');
 
 //variables para cada uno de los botones de modificar o crear producto
 let botonCargarProducto = document.getElementById('botonCargarProducto');
 let botonModificarProducto = document.getElementById('botonModificarProducto');
 let botonCancelarProducto = document.getElementById('botonCancelarProducto');
-let botonCrearProducto = document.getElementById('botonCrearProducto');
+let botonNuevoProducto = document.getElementById('botonNuevoProducto');
 let botonEliminarProducto = document.getElementById('botonEliminarProducto');
+let reescribirProducto = false;
+
+
 
 
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
@@ -32,8 +39,10 @@ function cargarProducto() {
         .then((respuesta)=>{ 
             return respuesta.json();
         })
-        .then((productos)=>{
+        .then((baseDatos)=>{
+            
             html = "";
+            let productos = baseDatos.productos;
             productos.forEach(element => {
                 html +=  `<option value="${element.id}">${element.nombre}</option>` 
             });
@@ -46,8 +55,6 @@ function cargarProducto() {
             inputsProducto[3].value=productos[indiceSeleccionado].precio;
             inputsProducto[4].value=productos[indiceSeleccionado].url;            
         })
-
-
 }
 
 //se llama para que cuando el usuario ingrese por primera vez, se muestre el contenido del primer producto
@@ -78,9 +85,7 @@ botonVistaPrevia.addEventListener('click', () => {
 })
 
 //funcion llamada con el botón de cerrar de vista previa del producto
-function cerrarVistaPrevia(){
-    modalVistaPrevia.style.display = 'none';
-}
+cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
 
 function cambioEditarProducto(){
     inputsProducto.forEach(element => element.disabled = false);
@@ -98,7 +103,7 @@ function cambioEditarProducto(){
     botonCargarProducto.style.display = "block";
     botonModificarProducto.style.display = 'none';
     botonCancelarProducto.style.display = 'block';
-    botonCrearProducto.style.display = 'none';
+    botonNuevoProducto.style.display = 'none';
     botonEliminarProducto.style.display = 'block';
 }
 
@@ -118,22 +123,47 @@ function cambioMostrarProducto(){
     botonCargarProducto.style.display = "none";
     botonModificarProducto.style.display = 'block';
     botonCancelarProducto.style.display = 'none';
-    botonCrearProducto.style.display = 'block';
+    botonNuevoProducto.style.display = 'block';
     botonEliminarProducto.style.display = 'none';
 }
 
 botonModificarProducto.addEventListener('click', ()=>{
+    reescribirProducto = true;
     cambioEditarProducto();
 })
 
-botonCrearProducto.addEventListener('click',()=>{
+botonNuevoProducto.addEventListener('click',()=>{
+    reescribirProducto = false;
+    inputsProducto.forEach((cajaTexto)=>{
+        cajaTexto.value = "";
+    })
+    inputsProducto[0].value = productosDisponibles.options.length + 1;
+    inputsProducto[5].value = "Cargar";
     cambioEditarProducto();
 })
 
 botonCancelarProducto.addEventListener('click', ()=>{
+    indiceSeleccionado = productosDisponibles.value-1;
+    cargarProducto();
     cambioMostrarProducto();
 })
 
 botonEliminarProducto.addEventListener('click', ()=>{
+    modificarJSON.eliminarProducto(inputsProducto[0].value);
     cambioMostrarProducto();
 })
+
+
+modificarCrearProducto.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
+    modificarJSON.reescribirOCrearProducto(
+        inputsProducto[0].value,
+        inputsProducto[1].value,
+        inputsProducto[2].value,
+        categoriaProducto.value,
+        inputsProducto[3].value,
+        inputsProducto[4].value,
+        reescribirProducto
+       )
+});

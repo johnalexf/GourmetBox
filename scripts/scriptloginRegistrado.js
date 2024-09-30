@@ -1,5 +1,7 @@
 // Código para cambiar de visualización si el usuario hace un correcto login
 //divBodyLogin contiene toda la estructura de formularios de registro y de login
+//divUsuarioRegistrado es la clase de los dos tipos de perfiles, las traemos en un arreglo, donde 
+//el indice 0 es el perfil de un usuario, y el indice 1 es el perfil de un administrador
 let divBodyLogin = document.querySelector(".bodyLogin");
 let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
 let botonRealizarIngreso = document.querySelector("#realizarIngreso");
@@ -8,7 +10,7 @@ let nameUser1 =  document.getElementById('sesion');
 let tipoUsuario = "";
 let indiceTipoUsuario = 0;
 
-
+//funcion para averiguar si el usuario es administrador
 function averiguarTipoUsuario(){
     tipoUsuario = localStorage.getItem('usuario');
     if(tipoUsuario == 'admin'){
@@ -18,7 +20,7 @@ function averiguarTipoUsuario(){
     }
 }
 
-
+// funcion para mostrar perfil ya sea de usuario o de administrador
 function mostrarPerfil(){
     averiguarTipoUsuario();
     divBodyLogin.classList.remove('mostrar');
@@ -34,6 +36,7 @@ function mostrarPerfil(){
         },500)
 }
 
+//funcion para mostrar los formularios de inicio de sesión y de registro
 function mostrardivBodyLogin(){
     averiguarTipoUsuario();
     divUsuarioRegistrado[indiceTipoUsuario].classList.remove('mostrar');
@@ -55,7 +58,12 @@ function mostrardivBodyLogin(){
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
 if(localStorage.getItem('usuario') != undefined){
   if( localStorage.getItem('usuario').length != 0 ){
-    mostrarPerfil();
+    averiguarTipoUsuario();
+    divBodyLogin.style.display = 'none';
+    divUsuarioRegistrado[indiceTipoUsuario].style.display = 'block';
+    divUsuarioRegistrado[indiceTipoUsuario].classList.remove('ocultar');
+    divUsuarioRegistrado[indiceTipoUsuario].classList.add('mostrar');
+    //mostrarPerfil();
   }
 }
 
