@@ -37,7 +37,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
         }
 
     } catch (error) {
-        console.error('Error agregando usuario:', error.message);
+        console.error('Error agregando producto:', error.message);
     }
 
 }
@@ -64,32 +64,30 @@ export async function eliminarProducto(id) {
 
 }
 
-// export async function actualizarBaseDatos() {
+let url2 = "../scripts/jsonproductos.json"; 
+
+export async function obtenerBaseDatos() {
     
-//     try {
-//         // Realiza una solicitud fetch para obtener el JSON
-//         const respuesta = await fetch(url);
+    try {
+        // Realiza una solicitud fetch para obtener el JSON
+        const respuesta = await fetch(url2);
         
-//         // Verifica si la solicitud fue exitosa
-//         if (!respuesta.ok) {
-//           throw new Error('Error al obtener el JSON');
-//         }
+        // Verifica si la solicitud fue exitosa
+        if (!respuesta.ok) {
+          throw new Error('Error al obtener el JSON');
+        }
     
-//         // Convierte la respuesta a un objeto JavaScript
-//         const datos = await respuesta.json();
+        // Convierte la respuesta a un objeto JavaScript
+        const datos = await respuesta.json();
         
-//         console.log(datos)
-//          console.log(datos[0].id);
-//         for(let i=0; i < datos.length;i++ ){
-//             datos[i].id = i + 1; 
-//         }
-        
-//          return datos;
-//       } catch (error) {
-//         console.error('Error:', error.message);
-//       }
+        //console.log(datos)
+        return datos;
+         
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
     
-// }
+}
 
 
 // export async function refrescar(cadena) {

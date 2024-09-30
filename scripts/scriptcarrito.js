@@ -1,4 +1,4 @@
-let idProductosCarrito = [];
+//let idProductosCarrito = [];
 let listaCompras = [];
 
 
@@ -33,7 +33,7 @@ function actualizarCarrito(){
 
     productosAgregados.innerHTML = contenidoCarritoHTML;
 
-    localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
+    // localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
     localStorage.setItem('listaCompras',JSON.stringify(listaCompras));
 }
 actualizarCarrito();

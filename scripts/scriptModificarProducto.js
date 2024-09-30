@@ -9,7 +9,7 @@ let html = "";
 let modificarCrearProducto = document.getElementById('modificarCrearProducto');
 let inputsProducto = modificarCrearProducto.querySelectorAll('input');
 let labelProducto = modificarCrearProducto.querySelectorAll('label');
-let indiceSeleccionado = 0;
+let indiceSeleccionado = 1;
 // variable que contiene el Select de productos disponibles del formulario
 let productosDisponibles = document.getElementById('productosDisponibles');
 //variable que contiene el select de categoría de producto
@@ -33,37 +33,40 @@ let reescribirProducto = false;
 
 
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
-function cargarProducto() {
-    fetch('../scripts/jsonproductos.json')
-        //el primer .then espera una respuesta positiva y devuelve en este caso un .json para usarlo en el siguiente .then
-        .then((respuesta)=>{ 
-            return respuesta.json();
-        })
-        .then((baseDatos)=>{
-            
+async function mostrarProducto() {
+   
+            let baseDatos ;
+            baseDatos = await modificarJSON.obtenerBaseDatos();
+            console.log(baseDatos)
             html = "";
             let productos = baseDatos.productos;
+            //console.log(productos)
             productos.forEach(element => {
-                html +=  `<option value="${element.id}">${element.nombre}</option>` 
+                html +=  `<option value="${element.id}">${element.nombre}</option>` ;
+                if(element.id == indiceSeleccionado){
+                    inputsProducto[0].value = element.id;
+                    inputsProducto[1].value = element.nombre;
+                    inputsProducto[2].value = element.descripcion;
+                    categoriaProducto.value = element.categoria;
+                    inputsProducto[3].value = element.precio;
+                    inputsProducto[4].value = element.url;  
+                }
             });
             productosDisponibles.innerHTML = html;
-            productosDisponibles.value = indiceSeleccionado + 1;
-            inputsProducto[0].value=productos[indiceSeleccionado].id;
-            inputsProducto[1].value=productos[indiceSeleccionado].nombre;
-            inputsProducto[2].value=productos[indiceSeleccionado].descripcion;
-            categoriaProducto.value = productos[indiceSeleccionado].categoria;
-            inputsProducto[3].value=productos[indiceSeleccionado].precio;
-            inputsProducto[4].value=productos[indiceSeleccionado].url;            
-        })
+            if(indiceSeleccionado !=0){
+                productosDisponibles.value = indiceSeleccionado;
+            }
+                          
+       
 }
 
 //se llama para que cuando el usuario ingrese por primera vez, se muestre el contenido del primer producto
-cargarProducto();
+mostrarProducto();
 
 //si hay un cambio en el select de productosDisponibles, se actualiza el contenido del formulario
 productosDisponibles.addEventListener('change', ()=>{
-    indiceSeleccionado = productosDisponibles.value-1;
-    cargarProducto();
+    indiceSeleccionado = productosDisponibles.value;
+     mostrarProducto();
 })
 
 

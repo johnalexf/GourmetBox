@@ -106,20 +106,28 @@ actualizarMenu();
 // Se exporta la función ya que este javascript se esta llamando como tipo modulo,
 //al ser de este tipo las variables y funciones no están de manera global
 export function adicionarCarrito(id) {
+    let indiceMenu = 0;
+    for (let i = 0; i < menu.length; i++) {
+        if (menu[i].id == id) {
+            indiceMenu = i;
+        }
+    }
+
     if (!encontrarIndiceListaObjetos(id)) {
         listaCompras.push(
-            new productoCarrito(
-                menu[id - 1].id,
-                menu[id - 1].nombre,
-                menu[id - 1].descripcion,
-                menu[id - 1].categoria,
-                menu[id - 1].precio,
-                menu[id - 1].url,
-                1
-            )
-        );
+                new productoCarrito(
+                    menu[indiceMenu].id,
+                    menu[indiceMenu].nombre,
+                    menu[indiceMenu].descripcion,
+                    menu[indiceMenu].categoria,
+                    menu[indiceMenu].precio,
+                    menu[indiceMenu].url,
+                    1
+                )
+             )
+        
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
-        alert(`El producto ${menu[id - 1].nombre} ha sido agregado al carrito`);
+        alert(`El producto ${menu[indiceMenu].nombre} ha sido agregado al carrito`);
     } else {
         alert("El producto ya se ha agregado al carrito");
     }
