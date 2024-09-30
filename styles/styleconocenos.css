@@ -17,10 +17,10 @@ footer {
 }
 
 /* Aumenta el tamaño del elemento al pasar el mouse */
-.nav-link:hover {
+/* .nav-link:hover {
   transform: scale(1.2);
   transform: translateX(-5px);
-}
+} */
 
 #icon,
 #icon:visited {

@@ -81,7 +81,7 @@ h3 {
 }
 
 /* este contenedor funciona como estructura 
-de los titulos y botones de ingreso y registro */
+de los títulos y botones de ingreso y registro */
 .zonagris {
     position: relative;
     top: 40px;
@@ -116,7 +116,7 @@ lado a otro suave */
     width: 50%;
     height: 100%;
     background: rgb(248, 247, 245);
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     justify-content: center;
     transition: 0.5s ease-in-out;
@@ -260,10 +260,10 @@ sale hacia la der */
 }
 
 
-.modal1{
+.modal1, .modalterminosP, .modalVistaPrevia {
     display: none; /* Desaparece el contenedor */
     position: fixed; /*Mantiene la pantalla fija asi se haga scroll  */
-    z-index: 2000;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -271,9 +271,9 @@ sale hacia la der */
     background-color: rgba(0, 0, 0, 0.208);
 }
 
-.modal1-contenedor{
+.modal1-contenedor, .modalVistaPreviaContenido{
     background-color: white;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     max-width: 400px;
     width: 80%;
@@ -287,13 +287,6 @@ sale hacia la der */
 }
 
 .modalterminosP {
-    display: none;/* Desaparece el contenedor */
-    position:fixed ; /*Mantiene la pantalla fija asi se haga scroll  */
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.466);
     transition: 3s ease-in-out;
 }
@@ -309,170 +302,17 @@ sale hacia la der */
     border: 1px solid black;
     text-align: justify;
     color: rgb(0, 0, 0);
+    position: relative;
 }
 
 .cerrarTerminos {
     position: absolute;
-    margin-right: 16%;
-}
-
-
-/* Estilos para la pantalla después de realizar un registro */
-
-/* Clase para el contenedor de toda la ilustración del perfil  */
-.divUsuarioRegistrado{
-    display: none;
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 100px;
-    height: auto;
-    width: 100%; */
-    
-}
-
-
-.tituloPerfil {
-    text-align: center;
-}
-
-.tituloPerfil h1{
-    margin-top: 20px;
-    color: #70349E;
-    font-size: 45px;
-}
-
-/* Estos son los tres contenedores principales del perfil */
-.datosPerfil, .suscripcionYPLatos, .botonesPerfil{
-    margin: auto;
-    margin-bottom: 30px; 
-    padding: 10px;
-    max-width: 800px;
-    border-radius: 20px;
-    display: grid;
-    gap: 10px;
-}
-
-.datosPerfil{
-    grid-template-columns: 1fr 3fr;
-}
-
-.suscripcionYPLatos, .botonesPerfil{
-    grid-template-columns: 1fr 1fr;
-}
-
-/* Estilos para los contenidos de los datos del perfil */
-.datosPerfil label{
-    padding-left: 20px;
-}
-
-.datosPerfil input{
-    padding: 5px 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: white;
-}
-
-.datosPerfil input::placeholder{
-    color: black;
-}
-
-/* Estilos para los botones  */
-.botonesPerfil button {
-    margin: auto;
-    width: 150px;
-    height: 40px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: 2px solid #70349E;
-    background-color: white;
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
-}
-
-.botonesPerfil button:hover{
-    background-color: rgba(105, 91, 199, 0.534);
-}
-
-/* Estilos para la sección de imágenes preliminares de platos y suscripciones */
-.suscripciones, .platos{
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.suscripciones h5, .platos h5{
-    color: #70349E;
-    grid-column: 1/3;
-    text-align: center;
-}
-
-.suscripciones .planes, .platos .platosBasicos{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-} 
-
-.suscripcionYPLatos img{
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    border-radius: 20px;
-}
-
-/* Clase para poder ubicar la imagen del costado izquierdo en posición junto a la imagen derecha */
-.imgIzquierda{
-    margin-left: 40%;
-}
-
-
-@media (width < 900px){
-    .divUsuarioRegistrado{
-        height: auto;
-    }
-    .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
-        max-width: 500px;
-    }
-    .imgIzquierda{
-        margin-left: 10%;
-    }
-}
-
-/* Cambio de distribución para imagen en celular */
-@media (width < 600px){
-    .divUsuarioRegistrado{
-        height: auto;
-    }
-    .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
-        max-width: auto;
-        margin: 4%;
-        padding-bottom: 4%;
-    }
-    .datosPerfil, .suscripcionYPLatos{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .datosPerfil{
-        gap: 5px;
-    }
-
-    .datosPerfil label{
-        padding-top: 10px;
-    }
-    .datosPerfil input{
-        margin: 0px 20px;
-    }
-    .suscripcionYPLatos{
-        gap: 20px;
-    }
-    .imgIzquierda{
-        margin-left: 50%;
-    }
-    .imgDerecha{
-        margin-left: 7%;
-    }
-
+    /* margin-right: 16%; */
 }
 
 .cerrar,
-.cerrarTerminos {
+.cerrarTerminos,
+.cerrarVistaPrevia {
     color: rgb(231, 99, 99);
     width: 25px;
     height: 25px;
@@ -487,30 +327,8 @@ sale hacia la der */
 }
 
 .cerrar:hover, 
-.cerrarTerminos:hover {
+.cerrarTerminos:hover,
+.cerrarVistaPrevia:hover {
     color: rgb(174, 59, 59);
     cursor: pointer;
-}
-
-/* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.transicion-div {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.9s ease, visibility 0.9s ease;
-  }
-  
-.transicion-div.mostrar {
-    opacity: 1;
-    visibility: visible;
-}
-  
-.transicion-div.ocultar {
-    opacity: 0;
-    visibility: hidden;
 }
