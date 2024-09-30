@@ -1,28 +1,16 @@
-main{
-
-padding: 10%;
-
-}
-.imgFondoBanner{
-    background-image: url(../img/Desayuno\ huevo\ 1.png);
-    background-size: 45%;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .contenidoMenuBanner{
-    width: 79vw;
+    width: 95vw;
     height: 80vh;
     display: grid;
-    grid-template-columns:  1fr 200px ;
+    grid-template-columns:  1fr 0.2fr ;
     gap: 20px;
 }
 .contenidoMenu{
-    border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
     gap: 20px
+
 }
 
 .producto{
@@ -52,7 +40,6 @@ background-color: blueviolet;
 .tamañoIcono{
    width: 50px;
    border-radius: 50%;
-   background-color: grey;
 }
 
 .contenedorIcono{
@@ -64,6 +51,17 @@ background-color: blueviolet;
     align-items: center;
     justify-content: center;
 }
+
+.contenedorIcono2{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(152, 12, 180);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .textoCentrado{
     text-align: center;
 }
@@ -71,6 +69,17 @@ background-color: blueviolet;
 .fondo1{
     display: grid;
     grid-template-rows: 1fr 20px;
+    
+}
+
+.contenedorSection{
+    background-image: url(../img/fondo\ seccion\ menu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 8vh;
+    padding-top: 10px;
 }
 .fondo2{
     display: flex;
@@ -82,10 +91,7 @@ background-color: blueviolet;
 .imgCarrusel{
    display: block;
 }
-.tamañoCarrusel{
-    width: 79vw;
-    height: 30vh;
-}
+
 .botonMenu{
     width: 11vw;
     height: 5vh;
@@ -96,12 +102,12 @@ background-color: blueviolet;
     border-radius: 30px;
     
 }
+
 .contenedorBotonMenu{
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding-left: 180px;
     height: 5vh;
 }
 .iconoBotonCard{
@@ -109,6 +115,10 @@ background-color: blueviolet;
 }
 .contenedorBotonCard{
     position: absolute;
-    right: 0px;
+    right: -5px;
     bottom: 0px;
+}
+.tituloSection{
+    text-align: center;
+    color: white;
 }

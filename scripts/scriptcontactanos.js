@@ -79,7 +79,7 @@ document.addEventListener("change", (event) => {
 // variable RegEdx (expresión regular) inicia (/^)  termina con ($/), esta variable es necesaria para poder usar .test()
 const expresiones = {
   telefono: /^[36][0-9]{9,}$/,
-  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,3}$/
+  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}(\.[a-zA-z]{2.3})?$/
 }
 
 

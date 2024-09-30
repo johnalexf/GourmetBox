@@ -8,8 +8,7 @@ if(localStorage.getItem('usuario') != undefined){
     }
 }
 
-console.log(document.title.toLowerCase());
-console.log(document.getElementById(document.title.toLowerCase()).innerText);
+
 let seccionNavbar = document.getElementById(document.title.toLowerCase());
 seccionNavbar.style.fontWeight = "bold";
     
