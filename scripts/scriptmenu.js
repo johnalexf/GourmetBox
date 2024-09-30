@@ -31,10 +31,9 @@ async function obtenerMenu() {
 menu = await obtenerMenu();
 console.log(menu);
 
-let contenidoMenu = document.querySelectorAll('.contenidoMenu');
-let desayunos = document.querySelector('.desayunos');
-let almuerzos = document.querySelector('.almuerzos');
-let postres = document.querySelector('.postres');
+let desayunos = document.querySelector('#desayunos');
+let almuerzos = document.querySelector('#almuerzos');
+let postres = document.querySelector('#postres');
 let desayunosHTML = "";
 let almuerzosHTML = "";
 let postresHTML = "";
@@ -61,23 +60,26 @@ if (localStorage.getItem('listaCompras') != undefined) {
 function actualizarMenu() {
     menu.forEach(producto => {
         contenidoMenuHTML =
-            `<div class="producto">
-                <div class="contenedorImagenCard">
-                <img src="${producto.url}" alt="">
-                </div>
-
-                <div class="contenedorTituloCard">
-                <h5> <b>${producto.nombre} </b> </h5>
-                </div>
-                
-                <div class="contenedorDescripcionCard"><p> ${producto.descripcion} </p></div>
-                <div class="contenedorPrecioCard"><p> <b> ${producto.precio} </b> </p></div>
-                <div class="contenedorBotonCard">
-                <button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})">
-                    <i class="bi bi-cart-plus iconoBotonCard"></i>
-                </button>
-                </div>
-        </div>`
+        `
+        <div class="producto">
+            <div class="contenedorImagenCard"><img src="${producto.url}" alt=""></div>
+            <div class="contenedorTituloCard">
+            <h5> <b>${producto.nombre} </b>
+            </h5>
+            </div>
+            <div class="contenedorDescripcionCard">
+            <p>${producto.descripcion}</p>
+            </div>
+            <div class="contenedorPrecioCard">
+            <p> <b>$  ${producto.precio}  COP</b> </p>
+            </div>
+            <!-- contenedor boton de la card -->
+            <div class="contenedorBotonCard"><button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})"><i class="bi bi-cart-plus iconoBotonCard"></i>
+            </button>
+            </div>
+        </div>
+        
+        `
 
         switch (producto.categoria) {
             case 'desayuno':
