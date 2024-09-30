@@ -80,6 +80,19 @@ li:hover,
 
 /* Inicio TARJETAS PERFILES */
 
+.contenedorPrincipal {
+  display: block;
+}
+
+.contenedorSecundario {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  display: none;  
+}
+
+
 .contenedorPerfiles .fl {
   width: 30px;
   position: absolute;
@@ -89,13 +102,13 @@ li:hover,
   transition: 1s;
 }
 
-.contenedorPerfiles .fl:hover{
+.contenedorPerfiles .fl:hover {
 filter: invert();
 transform: rotate(360deg);
 }
 
 
-.contenedorPerfiles .fotop{
+.contenedorPerfiles .fotop {
   border-radius: 50%;
   width: 150px;
   height: 180px;
@@ -112,13 +125,63 @@ transform: rotate(360deg);
   color: white;
 }
 
-.carta {
+.contenedorPerfiles .carta {
   width: 260px; 
   height: 350px; 
   position: relative;
 }
 
-.carta-contenedor {
+.contenedorSecundario .carta {
+  width: 340px;
+  height: 550px;
+  position: relative;
+  color: white;
+  background-color: #70349E;
+  border-radius: 15px;
+  align-content: center;
+  text-align: center;
+}
+.contenedorSecundario li {
+  list-style: none;
+}
+
+.contenedorSecundario .carta:hover {
+  background-color:  rgb(58, 57, 57);
+  border-radius: 15px;
+}
+
+.contenedorSecundario .fotop {
+  border-radius: 50%;
+  width: 100px;
+  height: 130px;
+  box-shadow: 0px 0px 6px white;
+  margin-bottom: 10px;
+}
+.contenedorSecundario h4, h5 {
+  font-size: 18px;
+}
+
+.contenedorSecundario .redes {
+  margin: 15px 0px 15px 0px;
+}
+
+.contenedorSecundario .visible p{
+  font-size: 16px;
+  text-align: justify;
+  padding: 0 12px 0 12px;
+}
+
+.contenedorSecundario .redes img{
+width: 30px;
+height: 30px;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  margin: 0 30px 50px;
+}
+
+.contenedorPrincipal .carta-contenedor {
   display: grid;
   position: absolute;
   width: 100%;
@@ -129,13 +192,11 @@ transform: rotate(360deg);
   text-align: center;
 }
 
-
-
-.visible {
+.contenedorPrincipal .visible {
   padding-top: 30px;
 }
 
-.visible,
+.contenedorPrincipal .visible,
 .oculto {
   grid-area: 1 / 1; /* Coloca ambas en la misma área */
   transition: opacity 1s ease;
@@ -156,14 +217,25 @@ transform: rotate(360deg);
   border-radius: 10px;
 }
 
-.carta-contenedor.show-oculto .visible {
+.contenedorPrincipal .carta-contenedor.show-oculto .visible {
   opacity: 0; /* Desvanece la cara visible */
   pointer-events: none; /* Desactiva eventos de clic */
 }
 
-.carta-contenedor.show-oculto .oculto {
+.contenedorPrincipal .carta-contenedor.show-oculto .oculto {
   opacity: 1; /* Muestra la cara oculta */
   pointer-events: auto; /* Activa eventos de clic */
+}
+
+
+@media (width < 500px){
+  .contenedorPrincipal{
+    display: none;
+  }
+  .contenedorSecundario{
+    display: block;
+  }
+  
 }
 
 @media (width < 800px){
@@ -178,10 +250,9 @@ transform: rotate(360deg);
 
 }
 
-
 .redes img{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   transition: filter 0.3s ease;
 }
 
@@ -190,7 +261,8 @@ transform: rotate(360deg);
 }
 
 .redes {
-  word-spacing: 20px;
+  margin-top: 20px;
+  word-spacing: 30px;
 }
 /* TARJETAS PERFILES HASTA AQUI */
 
@@ -282,3 +354,4 @@ transform: rotate(360deg);
     display: block;
    }
 }
+
