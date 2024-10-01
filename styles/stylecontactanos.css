@@ -43,7 +43,7 @@ h2,
 h3,
 span {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -57,7 +57,7 @@ button {
 .titulo h1 {
     margin-top: 20px;  
     color: #70349E;
-    font-size: 45px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -81,19 +81,14 @@ button {
 /* EStilos para el div que contiene el mensaje que se le da al usuario */
 .divContenidoFormulario .texto{
     text-align: center;
-    padding: 20px 20px;
+    padding: 0px 20px;
 }
 
-.textoTitulo{
+.textoTitulo h1{
     color: #70349E;
+    font-size: 45px ;
 }
 
-.textoTituloOculto{
-    display: none;
-    font-weight: 500;
-    font-size: 33px;
-    color: #70349E;
-}
 
 .textoParrafo{
     margin-top: 30px;
@@ -222,13 +217,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Cuando el tamaño de la pantalla sea menor a 1100px cambia la vista a una columna y el botón se asigna un espacio de ocupación de una columna */
 @media(width < 830px) {
-    /* .textoTitulo{
-       display: none;
-    }
     
-    .textoTituloOculto{
-        display: inline-block;
-    } */
+    .textoTitulo h1{
+        /* text-align: center; */
+        font-size: 40px;
+    }
 
     .textoParrafo h5{
         line-height: auto; /* PAra controlar el espacio entre lineas verticalmente */
@@ -282,14 +275,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Cuando la pantalla sea menor a 500px la distribución interna de la parte izquierda y derecha pasa a ser de a una columna */
 @media(width < 600px) {
-    /* .textoTitulo{
-        display: block;
-     }
-     
-     .textoTituloOculto{
-         display: none;
-     } */
-
+    
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
         width: 360px;
         grid-template-columns: 1fr;
@@ -394,6 +380,22 @@ input[type="number"]::-webkit-inner-spin-button {
 #botonSi:hover, #botonNo:hover{
     background-color: rgba(105, 91, 199, 0.534);
 }
+
+@media(width < 400px){
+    .divContenidoFormulario, .informacion, .parrafoIntermedio {
+        width: 300px;
+        grid-template-columns: 1fr;
+    }
+
+    .titulo h1 {
+        font-size: 45px;
+    }
+
+    .mapa{
+        width: 100%;
+    }
+}
+
 
 
 /* Paleta de colores

@@ -26,10 +26,11 @@ const validacion = localStorage.getItem('validacion');
 if( validacion == 'enviado'){
   modalMensajeExitoso.style.display = "block"; //Abrir ventana Mensaje Exitoso
 }else{
-  if( localStorage.getItem('contenidoFormulario') != undefined ){
+  if( localStorage.getItem('contenidoFormulario') != undefined &&  localStorage.getItem('contenidoFormulario').length > 16){
     modalContinuarFormulario.style.display = "block"; //Abrir ventana Continuar Formulario
   }
 }
+
 
 // Cerrar la ventana Mensaje Exitoso cuando se haga clic en la "X"
 cerrarModalExitoso.onclick = function() {
@@ -79,7 +80,7 @@ document.addEventListener("change", (event) => {
 // variable RegEdx (expresión regular) inicia (/^)  termina con ($/), esta variable es necesaria para poder usar .test()
 const expresiones = {
   telefono: /^[36][0-9]{9,}$/,
-  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}(\.[a-zA-z]{2.3})?$/
+  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}(\.[a-zA-z]{2,3})?$/
 }
 
 

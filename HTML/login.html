@@ -204,7 +204,7 @@
             <h1> Perfil </h1> 
           </div>
 
-          <form action="" id="informacionUsuario"></form>
+          <form action="" id="informacionUsuario">
             <div class="datosPerfil">
               <label for="usuarioGuardado">Usuario:</label>
               <input type="text" name="usuarioGuardado" id="usuarioGuardado" placeholder="Nombre de Usuario" disabled>
@@ -278,11 +278,12 @@
                 <label for="idProducto">id</label>
                 <div class = "acomodandoVistaPreliminar">
                   <input type="number" name="idProducto" id="idProducto" disabled required>
-                  <i class="bi bi-pencil-square" id="botonModificarProducto"></i>
+                  <button  type="submit" name="botonCargarProducto" id="botonCargarProducto"> <i class="bi bi-floppy-fill" ></i>    </button>
+                  <i class="bi bi-pencil-square" id="botonModificarProducto" title="Modificar Producto"></i>
                   <i class="bi bi-x-circle" id="botonCancelarProducto"></i>
                   <i class="bi bi-file-earmark-plus-fill" id="botonNuevoProducto"></i>
                   <i class="bi bi-trash-fill" id="botonEliminarProducto"></i>
-                  <i class="bi bi-eye-fill" id="botonVistaPreviaProducto"></i>
+                  <!-- <i class="bi bi-eye-fill" id="botonVistaPreviaProducto"></i> -->
                   <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
                 </div>
                 <label for="tituloProducto"> Titulo </label>
@@ -302,7 +303,7 @@
                 <input type="number" name="precioProducto" id="precioProducto" disabled required>
                 <label for="urlProducto">URL</label>
                 <input type="text" name="urlProducto" id="urlProducto" disabled required>
-                <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar">
+                <!-- <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar"> -->
               </div>
             </form>
           </div>
@@ -311,10 +312,10 @@
             <!-- <button id="botonModificarProducto">Modificar</button>
             <button id="botonCancelarProducto">Cancelar</button> -->
 
-             <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
-<!-- 
-            <button id="botonNuevoProducto">Nuevo</button> -->
-            <!-- <button id="botonEliminarProducto">Eliminar</button> -->
+             <button id="botonVistaPreviaProducto">Vista Preliminar</button>
+
+            <!-- <button id="botonNuevoProducto">Nuevo</button> 
+            <button id="botonEliminarProducto">Eliminar</button> -->
             
           </div>
       </div>
