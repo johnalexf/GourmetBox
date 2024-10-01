@@ -26,6 +26,7 @@
 
     <!-- Estilos propios de Login-->
     <link rel="stylesheet" href="../styles/stylelogin.css" />
+    <link rel="stylesheet" href="../styles/styleloginRegistrado.css">
   </head>
   <body>
     <!-- Navbar jalado con el javascript llamarNavFooter.js -->
@@ -192,7 +193,11 @@
       </div>
 
 
-
+    <!-- ventana para un usuario registrado
+        para realizar el cambio de ventana, en el script se tiene en cuenta el indice de 
+        let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
+        el indice 0 es para un usuario y el indice 1 es para un administrador
+    -->
       <div class="divUsuarioRegistrado transicion-div ocultar">
 
           <div class="tituloPerfil">  
@@ -218,12 +223,12 @@
 
           <div class="botonesPerfil">
               <button> Editar Perfil </button>
-              <button id="cerrarSesion"> Cerrar Sesión </button>
+              <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
           </div>
 
           <div class="suscripcionYPLatos">
             <div class="suscripciones">
-              <h5> Ver suscripciones</h5>
+              <a href="./suscripcion.html">Ver suscripciones</a>
               <div class="planes">
                 <img class="imgIzquierda" src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826" alt="">
                 <img class="imgDerecha" src="https://img.freepik.com/foto-gratis/croissants-taza-cafe_144627-34824.jpg?t=st=1727055982~exp=1727059582~hmac=8e89bec88ab57efd01a0d0b8900729dbf1213954fac2fd24a1b161ac66b9b1b6&w=996" alt="">
@@ -231,7 +236,7 @@
             </div>
 
             <div class="platos">
-              <h5>Ver menú</h5>
+              <a href="./menu.html">Ver menú</a>
               <div  class="platosBasicos">
                 <img class="imgIzquierda"  src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826" alt="">
                 <img class="imgDerecha"  src="https://img.freepik.com/foto-gratis/croissants-taza-cafe_144627-34824.jpg?t=st=1727055982~exp=1727059582~hmac=8e89bec88ab57efd01a0d0b8900729dbf1213954fac2fd24a1b161ac66b9b1b6&w=996" alt="">
@@ -239,6 +244,81 @@
             </div>
           </div>
       </div>
+
+    <!-- ventana para un administrador registrado -->
+      <div class="divUsuarioRegistrado transicion-div ocultar">
+
+        <div class="tituloPerfil">  
+          <h1> Perfil </h1> 
+        </div>
+
+        <form action="" id="informacionAdministrador">
+          <div class="datosPerfil">
+            <label for="usuarioGuardado2">Usuario:</label>
+            <input type="text" name="usuarioGuardado2" id="usuarioGuardado2" placeholder="Nombre de Usuario" disabled>
+            <label for="nombre2">Nombre:</label>
+            <input type="text" name="nombre2" id="nombre2" placeholder="Nombre completo del usuario" disabled>
+            <label for="correoGuardado2">Correo:</label>
+            <input type="email" name="correoGuardado2" id="correoGuardado2" placeholder="Correo registrado por el usuario" disabled>
+            <label for="telefono2">Teléfono</label>
+            <input type="number" name="telefono2" id="telefono2" placeholder="Numero de teléfono del usuario" disabled>
+          </div>
+        </form>
+
+        <div class="botonesPerfil">
+            <button> Editar Perfil </button>
+            <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
+        </div>
+
+        
+        <div class="modificarProducto">
+          <h2>Modificar o editar producto</h2>
+          <form action="" id="modificarCrearProducto">
+              <div class="inputsProducto">
+                <label for="idProducto">id</label>
+                <div class = "acomodandoVistaPreliminar">
+                  <input type="number" name="idProducto" id="idProducto" disabled required>
+                  <i class="bi bi-pencil-square" id="botonModificarProducto"></i>
+                  <i class="bi bi-x-circle" id="botonCancelarProducto"></i>
+                  <i class="bi bi-file-earmark-plus-fill" id="botonNuevoProducto"></i>
+                  <i class="bi bi-trash-fill" id="botonEliminarProducto"></i>
+                  <i class="bi bi-eye-fill" id="botonVistaPreviaProducto"></i>
+                  <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
+                </div>
+                <label for="tituloProducto"> Titulo </label>
+                <input type="text" name="tituloProducto" id="tituloProduto" class="tituloProducto" disabled required>
+                <label for="productosDisponibles">Titulo</label>
+                <select name="productoDisponibles" id="productosDisponibles"> </select>
+                <label for="descripcionProducto">Descripción</label>
+                <input type="text" name="descripcionProducto" id="descripcionProducto" disabled required>
+                <label for="categoriaProducto">categoría</label>
+                <select name="categoriaProducto" id="categoriaProducto" disabled>
+                  <option value="desayuno">Desayuno</option>
+                  <option value="almuerzo">Almuerzo</option>
+                  <option value="postre">Postre</option>
+                </select>
+                <!-- <input type="text" name="categoriaProducto" id="categoriaProducto" disabled> -->
+                <label for="precioProducto">Precio</label>
+                <input type="number" name="precioProducto" id="precioProducto" disabled required>
+                <label for="urlProducto">URL</label>
+                <input type="text" name="urlProducto" id="urlProducto" disabled required>
+                <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar">
+              </div>
+            </form>
+          </div>
+        
+          <div class="botonesProducto" id="botonesProducto">
+            <!-- <button id="botonModificarProducto">Modificar</button>
+            <button id="botonCancelarProducto">Cancelar</button> -->
+
+             <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
+<!-- 
+            <button id="botonNuevoProducto">Nuevo</button> -->
+            <!-- <button id="botonEliminarProducto">Eliminar</button> -->
+            
+          </div>
+      </div>
+      
 
       <!-- Ventana emergente mensaje enviado correctamente-->
       <div id="modalMensajeExitoso" class="modal1">
@@ -301,6 +381,26 @@
         </div>
       </div>
       
+      <!-- Modal vista previa Producto -->
+      <div id="modalVistaPrevia" class="modalVistaPrevia">
+        <div class="modalVistaPreviaContenido">
+          <i class="bi bi-x-circle-fill cerrarVistaPrevia" id="cerrarVistaPrevia"></i>
+
+          <div class="producto">
+            <div class="contenedorImagenCard"><img src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727100784~exp=1727104384~hmac=ae82d9be45fa77a5fafca2519dbd4f47ccace60db10142008757e5e804c298d6&w=826" alt=""></div>
+            <div class="contenedorTituloCard">
+            <h5> <b>Titulo del producto </b> </h5>
+            </div>
+            <div class="contenedorDescripcionCard"><p> Ingredientes: Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet </p></div>
+            <div class="contenedorPrecioCard"><p> <b>Precio 16.000</b> </p></div>
+            <div class="contenedorBotonCard">
+              <button class="botonCardMenu"><i class="bi bi-cart-plus iconoBotonCard"></i></button>
+             </div>
+           </div>
+
+
+        </div>
+      </div>
 
     
     </main>
@@ -318,5 +418,8 @@
     <script src="../scripts/llamarNavFooter.js"></script>
     <script src="../scripts/scriptlogin.js"></script>
     <script src="../scripts/usuarioRegistrado.js"></script>
+    <script src="../scripts/scriptloginRegistrado.js"></script>
+    <script src="../scripts/scriptModificarProducto.js" type="module"></script>
+
   </body>
 </html>

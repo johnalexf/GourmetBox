@@ -9,6 +9,7 @@ main {
     background-color: #fff;
     border-radius: 8px;
     margin: auto;
+    min-height: 80vh;
 }
 
 
@@ -25,7 +26,14 @@ header h1 {
     overflow-wrap: break-word;
 }
 
-
+.imgdehero{
+    width: 90vw;
+    height: 30vh;
+    background-image: url(../img/Herocontent.png);
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* Estilos para el hero-content */
 .hero-content {
     padding: 0.5rem;
