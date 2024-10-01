@@ -85,15 +85,13 @@
     border-color: black; 
 }
 
-
-
-
 .datosPerfil input::placeholder, .inputsProducto select{
     color: black;
 }
 
 /* Estilos para los botones #botonVistaPreviaProducto */
-.botonesPerfil button, .botonesProducto button, #botonCargarProducto  {
+/* #botonCargarProducto */
+.botonesPerfil button, .botonesProducto button  {
     margin: auto;
     width: 150px;
     height: 30px;
@@ -110,9 +108,10 @@
 } */
 
 
-.botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover, #botonVistaPreviaProducto:hover{
+.botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover, .acomodandoVistaPreliminar i:hover{
     cursor: pointer;
     background-color: white;
+    color: #70349E;
 }
 
 /* #botonCancelarProducto{

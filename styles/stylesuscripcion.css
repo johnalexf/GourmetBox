@@ -1,28 +1,57 @@
-/* //Estilo Herocontent */
+/* Estilos para el main */
+
+
+/* Estilos para el hero-content */
 .hero-content {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
-    width: 100%;
     grid-column: 1 / -1;
-    height: auto;
+    grid-column: 1 / -1;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .imgdehero img {
     object-fit: cover;
     height: auto;
     width: 100%;
-
+    height: auto;
+    object-fit: cover;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 /* //FINAL Estilo Herocontent */
 
 /* Estilos para el subtitle, cinta que se desplaza de manera automatica */
+/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
     grid-column: 1 / -1;
-    margin-bottom: 25px;
+}
+
+.cinta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #703493;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+    margin: 0 2em;
+}
+
+.scroll div {
+    display: flex;
+    gap: 2em;
 }
 
 .cinta {
@@ -69,26 +98,34 @@
 
 /* Fin de estilos para el subtitle, cinta que se desplaza de manera automatica */
 
-/* Estilos para el subscription-container */
-.subs-container {
-    margin: 10px auto;
+.Suscripcion {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    /* Para pantallas más grandes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    max-width: 980px;
-    /* Asegúrate de que no haya espacio en blanco */
-}
-
-
-
-/* Objetos dentro del contenedor */
-.Objectos1 {
+    padding: 30px;
     margin: 0 auto;
-    background-color: rgb(38, 34, 34);
-    height: 500px;
-    width: 70%;
-    border-radius: 25px;
+    max-width: 100%;
 }
 
-/* Fin de Estilos para el subscription-container */
+/* Ajuste para pantallas más grandes (computadoras) */
+@media (min-width: 768px) {
+    .Suscripcion {
+        grid-template-columns: repeat(2, 1fr);
+        /* Solo 2 columnas en pantallas grandes */
+        max-width: 80%;
+        /* Limita el ancho máximo en pantallas grandes */
+    }
+}
+
+.Objeto {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+    height: 450px;
+    width: 100%;
+    max-width: 325px;
+    /* Limita el ancho máximo a 300px */
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

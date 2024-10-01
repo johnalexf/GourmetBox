@@ -141,13 +141,13 @@ botonNuevoProducto.addEventListener('click',()=>{
         cajaTexto.value = "";
     })
     inputsProducto[0].value = productosDisponibles.options.length + 1;
-    inputsProducto[5].value = "Cargar";
+    //inputsProducto[5].value = "Cargar";
     cambioEditarProducto();
 })
 
 botonCancelarProducto.addEventListener('click', ()=>{
-    indiceSeleccionado = productosDisponibles.value-1;
-    cargarProducto();
+    indiceSeleccionado = productosDisponibles.value;
+    mostrarProducto();
     cambioMostrarProducto();
 })
 
