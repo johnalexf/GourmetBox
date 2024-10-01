@@ -1,100 +1,100 @@
 /* Estilos para el main */
-main {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-    grid-template-rows: auto repeat(6, auto);
-    width: 95%;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    margin: auto;
-    min-height: 80vh;
-}
 
-
-/* Estilos para el header */
-header {
-    grid-column: 1 / -1;
-    color: #ecf0f1;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    overflow-wrap: break-word;
-}
-
-.imgdehero{
-    width: 90vw;
-    height: 30vh;
-    background-image: url(../img/Herocontent.png);
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 /* Estilos para el hero-content */
 .hero-content {
+    grid-column: 1 / -1;
     padding: 0.5rem;
-    display: grid;
-    place-items: center;
-    margin: auto;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .hero-content img {
     width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
+    height: auto;
+    object-fit: cover;
     border-radius: 8px;
 }
 
 
-/* Estilos para el subtitle */
+/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
     grid-column: 1 / -1;
-    background-color: #3498db;
-    color: #ecf0f1;
-    padding: 0.5rem;
-    text-align: center;
 }
 
-.subtitle p {
-    font-size: 0.9rem;
+.cinta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #703493;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+    margin: 0 2em;
+}
+
+.scroll div {
+    display: flex;
+    gap: 2em;
+}
+
+.scroll p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: rgb(217, 217, 87);
+    font-weight: bold;
     margin-bottom: 0;
-    overflow-wrap: break-word;
+    line-height: 10px;
 }
 
-
-/* Estilos para el subscription-container */
-.subscription-container {
-    background: #733092;
-    padding: 1rem;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.RightToLeft {
+    animation: RightToLeft 8s infinite linear;
 }
 
-article {
-    color: #ecf0f1;
-    padding: 1%;
-    border-radius: 8px;
-    margin-top: 10px;
-    text-align: center;
+@keyframes RightToLeft {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-20%);
+    }
 }
 
-article img {
+/* Fin de estilos para el subtitle, cinta que se desplaza de manera automatica */
+
+.Suscripcion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Ajuste para pantallas más grandes (computadoras) */
+@media (min-width: 768px) {
+    .Suscripcion {
+        grid-template-columns: repeat(2, 1fr);
+        /* Solo 2 columnas en pantallas grandes */
+        max-width: 80%;
+        /* Limita el ancho máximo en pantallas grandes */
+    }
+}
+
+.Objeto {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+    height: 450px;
     width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-article h2 {
-    margin-bottom: 0.5rem;
-}
-
-article p {
-    font-size: 0.8rem;
+    max-width: 325px;
+    /* Limita el ancho máximo a 300px */
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
