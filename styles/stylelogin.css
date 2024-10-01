@@ -21,6 +21,32 @@ h3 {
     font-style: normal;
 }
 
+.ingreso h2,
+.registro h2 {
+    font-size: 25px;
+}
+
+.terminos {
+    display: flex;
+    gap: 20px;
+    padding-left: 40px;
+    color: #2d09fa;
+    transition: 0.25s;
+}
+
+.terminos label{
+    text-decoration: underline;
+}
+
+.terminos label:hover {
+    scale: 106%;
+}
+
+.terminos input{
+    width: 20px;
+}
+
+
 .bodyLogin button {
     width: 200px;
     height: 40px;
@@ -37,12 +63,11 @@ h3 {
 
 /* este es el fondo se le puede colocar la imagen*/
 .bodyLogin {
-    /* display: none; */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;   
-    background-color: rgba(105, 91, 199, 0.637);
+    min-height: 700px;   
+    background-color: rgba(105, 91, 199, 0.377);
     transform: 0.5s;
 }
 
@@ -172,7 +197,7 @@ sale hacia la der */
     padding-left: 0px;
     margin: auto;
     width: 150px;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     border-radius: 50px;
     border: 2px solid #70349E;
@@ -257,19 +282,55 @@ sale hacia la der */
     position: relative;
 }
 
+.modalterminos h5, h6{
+    text-align: center;
+}
+
+.modalterminosP {
+    display: none;/* Desaparece el contenedor */
+    position:fixed ; /*Mantiene la pantalla fija asi se haga scroll  */
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+    transition: 3s ease-in-out;
+}
+
+.modalterminos {
+    background-color: rgb(255, 255, 255);
+    margin: 2% auto;
+    padding: 20px;
+    width: 60%;
+    height: 100%;
+    overflow: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+}
+
+.cerrarTerminos {
+    position: absolute;
+    margin-right: 16%;
+}
 
 
 /* Estilos para la pantalla después de realizar un registro */
 
 /* Clase para el contenedor de toda la ilustración del perfil  */
-.usuarioRegistrado{
+.divUsuarioRegistrado{
     display: none;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 100px;
     height: auto;
+    width: 100%; */
+    
 }
 
-.usuarioRegistrado.active{
-    transition-delay: 3.5s;
-}
 
 .tituloPerfil {
     text-align: center;
@@ -363,7 +424,7 @@ sale hacia la der */
 
 
 @media (width < 900px){
-    .usuarioRegistrado{
+    .divUsuarioRegistrado{
         height: auto;
     }
     .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
@@ -376,7 +437,7 @@ sale hacia la der */
 
 /* Cambio de distribución para imagen en celular */
 @media (width < 600px){
-    .usuarioRegistrado{
+    .divUsuarioRegistrado{
         height: auto;
     }
     .datosPerfil, .suscripcionYPLatos, .botonesPerfil{
@@ -410,7 +471,8 @@ sale hacia la der */
 
 }
 
-.cerrar{
+.cerrar,
+.cerrarTerminos {
     color: rgb(231, 99, 99);
     width: 25px;
     height: 25px;
@@ -424,7 +486,8 @@ sale hacia la der */
     box-shadow: 3px 8px rgba(0,0,0,0.25);
 }
 
-.cerrar:hover{
+.cerrar:hover, 
+.cerrarTerminos:hover {
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
@@ -434,4 +497,20 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.transicion-div {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+  }
+  
+.transicion-div.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.transicion-div.ocultar {
+    opacity: 0;
+    visibility: hidden;
 }
