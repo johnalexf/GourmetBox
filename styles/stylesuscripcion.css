@@ -69,7 +69,7 @@
 
 .Suscripcion {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     padding: 30px;
     margin: 0 auto;
@@ -77,24 +77,46 @@
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
-@media (min-width: 768px) {
+@media (min-width: 760px) {
     .Suscripcion {
         grid-template-columns: repeat(2, 1fr);
         /* Solo 2 columnas en pantallas grandes */
-        max-width: 80%;
+        max-width: 90%;
         /* Limita el ancho máximo en pantallas grandes */
     }
 }
 
 .Objeto {
-    background-color: #f0f0f0;
+    background-color: #786880;
     border-radius: 20px;
     padding: 20px;
-    height: 450px;
+    height: 400px;
     width: 100%;
     max-width: 325px;
-    /* Limita el ancho máximo a 300px */
+    position: relative;
+    /* Necesario para posicionar el botón relativo al contenedor */
     margin: 0 auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boton-circular {
+    position: absolute;
+    bottom: -5px;
+    /* Ajusta según sea necesario */
+    right: -4px;
+    /* Ajusta según sea necesario */
+    background-color: #d6cb4f;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    /* Ajusta el tamaño del botón circular */
+    height: 70px;
+    font-size: 30px;
+    /* Ajusta el tamaño del texto o ícono dentro del botón */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
