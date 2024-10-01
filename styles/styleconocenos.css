@@ -320,7 +320,16 @@ height: 30px;
 
   .accordion-button {
     pointer-events: none;
+    color: white;
+    background-color: #70349E;
   }
+
+  .accordion-collapse {
+    display: block !important; 
+    height: auto !important; 
+  }
+
+
 }
 
 /* Muestra la flecha y habilita el botón en pantallas pequeñas */
