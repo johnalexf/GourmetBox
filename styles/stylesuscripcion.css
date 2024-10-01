@@ -1,100 +1,94 @@
-/* Estilos para el main */
-main {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-    grid-template-rows: auto repeat(6, auto);
-    width: 95%;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    margin: auto;
-    min-height: 80vh;
-}
-
-
-/* Estilos para el header */
-header {
-    grid-column: 1 / -1;
-    color: #ecf0f1;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    overflow-wrap: break-word;
-}
-
-.imgdehero{
-    width: 90vw;
-    height: 30vh;
-    background-image: url(../img/Herocontent.png);
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-/* Estilos para el hero-content */
+/* //Estilo Herocontent */
 .hero-content {
-    padding: 0.5rem;
+    padding: 1rem;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     place-items: center;
-    margin: auto;
     width: 100%;
+    grid-column: 1 / -1;
+    height: auto;
 }
 
-.hero-content img {
+.imgdehero img {
+    object-fit: cover;
+    height: auto;
     width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
-    border-radius: 8px;
+
 }
 
+/* //FINAL Estilo Herocontent */
 
-/* Estilos para el subtitle */
+/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
     grid-column: 1 / -1;
-    background-color: #3498db;
-    color: #ecf0f1;
-    padding: 0.5rem;
-    text-align: center;
+    margin-bottom: 25px;
 }
 
-.subtitle p {
-    font-size: 0.9rem;
+.cinta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #703493;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+    margin: 0 2em;
+}
+
+.scroll div {
+    display: flex;
+    gap: 2em;
+}
+
+.scroll p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: rgb(217, 217, 87);
+    font-weight: bold;
     margin-bottom: 0;
-    overflow-wrap: break-word;
+    line-height: 10px;
 }
 
+.RightToLeft {
+    animation: RightToLeft 8s infinite linear;
+}
+
+@keyframes RightToLeft {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-20%);
+    }
+}
+
+/* Fin de estilos para el subtitle, cinta que se desplaza de manera automatica */
 
 /* Estilos para el subscription-container */
-.subscription-container {
-    background: #733092;
-    padding: 1rem;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.subs-container {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    /* Para pantallas más grandes */
+    gap: 40px;
+    max-width: 980px;
+    /* Asegúrate de que no haya espacio en blanco */
 }
 
-article {
-    color: #ecf0f1;
-    padding: 1%;
-    border-radius: 8px;
-    margin-top: 10px;
-    text-align: center;
+
+
+/* Objetos dentro del contenedor */
+.Objectos1 {
+    margin: 0 auto;
+    background-color: rgb(38, 34, 34);
+    height: 500px;
+    width: 70%;
+    border-radius: 25px;
 }
 
-article img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-article h2 {
-    margin-bottom: 0.5rem;
-}
-
-article p {
-    font-size: 0.8rem;
-}
+/* Fin de Estilos para el subscription-container */
