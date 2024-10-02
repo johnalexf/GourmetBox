@@ -104,38 +104,61 @@
             <h1>CONTÁCTENOS</h1>
         </div>
 
-        <div class="parrafo">
-            <strong>¡Nos interesa tu opinión!</strong> Si tienes alguna duda, sugerencia o reclamo, diligencia
-            el siguiente formulario. Nuestro equipo se encargará de revisarlo y te contactará lo antes posible.
-        </div>
 
-        <!-- El url sale de la pagina formSpree la cual envía un correo si los campos cumplen con los requerimientos-->
-        <!-- target="_blank" si se desea que abra la pagina de formSpree en una nueva -->
         <form action="https://formspree.io/f/mrbzwgpp" method="POST" id="formulario" >
-            <div class="formulario">
-                <div class="izquierda">
-                    <div class = "etiqueta"> <label for="nombre" > Nombre *</label> </div>
-                    <div class = "entrada"> <input type="text" id="nombre" name="name" placeholder="Nombre aquí" required> </div>
-                    <div class = "etiqueta"> <label for="email"> Correo *</label> </div>
-                    <div class = "entrada"> <input type="email" id="email" name="email" placeholder="Correo aquí" required> </div>
-                    <div class = "etiqueta"> <label for="telefono" > Teléfono *</label> </div>
-                    <div class = "entrada"> <input type="number"  minlength="10" maxlength="10" id="telefono" name="telefono" placeholder="Teléfono aquí" required> </div>
-                    <div class = "etiqueta"> <label for="asunto"> Asunto  *</label> </div>
-                    <div class = "entrada"> <input type="text" id="asunto" name="asunto" placeholder="Asunto aquí" required> </div>
-                </div>
-                <div class="derecha">
-                    <div class="etiqueta"> <label for="contenidoMsm"> Contenido *</label> </div>
-                    <textarea id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" required></textarea>
-                    <!-- <div class = "entrada"> <input type="text"> </div> -->
-                </div>
-                <div class="contenedorBoton">
-                    <p> Los campos marcados con (*) son obligatorios </p>
-                    <button id="enviar" class="boton" type="submit">Enviar</button>
-                </div>
-            </div>
-        </form>
+        <div class = "divContenidoFormulario">
 
-        <div class="parrafo">
+          <div class="texto">
+            <div class="textoTitulo">
+              <h1>¡Nos interesa tu opinión!</h1>
+            </div>
+            <div class="textoParrafo">
+              <!-- "Si tienes alguna duda, sugerencia o reclamo, te invitamos a diligenciar el siguiente 
+              formulario. Nuestro equipo se encargará de revisar tu solicitud con atención 
+              y te brindará una respuesta lo más pronto posible. Estamos comprometidos en ofrecerte el mejor 
+              servicio, por lo que no dudes en comunicarte con nosotros para cualquier inquietud. ¡Estaremos encantados de ayudarte!" -->
+              <h5>Si tienes alguna duda, sugerencia o reclamo, te invitamos a diligenciar el siguiente 
+                formulario. Nuestro equipo se encargará de revisar tu solicitud y te brindará una respuesta 
+                lo más pronto posible. </h5>
+              <!-- Si tienes alguna duda,
+              sugerencia o reclamo,
+              diligencia el siguiente
+              formulario. Nuestro
+              equipo se encargará de
+              revisarlo y te contactará lo
+              antes posible. -->
+            </div>
+          </div>
+
+          <!-- El url sale de la pagina formSpree la cual envía un correo si los campos cumplen con los requerimientos-->
+          <!-- target="_blank" si se desea que abra la pagina de formSpree en una nueva -->
+          
+              <div class="formulario">
+                  <div class="inputPequeños">
+                      <div class = "etiqueta"> <label for="nombre" > Nombre *</label> </div>
+                      <div class = "entrada"> <input type="text" id="nombre" name="name" placeholder="Nombre aquí" required> </div>
+                      <div class = "etiqueta"> <label for="email"> Correo *</label> </div>
+                      <div class = "entrada"> <input type="email" id="email" name="email" placeholder="Correo aquí" required> </div>
+                      <div class = "etiqueta"> <label for="telefono" > Teléfono *</label> </div>
+                      <div class = "entrada"> <input type="number"  minlength="10" maxlength="10" id="telefono" name="telefono" placeholder="Teléfono aquí" required> </div>
+                      <div class = "etiqueta"> <label for="asunto"> Asunto  *</label> </div>
+                      <div class = "entrada"> <input type="text" id="asunto" name="asunto" placeholder="Asunto aquí" required> </div>
+                  </div>
+                  <div class="inputContenido">
+                      <div class="etiqueta"> <label for="contenidoMsm"> Contenido *</label> </div>
+                      <textarea id="contenidoMsm" name="contenidoMsm" placeholder="Contenido aquí" required></textarea>
+                      <!-- <div class = "entrada"> <input type="text"> </div> -->
+                  </div>
+              </div>
+            <div class="contenedorBoton">
+              <p> Los campos marcados con (*) son obligatorios </p>
+              <button id="enviar" class="boton" type="submit">Enviar</button>
+            </div>
+         
+      </div>
+    </form>
+
+        <div class="parrafoIntermedio">
             <p>O si prefieres comunicarte a través de un medio alternativo, a continuación te proporcionamos nuestros datos
                 de contacto principales </p>
         </div>
@@ -159,6 +182,7 @@
                 </iframe>
             </div>
         </div>
+        
 
         <!-- A las siguientes ventanas emergentes se les asigna la misma clase "modal1", no se deja como "modal" por que esta es una clase reservada de Bootstrap -->
 

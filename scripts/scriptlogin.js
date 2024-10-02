@@ -1,4 +1,3 @@
-
 /* variables para modificar los estilos de las ventanas de los formularios login y registro */
 // Botones para hacer el cambio de formulario
 const loginBotonCambioVentana = document.querySelector(".ingresoBotonCambioVentana");
@@ -47,6 +46,8 @@ cerrarTerminos.addEventListener("click", () => {
 });
 
 
+
+
 //Código para validación de datos de correo y contraseña
 /* expresiones para validar correo y Contrasena */
 const expresiones = {
@@ -89,11 +90,6 @@ document.getElementById('correo').addEventListener('input', function(){
   }
 });
 
- // limpia el mensaje al ingresar nuevamente en el campo correo
- document.getElementById('correo').addEventListener('input', function() {
-  const mensaje = document.getElementById('mensaje');
-  mensaje.textContent = '';
-});
 
 //método de escucha para mostrar siempre el mensaje de advertencia de la clave
 // creación de variables de las dos contraseñas
@@ -104,10 +100,10 @@ function verificarContrasenaAdecuada(){
   if(expresiones.contrasena.test(contrasenaRegistro.value)){
     contrasenaRegistro.setCustomValidity('');
    }else{
-    contrasenaRegistro.reportValidity(); //habilita el mensaje de advertencia
     contrasenaRegistro.setCustomValidity(
       'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.'
     );
+    contrasenaRegistro.reportValidity(); //habilita el mensaje de advertencia
    }
 }
 
@@ -115,10 +111,10 @@ function verificarContrasenaIguales(){
   if(confirmacionContrasenaRegistro.value === contrasenaRegistro.value){
     confirmacionContrasenaRegistro.setCustomValidity('');
   }else{
-     confirmacionContrasenaRegistro.reportValidity();
      confirmacionContrasenaRegistro.setCustomValidity(
        'Las contraseñas no coinciden.'
-     );
+     ); //Se le asigna el mensaje de advertencia
+     confirmacionContrasenaRegistro.reportValidity(); //se muestra el mensaje
   }
 }
 
@@ -141,64 +137,4 @@ document.getElementById('formularioR').addEventListener('submit', function(event
       modalMensajeExitoso.style.display = 'block'; 
 });
    
-
-// Código para cambiar de visualización si el usuario hace un correcto login
-//ya hemos llamado al div class bodyLogin como body
-let divUsuarioRegistrado = document.querySelector(".divUsuarioRegistrado");
-let botonRealizarIngreso = document.querySelector("#realizarIngreso");
-let botonCerrarSesion = document.querySelector("#cerrarSesion");
-const formularioIngreso = document.querySelector("#formulario");
-let nameUser1 =  document.getElementById('sesion');
-
-function mostrarPerfil(){
-  bodyLogin.classList.remove('mostrar');
-  bodyLogin.classList.add('ocultar');
-  setTimeout( function(){
-      bodyLogin.style.display = 'none';
-      divUsuarioRegistrado.style.display = 'block';
-    },500 )
-  setTimeout(function(){
-      divUsuarioRegistrado.classList.remove('ocultar');
-      divUsuarioRegistrado.classList.add('mostrar');
-    },500)
-}
-
-function mostrarBodyLogin(){
-  divUsuarioRegistrado.classList.remove('mostrar');
-  divUsuarioRegistrado.classList.add('ocultar');
-  setTimeout( function(){
-    bodyLogin.style.display = 'flex';
-    divUsuarioRegistrado.style.display = 'none';
-  },500 )
-  setTimeout( function(){
-    bodyLogin.classList.remove('ocultar');
-    bodyLogin.classList.add('mostrar');
-  },500 );
-}
-
-
-// si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
-if(localStorage.getItem('usuario') != undefined){
-  if( localStorage.getItem('usuario').length != 0 ){
-    mostrarPerfil();
-  }
-}
-
-//Cuando oprime en ingresar, verifica el usuario y la contraseña, si son correctas muestra el div de perfil y oculta el de formularios de ingreso
-botonRealizarIngreso.onclick = function(event) {
-  event.preventDefault();
-  if(formularioIngreso.usuario.value === "admin" && formularioIngreso.contrasena.value === "1234" ){
-    localStorage.setItem( 'usuario', 'admin');
-    mostrarPerfil();
-    nameUser1.innerText = localStorage.getItem('usuario');
-  }
-}
-
-//Cuando cierra sesión muestra los formularios y oculta el perfil
-botonCerrarSesion.onclick = function() {
-  mostrarBodyLogin();
-  nameUser1.innerText = "Ingresar";
-  localStorage.setItem( 'usuario', '');
-
-}
 

@@ -71,9 +71,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
-    padding: 30px;
+    padding: 50px;
     margin: 0 auto;
     max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
@@ -106,7 +107,7 @@
     /* Ajusta según sea necesario */
     right: -4px;
     /* Ajusta según sea necesario */
-    background-color: #d6cb4f;
+    background-color: #703493;
     border: none;
     color: white;
     border-radius: 50%;
@@ -119,4 +120,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Estilos para el texto dentro de la clase Suscripcion */
+.Suscripcion {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.Objeto h3 {
+    font-size: 1.8em;
+    /* Tamaño del título */
+    font-weight: 600;
+    /* Peso de la fuente para hacerlo más visible */
+    margin-bottom: 10px;
+    /* Espacio inferior para separación */
+}
+
+.Objeto p {
+    font-size: 1.1em;
+    /* Tamaño del texto de los párrafos */
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.Objeto strong {
+    font-weight: 600;
+}
+
+.Texto-Objeto {
+    max-width: 85%;
+    margin: 0 auto;
+
 }
