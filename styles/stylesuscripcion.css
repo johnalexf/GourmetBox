@@ -1,57 +1,26 @@
 /* Estilos para el main */
 
-
 /* Estilos para el hero-content */
 .hero-content {
-    grid-column: 1 / -1;
     grid-column: 1 / -1;
     padding: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
 }
 
-.imgdehero img {
-    object-fit: cover;
-    height: auto;
+.hero-content img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
 }
 
-/* //FINAL Estilo Herocontent */
 
-/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 /* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
     grid-column: 1 / -1;
-}
-
-.cinta {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    height: 6vh;
-    background-color: #703493;
-    overflow: hidden;
-}
-
-.scroll {
-    white-space: nowrap;
-    margin: 0 2em;
-}
-
-.scroll div {
-    display: flex;
-    gap: 2em;
 }
 
 .cinta {
@@ -100,32 +69,87 @@
 
 .Suscripcion {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
-    padding: 30px;
+    padding: 50px;
     margin: 0 auto;
     max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
-@media (min-width: 768px) {
+@media (min-width: 760px) {
     .Suscripcion {
         grid-template-columns: repeat(2, 1fr);
         /* Solo 2 columnas en pantallas grandes */
-        max-width: 80%;
+        max-width: 90%;
         /* Limita el ancho máximo en pantallas grandes */
     }
 }
 
 .Objeto {
-    background-color: #f0f0f0;
+    background-color: #786880;
     border-radius: 20px;
     padding: 20px;
-    height: 450px;
+    height: 400px;
     width: 100%;
     max-width: 325px;
-    /* Limita el ancho máximo a 300px */
+    position: relative;
+    /* Necesario para posicionar el botón relativo al contenedor */
     margin: 0 auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boton-circular {
+    position: absolute;
+    bottom: -5px;
+    /* Ajusta según sea necesario */
+    right: -4px;
+    /* Ajusta según sea necesario */
+    background-color: #703493;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    /* Ajusta el tamaño del botón circular */
+    height: 70px;
+    font-size: 30px;
+    /* Ajusta el tamaño del texto o ícono dentro del botón */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para el texto dentro de la clase Suscripcion */
+.Suscripcion {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.Objeto h3 {
+    font-size: 1.8em;
+    /* Tamaño del título */
+    font-weight: 600;
+    /* Peso de la fuente para hacerlo más visible */
+    margin-bottom: 10px;
+    /* Espacio inferior para separación */
+}
+
+.Objeto p {
+    font-size: 1.1em;
+    /* Tamaño del texto de los párrafos */
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.Objeto strong {
+    font-weight: 600;
+}
+
+.Texto-Objeto {
+    max-width: 85%;
+    margin: 0 auto;
+
 }
