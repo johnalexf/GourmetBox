@@ -1,5 +1,22 @@
+/* Estilos para la pantalla después de realizar un registro 
+Para perfiles de usuario y de administrador*/
 
-/* Estilos para la pantalla después de realizar un registro */
+/* Estilos para que al hacer cambio de ventana tenga una transición mas amigable */
+.transicion-div {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+  }
+  
+.transicion-div.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.transicion-div.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
 
 /* Clase para el contenedor de toda la ilustración del perfil  */
 .divUsuarioRegistrado{
@@ -10,27 +27,26 @@
     margin-top: 100px;
     height: auto;
     width: 100%; */
-    
 }
 
-
+/* Titulos principales, Perfil, Modificar o editar producto */
 .tituloPerfil, .modificarProducto h2 {
     text-align: center;
+    color: #70349E;
+}
+
+.tituloPerfil h1{
+    margin-top: 20px;
+    font-size: 45px;
 }
 
 .modificarProducto h2{
     margin-top: 30px;
 }
 
-.tituloPerfil h1{
-    margin-top: 20px;
-    color: #70349E;
-    font-size: 45px;
-}
-
-
-/* Estos son los contenedores principales del perfil  */
-.datosPerfil, .suscripcionYPLatos, .botonesPerfil, .inputsProducto, .botonesProducto{
+/* Estos son todos los contenedores principales de ambos perfiles  */
+.datosPerfil, .suscripcionYPLatos,
+ .botonesPerfil, .inputsProducto{
     margin: auto;
     margin-bottom: 0px; 
     padding: 10px;
@@ -40,60 +56,55 @@
     gap: 10px;
 }
 
+/* Grid para todo los formularios de las diferentes vistas de perfil */
 .datosPerfil, .inputsProducto{
     grid-template-columns: 1fr 3fr;
+}
+#divBotonCargar{
+    grid-column: span 2;
+    text-align: center;
 }
 
 .suscripcionYPLatos, .botonesPerfil{
     grid-template-columns: 1fr 1fr;
 }
 
-.botonesProducto{
-    grid-template-columns: 1fr 1fr;
-}
-
-/* Estilos para los contenidos de los datos del perfil */
-.datosPerfil label, .inputsProducto label{
+/* Estilos para los label de los formularios  */
+.datosPerfil label, .inputsProducto label, .parrafoImagen{
     padding-left: 20px;
 }
-
+/* Estilos para los input y select de los formularios */
 .datosPerfil input, .inputsProducto input, .inputsProducto select{
     padding: 5px 10px;
-    /* border: 1px solid black; */
     border-radius: 10px;
-    /* background-color: white; */
 }
 
-#botonCargarProducto{
-    padding: 0px 10px;
-    grid-column: span 2;
+.divUrlProducto{
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    height: 40px;
+    color: #545454;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
-/* Estilos necesarios para que el select de categoría se asemeje a los estilos de un input desactivado  */
-.inputsProducto select{
-    border-width: 1.6px;
-    border-style: inset;
+.divUrlProducto p{
+    margin: auto;
+    padding-left: 0px;
     
 }
-.inputsProducto select:disabled{
-    background-color: #efefef4d;
-    border-color: #7676764d;
-}
 
-.inputsProducto select:enabled{
-    background-color: white;
-    border-color: black; 
-}
+/* Estilos para todos los botones que no están representados
+con un símbolo*/
 
-.datosPerfil input::placeholder, .inputsProducto select{
-    color: black;
-}
-
-/* Estilos para los botones #botonVistaPreviaProducto */
-/* #botonCargarProducto */
-.botonesPerfil button, .botonesProducto button  {
+.botonesPerfil button, 
+.modificarProducto button,
+#botonCargarProducto,
+.divUrlProducto label,
+.vistaPreviaAceptar button {
     margin: auto;
-    width: 150px;
+    width: 130px;
     height: 30px;
     font-weight: bold;
     border-radius: 50px;
@@ -101,34 +112,97 @@
     background-color: rgba(105, 91, 199, 0.534);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
+/* Estilo adicional para el label de Cargar Imagen  */
+.divUrlProducto label{
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+    /* color: black;  */
+     color: #1010104d; 
+}
 
-/* #botonVistaPreviaProducto{
-    font-size: 25px;
-    text-align: right;
-} */
+.cargar label{
+    color: black;
+}
 
 
-.botonesPerfil button:hover, .botonesProducto button:hover, #botonCargarProducto:hover, .acomodandoVistaPreliminar i:hover{
+.botonesPerfil button:hover,
+.vistaIdYBotones i:hover,
+.vistaIdYBotones button:hover,
+.cargar #botonCargarProducto:hover,
+.vistaPreviaAceptar button:hover,
+.cargar label:hover{
     cursor: pointer;
     background-color: white;
     color: #70349E;
 }
 
-/* #botonCancelarProducto{
-    background-color: #6c1adf;
-}
-
-#botonCancelarProducto:hover{
-    background-color: #a68dc8;
-} */
-
-/* #botonEliminarProducto{
-    background-color: red;
+#botonEliminarProducto{
+    color: rgb(174, 59, 59);
 }
 
 #botonEliminarProducto:hover{
-    background-color: rgb(171, 44, 44);
-} */
+    color: rgb(231, 99, 99);
+}
+
+.vistaIdYBotones{
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+}
+
+.vistaIdYBotones i {
+    font-size: 26px;
+    text-align: right;
+}
+
+.vistaIdYBotones i:hover {
+    color: blue;
+}
+
+#botonCancelarEdicionProducto{
+    grid-column: 3/5;
+}
+
+#botonCargarProducto{
+    padding: 0px;
+}
+#urlProducto{
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+}
+#urlProducto:hover{
+    cursor: pointer;
+}
+
+/* Estilos necesarios para que el select de categoría y el label usado como boton de Url
+ se asemeje a los estilos de un input desactivado  */
+.inputsProducto select:disabled, .divUrlProducto{
+    background-color: #efefef4d;
+    border-color: #7676764d;
+}
+/* Estilos necesarios para que el select de categoría
+ se asemeje a los estilos de un input activado  */
+.inputsProducto select:enabled{
+    background-color: white;
+    border-color: black; 
+}
+/* Estilos necesarios para que el select de categoría
+ se asemeje a los estilos de un input   */
+ .inputsProducto select, .divUrlProducto {
+    border-width: 1.6px;
+    border-style: inset;
+    
+}
+
+/* Se oculta el label y input titulo ya que estos aparecerán cuando se de en la opción de 
+modificar o crear desapareciendo el select de productos disponibles*/
+/* botones que no se muestran desde el inicio de sesión de un administrador */
+.modificarProducto label:nth-of-type(2), .tituloProducto, 
+#botonCancelarEdicionProducto{
+    display: none;
+}
 
 
 /* Estilos para la sección de imágenes preliminares de platos y suscripciones */
@@ -175,50 +249,12 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.transicion-div {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.9s ease, visibility 0.9s ease;
-  }
-  
-.transicion-div.mostrar {
-    opacity: 1;
-    visibility: visible;
-}
-  
-.transicion-div.ocultar {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* botones que no se muestran desde el inicio de sesión de un administrador */
-#botonCargarProducto, #botonCancelarProducto, #botonEliminarProducto{
-    display: none;
-}
-
-/* Se oculta el label y input titulo ya que estos aparecerán cuando se de en la opción de 
-modificar o crear desapareciendo el select de productos disponibles*/
-.modificarProducto label:nth-of-type(2), .tituloProducto{
-    display: none;
-}
-
-.acomodandoVistaPreliminar{
-    display: grid;
-    grid-template-columns: 3fr repeat(5, 1fr);
-}
-
-.acomodandoVistaPreliminar i {
-    font-size: 25px;
-    text-align: right;
-}
-
-
-
 @media (width < 900px){
     .divUsuarioRegistrado{
         height: auto;
     }
-    .datosPerfil, .suscripcionYPLatos, .botonesPerfil, .inputsProducto, .botonesProducto{
+    .datosPerfil, .suscripcionYPLatos, 
+    .botonesPerfil, .inputsProducto{
         max-width: 500px;
     }
     .imgIzquierda{
@@ -226,21 +262,17 @@ modificar o crear desapareciendo el select de productos disponibles*/
     }
 }
 
+
 /* Cambio de distribución para imagen en celular */
 @media (width < 600px){
     .divUsuarioRegistrado{
         height: auto;
     }
-    .datosPerfil, .suscripcionYPLatos, .botonesPerfil, .inputsProducto, .botonesProducto{
+    .datosPerfil, .suscripcionYPLatos, 
+    .botonesPerfil, .inputsProducto{
         max-width: auto;
         margin: 4%;
         padding-bottom: 4%;
-    }
-    .botonesProducto{
-        grid-template-columns: 1fr 1fr;
-    }
-    #botonCargarProducto{
-        grid-column: span 1;
     }
     .datosPerfil, .suscripcionYPLatos, .inputsProducto{
         grid-template-columns: 1fr;
@@ -249,12 +281,24 @@ modificar o crear desapareciendo el select de productos disponibles*/
         gap: 5px;
     }
 
-    .datosPerfil label, .inputsProducto label{
+    .datosPerfil label, .inputsProducto label, .inputsProducto p:nth-of-type(1){
         padding-top: 10px;
     }
-    .datosPerfil input, .inputsProducto input, .inputsProducto select{
+    .divUrlProducto label{
+        padding-top: 0px;
+    }
+    .datosPerfil input, 
+    .inputsProducto input, 
+    .inputsProducto select{
         margin: 0px 20px;
     }
+    .vistaIdYBotones{
+        margin-right: 20px;
+    }
+    #divBotonCargar{
+        grid-column: span 1;
+    }
+
     .suscripcionYPLatos{
         gap: 20px;
     }
@@ -267,7 +311,12 @@ modificar o crear desapareciendo el select de productos disponibles*/
 
 }
 
+
+/* Estilos para la ventana modal de vista previa del producto */
+
+/*  de estilos de producto de vista previa */
 .producto{
+    margin: auto;
     position: relative;
     border: 2px solid rgb(73, 19, 57);
     border-radius: 10%;
@@ -276,17 +325,39 @@ modificar o crear desapareciendo el select de productos disponibles*/
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
     width: 300px;
     height: 300px;
-    }
-    
-    .producto button {
-    padding: 2vh 1.2vw;
+}
+
+.producto button {
+padding: 2vh 1.2vw;
+border-radius: 50%;
+background-color: blueviolet;
+}
+
+
+.producto img{
     border-radius: 50%;
-    background-color: blueviolet;
-    }
-    
-    
-    .producto img{
-        border-radius: 50%;
-        height: 100px;
-        width: 100px;
-    }
+    height: 100px;
+    width: 100px;
+}
+
+.contenedorBotonCard{
+    position: absolute;
+    right: -5px;
+    bottom: 0px;
+}
+/* Fin de estilos de producto de vista previa */
+
+/* .modalVistaPrevia{
+    display: block;
+} */
+
+.modalVistaPrevia h4{
+    text-align: center;
+    color: #70349E;
+}
+
+
+.vistaPreviaAceptar{
+    text-align: center;
+    margin: 20px;
+}
