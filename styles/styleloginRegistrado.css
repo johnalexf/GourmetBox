@@ -61,6 +61,7 @@ Para perfiles de usuario y de administrador*/
     grid-template-columns: 1fr 3fr;
 }
 #divBotonCargar{
+    margin-top: 5px;
     grid-column: span 2;
     text-align: center;
 }
@@ -260,6 +261,9 @@ input[type="number"]::-webkit-inner-spin-button {
     .imgIzquierda{
         margin-left: 0%;
     }
+    .vistaIdYBotones input{
+        width: 100px;
+    }
 }
 
 
@@ -284,21 +288,30 @@ input[type="number"]::-webkit-inner-spin-button {
     .datosPerfil label, .inputsProducto label, .inputsProducto p:nth-of-type(1){
         padding-top: 10px;
     }
+    .inputsProducto p:nth-of-type(1){
+        margin: 0px;
+    }
     .divUrlProducto label{
         padding-top: 0px;
+        padding-bottom: 0px;
     }
+     .divUrlProducto p{
+        text-align: center;
+        /* padding-right: 15px; */
+    } 
     .datosPerfil input, 
     .inputsProducto input, 
-    .inputsProducto select{
+    .inputsProducto select,
+    .divUrlProducto{
         margin: 0px 20px;
     }
     .vistaIdYBotones{
         margin-right: 20px;
     }
     #divBotonCargar{
+        margin-top: 15px;
         grid-column: span 1;
     }
-
     .suscripcionYPLatos{
         gap: 20px;
     }

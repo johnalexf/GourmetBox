@@ -64,7 +64,7 @@ export async function eliminarProducto(id) {
 
 }
 
-let url2 = "../scripts/jsonproductos.json"; 
+let url2 = "../scripts/baseDatos.json"; 
 
 export async function obtenerBaseDatos() {
     

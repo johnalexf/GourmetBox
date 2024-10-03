@@ -16,13 +16,12 @@ let productosDisponibles = document.getElementById('productosDisponibles');
 //variable que contiene el select de categoría de producto
 let categoriaProducto = document.getElementById('categoriaProducto');
 
+
 //variables para mostrar ventana emergente con una vista previa del producto seleccionado o el nuevo creado y aceptar o cancelar cambios
 let botonCancelarCambios = document.getElementById('cancelarCambios');
 let botonAceptarCambios = document.getElementById('aceptarCambios');
 let divProducto = document.querySelector('.producto');
 let modalVistaPrevia = document.getElementById('modalVistaPrevia');
-
-//let botonVistaPrevia = document.getElementById('botonVistaPreviaProducto');
 let cerrarVistaPrevia = document.getElementById('cerrarVistaPrevia');
 
 //variables para cada uno de los botones de modificar o crear producto
@@ -32,10 +31,13 @@ let botonModificarProducto = document.getElementById('botonModificarProducto');
 let botonCancelarEdicionProducto = document.getElementById('botonCancelarEdicionProducto');
 let botonNuevoProducto = document.getElementById('botonNuevoProducto');
 let botonEliminarProducto = document.getElementById('botonEliminarProducto');
+//variable de control la cual diferencia si se va sobrescribir o crear un producto nuevo
 let reescribirProducto = false;
 
 //variables para el modal de eliminar producto
 let modalEliminarProducto = document.getElementById('modalEliminarProducto');
+let botonAceptarEliminar = document.getElementById('botonAceptarEliminar');
+let botonCancelarEliminar = document.getElementById('botonCancelarEliminar');
 
 //variable para guardar la imagen de forma de texto
 let imagen;
@@ -49,7 +51,6 @@ async function mostrarProductoEnFormulario() {
             console.log(baseDatos)
             html = "";
             let productos = baseDatos.productos;
-            //console.log(productos)
             productos.forEach(element => {
                 html +=  `<option value="${element.id}">${element.nombre}</option>` ;
                 if(element.id == indiceSeleccionado){
@@ -60,15 +61,14 @@ async function mostrarProductoEnFormulario() {
                     inputsProducto[3].value = element.precio;
                     pNombreUrlImagen.textContent = "imagen.png";
                     imagen = element.url;
-                    //console.log(imagen); 
-                    //console.log(typeof(imagen))
-                    //console.log(imagen.length);
                 }
             });
             productosDisponibles.innerHTML = html;
             if(indiceSeleccionado !=0){
                 productosDisponibles.value = indiceSeleccionado;
             }
+            //ya que traemos la imagen de la base de datos, no requerimos cargar una imagen
+            //de igual forma si el usuario desea cargar una nueva, lo puede hacer
             inputsProducto[4].required = false; 
                           
        
@@ -136,10 +136,10 @@ function cambioNoEditarProducto(){
 
 botonModificarProducto.addEventListener('click', ()=>{
     for(let i=1;i<=4;i++){
-        inputsProducto[i].setCustomValidity("");
+        inputsProducto[i].setCustomValidity("");// deshabilita los mensajes de advertencia desde el inicio de modificar
     }
     reescribirProducto = true;
-    inputsProducto[4].value = "";
+    inputsProducto[4].value = ""; //si hay un archivo previo cargado con el boton, este se elimina
     cambioEditarProducto();
 })
 
@@ -150,7 +150,7 @@ botonNuevoProducto.addEventListener('click',()=>{
     inputsProducto.forEach((cajaTexto)=>{
         cajaTexto.value = "";
     })
-    inputsProducto[0].value = productosDisponibles.options.length + 1;
+    inputsProducto[0].value = parseInt(productosDisponibles.options[productosDisponibles.length-1].value) + 1;
     console.log(inputsProducto);
     inputsProducto[5].value = "Cargar"
     pNombreUrlImagen.textContent = "no se ha cargado un archivo";
@@ -160,6 +160,7 @@ botonNuevoProducto.addEventListener('click',()=>{
         inputsProducto[i].setCustomValidity(mensajeAlerta[i-1]);
     }
 })
+
 
 botonCancelarEdicionProducto.addEventListener('click', ()=>{
     indiceSeleccionado = productosDisponibles.value;
@@ -171,15 +172,23 @@ botonEliminarProducto.addEventListener('click', ()=>{
     modalEliminarProducto.style.display = "block";
     //modificarJSON.eliminarProducto(inputsProducto[0].value);
 })
+botonAceptarEliminar.addEventListener('click', function(){
+    modificarJSON.eliminarProducto(inputsProducto[0].value);
+})
 
 modalEliminarProducto.querySelector('.cerrar').addEventListener( 'click', ()=>{
+    modalEliminarProducto.style.display = "none";
+})
+
+botonCancelarEliminar.addEventListener('click', function(){
     modalEliminarProducto.style.display = "none";
 })
 
 
 formularioModificarCrearProducto.addEventListener('submit', (event)=>{
     event.preventDefault();
-    console.log(inputsProducto[4].files[0])
+    //console.log(inputsProducto[4].files[0])
+    //instrucciones para obtener la imagen y guardarla en la variable imagen
     if(!(event.target[7].files[0] === undefined)){
         //código para leer la imagen y convertirlo a texto para poder almacenarlo
         const file = event.target[7].files[0];
@@ -200,8 +209,11 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
     
 });
 
+//Poner el nombre del archivo que se carga en seleccionar archivo en el parrafo junto 
 inputsProducto[4].addEventListener('change', function(){
+   
         if(inputsProducto[4].files.length > 0){
+            let longitudFile = inputsProducto[4].files[0].name.length;
             console.log(inputsProducto[4].files[0].name)
             pNombreUrlImagen.textContent = inputsProducto[4].files[0].name;
         }

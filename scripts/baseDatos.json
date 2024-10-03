@@ -1,0 +1,84 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Wafle Primavera",
+      "descripcion": "Lleva un waffle con crema dulce y naranja en conserva caramelizada",
+      "categoria": "desayuno",
+      "precio": "14000",
+      "url": "../img_comidas/DESAYUNOS/Wafle_primavera.png"
+    },
+    {
+      "id": "2",
+      "nombre": "Tostada Napolitana",
+      "descripcion": "Tostada de pan de masa madre, salsa napolitana, huevo estrellado y se acompaña con café con leche",
+      "categoria": "desayuno",
+      "precio": "16500",
+      "url": "../img_comidas/DESAYUNOS/Tostada_napolitana.png"
+    },
+    {
+      "id": "3",
+      "nombre": "Bowl Exotic",
+      "descripcion": "Incluye mariscos salteados, una base de vegetales (Aguacate, lechuga y acelgas) y huevo estrellado",
+      "categoria": "desayuno",
+      "precio": "18500",
+      "url": "../img_comidas/DESAYUNOS/Bowl_exotic.png"
+    },
+    {
+      "id": "4",
+      "nombre": "Solomito en Cerveza",
+      "descripcion": "Porción de 700g de solomito marinado en cerveza artesanal, acompañado de papas y ensalada.",
+      "categoria": "almuerzo",
+      "precio": "22500",
+      "url": "../img_comidas/ALMUERZOS/solomito_en_cerveza.png"
+    },
+    {
+      "id": "5",
+      "nombre": "Bowl Junior",
+      "descripcion": "Pollo crunchy con una base de huevo cocido y vegetales: aguacate, tomate cherry y lechuga iceberg.",
+      "categoria": "almuerzo",
+      "precio": "22500",
+      "url": "../img_comidas/ALMUERZOS/bowl_junior.png"
+    },
+    {
+      "id": "6",
+      "nombre": "Marinado Senior",
+      "descripcion": "Porción de pulpo de la casa acompañado de papas fileteadas al horno en salsa amarrilla",
+      "categoria": "almuerzo",
+      "precio": "34500",
+      "url": "../img_comidas/ALMUERZOS/marinado_senior.png"
+    },
+    {
+      "id": "7",
+      "nombre": "Gourmet Romero",
+      "descripcion": "Porción de costilla asada con papas criollas y base de salsa de champiñones",
+      "categoria": "almuerzo",
+      "precio": "34500",
+      "url": "../img_comidas/ALMUERZOS/gourmet_romero.png"
+    },
+    {
+      "id": "8",
+      "nombre": "Rojo Escarlata",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/porstreescarlata.jpg"
+    },
+    {
+      "id": "9",
+      "nombre": "Vainilla Invierno",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/Postreinvierno.jpg"
+    },
+    {
+      "id": "10",
+      "nombre": "Verde Aguacate",
+      "descripcion": "pendiente",
+      "categoria": "postre",
+      "precio": "25000",
+      "url": "../img_comidas/POSTRES/postreverdeagucate.jpg"
+    }
+  ]
+}
