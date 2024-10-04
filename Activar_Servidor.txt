@@ -1,0 +1,16 @@
+Para activar el servidor ejecutar las siguientes lineas
+
+Instalación de los paquetes necesarios 
+1. Abrir la terminal desde el archivo index.html
+2. npm install node.js
+3. npm install -g json-server
+
+Activación del servidor
+4. json-server --watch ./scripts/baseDatos.json
+
+Listo ya puedes probar modificar productos o crear productos,
+si deseas conocer mas a fondo que hace cada comando, en el 
+archivo Json-server.md hay una pequeña pero importante teoría,
+que explica al detalle cada uno.
+
+Para ingresar 

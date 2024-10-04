@@ -1,5 +1,5 @@
 # GourmetBox
-Para que funcione el acceso y la edición de un archivo JSON,
+  Para que funcione el acceso y la edición de un archivo JSON,
 usamos dos paquetes Node.js y json-server
 
 pasos para poder ejecutar un servidor virtual, localmente y simular el consumo y edición de una API:
@@ -14,7 +14,7 @@ Para poner en marcha tu servidor local, escribe json-server --watch ./scripts/js
 en este caso ./scripts/jsonproductos.json es la ubicación de la base de datos que quieres simular como API
 
 
-json-server --watch ./scripts/jsonproductos.json
+json-server --watch ./scripts/baseDatos.json
 
 Aquí una breve explicación para que entiendas que hace cada comando
 
