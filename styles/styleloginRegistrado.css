@@ -84,10 +84,10 @@ Para perfiles de usuario y de administrador*/
     position: relative;
     align-items: center;
     border-radius: 10px;
-    height: 40px;
+    height: 37px;
     color: #545454;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 5fr;
 }
 
 .divUrlProducto p{
@@ -102,7 +102,6 @@ con un símbolo*/
 .botonesPerfil button, 
 .modificarProducto button,
 #botonCargarProducto,
-.divUrlProducto label,
 .vistaPreviaAceptar button {
     margin: auto;
     width: 130px;
@@ -114,18 +113,29 @@ con un símbolo*/
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 /* Estilo adicional para el label de Cargar Imagen  */
+.divUrlProducto i{
+    line-height: 0px;
+    margin: 0px;
+    font-size: 32px;
+}
 .divUrlProducto label{
-    margin: 0;
-    padding: 0px;
-    text-align: center;
-    /* color: black;  */
-     color: #1010104d; 
+    padding-left: 5px;
+    width:  30px;
+    color: #1010104d; 
 }
 
 .cargar label{
-    color: black;
+    color: #70349E;
 }
 
+/* Paleta de colores
+#FFFEF4
+#D6CB4F
+#71B344
+#869639
+#6A5BC7
+#70349E
+*/
 
 .botonesPerfil button:hover,
 .vistaIdYBotones i:hover,
@@ -136,6 +146,10 @@ con un símbolo*/
     cursor: pointer;
     background-color: white;
     color: #70349E;
+}
+
+.cargar i:hover{
+    color: #674b7d;
 }
 
 #botonEliminarProducto{
