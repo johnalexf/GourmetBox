@@ -1,5 +1,5 @@
 # GourmetBox
-Para que funcione el acceso y la edición de un archivo JSON,
+  Para que funcione el acceso y la edición de un archivo JSON,
 usamos dos paquetes Node.js y json-server
 
 pasos para poder ejecutar un servidor virtual, localmente y simular el consumo y edición de una API:
