@@ -46,11 +46,13 @@ let imagen;
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
 async function mostrarProductoEnFormulario() {
    
-            let baseDatos ;
-            baseDatos = await modificarJSON.obtenerBaseDatos();
-            console.log(baseDatos)
+            // let baseDatos ;
+            // baseDatos = await modificarJSON.obtenerBaseDatos();
+            // console.log(baseDatos)
+            // html = "";
+            // let productos = baseDatos.productos;
             html = "";
-            let productos = baseDatos.productos;
+            let productos = await modificarJSON.obtenerBaseDatos();
             productos.forEach(element => {
                 html +=  `<option value="${element.id}">${element.nombre}</option>` ;
                 if(element.id == indiceSeleccionado){
@@ -59,7 +61,7 @@ async function mostrarProductoEnFormulario() {
                     inputsProducto[2].value = element.descripcion;
                     categoriaProducto.value = element.categoria;
                     inputsProducto[3].value = element.precio;
-                    pNombreUrlImagen.textContent = "imagen.png";
+                    pNombreUrlImagen.textContent = "imagen cargada";
                     imagen = element.url;
                 }
             });
@@ -172,8 +174,8 @@ botonEliminarProducto.addEventListener('click', ()=>{
     modalEliminarProducto.style.display = "block";
     //modificarJSON.eliminarProducto(inputsProducto[0].value);
 })
-botonAceptarEliminar.addEventListener('click', function(){
-    modificarJSON.eliminarProducto(inputsProducto[0].value);
+botonAceptarEliminar.addEventListener('click', async function(){
+    await modificarJSON.eliminarProducto(inputsProducto[0].value);
 })
 
 modalEliminarProducto.querySelector('.cerrar').addEventListener( 'click', ()=>{
@@ -242,15 +244,15 @@ function vistaPreliminar() {
 //funcion llamada con el botón de cerrar de vista previa del producto
 cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
 botonCancelarCambios.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
-botonAceptarCambios.addEventListener('click', ()=>{
+botonAceptarCambios.addEventListener('click', async ()=>{
      modalVistaPrevia.style.display = 'block'
-     cargarProducto();
+     await cargarProducto();
      ;});
 
 
-function cargarProducto (){
+async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
-     modificarJSON.reescribirOCrearProducto(
+     await modificarJSON.reescribirOCrearProducto(
         inputsProducto[0].value,
         inputsProducto[1].value,
         inputsProducto[2].value,

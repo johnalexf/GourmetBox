@@ -12,3 +12,5 @@ Listo ya puedes probar modificar productos o crear productos,
 si deseas conocer mas a fondo que hace cada comando, en el 
 archivo Json-server.md hay una pequeña pero importante teoría,
 que explica al detalle cada uno.
+
+Para ingresar 

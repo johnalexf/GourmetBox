@@ -112,6 +112,37 @@ con un símbolo*/
     background-color: rgba(105, 91, 199, 0.534);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
+
+/* Botones de cancelar  */
+.vistaPreviaAceptar button:nth-of-type(1), .vistaIdYBotones button, .botonesPerfil button:nth-of-type(2){
+    background-color: white;
+    border: 2px solid #70349E;
+    color: rgb(233, 67, 67);
+}
+.vistaPreviaAceptar button:nth-of-type(1):hover, .vistaIdYBotones button:hover,.botonesPerfil button:nth-of-type(2):hover{
+    background-color: rgb(231, 99, 99);
+    color: white;
+}
+
+.vistaPreviaAceptar button:nth-of-type(2){
+    background-color: white;
+    border: 2px solid #70349E;
+    color: #70349E;
+}
+.vistaPreviaAceptar button:nth-of-type(2):hover{
+    background-color: #71B344;
+    color: white;
+}
+
+/* Paleta de colores
+#FFFEF4
+#D6CB4F
+#71B344
+#869639
+#6A5BC7
+#70349E
+*/
+
 /* Estilo adicional para el label de Cargar Imagen  */
 .divUrlProducto i{
     line-height: 0px;
@@ -124,32 +155,15 @@ con un símbolo*/
     color: #1010104d; 
 }
 
-.cargar label{
-    color: #70349E;
-}
-
-/* Paleta de colores
-#FFFEF4
-#D6CB4F
-#71B344
-#869639
-#6A5BC7
-#70349E
-*/
 
 .botonesPerfil button:hover,
 .vistaIdYBotones i:hover,
-.vistaIdYBotones button:hover,
 .cargar #botonCargarProducto:hover,
 .vistaPreviaAceptar button:hover,
 .cargar label:hover{
     cursor: pointer;
     background-color: white;
     color: #70349E;
-}
-
-.cargar i:hover{
-    color: #674b7d;
 }
 
 #botonEliminarProducto{
@@ -165,13 +179,14 @@ con un símbolo*/
     grid-template-columns: 1fr repeat(3, 1fr);
 }
 
-.vistaIdYBotones i {
+.vistaIdYBotones i , .cargar label {
     font-size: 26px;
     text-align: right;
+    color:  rgb(90, 90, 179);
 }
 
-.vistaIdYBotones i:hover {
-    color: blue;
+.vistaIdYBotones i:hover, .cargar i:hover{
+    color: #71B344;
 }
 
 #botonCancelarEdicionProducto{

@@ -5,20 +5,16 @@
 let divBodyLogin = document.querySelector(".bodyLogin");
 let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
 let botonRealizarIngreso = document.querySelector("#realizarIngreso");
+
+let informaciónUsuario = document.getElementById('informacionUsuario');
+
+
 let formularioIngreso = document.querySelector("#formulario");
 let nameUser1 =  document.getElementById('sesion');
 let tipoUsuario = "";
 let indiceTipoUsuario = 0;
 
-//funcion para averiguar si el usuario es administrador
-function averiguarTipoUsuario(){
-    tipoUsuario = localStorage.getItem('usuario');
-    if(tipoUsuario == 'admin'){
-        indiceTipoUsuario = 1 ;
-    }else{
-        indiceTipoUsuario = 0 ;
-    }
-}
+
 
 // funcion para mostrar perfil ya sea de usuario o de administrador
 function mostrarPerfil(){
@@ -67,9 +63,23 @@ if(localStorage.getItem('usuario') != undefined){
   }
 }
 
+//funcion para averiguar si el usuario es administrador
+function averiguarTipoUsuario(){
+  tipoUsuario = localStorage.getItem('usuario');
+  if(tipoUsuario == 'admin'){
+      indiceTipoUsuario = 1 ;
+  }else{
+      indiceTipoUsuario = 0 ;
+  }
+}
+
+
 //Cuando oprime en ingresar, verifica el usuario y la contraseña, si son correctas muestra el div de perfil y oculta el de formularios de ingreso
 botonRealizarIngreso.onclick = function(event) {
   event.preventDefault();
+  
+  let buscarUsuario;
+  let buscarClave;
   if(formularioIngreso.usuario.value === "admin" && formularioIngreso.contrasena.value === "1234" ){
     localStorage.setItem( 'usuario', 'admin');
     mostrarPerfil();
@@ -80,6 +90,14 @@ botonRealizarIngreso.onclick = function(event) {
     mostrarPerfil();
     nameUser1.innerText = localStorage.getItem('usuario');
   }
+}
+
+function mostrarDatosPerfilUsuario(){
+  let dbUsuario = obtenerBaseDatosUsuarios("usuario");
+    informaciónUsuario.usuarioGuardado.value = dbUsuario.id;
+    informaciónUsuario.usuarioGuardado.value = dbUsuario.nombre;
+    informaciónUsuario.usuarioGuardado.value = dbUsuario.correo;
+    informaciónUsuario.usuarioGuardado.value = dbUsuario.telefono;
 }
 
 //Cuando cierra sesión muestra los formularios y oculta el perfil de usuario o de administrador
