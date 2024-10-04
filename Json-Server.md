@@ -14,7 +14,7 @@ Para poner en marcha tu servidor local, escribe json-server --watch ./scripts/js
 en este caso ./scripts/jsonproductos.json es la ubicación de la base de datos que quieres simular como API
 
 
-json-server --watch ./scripts/jsonproductos.json
+json-server --watch ./scripts/baseDatos.json
 
 Aquí una breve explicación para que entiendas que hace cada comando
 

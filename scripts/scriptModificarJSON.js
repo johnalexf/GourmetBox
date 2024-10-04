@@ -1,4 +1,4 @@
-export let url = "http://localhost:3000/productos";
+export let urlProductos = "http://localhost:3000/productos";
 export let urlEscribir = "";
 export let metodo = '';
 
@@ -7,10 +7,10 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
     
     if(Reescribir == true){
         metodo = 'PUT';
-        urlEscribir = url + '/' + id;
+        urlEscribir = urlProductos + '/' + id;
     }else{
         metodo = 'POST';
-        urlEscribir = url;
+        urlEscribir = urlProductos;
     }
 
 
@@ -45,7 +45,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 export async function eliminarProducto(id) {
     
     try{
-        const deleteResponse = await fetch(url + '/' + id, {
+        const deleteResponse = await fetch(urlProductos + '/' + id, {
             method: 'DELETE',
         });
 
@@ -64,13 +64,13 @@ export async function eliminarProducto(id) {
 
 }
 
-let url2 = "../scripts/jsonproductos.json"; 
+let urlProductosLocal = "../scripts/baseDatos.json"; 
 
 export async function obtenerBaseDatos() {
     
     try {
         // Realiza una solicitud fetch para obtener el JSON
-        const respuesta = await fetch(url2);
+        const respuesta = await fetch(urlProductosLocal);
         
         // Verifica si la solicitud fue exitosa
         if (!respuesta.ok) {
@@ -81,7 +81,7 @@ export async function obtenerBaseDatos() {
         const datos = await respuesta.json();
         
         //console.log(datos)
-        return datos;
+        return datos.productos;
          
       } catch (error) {
         console.error('Error:', error.message);
@@ -89,30 +89,73 @@ export async function obtenerBaseDatos() {
     
 }
 
+export let urlUsuarios = "http://localhost:3000/usuarios";
 
-// export async function refrescar(cadena) {
+//funcion para agregar un nuevo producto o reescribirlo
+export async function reescribirOCrearUsuario(usuario,nombre,correo,telefono,contrasena,Reescribir) {
     
-//     console.log("entro")
-    
-//         try {
-//             for(let i=0; i < cadena.length; i++){
-       
-//                 // Enviar la solicitud POST para agregar el nuevo producto
-//                 const respuesta = await fetch( url + '/' (i+1), {
-//                     method: 'PUT',
-//                     headers: {
-//                         'Content-Type': 'application/json',
-//                     },
-//                     body: JSON.stringify(cadena[i])
-//                 });
+    if(Reescribir == true){
+        metodo = 'PUT';
+        urlEscribir = urlUsuarios + '/' + id;
+    }else{
+        metodo = 'POST';
+        urlEscribir = urlUsuarios;
+    }
 
-//                 if (!respuesta.ok) {
-//                     throw new Error(`Error agregando producto: ${respuesta.statusText}`);
-//                 }
-//         }
-//         } catch (error) {
-//             console.error('Error agregando usuario:', error.message);
-//         }
+    try {
+        
+        // Enviar la solicitud POST para agregar el nuevo producto
+        const respuesta = await fetch(urlEscribir, {
+            method: metodo,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: usuario,
+                rol: "usuario",
+                nombre : nombre,
+                correo : correo,
+                telefono : telefono,
+                contrasena : contrasena
+            }),
+        });
 
+        if (!respuesta.ok) {
+            throw new Error(`Error agregando o modificando usuario: ${respuesta.statusText}`);
+        }
+
+    } catch (error) {
+        console.error('Error agregando o modificando usuario:', error.message);
+    }
+
+}
+
+let urlUsuariosLocal = "../scripts/baseDatos.json"; 
+export async function verificarSiUsuarioExiste(usuario) {
+            
+    try {
+        // Realiza una solicitud fetch para obtener el JSON
+        const respuesta = await fetch(urlUsuariosLocal);
+        
+        // Verifica si la solicitud fue exitosa
+        if (!respuesta.ok) {
+          throw new Error('Error al obtener el JSON');
+        }
     
-// }
+        // Convierte la respuesta a un objeto JavaScript
+        const datos = await respuesta.json();
+        const usuarios = await datos.usuarios;
+        let retorno = false;
+
+        usuarios.forEach(element => {
+            if(element.id == usuario){
+                retorno = true;
+            }
+        });
+
+        return retorno;
+      } catch (error) {
+        console.error('Error:', error.message);
+      }
+    
+}

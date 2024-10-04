@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sesion</title>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sesion</title>
+
+  <!-- Poppins Regular 400 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <!-- Poppins Regular 400 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,12 +24,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
+  <!-- Roboto Bold 700 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
 
+  <!-- Estilos del Navbar y Footer -->
+  <link rel="stylesheet" href="../styles/styleNavFooter.css" />
   <!-- Estilos del Navbar y Footer -->
   <link rel="stylesheet" href="../styles/styleNavFooter.css" />
 
   <!-- Estilos propios de Login-->
   <link rel="stylesheet" href="../styles/stylelogin.css" />
+  <link rel="stylesheet" href="../styles/styleloginRegistrado.css">
 </head>
 
 <body>
@@ -30,8 +46,11 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
+          <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
         </a>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -65,6 +84,7 @@
           </ul>
         </div>
       </div>
+    </nav>
     </nav>
   </header>
 
@@ -121,39 +141,47 @@
     </div>
 
 
+    <!-- ventana para un usuario registrado
+        para realizar el cambio de ventana, en el script se tiene en cuenta el indice de 
+        let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
+        el indice 0 es para un usuario y el indice 1 es para un administrador
+    -->
 
+    <!-- ventana para un usuario registrado -->
+    <div class="divUsuarioRegistrado transicion-div ocultar">
     <div class="divUsuarioRegistrado transicion-div ocultar">
 
       <div class="tituloPerfil">
         <h1> Perfil </h1>
       </div>
 
-      <form action="" id="informacionUsuario"></form>
-      <div class="datosPerfil">
-        <label for="usuarioGuardado">Usuario:</label>
-        <input type="text" name="usuarioGuardado" id="usuarioGuardado" placeholder="Nombre de Usuario" disabled>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre completo del usuario" disabled>
-        <label for="correoGuardado">Correo:</label>
-        <input type="email" name="correoGuardado" id="correoGuardado" placeholder="Correo registrado por el usuario"
-          disabled>
-        <label for="telefono">Teléfono</label>
-        <input type="number" name="telefono" id="telefono" placeholder="Numero de teléfono del usuario" disabled>
-        <label for="suscripcion">Suscripción</label>
-        <input type="text" name="suscripcion" id="suscripcion" placeholder="Sin suscripción" disabled>
-        <label for="preferencias">Preferencias</label>
-        <input type="text" name="preferencias" id="preferencias" placeholder="Sin preferencias" disabled>
-      </div>
+      <form action="" id="informacionUsuario">
+        <div class="datosPerfil">
+          <label for="usuarioGuardado">Usuario:</label>
+          <input type="text" name="usuarioGuardado" id="usuarioGuardado" placeholder="Nombre de Usuario" disabled>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre completo del usuario" disabled>
+          <label for="correoGuardado">Correo:</label>
+          <input type="email" name="correoGuardado" id="correoGuardado" placeholder="Correo registrado por el usuario"
+            disabled>
+          <label for="telefonoUsuario">Teléfono</label>
+          <input type="number" name="telefonoUsuario" id="telefonoUsuario" placeholder="Numero de teléfono del usuario"
+            disabled>
+          <label for="suscripcion">Suscripción</label>
+          <input type="text" name="suscripcion" id="suscripcion" placeholder="Sin suscripción" disabled>
+          <label for="preferencias">Preferencias</label>
+          <input type="text" name="preferencias" id="preferencias" placeholder="Sin preferencias" disabled>
+        </div>
       </form>
 
       <div class="botonesPerfil">
         <button> Editar Perfil </button>
-        <button id="cerrarSesion"> Cerrar Sesión </button>
+        <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
       </div>
 
       <div class="suscripcionYPLatos">
         <div class="suscripciones">
-          <h5> Ver suscripciones</h5>
+          <a href="./suscripcion.html">Ver suscripciones</a>
           <div class="planes">
             <img class="imgIzquierda"
               src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826"
@@ -165,7 +193,7 @@
         </div>
 
         <div class="platos">
-          <h5>Ver menú</h5>
+          <a href="./menu.html">Ver menú</a>
           <div class="platosBasicos">
             <img class="imgIzquierda"
               src="https://img.freepik.com/foto-gratis/composicion-deliciosa-comida-brasilena-alto-angulo_23-2148739223.jpg?t=st=1727055953~exp=1727059553~hmac=9aa72da2380d0114ae93127fcdc5278f08f3a30ac574f027f61ef67764af7931&w=826"
@@ -180,11 +208,28 @@
 
     <!-- ventana para un administrador registrado -->
     <div class="divUsuarioRegistrado transicion-div ocultar">
+    <div class="divUsuarioRegistrado transicion-div ocultar">
 
       <div class="tituloPerfil">
         <h1> Perfil </h1>
       </div>
+      <div class="tituloPerfil">
+        <h1> Perfil </h1>
+      </div>
 
+      <form action="" id="informacionAdministrador">
+        <div class="datosPerfil">
+          <label for="usuarioGuardado2">Usuario:</label>
+          <input type="text" name="usuarioGuardado2" id="usuarioGuardado2" placeholder="Nombre de Usuario" disabled>
+          <label for="nombre2">Nombre:</label>
+          <input type="text" name="nombre2" id="nombre2" placeholder="Nombre completo del usuario" disabled>
+          <label for="correoGuardado2">Correo:</label>
+          <input type="email" name="correoGuardado2" id="correoGuardado2" placeholder="Correo registrado por el usuario"
+            disabled>
+          <label for="telefono2">Teléfono</label>
+          <input type="number" name="telefono2" id="telefono2" placeholder="Numero de teléfono del usuario" disabled>
+        </div>
+      </form>
       <form action="" id="informacionAdministrador">
         <div class="datosPerfil">
           <label for="usuarioGuardado2">Usuario:</label>
@@ -203,57 +248,69 @@
         <button> Editar Perfil </button>
         <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
       </div>
+      <div class="botonesPerfil">
+        <button> Editar Perfil </button>
+        <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
+      </div>
 
 
       <div class="modificarProducto">
         <h2>Modificar o editar producto</h2>
-        <form action="" id="modificarCrearProducto">
+        <form id="modificarCrearProducto"  action="/upload" method="POST" enctype="multipart/form-data">
           <div class="inputsProducto">
-            <label for="idProducto">id</label>
-            <div class="acomodandoVistaPreliminar">
+
+            <label for="idProducto">Id :</label>
+
+            <div class="vistaIdYBotones">
               <input type="number" name="idProducto" id="idProducto" disabled required>
-              <i class="bi bi-pencil-square" id="botonModificarProducto"></i>
-              <i class="bi bi-x-circle" id="botonCancelarProducto"></i>
-              <i class="bi bi-file-earmark-plus-fill" id="botonNuevoProducto"></i>
-              <i class="bi bi-trash-fill" id="botonEliminarProducto"></i>
-              <i class="bi bi-eye-fill" id="botonVistaPreviaProducto"></i>
-              <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
+              <i class="bi bi-pen-fill" id="botonModificarProducto" title="Modificar Producto"></i>
+              <!-- <i class="bi bi-pencil-square" id="botonModificarProducto" title="Modificar Producto"></i> -->
+              <i class="bi bi-file-earmark-plus-fill" id="botonNuevoProducto" title="Nuevo Producto"></i>
+              <i class="bi bi-trash-fill" id="botonEliminarProducto" title="Eliminar Producto"></i>
+              <button type="button" id="botonCancelarEdicionProducto">Cancelar</button>
+              <!-- <i class="bi bi-x-circle" id="botonCancelarEdicionProducto"></i> -->
             </div>
-            <label for="tituloProducto"> Titulo </label>
+
+            <label for="tituloProducto"> Titulo : </label>
             <input type="text" name="tituloProducto" id="tituloProduto" class="tituloProducto" disabled required>
-            <label for="productosDisponibles">Titulo</label>
+            <label for="productosDisponibles">Titulo :</label>
             <select name="productoDisponibles" id="productosDisponibles"> </select>
-            <label for="descripcionProducto">Descripción</label>
+            <label for="descripcionProducto">Descripción :</label>
             <input type="text" name="descripcionProducto" id="descripcionProducto" disabled required>
-            <label for="categoriaProducto">categoría</label>
+            <label for="categoriaProducto">Categoría :</label>
             <select name="categoriaProducto" id="categoriaProducto" disabled>
               <option value="desayuno">Desayuno</option>
               <option value="almuerzo">Almuerzo</option>
               <option value="postre">Postre</option>
             </select>
-            <!-- <input type="text" name="categoriaProducto" id="categoriaProducto" disabled> -->
-            <label for="precioProducto">Precio</label>
+            <label for="precioProducto">Precio :</label>
             <input type="number" name="precioProducto" id="precioProducto" disabled required>
-            <label for="urlProducto">URL</label>
-            <input type="text" name="urlProducto" id="urlProducto" disabled required>
-            <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar">
+
+            <p class="parrafoImagen"> Imagen :</p>
+            <div class="divUrlProducto" ><!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
+              <label for="urlProducto"><i class="bi bi-plus-square-fill"></i></label>
+              <input type="file" name="urlProducto" id="urlProducto" disabled required>
+              <p id="nombreUrlImagen"> no se ha cargado un archivo </p>
+            </div>
+
+            <div id="divBotonCargar"><!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
+              <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar" disabled>
+            </div>
           </div>
         </form>
       </div>
 
-      <div class="botonesProducto" id="botonesProducto">
-        <!-- <button id="botonModificarProducto">Modificar</button>
-            <button id="botonCancelarProducto">Cancelar</button> -->
-
-        <!-- <button id="botonVistaPreviaProducto">Vista Preliminar</button> -->
-        <!-- 
-            <button id="botonNuevoProducto">Nuevo</button> -->
-        <!-- <button id="botonEliminarProducto">Eliminar</button> -->
-
-      </div>
     </div>
 
 
+    <!-- Ventana emergente mensaje enviado correctamente-->
+    <div id="modalMensajeExitoso" class="modal1">
+      <div class="modal1-contenedor">
+        <i class="bi bi-x-circle-fill cerrar"></i>
+        <!-- Icono sacado de Bootstrap-->
+        <h5>Bienvenido</h5>
+      </div>
+    </div>
     <!-- Ventana emergente mensaje enviado correctamente-->
     <div id="modalMensajeExitoso" class="modal1">
       <div class="modal1-contenedor">
@@ -321,10 +378,121 @@
       </div>
     </div>
 
+    <!-- Ventana emergente terminos y condiciones-->
+    <div id="modalTerminos" class="modalterminosP">
+      <div class="modalterminos">
+        <i class="bi bi-x-circle-fill cerrarTerminos"></i>
+        <!-- Icono sacado de Bootstrap-->
+        <h5>Terminos & Condiciones Data</h5>
+        <h6>Ultima actualizacion: 24 de Sept. de 2024</h6>
+        <p>Bienvenido a Gourmet Box. Al registrarte y utilizar nuestra plataforma, aceptas los siguientes términos y
+          condiciones relacionados con el manejo de tus datos personales.</p>
+        <ol>
+          <li>Información que Recopilamos</li>
+          <p>Gourmet Box recopila y almacena la siguiente información personal de sus usuarios:
+            Nombre,
+            Nombre de usuario,
+            Teléfono,
+            Dirección,
+            Correo electrónico,
+            Contraseña.
+          </p>
+          <li>Uso de la Información</li>
+          <p>La información recopilada se utiliza para:
+            Procesar tus pedidos y gestionar tu suscripción.
+            Mejorar la experiencia del usuario en nuestra plataforma.
+            Comunicarnos contigo sobre tu cuenta, pedidos y promociones.
+            Cumplir con obligaciones legales y normativas.
+          </p>
+          <li>Protección de Datos</li>
+          <p>Gourmet Box implementa medidas de seguridad adecuadas para proteger la información personal de los usuarios
+            contra el acceso no autorizado, divulgación, alteración y destrucción.</p>
+          <li>Compartición de Información</li>
+          <p>No compartiremos tu información personal con terceros, salvo en los siguientes casos:
+            Con proveedores de servicios que nos ayudan a operar nuestra plataforma (por ejemplo, servicios de pago y
+            envío).
+            Cuando sea requerido por ley o para proteger nuestros derechos.
+          </p>
+          <li>Tus Derechos</li>
+          <p>Tienes el derecho a:
+            Acceder a tu información personal.
+            Rectificar cualquier dato inexacto.
+            Solicitar la eliminación de tu información, sujeto a obligaciones legales.
+            Oponerte al tratamiento de tus datos en ciertas circunstancias.
+          </p>
+          <li>Cookies y Tecnologías Similares</li>
+          <p>Gourmet Box puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario. Puedes
+            gestionar tus preferencias de cookies a través de la configuración de tu navegador.</p>
+          <li>Cambios en la Política de Datos</li>
+          <p>Gourmet Box se reserva el derecho de modificar esta política en cualquier momento. Notificaremos a los
+            usuarios sobre cualquier cambio significativo a través de la plataforma o por correo electrónico.</p>
+          <li>Contacto</li>
+          <p>Si tienes preguntas o inquietudes sobre el manejo de tus datos personales, puedes contactarnos a través de:
+            Correo electrónico: softwaresinfoni@gmail.com, Teléfono: 555-55555.
+          </p>
+          <h6>Al utilizar Gourmet Box, aceptas estos términos y condiciones.<br>Te agradecemos por confiar en nosotros.
+          </h6>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Modal vista previa Producto -->
+    <div id="modalVistaPrevia" class="modalVistaPrevia">
+      <div class="modalVistaPreviaContenido">
+        <i class="bi bi-x-circle-fill cerrarVistaPrevia" id="cerrarVistaPrevia"></i>
+        <h4> Vista preliminar </h4>
+        <div class="producto">
+          <!-- contenedor imagen de la card -->
+          <div class="contenedorImagenCard"><img src="../img/waffle primavera.png" alt=""></div>
+          <!-- contenedor titulo de la card -->
+          <div class="contenedorTituloCard">
+            <h5> <b>Waffle primavera</b>
+            </h5>
+          </div>
+          <!-- contenedor descripcion de la card -->
+          <div class="contenedorDescripcionCard">
+            <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
+          </div>
+          <!-- contenedor precio de la card -->
+          <div class="contenedorPrecioCard">
+            <p> <b>$ 12.500 COP</b> </p>
+          </div>
+          <!-- contenedor boton de la card -->
+          <div class="contenedorBotonCard"><button class="botonCardMenu"><i class="bi bi-cart-plus iconoBotonCard"></i>
+            </button>
+          </div>
+        </div>
+        <div class="vistaPreviaAceptar">
+          <p>Si estas de acuerdo con los cambios presiona 
+            aceptar, en caso contrario presiona cancelar.</p>
+          <button id="cancelarCambios">Cancelar</button> <button id="aceptarCambios">Aceptar</button>
+        </div>
+      </div>
+    </div>
+
+     <!-- Ventana emergente seguro desea eliminar-->
+     <div id="modalEliminarProducto" class="modal1">
+      <div class="modal1-contenedor">
+        <i class="bi bi-x-circle-fill cerrar"></i>
+        <br>
+        <h5>Seguro que desea eliminar el producto</h5>
+        <div class = "vistaPreviaAceptar">
+          <button id="botonCancelarEliminar"> No </button>
+          <button id="botonAceptarEliminar"> Si </button>
+        </div>
+      </div>
+    </div>
+
 
 
   </main>
 
+  </main>
+
+  <!-- Footer jalado con el javascript llamarNavFooter.js -->
+  <footer>
+    <div id="footer"></div>
+  </footer>
   <!-- Footer jalado con el javascript llamarNavFooter.js -->
   <footer>
     <div id="footer"></div>
@@ -334,8 +502,11 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="../scripts/llamarNavFooter.js"></script>
-  <script src="../scripts/scriptlogin.js"></script>
+  <script src="../scripts/scriptlogin.js" type="module"></script>
   <script src="../scripts/usuarioRegistrado.js"></script>
+  <script src="../scripts/scriptloginRegistrado.js"></script>
+  <script src="../scripts/scriptModificarProducto.js" type="module"></script>
+
 </body>
 
 </html>
