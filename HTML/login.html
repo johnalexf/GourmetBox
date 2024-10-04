@@ -6,15 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sesion</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sesion</title>
-
-  <!-- Poppins Regular 400 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <!-- Poppins Regular 400 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,13 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
-  <!-- Roboto Bold 700 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Estilos del Navbar y Footer -->
-  <link rel="stylesheet" href="../styles/styleNavFooter.css" />
   <!-- Estilos del Navbar y Footer -->
   <link rel="stylesheet" href="../styles/styleNavFooter.css" />
 
@@ -46,11 +31,8 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
-          <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -105,7 +87,7 @@
         <div class="contieneFormularios">
           <div class="formularioIngreso">
             <form method="POST" id="formulario">
-              <h3>Iniciar Sesion</h3>
+              <h3>Iniciar Sesión</h3>
               <input title="Necesita Nombre Usuario" type="text" placeholder="Usuario" name="usuario" id="usuario"
                 required />
               <input title="Ingrese Contrasena" type="password" name="contrasena" id="contrasena"
@@ -148,7 +130,6 @@
     -->
 
     <!-- ventana para un usuario registrado -->
-    <div class="divUsuarioRegistrado transicion-div ocultar">
     <div class="divUsuarioRegistrado transicion-div ocultar">
 
       <div class="tituloPerfil">
@@ -208,11 +189,7 @@
 
     <!-- ventana para un administrador registrado -->
     <div class="divUsuarioRegistrado transicion-div ocultar">
-    <div class="divUsuarioRegistrado transicion-div ocultar">
 
-      <div class="tituloPerfil">
-        <h1> Perfil </h1>
-      </div>
       <div class="tituloPerfil">
         <h1> Perfil </h1>
       </div>
@@ -230,24 +207,7 @@
           <input type="number" name="telefono2" id="telefono2" placeholder="Numero de teléfono del usuario" disabled>
         </div>
       </form>
-      <form action="" id="informacionAdministrador">
-        <div class="datosPerfil">
-          <label for="usuarioGuardado2">Usuario:</label>
-          <input type="text" name="usuarioGuardado2" id="usuarioGuardado2" placeholder="Nombre de Usuario" disabled>
-          <label for="nombre2">Nombre:</label>
-          <input type="text" name="nombre2" id="nombre2" placeholder="Nombre completo del usuario" disabled>
-          <label for="correoGuardado2">Correo:</label>
-          <input type="email" name="correoGuardado2" id="correoGuardado2" placeholder="Correo registrado por el usuario"
-            disabled>
-          <label for="telefono2">Teléfono</label>
-          <input type="number" name="telefono2" id="telefono2" placeholder="Numero de teléfono del usuario" disabled>
-        </div>
-      </form>
 
-      <div class="botonesPerfil">
-        <button> Editar Perfil </button>
-        <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
-      </div>
       <div class="botonesPerfil">
         <button> Editar Perfil </button>
         <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
@@ -311,14 +271,6 @@
         <h5>Bienvenido</h5>
       </div>
     </div>
-    <!-- Ventana emergente mensaje enviado correctamente-->
-    <div id="modalMensajeExitoso" class="modal1">
-      <div class="modal1-contenedor">
-        <i class="bi bi-x-circle-fill cerrar"></i>
-        <!-- Icono sacado de Bootstrap-->
-        <h5>Bienvenido</h5>
-      </div>
-    </div>
 
     <!-- Ventana emergente terminos y condiciones-->
     <div id="modalTerminos" class="modalterminosP">
@@ -378,63 +330,6 @@
       </div>
     </div>
 
-    <!-- Ventana emergente terminos y condiciones-->
-    <div id="modalTerminos" class="modalterminosP">
-      <div class="modalterminos">
-        <i class="bi bi-x-circle-fill cerrarTerminos"></i>
-        <!-- Icono sacado de Bootstrap-->
-        <h5>Terminos & Condiciones Data</h5>
-        <h6>Ultima actualizacion: 24 de Sept. de 2024</h6>
-        <p>Bienvenido a Gourmet Box. Al registrarte y utilizar nuestra plataforma, aceptas los siguientes términos y
-          condiciones relacionados con el manejo de tus datos personales.</p>
-        <ol>
-          <li>Información que Recopilamos</li>
-          <p>Gourmet Box recopila y almacena la siguiente información personal de sus usuarios:
-            Nombre,
-            Nombre de usuario,
-            Teléfono,
-            Dirección,
-            Correo electrónico,
-            Contraseña.
-          </p>
-          <li>Uso de la Información</li>
-          <p>La información recopilada se utiliza para:
-            Procesar tus pedidos y gestionar tu suscripción.
-            Mejorar la experiencia del usuario en nuestra plataforma.
-            Comunicarnos contigo sobre tu cuenta, pedidos y promociones.
-            Cumplir con obligaciones legales y normativas.
-          </p>
-          <li>Protección de Datos</li>
-          <p>Gourmet Box implementa medidas de seguridad adecuadas para proteger la información personal de los usuarios
-            contra el acceso no autorizado, divulgación, alteración y destrucción.</p>
-          <li>Compartición de Información</li>
-          <p>No compartiremos tu información personal con terceros, salvo en los siguientes casos:
-            Con proveedores de servicios que nos ayudan a operar nuestra plataforma (por ejemplo, servicios de pago y
-            envío).
-            Cuando sea requerido por ley o para proteger nuestros derechos.
-          </p>
-          <li>Tus Derechos</li>
-          <p>Tienes el derecho a:
-            Acceder a tu información personal.
-            Rectificar cualquier dato inexacto.
-            Solicitar la eliminación de tu información, sujeto a obligaciones legales.
-            Oponerte al tratamiento de tus datos en ciertas circunstancias.
-          </p>
-          <li>Cookies y Tecnologías Similares</li>
-          <p>Gourmet Box puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario. Puedes
-            gestionar tus preferencias de cookies a través de la configuración de tu navegador.</p>
-          <li>Cambios en la Política de Datos</li>
-          <p>Gourmet Box se reserva el derecho de modificar esta política en cualquier momento. Notificaremos a los
-            usuarios sobre cualquier cambio significativo a través de la plataforma o por correo electrónico.</p>
-          <li>Contacto</li>
-          <p>Si tienes preguntas o inquietudes sobre el manejo de tus datos personales, puedes contactarnos a través de:
-            Correo electrónico: softwaresinfoni@gmail.com, Teléfono: 555-55555.
-          </p>
-          <h6>Al utilizar Gourmet Box, aceptas estos términos y condiciones.<br>Te agradecemos por confiar en nosotros.
-          </h6>
-        </ol>
-      </div>
-    </div>
 
     <!-- Modal vista previa Producto -->
     <div id="modalVistaPrevia" class="modalVistaPrevia">
@@ -487,20 +382,14 @@
 
   </main>
 
-  </main>
-
-  <!-- Footer jalado con el javascript llamarNavFooter.js -->
-  <footer>
-    <div id="footer"></div>
-  </footer>
   <!-- Footer jalado con el javascript llamarNavFooter.js -->
   <footer>
     <div id="footer"></div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
   <script src="../scripts/llamarNavFooter.js"></script>
   <script src="../scripts/scriptlogin.js" type="module"></script>
   <script src="../scripts/usuarioRegistrado.js"></script>
