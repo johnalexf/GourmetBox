@@ -10,11 +10,11 @@
 main {
     background-color: rgba(112, 179, 68, 0.2);
     padding: 10px 15%;
-    background-image: url('../img/FONDOCONTACTANOS.jpg');
+    background-image: url('../img/fondo5contactenos.jpg');
     background-size: cover; /* Cubre todo el contenedor */
     background-position: center;/* Centra la imagen */
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     display: grid;
     place-items: center;
 }

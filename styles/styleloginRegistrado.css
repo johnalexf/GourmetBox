@@ -35,6 +35,11 @@ Para perfiles de usuario y de administrador*/
     color: #70349E;
 }
 
+.modificarProducto{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .tituloPerfil h1{
     margin-top: 20px;
     font-size: 45px;
@@ -105,7 +110,7 @@ con un símbolo*/
 .vistaPreviaAceptar button {
     margin: auto;
     width: 130px;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     border-radius: 50px;
     border: 2px solid #70349E;
@@ -115,13 +120,13 @@ con un símbolo*/
 
 /* Botones de cancelar  */
 .vistaPreviaAceptar button:nth-of-type(1), .vistaIdYBotones button, .botonesPerfil button:nth-of-type(2){
-    background-color: white;
-    border: 2px solid #70349E;
-    color: rgb(233, 67, 67);
+    background-color: rgb(231, 99, 99);
+    border: 2px solid rgb(231, 99, 99);
+    color: white;
 }
 .vistaPreviaAceptar button:nth-of-type(1):hover, .vistaIdYBotones button:hover,.botonesPerfil button:nth-of-type(2):hover{
-    background-color: rgb(231, 99, 99);
-    color: white;
+    background-color: white;
+    color: rgb(231, 99, 99);
 }
 
 .vistaPreviaAceptar button:nth-of-type(2){
@@ -130,7 +135,7 @@ con un símbolo*/
     color: #70349E;
 }
 .vistaPreviaAceptar button:nth-of-type(2):hover{
-    background-color: #71B344;
+    background-color: #70349E;
     color: white;
 }
 
