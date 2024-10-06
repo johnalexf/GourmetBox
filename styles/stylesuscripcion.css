@@ -78,7 +78,7 @@
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
-@media (min-width: 760px) {
+@media (min-width: 920px) {
     .Suscripcion {
         grid-template-columns: repeat(3, 1fr);
         /* Solo 2 columnas en pantallas grandes */
