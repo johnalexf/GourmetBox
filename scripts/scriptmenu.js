@@ -64,7 +64,7 @@ function actualizarMenu() {
         <div class="producto">
             <div class="contenedorImagenCard"><img src="${producto.url}" alt=""></div>
             <div class="contenedorTituloCard">
-            <h5> <b>${producto.nombre} </b>
+            <h5> ${producto.nombre}
             </h5>
             </div>
             <div class="contenedorDescripcionCard">
@@ -74,7 +74,7 @@ function actualizarMenu() {
             <p> <b>$  ${producto.precio}  COP</b> </p>
             </div>
             <!-- contenedor boton de la card -->
-            <div class="contenedorBotonCard"><button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})"><i class="bi bi-cart-plus iconoBotonCard"></i>
+            <div class="contenedorBotonCard"><button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})"><i class="bi bi-cart4 iconoBotonCard"></i>
             </button>
             </div>
         </div>

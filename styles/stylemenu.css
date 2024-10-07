@@ -1,40 +1,60 @@
 
+.imgFondoBanner{
+    /* para pruebas */
+}
+
+.contenedorimgestatica img{
+    object-fit: cover;
+    width: 600px;
+}
+
+.carruselbanners img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
 .contenidoMenuBanner{
     width: 95vw;
     height: 80vh;
     display: grid;
-    grid-template-columns:  1fr 0.2fr ;
+    grid-template-columns:  1fr 0.5fr ;
     gap: 20px;
 }
 .contenidoMenu{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    margin: auto;
     gap: 20px
 
 }
-
+.contenedorTituloCard h5{
+    font-size: 25px;
+    font-weight: bold;
+}
 .producto{
+margin: auto;
 position: relative;
-border: 2px solid rgb(73, 19, 57);
+border: 2px solid #70349E;
 border-radius: 10%;
 text-align: center;
-padding: 10px 0px;
+padding: 10px 10px;
 box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 width: 300px;
-height: 300px;
+height: 350px;
 }
 
 .producto button {
 padding: 2vh 1.2vw;
 border-radius: 50%;
-background-color: blueviolet;
+background-color: #70349E;
 }
 
 
 .producto img{
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 140px;
 }
 
 .tamañoIcono{
@@ -43,8 +63,8 @@ background-color: blueviolet;
 }
 
 .contenedorIcono{
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background-color: grey;
     display: flex;
@@ -56,7 +76,7 @@ background-color: blueviolet;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: rgb(152, 12, 180);
+    background-color: #70349E;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,11 +84,14 @@ background-color: blueviolet;
 
 .textoCentrado{
     text-align: center;
+    padding-left: 1.5%;
 }
 
 .fondo1{
     display: grid;
     grid-template-rows: 1fr 20px;
+
+
     
 }
 
@@ -84,12 +107,10 @@ background-color: blueviolet;
 .fondo2{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     height: 80vh;
-}
-.imgCarrusel{
-   display: block;
+    
 }
 
 .botonMenu{
@@ -97,12 +118,17 @@ background-color: blueviolet;
     height: 5vh;
     color: white;
     font-size: 15px;
-    background-color: grey;
+    background-color: #70349E;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
     border-radius: 30px;
-    
 }
 
+.contenedorimgestatica{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 .contenedorBotonMenu{
     display: flex;
     justify-content: center;
@@ -111,7 +137,8 @@ background-color: blueviolet;
     height: 5vh;
 }
 .iconoBotonCard{
-    font-size: 25px;
+    font-size: 28px;
+    color: rgba(255, 255, 255);
 }
 .contenedorBotonCard{
     position: absolute;
@@ -122,3 +149,4 @@ background-color: blueviolet;
     text-align: center;
     color: white;
 }
+
