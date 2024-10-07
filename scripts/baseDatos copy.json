@@ -1,11 +1,21 @@
 {
+  "usuarios": [
+    {
+      "id": "admin",
+      "rol": "admin",
+      "nombre": "Software Sinfoni",
+      "correo": "softwaresinfoni@gmail.com",
+      "telefono": "6045555555",
+      "contrasena": "1234"
+    }
+  ],
   "productos": [
     {
       "id": "1",
       "nombre": "Wafle Primavera",
-      "descripcion": "Lleva un waffle con crema dulce y naranja en conserva caramelizada",
+      "descripcion": "Waffle con crema dulce y naranja en conserva caramelizada",
       "categoria": "desayuno",
-      "precio": "14000",
+      "precio": "12500",
       "url": "../img_comidas/DESAYUNOS/Wafle_primavera.png"
     },
     {
@@ -19,7 +29,7 @@
     {
       "id": "3",
       "nombre": "Bowl Exotic",
-      "descripcion": "Incluye mariscos salteados, una base de vegetales (Aguacate, lechuga y acelgas) y huevo estrellado",
+      "descripcion": "Mariscos salteados, una base de vegetales (Aguacate, lechuga y acelgas) y huevo estrellado",
       "categoria": "desayuno",
       "precio": "18500",
       "url": "../img_comidas/DESAYUNOS/Bowl_exotic.png"
@@ -59,25 +69,25 @@
     {
       "id": "8",
       "nombre": "Rojo Escarlata",
-      "descripcion": "pendiente",
+      "descripcion": "Manjar de leche acompañado por cerezas, sobre una cama de red veltet.",
       "categoria": "postre",
-      "precio": "25000",
+      "precio": "16500",
       "url": "../img_comidas/POSTRES/porstreescarlata.jpg"
     },
     {
       "id": "9",
       "nombre": "Vainilla Invierno",
-      "descripcion": "pendiente",
+      "descripcion": "Helado de vainilla, junto a frutos secos y polvo de chocolate amargo.",
       "categoria": "postre",
-      "precio": "25000",
+      "precio": "12500",
       "url": "../img_comidas/POSTRES/Postreinvierno.jpg"
     },
     {
       "id": "10",
       "nombre": "Verde Aguacate",
-      "descripcion": "pendiente",
+      "descripcion": "Helado de aguacate acompañado de uvas chilenas y una crema dulce de espinacas.",
       "categoria": "postre",
-      "precio": "25000",
+      "precio": "12500",
       "url": "../img_comidas/POSTRES/postreverdeagucate.jpg"
     }
   ]

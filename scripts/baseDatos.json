@@ -11,17 +11,33 @@
     {
       "id": "john",
       "rol": "usuario",
-      "nombre": "John Forero",
-      "correo": "johnalexfr@hotmail.com",
-      "telefono": "3202173409",
+      "nombre": "john forero",
+      "correo": "johnforero@hotmail.com",
+      "telefono": "3201235654",
       "contrasena": "John12"
     },
     {
-      "id": "rafa",
+      "id": "Eduard",
       "rol": "usuario",
-      "nombre": "rafa",
+      "nombre": "Eduard Idrobo",
+      "correo": "Eduard@hotmail.com",
+      "telefono": "3201234567",
+      "contrasena": "Eduard12"
+    },
+    {
+      "id": "Mafe",
+      "rol": "usuario",
+      "nombre": "Mafe Saavedra",
+      "correo": "MafeSaavedra@hotmail.com.co",
+      "telefono": "3215165454",
+      "contrasena": "Mafe12"
+    },
+    {
+      "id": "Rafa",
+      "rol": "usuario",
+      "nombre": "RafaArteaga",
       "correo": "rafa@hotmail.com",
-      "telefono": "3202173409",
+      "telefono": "3321546987",
       "contrasena": "Rafa12"
     }
   ],

@@ -90,10 +90,13 @@
               <h3>Iniciar Sesión</h3>
               <input title="Necesita Nombre Usuario" type="text" placeholder="Usuario" name="usuario" id="usuario"
                 required />
-              <input title="Ingrese Contrasena" type="password" name="contrasena" id="contrasena"
-                placeholder="Contrasena" required />
+              <div class="divContrasena">
+                <input title="Ingrese Contrasena" type="password" name="contrasena" id="contrasena"
+                  placeholder="Contrasena" required />
+                  <i id="iconoContrasenaLogin" class="bi bi-eye-fill"></i>
+              </div>
               <input type="submit" value="Ingreso" id="realizarIngreso" />
-              <a href="#" class="olvidoContrasena">¿Olvido Contrasena?</a>
+              <a class="olvidoContrasena">¿Olvido Contrasena?</a>
             </form>
           </div>
 
@@ -107,10 +110,16 @@
               <input title="Ingrese Correo" type="email" name="correo" id="correo" placeholder="Correo" required />
               <input title="Ingrese Teléfono" type="number" name="telefono" id="telefono" placeholder="Teléfono"
                 required />
-              <input title="Ingrese Contrasena" type="password" name="contrasenaR" id="contrasenaR"
-                placeholder="Contrasena" required />
-              <input title="Ingrese Nuevamente Contrasena" type="password" name="validarContrasena"
-                id="validarContrasena" placeholder="Contrasena Nuevamente" required />
+              <div class="divContrasena">
+                <input title="Ingrese Contrasena" type="password" name="contrasenaR" id="contrasenaR"
+                  placeholder="Contrasena" required />
+                  <i id="iconoContrasenaR" class="bi bi-eye-fill"></i>
+              </div>
+              <div class="divContrasena">
+                <input title="Ingrese Nuevamente Contrasena" type="password" name="validarContrasena"
+                 id="validarContrasena" placeholder="Contrasena Nuevamente" required />
+                 <i id="iconoConfirmarContrasena" class="bi bi-eye-fill"></i> <!-- bi-eye-slash -->
+              </div>
               <div class="terminos">
                 <label for="terminosCondiciones">Terminos & Condiciones</label>
                 <input type="checkbox" name="terminosCondiciones" id="terminosCondiciones" required>
@@ -138,12 +147,12 @@
 
       <form action="" id="informacionUsuario">
         <div class="datosPerfil">
-          <label for="usuarioGuardado">Usuario:</label>
-          <input type="text" name="usuarioGuardado" id="usuarioGuardado" placeholder="Nombre de Usuario" disabled>
-          <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" placeholder="Nombre completo del usuario" disabled>
-          <label for="correoGuardado">Correo:</label>
-          <input type="email" name="correoGuardado" id="correoGuardado" placeholder="Correo registrado por el usuario"
+          <label for="aliasUsuario">Usuario:</label>
+          <input type="text" name="aliasUsuario" id="aliasUsuario" placeholder="Nombre de Usuario" disabled>
+          <label for="nombreUsuario">Nombre:</label>
+          <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre completo del usuario" disabled>
+          <label for="correoUsuario">Correo:</label>
+          <input type="email" name="correoUsuario" id="correoUsuario" placeholder="Correo registrado por el usuario"
             disabled>
           <label for="telefonoUsuario">Teléfono</label>
           <input type="number" name="telefonoUsuario" id="telefonoUsuario" placeholder="Numero de teléfono del usuario"
@@ -157,7 +166,7 @@
 
       <div class="botonesPerfil">
         <button> Editar Perfil </button>
-        <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
+        <button id="cerrarSesion"> Cerrar Sesión </button>
       </div>
 
       <div class="suscripcionYPLatos">
@@ -196,21 +205,21 @@
 
       <form action="" id="informacionAdministrador">
         <div class="datosPerfil">
-          <label for="usuarioGuardado2">Usuario:</label>
-          <input type="text" name="usuarioGuardado2" id="usuarioGuardado2" placeholder="Nombre de Usuario" disabled>
-          <label for="nombre2">Nombre:</label>
-          <input type="text" name="nombre2" id="nombre2" placeholder="Nombre completo del usuario" disabled>
-          <label for="correoGuardado2">Correo:</label>
-          <input type="email" name="correoGuardado2" id="correoGuardado2" placeholder="Correo registrado por el usuario"
+          <label for="aliasAdministrador">Usuario:</label>
+          <input type="text" name="aliasAdministrador" id="aliasAdministrador" placeholder="Nombre de Usuario" disabled>
+          <label for="nombreAdministrador">Nombre:</label>
+          <input type="text" name="nombreAdministrador" id="nombreAdministrador" placeholder="Nombre completo del usuario" disabled>
+          <label for="correoAdministrador">Correo:</label>
+          <input type="email" name="correoAdministrador" id="correoAdministrador" placeholder="Correo registrado por el usuario"
             disabled>
-          <label for="telefono2">Teléfono</label>
-          <input type="number" name="telefono2" id="telefono2" placeholder="Numero de teléfono del usuario" disabled>
+          <label for="telefonoAdministrador">Teléfono</label>
+          <input type="number" name="telefonoAdministrador" id="telefonoAdministrador" placeholder="Numero de teléfono del usuario" disabled>
         </div>
       </form>
 
       <div class="botonesPerfil">
         <button> Editar Perfil </button>
-        <button id="cerrarSesion" onclick="cerrarSesion()"> Cerrar Sesión </button>
+        <button id="cerrarSesion"> Cerrar Sesión </button>
       </div>
 
 
@@ -249,7 +258,7 @@
             <p class="parrafoImagen"> Imagen :</p>
             <div class="divUrlProducto" ><!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
               <label for="urlProducto"><i class="bi bi-plus-square-fill"></i></label>
-              <input type="file" name="urlProducto" id="urlProducto" disabled required>
+              <input type="file" name="urlProducto" id="urlProducto" accept=".jpeg,.jpg,.png,.svg" disabled required>
               <p id="nombreUrlImagen"> no se ha cargado un archivo </p>
             </div>
 
@@ -391,9 +400,10 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="../scripts/llamarNavFooter.js"></script>
-  <script src="../scripts/scriptlogin.js" type="module"></script>
   <script src="../scripts/usuarioRegistrado.js"></script>
-  <script src="../scripts/scriptloginRegistrado.js"></script>
+
+  <script src="../scripts/scriptloginRegistro.js" type="module"></script>
+  <script src="../scripts/scriptloginIngresando.js" type="module"></script>
   <script src="../scripts/scriptModificarProducto.js" type="module"></script>
 
 </body>
