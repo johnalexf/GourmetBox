@@ -64,9 +64,9 @@ function mostrarDivBodyLogin(){
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
 if(localStorage.getItem('usuario') != undefined){
   if( localStorage.getItem('usuario').length != 0 ){
+    datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
     averiguarTipoUsuario();
 
-    datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
     if(indiceTipoUsuario == 1) mostrarDatosPerfilAdministrador();
     else   mostrarDatosPerfilUsuario();
 
@@ -79,7 +79,7 @@ if(localStorage.getItem('usuario') != undefined){
 
 //funcion para averiguar si el usuario es administrador
 function averiguarTipoUsuario(){
-  tipoUsuario = localStorage.getItem('usuario');
+  tipoUsuario = datosUsuario.rol;
   if(tipoUsuario == 'admin'){
       indiceTipoUsuario = 1 ;
   }else{
