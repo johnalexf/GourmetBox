@@ -39,6 +39,14 @@
       "correo": "rafa@hotmail.com",
       "telefono": "3321546987",
       "contrasena": "Rafa12"
+    },
+    {
+      "id": "petronilo",
+      "rol": "admin",
+      "nombre": "petronilo2",
+      "correo": "petronilo@gmail.com",
+      "telefono": "3222792799",
+      "contrasena": "Soraikudo1"
     }
   ],
   "productos": [

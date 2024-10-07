@@ -234,7 +234,7 @@ function vistaPreliminar() {
             <div class="contenedorDescripcionCard"><p>${inputsProducto[2].value}</p></div>
             <div class="contenedorPrecioCard"><p> <b>Precio ${inputsProducto[3].value}</b> </p></div>
             <div class="contenedorBotonCard">
-              <button class="botonCardMenu"><i class="bi bi-cart-plus iconoBotonCard"></i></button>
+              <button class="botonCardMenu"><i class="bi bi-cart4 iconoBotonCard"></i></button>
              </div>
              `;
     divProducto.innerHTML = html;
