@@ -11,18 +11,10 @@
     {
       "id": "john",
       "rol": "usuario",
-      "nombre": "John Forero",
-      "correo": "johnalexfr@hotmail.com",
-      "telefono": "3202173409",
+      "nombre": "john forero",
+      "correo": "johnforero@hotmail.com",
+      "telefono": "3201235654",
       "contrasena": "John12"
-    },
-    {
-      "id": "rafa",
-      "rol": "usuario",
-      "nombre": "rafa",
-      "correo": "rafa@hotmail.com",
-      "telefono": "3202173409",
-      "contrasena": "Rafa12"
     }
   ],
   "productos": [

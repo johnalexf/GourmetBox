@@ -364,8 +364,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #botonSi, #botonNo{
-    background-color: white;
-    color: black;
+    background-color: rgba(105, 91, 199, 0.534);
+    color: white;
     padding: 10px 15px;
     border: 2px solid #70349E;
     border-radius: 6px;
@@ -374,11 +374,13 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 50px; 
     text-align: center;
     box-shadow: 3px 3px rgba(0,0,0,0.25);
-    transition: background-color .3s;
+    transition: background-color .9s;
 }
 
 #botonSi:hover, #botonNo:hover{
-    background-color: rgba(105, 91, 199, 0.534);
+    background-color: white;
+    color: rgba(105, 91, 199, 0.534);
+
 }
 
 @media(width < 400px){

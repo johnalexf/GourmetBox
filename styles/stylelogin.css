@@ -197,6 +197,28 @@ sale hacia la der */
     padding-left: 20px;
 }
 
+.divContrasena{
+    position: relative;
+    padding: 0px;
+}
+
+.divContrasena input{
+    width: 100%;
+}
+
+.divContrasena i{
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    color: #76767684;
+    top: 4px;
+    right: 10px;
+}
+
+.divContrasena i:hover{
+    color: #70349E;
+}
+
 /* Estilos para los botones  */
 #realizarIngreso,
 #realizarRegistro {
@@ -322,11 +344,6 @@ h6 {
     text-align: justify;
     color: rgb(0, 0, 0);
     position: relative;
-}
-
-.cerrarTerminos {
-    position: absolute;
-    margin-right: 16%;
 }
 
 .cerrar,

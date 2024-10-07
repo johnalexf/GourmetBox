@@ -31,7 +31,6 @@ if( validacion == 'enviado'){
   }
 }
 
-
 // Cerrar la ventana Mensaje Exitoso cuando se haga clic en la "X"
 cerrarModalExitoso.onclick = function() {
   modalMensajeExitoso.style.display = "none";

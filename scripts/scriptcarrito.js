@@ -1,7 +1,7 @@
 //let idProductosCarrito = [];
 let listaCompras = [];
 
-
+//Obtener de local storage la lista de compras si esta creada
 if(localStorage.getItem('listaCompras')!=undefined){
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
