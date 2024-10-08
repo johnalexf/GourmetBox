@@ -156,6 +156,45 @@ export async function verificarSiUsuarioExiste(usuario) {
         return retorno;
       } catch (error) {
         console.error('Error:', error.message);
-      }
+      } 
+}
+
+export async function verificarContrasena(usuario,contrasena) {
+            
+    try {
+        // Realiza una solicitud fetch para obtener el JSON
+        const respuesta = await fetch(urlUsuariosLocal);
+        
+        // Verifica si la solicitud fue exitosa
+        if (!respuesta.ok) {
+          throw new Error('Error al obtener el JSON');
+        }
     
+        // Convierte la respuesta a un objeto JavaScript
+        const datos = await respuesta.json();
+        const usuarios = await datos.usuarios;
+        let usuarioSiExiste = false;
+        let contrasenaCorrecta = false;
+        let datosUsuario = {};
+
+        usuarios.forEach(element => {
+            if(element.id == usuario){
+                usuarioSiExiste = true;
+                if(contrasena == element.contrasena ){
+                    contrasenaCorrecta = true;
+                    datosUsuario = {
+                        id : element.id,
+                        rol: element.rol,
+                        nombre: element.nombre,
+                        correo: element.correo,
+                        telefono : element.telefono
+                    }
+                }
+            }
+        });
+
+        return [usuarioSiExiste, contrasenaCorrecta, datosUsuario];
+      } catch (error) {
+        console.error('Error:', error.message);
+      } 
 }

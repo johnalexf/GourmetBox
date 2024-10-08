@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /* Prueba para poder mantener el footer siempre en la parte de abajo */
@@ -11,6 +12,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
+
 }
 
 
@@ -52,13 +54,13 @@ h3 {
     width: 200px;
     height: 40px;
     border-radius: 15px;
-    border: 2px solid #70349E;
+    /* border: 2px solid #70349E; */
     background-color: rgba(105, 91, 199, 0.534);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
 .bodyLogin button:hover {
-    background-color: white;
+    background-color: rgba(105, 91, 199, 0.534);
 }
 
 
@@ -68,7 +70,7 @@ h3 {
     justify-content: center;
     align-items: center;
     min-height: 700px;
-    background-color: rgba(255, 255, 255, 0.979);
+    background-color: rgb(255, 255, 255);
     /* este es el fondo se le puede colocar la imagen*/
     transform: 0.5s;
 }
@@ -90,7 +92,10 @@ de los títulos y botones de ingreso y registro */
     width: 100%;
     height: 420px;
     display: flex;
-    background: rgba(105, 91, 199, 0.274);
+    background-image: url("../img/zonagris.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     border-radius: 15px;
 }
@@ -197,6 +202,28 @@ sale hacia la der */
     padding-left: 20px;
 }
 
+.divContrasena{
+    position: relative;
+    padding: 0px;
+}
+
+.divContrasena input{
+    width: 100%;
+}
+
+.divContrasena i{
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    color: #76767684;
+    top: 4px;
+    right: 10px;
+}
+
+.divContrasena i:hover{
+    color: #70349E;
+}
+
 /* Estilos para los botones  */
 #realizarIngreso,
 #realizarRegistro {
@@ -269,9 +296,13 @@ sale hacia la der */
 }
 
 
-.modal1, .modalterminosP, .modalVistaPrevia {
-    display: none; /* Desaparece el contenedor */
-    position: fixed; /*Mantiene la pantalla fija asi se haga scroll  */
+.modal1,
+.modalterminosP,
+.modalVistaPrevia {
+    display: none;
+    /* Desaparece el contenedor */
+    position: fixed;
+    /*Mantiene la pantalla fija asi se haga scroll  */
     z-index: 2;
     top: 0;
     left: 0;
@@ -280,7 +311,8 @@ sale hacia la der */
     background-color: rgba(0, 0, 0, 0.208);
 }
 
-.modal1-contenedor, .modalVistaPreviaContenido{
+.modal1-contenedor,
+.modalVistaPreviaContenido {
     background-color: white;
     margin: 5% auto;
     padding: 20px;
@@ -324,11 +356,6 @@ h6 {
     position: relative;
 }
 
-.cerrarTerminos {
-    position: absolute;
-    margin-right: 16%;
-}
-
 .cerrar,
 .cerrarTerminos,
 .cerrarVistaPrevia {
@@ -336,16 +363,18 @@ h6 {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    float: right; /* lo obliga a posicionarse a la derecha  */
-    position: absolute;/* elimina su posición normal en un documento */
-    top: 10px; 
-    right: 15px; 
-    font-size: 25px; 
+    float: right;
+    /* lo obliga a posicionarse a la derecha  */
+    position: absolute;
+    /* elimina su posición normal en un documento */
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
     cursor: pointer;
-    box-shadow: 3px 8px rgba(0,0,0,0.25);
+    box-shadow: 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-.cerrar:hover, 
+.cerrar:hover,
 .cerrarTerminos:hover,
 .cerrarVistaPrevia:hover {
     color: rgb(174, 59, 59);

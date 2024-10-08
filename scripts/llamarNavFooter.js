@@ -18,8 +18,3 @@ fetch('../HTML/footer.html')
     })
     .catch(error => console.error('Error al cargar el footer:', error));
  
-
-
-
-
-// nameUser.textContent = localStorage.getItem('usuario');

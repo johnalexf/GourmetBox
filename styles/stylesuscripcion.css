@@ -78,9 +78,9 @@
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
-@media (min-width: 760px) {
+@media (min-width: 920px) {
     .Suscripcion {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         /* Solo 2 columnas en pantallas grandes */
         max-width: 90%;
         /* Limita el ancho máximo en pantallas grandes */
@@ -109,7 +109,7 @@
     /* Ajusta según sea necesario */
     right: -4px;
     /* Ajusta según sea necesario */
-    background-color: #703493;
+    background-color: #d6cb4f;
     border: none;
     color: white;
     border-radius: 50%;

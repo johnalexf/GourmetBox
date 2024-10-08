@@ -1,3 +1,7 @@
+//Este javascript permite darle dinamismo a los div de iniciar sesión y registro 
+//Ademas permite realizar el registro de un nuevo usuario, haciendo las respectivas
+//validaciones de los campos requeridos y almacenándolos en baseDatos.json
+
 //javascript que realiza las funciones necesarias para eliminar o modificar un usuario
 import * as modificarJSON from "../scripts/scriptModificarJSON.js";
 
@@ -20,6 +24,8 @@ const terminos = document.getElementById("terminosCondiciones");
 
 //Formulario de registro
 let formularioRegistro = document.getElementById('formularioR');
+let iconoContrasenaR = document.getElementById('iconoContrasenaR');
+let iconoConfirmarContrasena = document.getElementById('iconoConfirmarContrasena');
 
 // Cuando oprima el botón de registro para cambio de ventana, activa la funcionalidad de los contenedores para hacer el cambio de formularios
 registroBotonCambioVentana.onclick = function(){
@@ -33,25 +39,46 @@ loginBotonCambioVentana.onclick = function(){
     bodyLogin.classList.remove('active');
 }
 
-// Cerrar la ventana Mensaje Exitoso cuando se haga clic en la "X"
-cerrarModalExitoso.onclick = function() {
-  modalMensajeExitoso.style.display = "none";
-}
+//código para mostrar la contraseña
+iconoContrasenaR.addEventListener("click",()=>{
+  if(iconoContrasenaR.classList[1] == 'bi-eye-fill'){
+    iconoContrasenaR.classList.remove('bi-eye-fill');
+    iconoContrasenaR.classList.add('bi-eye-slash');
+    formularioRegistro.contrasenaR.type  = "text";
+  }else{
+    iconoContrasenaR.classList.remove('bi-eye-slash');
+    iconoContrasenaR.classList.add('bi-eye-fill');
+    formularioRegistro.contrasenaR.type  = "password";
+  }
+});
+
+//código para mostrar la contraseña en el campo confirmarContrasena
+iconoConfirmarContrasena.addEventListener("click",()=>{
+  if(iconoConfirmarContrasena.classList[1] == 'bi-eye-fill'){
+    iconoConfirmarContrasena.classList.remove('bi-eye-fill');
+    iconoConfirmarContrasena.classList.add('bi-eye-slash');
+    formularioRegistro.validarContrasena.type  = "text";
+  }else{
+    iconoConfirmarContrasena.classList.remove('bi-eye-slash');
+    iconoConfirmarContrasena.classList.add('bi-eye-fill');
+    formularioRegistro.validarContrasena.type  = "password";
+  }
+});
 
 
+// mostrar términos y condiciones
 terminos.addEventListener("click", () => {
   modalTerminos.style.display = "block";
 });
-
-
-
-// Cerrar la ventana Mensaje Exitoso cuando se haga clic en la "X"
+// Cerrar la ventana de términos y condiciones cuando se haga clic en la "X"
 cerrarTerminos.addEventListener("click", () => {
   modalTerminos.style.display = "none";
-
 });
 
-
+// Cerrar la ventana bienvenido cuando se haga clic en la "X"
+cerrarModalExitoso.onclick = function() {
+  modalMensajeExitoso.style.display = "none";
+}
 
 
 //Código para validación de datos de correo y contraseña
@@ -63,7 +90,7 @@ const expresiones = {
 }
 
 
-//funcion que realiza validacion del valor de usuario, si contiene espacio
+//funcion que realiza validación del valor de usuario, si contiene espacio
 //entre palabras se muestra un mensaje.
 function validarUsuario(){
   if(!usuarioR.value.includes(" ")){
@@ -93,7 +120,7 @@ formularioRegistro.correo.addEventListener('input', function(){
   }
 });
 
-//método de escucha cuando hay cambios en el input de teléfono y verificar que cumpla la condición
+//método de escucha cuando hay cambios en el input de teléfono y verificar que cumpla la condición al momento de dar enviar
 formularioRegistro.telefono.addEventListener('input', function(){
   
   if(!expresiones.telefono.test(formularioRegistro.telefono.value)){
@@ -106,30 +133,26 @@ formularioRegistro.telefono.addEventListener('input', function(){
   }
 });
 
-//método de escucha para mostrar siempre el mensaje de advertencia de la clave
-// creación de variables de las dos contraseñas
-let contrasenaRegistro = document.getElementById('contrasenaR');
-let confirmacionContrasenaRegistro = document.getElementById('validarContrasena')
 
 function verificarContrasenaAdecuada(){
-  if(expresiones.contrasena.test(contrasenaR.value)){
-    contrasenaRegistro.setCustomValidity('');
+  if(expresiones.contrasena.test(formularioRegistro.contrasenaR.value)){
+    formularioRegistro.contrasenaR.setCustomValidity('');
    }else{
-    contrasenaRegistro.setCustomValidity(
+    formularioRegistro.contrasenaR.setCustomValidity(
       'La contraseña debe tener al menos 6 caracteres, una mayúscula y un número.'
     );
-    contrasenaRegistro.reportValidity(); //habilita el mensaje de advertencia
+    formularioRegistro.contrasenaR.reportValidity(); //habilita el mensaje de advertencia
    }
 }
 
 function verificarContrasenaIguales(){
-  if(confirmacionContrasenaRegistro.value === contrasenaRegistro.value){
-    confirmacionContrasenaRegistro.setCustomValidity('');
+  if(formularioRegistro.contrasenaR.value === formularioRegistro.validarContrasena.value){
+    formularioRegistro.validarContrasena.setCustomValidity('');
   }else{
-     confirmacionContrasenaRegistro.setCustomValidity(
+    formularioRegistro.validarContrasena.setCustomValidity(
        'Las contraseñas no coinciden.'
      ); //Se le asigna el mensaje de advertencia
-     confirmacionContrasenaRegistro.reportValidity(); //se muestra el mensaje
+     formularioRegistro.validarContrasena.reportValidity(); //se muestra el mensaje
   }
 }
 
@@ -140,14 +163,14 @@ window.addEventListener('click', (event) =>{
   if(event.target.id == "usuarioR"){validarUsuario();}
 })
 
-//método de escucha sobre cambios en el input de contrasenaRegistro para verificar que cumpla la expresión
-contrasenaRegistro.addEventListener('input', verificarContrasenaAdecuada)
+//método de escucha sobre cambios en el input de contrasenaR para verificar que cumpla la expresión
+formularioRegistro.contrasenaR.addEventListener('input', verificarContrasenaAdecuada)
 
-//método de escucha sobre cambios en el input de confirmacionContrasenaRegistro para verificar que cumpla la expresión
-confirmacionContrasenaRegistro.addEventListener('input',verificarContrasenaIguales)
+//método de escucha sobre cambios en el input de validar contraseña para verificar que cumpla la expresión
+formularioRegistro.validarContrasena.addEventListener('input',verificarContrasenaIguales)
 
 
-document.getElementById('formularioR').addEventListener('submit', async function(event) {
+formularioRegistro.addEventListener('submit', async function(event) {
     event.preventDefault();
     validarUsuario();
     
@@ -167,6 +190,7 @@ document.getElementById('formularioR').addEventListener('submit', async function
       false
       );
       modalMensajeExitoso.style.display = 'block'; 
+      formularioRegistro.reset();
     }else{
       formularioRegistro.usuarioR.setCustomValidity('El usuario ya existe.');
       formularioRegistro.usuarioR.reportValidity();
