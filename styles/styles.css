@@ -1,0 +1,332 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    justify-content: center;
+}
+
+
+
+.seccionEnlaces {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    justify-content: space-between;
+    place-content: center;
+    align-items: center;
+}
+
+.enlaceMenu {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 580px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+.enlaceMenu span,
+.enlaceSuscripcion span{
+    color: #70349E;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.seccionEnlaces p{
+    font-size: 32px;
+}
+
+.btnMenu a,
+.enlaceMenu a,
+.enlaceSuscripcion a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 100px; 
+    border-radius: 50px;
+    border: 2px solid #70349E;
+    background-color: rgba(105, 91, 199, 0.534);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
+}
+
+.btnMenu a:hover,
+.enlaceMenu a:hover,
+.enlaceSuscripcion a:hover {
+    color: #70349E;
+    background-color: white;
+}
+
+
+.fondoEnlaces {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.enlaceSuscripcion {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 580px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+
+/* estilos carusel de platos y titulos en menu */
+/* Imagen de fondo tenedores y tamaño y estructura grid */
+.favoritos {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-template-rows: 80% 20%;
+    background-image: url("../img_comidas/CARRUSEL-INDEX/fondoC.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-between;
+}
+
+/* lado derecho y centrado para contenedor imagen */
+.contenedor-slider {
+    width: 100%;
+    height: 480px;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    position: relative;
+    margin-left: 200px;
+    margin-top: 25px;
+}
+
+.btnMenu {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    text-align: center;
+    margin-left: 170px;
+    padding-top: 35px;
+}
+
+/* dentro de su contenedor las imagenes se ubican centradas y con un tamaño */
+.contenedor-slider .plato1,
+.contenedor-slider .plato2,
+.contenedor-slider .plato3,
+.contenedor-slider .plato4,
+.contenedor-slider .plato5,
+.contenedor-slider .plato6   {
+    position: absolute;
+    place-content: center;
+    text-align: center;
+    width: 450px;
+    height: 450px;
+}
+
+/* las imagenes se ajustan a su contenedor y tiempo en transicion */
+.contenedor-slider img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+/* inicialmente el plato 1 es el que se muestra */
+.contenedor-slider .plato1 img {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Los demas se ocultan  */
+.contenedor-slider .plato2 img,
+.contenedor-slider .plato3 img,
+.contenedor-slider .plato4 img,
+.contenedor-slider .plato5 img,
+.contenedor-slider .plato6 img {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* esta seccion se pondra el menu a la derecha */
+.menu {
+    width: 600px;
+    display: grid;
+    align-content: center; 
+    place-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+/* la imagen que ira debajo de la descripcion del menu posicion por grid*/
+.imagenMenu{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+/* se le da un tamaño a la imagen */
+.imagenMenu img{
+    width: 390px;
+    height: 530px;
+}
+
+/* misma posicion que la imagen letras blancas */
+.itemFavoritos {
+    margin: auto;
+    padding-top: 130px;
+    color: white;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* tiempo en transicion del cambio en tamaño letra y color */
+.itemFavoritos p span {
+    transition: 1s ease;
+}
+
+/* imagen del titulo Favoritos */
+.tituloUbicanos,
+.tituloFavoritos,
+.tituloComentarios {
+    background-image: url("../img_comidas/CARRUSEL-INDEX/banners_menu.jpg");
+    background-position: center;
+    place-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 0;
+    color: white;
+}
+
+
+/* seccion cinta de scroll lateral */
+/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
+.subtitle {
+    grid-column: 1 / -1;
+}
+
+.cinta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #703493;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+    margin: 0 2em;
+    transition: transform 0.2s ease; 
+}
+
+.scroll div {
+    display: flex;
+    gap: 2em;
+}
+
+.scroll p {
+    font-size: 25px;
+    color: rgb(217, 217, 87);
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 10px;
+}
+
+
+
+/* Estilos cards de  Recomendaciones*/
+
+.slide-container{
+    max-width: 1200px;
+    width: 100%;
+}
+
+.slide-content {
+    margin: 0 40px;
+}
+
+.card .textoCard img{
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: rgba(112, 52, 158, 0.158);
+    width: 330px;
+    height: 360px;
+}
+
+.textoCard{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.textoCard h2 {
+    font-size: 24px;
+}
+.textoCard h4{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+/* Estilos para la sección de ubicación y datos de la empresa
+    El estilo principal del contenedor información es el mismo que el de formulario
+*/
+
+.informacion {
+    width: 100%;
+    justify-content: space-between;
+    padding: 40px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.informacion .datos {
+    grid-column: 1/2;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    border: 1px solid #70349E;
+}
+
+/* párrafos dentro de información de contacto */
+.ajusteParrafo {
+    margin: 0%;
+}
+
+/* Estilo para el div que contiene el mapa */
+.ubicacion {
+    grid-column: 2/3;
+    border-radius: 30px;
+}
+
+.mapa {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid #70349E;
+}
