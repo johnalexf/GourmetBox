@@ -44,13 +44,20 @@ h3 {
 }
 
 /* Estilos comunes entre el titulo y cada uno de los productos agregados */
-.tituloCuadroCompras, .producto{
+.tituloCuadroCompras, .carrito{
     margin: auto;
-    max-width: 800px;
+    max-width: 1000px;
     border-radius: 20px;
     border: 2px solid black;
     display: grid;
 }
+
+.carrito{
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
 
 /* Estilos para el titulo de compras, este se distribuye en cuatro columnas la primera tiene el doble de tamaño que las demás */
 .tituloCuadroCompras{
@@ -70,19 +77,27 @@ h3 {
 
 /* Contenedor de todos los productos que se van agregando */
 /* Se le da un padding para separarlo del titulo de compras */
+
+.productoCarrito{
+    margin: auto;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 2px solid black;
+    display: grid;
+} 
 .productosAgregados{
     padding: 1px;
 }
 
 /* contenedor del primer producto */
-.producto{
+.productoCarrito{
     margin-bottom: 20px;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
 }
 
-.producto img{
+.productoCarrito img{
     border-radius: 20px;
     margin: 10px;
     width: 100px;
@@ -90,7 +105,7 @@ h3 {
     border: 1px solid black;
 }
 
-.producto p{
+.productoCarrito p{
     width: 100%;
     margin: auto;
     text-align: center;
@@ -146,7 +161,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* En span se encuentra mensajes de precio por unidad y subtotal de cada producto, que se mostraran en pantallas pequeñas */
-.producto span{
+.productoCarrito span{
     display: none;
 }
 
@@ -178,7 +193,7 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     /* contenedor del primer producto */
-    .producto{
+    .productoCarrito{
         padding: 5%;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -186,12 +201,12 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     /* Poner el primer elemento párrafo el cual es el titulo de forma que ocupe dos columnas */
-    .producto p:first-of-type {
+    .productoCarrito p:first-of-type {
         grid-column: 1/3;
         
     }
 
-    .producto img{
+    .productoCarrito img{
         margin: auto;
         grid-row-start: 2;
         grid-row-end: 6;
@@ -200,17 +215,22 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
     /* Con las siguientes instrucciones manipulo la ubicación de los elementos internos para que se ajuste a lo deseado */
-    .producto div:first-of-type{
+    .productoCarrito div:first-of-type{
         grid-row-start: 3;
     }
-    .producto p:nth-of-type(2){
+    .productoCarrito p:nth-of-type(2){
         grid-row-start: 4;
     }
-    .producto p:nth-of-type(3){
+    .productoCarrito p:nth-of-type(3){
         grid-row-start: 5;
     }
-    .producto span{
+    .productoCarrito span{
         display: inline-block;
     }
 }
+
+/* .producto{
+    width: auto !important; 
+    height: auto !important;
+    } */
 

@@ -300,6 +300,11 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
     }
 })
 
+let clave = "Soraikudo1?";
+console.log(clave);
+console.log(modificarJSON.encrypt_data(clave));
+
+
 
 
 

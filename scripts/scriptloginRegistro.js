@@ -186,7 +186,7 @@ formularioRegistro.addEventListener('submit', async function(event) {
       formularioRegistro.nombreR.value,
       formularioRegistro.correo.value,
       formularioRegistro.telefono.value,
-      formularioRegistro.contrasenaR.value,
+      modificarJSON.encrypt_data(formularioRegistro.contrasenaR.value),
       false
       );
       modalMensajeExitoso.style.display = 'block'; 

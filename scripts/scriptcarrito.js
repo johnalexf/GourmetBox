@@ -1,4 +1,4 @@
-//let idProductosCarrito = [];
+//let idProductosCarrito = []; 
 let listaCompras = [];
 
 //Obtener de local storage la lista de compras si esta creada
@@ -6,12 +6,17 @@ if(localStorage.getItem('listaCompras')!=undefined){
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
 
+console.log(listaCompras[0].subtotal);
 let productosAgregados = document.querySelector(".productosAgregados");
 let contenidoCarritoHTML = "";
 
 
 function actualizarCarrito(){
-    contenidoCarritoHTML = ""
+    
+    
+    productos();
+    resumenDeCompra();
+
     listaCompras.forEach(producto => {
         producto.subtotal = producto.precio * producto.cantidad;
         contenidoCarritoHTML += 
@@ -36,7 +41,21 @@ function actualizarCarrito(){
     // localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
     localStorage.setItem('listaCompras',JSON.stringify(listaCompras));
 }
-actualizarCarrito();
+//actualizarCarrito();
+
+//inicio resumenDeCompra();
+function productos(){
+    contenidoCarritoHTML = ""
+}
+// fin funcion resumenDeCompra();
+
+
+
+//inicio resumenDeCompra();
+function resumenDeCompra(){
+contenidoCarritoHTML = ""
+}
+// fin funcion resumenDeCompra();
 
 function encontrarIndiceListaObjetos(id){
     let index = 0;

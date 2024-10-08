@@ -14,3 +14,5 @@ archivo Json-server.md hay una pequeña pero importante teoría,
 que explica al detalle cada uno.
 
 Para ingresar 
+usuario:    admin
+contraseña: MeRj2024

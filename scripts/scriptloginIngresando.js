@@ -152,7 +152,7 @@ formularioIngreso.addEventListener( 'submit', async function(event) {
   let usuarioExiste = false;
   let usuario = formularioIngreso.usuario.value;
   let contrasenaCorrecta = false;
-  let contrasenaAVerificar = formularioIngreso.contrasena.value;
+  let contrasenaAVerificar = modificarJSON.encrypt_data(formularioIngreso.contrasena.value);
   
   
   [usuarioExiste, contrasenaCorrecta, datosUsuario] = await modificarJSON.verificarContrasena(usuario,contrasenaAVerificar);

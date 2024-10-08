@@ -6,7 +6,7 @@
       "nombre": "Software Sinfoni",
       "correo": "softwaresinfoni@gmail.com",
       "telefono": "6045555555",
-      "contrasena": "1234"
+      "contrasena": "1e5a20531399139d"
     },
     {
       "id": "john",
@@ -14,7 +14,7 @@
       "nombre": "john forero",
       "correo": "johnforero@hotmail.com",
       "telefono": "3201235654",
-      "contrasena": "John12"
+      "contrasena": "1d3828ef1337"
     },
     {
       "id": "Eduard",
@@ -22,7 +22,7 @@
       "nombre": "Eduard Idrobo",
       "correo": "Eduard@hotmail.com",
       "telefono": "3201234567",
-      "contrasena": "Eduard12"
+      "contrasena": "1b392df62ccd1337"
     },
     {
       "id": "Mafe",
@@ -30,7 +30,7 @@
       "nombre": "Mafe Saavedra",
       "correo": "MafeSaavedra@hotmail.com.co",
       "telefono": "3215165454",
-      "contrasena": "Mafe12"
+      "contrasena": "1e56281e1337"
     },
     {
       "id": "Rafa",
@@ -38,7 +38,7 @@
       "nombre": "RafaArteaga",
       "correo": "rafa@hotmail.com",
       "telefono": "3321546987",
-      "contrasena": "Rafa12"
+      "contrasena": "204a281a1337"
     },
     {
       "id": "petronilo",
@@ -46,7 +46,15 @@
       "nombre": "petronilo2",
       "correo": "petronilo@gmail.com",
       "telefono": "3222792799",
-      "contrasena": "Soraikudo1"
+      "contrasena": "20bc2cca29502df92b6e"
+    },
+    {
+      "id": "prueba",
+      "rol": "usuario",
+      "nombre": "prueba",
+      "correo": "prueba@hotmail.com",
+      "telefono": "32012345678",
+      "contrasena": "1f932dfa268a1337"
     }
   ],
   "productos": [

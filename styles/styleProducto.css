@@ -1,0 +1,55 @@
+/* Cards de productos */
+
+.producto{
+    margin: auto;
+    position: relative;
+    border: 2px solid #70349E;
+    border-radius: 10%;
+    text-align: center;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    width: 300px;
+    height: 350px;
+    }
+    
+    .producto button {
+    padding: 2vh 1.2vw;
+    border-radius: 50%;
+    background-color: #70349E;
+    }
+    
+    .producto img{
+        border-radius: 50%;
+        height: 140px;
+        width: 140px;
+    }
+
+    .contenedorBotonMenu{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 5vh;
+    }
+    .iconoBotonCard{
+        font-size: 28px;
+        color: rgba(255, 255, 255);
+    }
+    .contenedorBotonCard{
+        position: absolute;
+        right: -5px;
+        bottom: 0px;
+    }
+    .contenedorTituloCard h5{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    @media (width < 400px) {
+        .producto {
+            width: 230px;
+            height: 280px;
+        }
+    }
+    
+    
