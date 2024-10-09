@@ -1,3 +1,6 @@
+Para poder modificar o crear productos y Para
+poder crear nuevos usuarios, debes activar el servidor.
+
 Para activar el servidor ejecutar las siguientes lineas
 
 Instalación de los paquetes necesarios 
@@ -8,12 +11,14 @@ Instalación de los paquetes necesarios
 Activación del servidor
 4. json-server --watch ./scripts/baseDatos.json
 
+Para ingresar como administrador:
+usuario:    admin
+contraseña: MeRj2024
+
 Listo ya puedes probar modificar productos o crear productos, 
 también puedes crear un usuario e ingresar con el mismo;
 si deseas conocer mas a fondo que hace cada comando, en el 
 archivo Json-server.md hay una pequeña pero importante teoría,
 que explica al detalle cada uno.
 
-Para ingresar como administrador:
-usuario:    admin
-contraseña: MeRj2024
+

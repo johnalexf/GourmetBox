@@ -178,9 +178,9 @@ export async function verificarContrasena(usuario,contrasena) {
         let datosUsuario = {};
 
         usuarios.forEach(element => {
-            if(element.id == usuario){
+            if(element.id === usuario){
                 usuarioSiExiste = true;
-                if(contrasena == element.contrasena ){
+                if(contrasena === element.contrasena ){
                     contrasenaCorrecta = true;
                     datosUsuario = {
                         id : element.id,
