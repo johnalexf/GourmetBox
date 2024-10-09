@@ -35,6 +35,7 @@
 </head>
 <body>
 
+  <!-- barra de navegacion -->
     <header>
         <nav
           class="navbar navbar-expand-lg"
@@ -95,9 +96,9 @@
   
     
     
-    <main>
+  <main>
 
-
+      <!-- Banner principal -->
       <div class="seccionEnlaces">
 
         <div class="fondoEnlaces">
@@ -120,45 +121,39 @@
       </div>
 
 
-      <div class="tituloFavoritos">
-        <h2>Favoritos</h2>
-      </div>
+      <!-- seccion de Recomendados -->
+    <div class="tituloFavoritos">
+      <h2>RECOMENDADOS</h2>
+    </div>
 
-
-
-    <div class="favoritos">
+    <!-- slider y menu dinamico -->
+    <div class="favoritos" style="display: none;">
 
       <div class="contenedor-slider">
 
-              <div class="plato1">
-                <img src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png" alt="Exotic">
-              </div>
-
-              <div class="plato2">
-                <img src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png" alt="Wafle">
-              </div>
-
-              <div class="plato3">
-                <img src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png" alt="BowlJunior">
-              </div>
-
-              <div class="plato4">
-                <img src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png" alt="marinadoSenior">
-              </div>
-
-              <div class="plato5">
-                <img src="./img_comidas/CARRUSEL-INDEX//porstreescarlata.jpg" alt="RojoEscarlata">
-              </div>
-
-              <div class="plato6">
-                <img src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.jpg" alt="VainillaInvierno">
-              </div>
+        <div class="plato1">
+          <img src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png" alt="Exotic">
+        </div>
+        <div class="plato2">
+          <img src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png" alt="Wafle">
+        </div>
+        <div class="plato3">
+          <img src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png" alt="BowlJunior">
+        </div>
+        <div class="plato4">
+          <img src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png" alt="marinadoSenior">
+        </div>
+        <div class="plato5">
+          <img src="./img_comidas/CARRUSEL-INDEX//porstreescarlata.jpg" alt="RojoEscarlata">
+        </div>
+        <div class="plato6">
+          <img src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.jpg" alt="VainillaInvierno">
+        </div>
       </div>
 
       <div class="btnMenu">
         <a href="./HTML/menu.html">Ver Mas</a>
       </div>
-
 
       <div class="menu">       
         <div class="imagenMenu">
@@ -177,6 +172,37 @@
         </div>
       </div>
     </div>
+
+    <!-- slider para Celular -->
+
+      <div class="favoritoC">
+        <div class="sliderC">
+          <div class="plato1">
+            <img src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png" alt="Exotic">
+          </div>
+          <div class="plato2">
+            <img src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png" alt="Wafle">
+          </div>
+          <div class="plato3">
+            <img src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png" alt="BowlJunior">
+          </div>
+          <div class="plato4">
+            <img src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png" alt="marinadoSenior">
+          </div>
+          <div class="plato5">
+            <img src="./img_comidas/CARRUSEL-INDEX//porstreescarlata.jpg" alt="RojoEscarlata">
+          </div>
+          <div class="plato6">
+            <img src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.jpg" alt="VainillaInvierno">
+          </div>
+        </div>
+        <div class="btnMenuC">
+          <a href="./HTML/menu.html">Ver Mas</a>
+        </div>
+      </div>
+
+
+
 
     <!-- cinta que se desplaza de manera automatica -->
     <section class="subtitle">
@@ -204,15 +230,16 @@
       </div>
     </section>
 
-
-
+    <!-- seccion de cometarios -->
     <div class="tituloComentarios">
       <h2>NOS PREFIEREN</h2>
     </div>
 
+    <!-- slider comentarios -->
     <div class="slide-container swiper" >
       <div class="slide-content">
         <div class="card-wrapper swiper-wrapper">
+          <!-- primer slide -->
           <div class="card swiper-slide">
             <div class="textoCard">
               <h2>Mengana Cifuentez</h2>
@@ -221,7 +248,7 @@
               <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
             </div>
           </div>
-    
+          <!-- segundo slide -->
           <div class="card swiper-slide">
             <div class="textoCard">
               <h2>Fulanito Perez</h2>
@@ -230,7 +257,7 @@
               <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
             </div>
           </div>
-    
+          <!-- tercer slide -->
           <div class="card swiper-slide">
             <div class="textoCard">
               <h2>Mariano Mash</h2>
@@ -239,7 +266,7 @@
               <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
             </div>
           </div>
-    
+          <!-- cuarto slide -->
           <div class="card swiper-slide">
             <div class="textoCard">
               <h2 class="nombre">Juliana Martinez</h2>
@@ -250,43 +277,40 @@
           </div>
         </div>
       </div>  
-       <!-- If we need pagination -->
+       <!-- Botones Paginacion slider -->
        <div class="swiper-pagination"></div>
 
-       <!-- If we need navigation buttons -->
+       <!-- Botones de Navegacion slider -->
        <div class="swiper-button-prev"></div>
        <div class="swiper-button-next"></div>
     </div>
 
-
-
+    <!-- seccion de ubicacion -->
     <div class="tituloUbicanos">
       <h2>UBICANOS</h2>
     </div>
 
-        <!-- contenedor de la información de la empresa y contiene un mapa (el cual esta generando warnings por una futura actualización de google chrome que bloqueara una cookie que usa el mapa) -->
-        <div class="informacion">
-          <div class="datos">
-              <p class="ajusteParrafo">Ubicación : </p>
-              <p>Colombia, Medellin, Trinidad Carrera 65C Calle 25 -68</p>
-              <p class="ajusteParrafo">Teléfono : </p>
-              <p>555-55555</p>
-              <p class="ajusteParrafo">Correo : </p>
-              <p>softwaresinfoni@gmail.com</p>
-              <p class="ajusteParrafo">Horario : </p>
-              <p>Lunes a Domingo de 8:00 am a 2:00 pm</p>
-          </div>
-          <div class="ubicacion">
-              <iframe class="mapa"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.1413391990873!2d-75.58645609527545!3d6.227200389543579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429c80d129989%3A0x1110527907574dc6!2sCra.%2065C%20%2325-68%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1726643132966!5m2!1ses-419!2sco"
-                  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-          </div>
-      </div> 
+    <!-- contenedor de la información de la empresa y contiene un mapa (el cual esta generando warnings por una futura actualización de google chrome que bloqueara una cookie que usa el mapa) -->
+    <div class="informacion">
+      <div class="datos">
+        <p class="ajusteParrafo">Ubicación : </p>
+        <p>Colombia, Medellin, Trinidad Carrera 65C Calle 25 -68</p>
+        <p class="ajusteParrafo">Teléfono : </p>
+        <p>555-55555</p>
+        <p class="ajusteParrafo">Correo : </p>
+        <p>softwaresinfoni@gmail.com</p>
+        <p class="ajusteParrafo">Horario : </p>
+        <p>Lunes a Domingo de 8:00 am a 2:00 pm</p>
+      </div>
+      <div class="ubicacion">
+        <iframe class="mapa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.1413391990873!2d-75.58645609527545!3d6.227200389543579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429c80d129989%3A0x1110527907574dc6!2sCra.%2065C%20%2325-68%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1726643132966!5m2!1ses-419!2sco"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div> 
 
-
-
-    </main>
+  </main>
 
     <footer
       class="border-top border-success p-4 border-opacity-12"
@@ -343,5 +367,5 @@
 
 
 </body>
-  <!-- commit de entrega tarea 7 -->
+  
 </html>
