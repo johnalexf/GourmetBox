@@ -40,11 +40,21 @@ button{
     cursor: pointer;
 }
 
-.titulo h1, .tituloCuadroCompras h5 {
-    padding: 15px;
+.titulo h1, .tituloCuadroCompras h2 {
     color: #70349E;
-    font-size: 45px;
     text-align: center;
+}
+
+.titulo h1 {
+    font-size: 45px;
+}
+
+.tituloCuadroCompras h2{
+    
+}
+
+hr{
+    line-height: 0px;
 }
 
 .carrito{
@@ -65,12 +75,11 @@ button{
 
 .productoCarrito{
     margin: auto;
-    padding: 10px;
     width: 400px;
     border-radius: 20px;
     /* border: 2px solid black; */
     display: grid;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     grid-template-columns: 1fr 2fr;
     gap: 15px;
     position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
@@ -128,6 +137,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Estilos para los iconos dentro de cantidad */
 .cantidad i{
+    font-weight: bold;
     display: grid;
     place-items: center;
     width: 25px;
@@ -214,7 +224,6 @@ input[type="number"]::-webkit-inner-spin-button {
     right: 15px;
     font-size: 25px;
     cursor: pointer;
-    box-shadow: 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .cerrar:hover{
