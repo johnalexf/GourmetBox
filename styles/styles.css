@@ -4,6 +4,7 @@
     margin: 0;
 }
 
+/* letra para todo el documento */
 main {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -13,7 +14,7 @@ main {
 }
 
 
-
+/* dos secciones centrado */
 .seccionEnlaces {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -23,14 +24,25 @@ main {
     align-items: center;
 }
 
+/* ocupa arriba a la izquierda tamaño fijo */
 .enlaceMenu {
     grid-column: 1/2;
     grid-row: 1/2;
+    width: 100%;
+    height: auto;
     width: 580px;
     height: 300px;
     text-align: center;
     margin: auto;
 }
+
+.seccionEnlaces{
+    width: 100%; 
+    text-align: center;
+}
+.seccionEnlaces .fondoEnlaces img{
+    width: 100%;
+}    
 
 .enlaceMenu span,
 .enlaceSuscripcion span{
@@ -43,6 +55,7 @@ main {
     font-size: 32px;
 }
 
+
 .btnMenu a,
 .enlaceMenu a,
 .enlaceSuscripcion a{
@@ -53,7 +66,7 @@ main {
     border-radius: 50px;
     border: 2px solid #70349E;
     background-color: rgba(105, 91, 199, 0.534);
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .btnMenu a:hover,
@@ -67,6 +80,7 @@ main {
 .fondoEnlaces {
     grid-column: 1/3;
     grid-row: 1/3;
+    width: 100%;
 }
 
 .enlaceSuscripcion {
@@ -78,10 +92,10 @@ main {
     margin: auto;
 }
 
-
 /* estilos carusel de platos y titulos en menu */
 /* Imagen de fondo tenedores y tamaño y estructura grid */
 .favoritos {
+    display: block;
     width: 100%;
     height: 100vh;
     display: grid;
@@ -92,7 +106,6 @@ main {
     background-size: cover;
     justify-content: space-between;
 }
-
 /* lado derecho y centrado para contenedor imagen */
 .contenedor-slider {
     width: 100%;
@@ -119,7 +132,7 @@ main {
 .contenedor-slider .plato3,
 .contenedor-slider .plato4,
 .contenedor-slider .plato5,
-.contenedor-slider .plato6   {
+.contenedor-slider .plato6 {
     position: absolute;
     place-content: center;
     text-align: center;
@@ -285,11 +298,6 @@ main {
 }
 
 
-
-
-
-
-
 /* Estilos para la sección de ubicación y datos de la empresa
     El estilo principal del contenedor información es el mismo que el de formulario
 */
@@ -331,3 +339,178 @@ main {
     border: 1px solid #70349E;
 }
 
+/* media responsive Banner principal tablet*/
+@media (min-width: 401px) and (max-width: 889px) {
+   
+    .enlaceSuscripcion,
+    .enlaceMenu {
+        width: auto;
+        height: auto;
+        padding: 0 30px;
+    }
+
+    .enlaceMenu a,
+    .enlaceSuscripcion a{
+        padding: 10px 50px;
+    }
+
+    .seccionEnlaces .enlaceMenu p,
+    .seccionEnlaces .enlaceSuscripcion p{
+        font-size: 26px;
+    }
+
+    .seccionEnlaces .enlaceMenu span,
+    .seccionEnlaces .enlaceSuscripcion span{
+        font-size: 26px;
+    }
+
+    .contenedor-slider {
+        width: 100%;
+        height: auto;
+        grid-column: 1/2;
+        grid-row: 1/3;
+        position: relative;
+        margin-left: 20px;
+        margin-top: 25px;
+        padding-top: 60px;
+    }
+
+    .contenedor-slider .plato1,
+    .contenedor-slider .plato2,
+    .contenedor-slider .plato3,
+    .contenedor-slider .plato4,
+    .contenedor-slider .plato5,
+    .contenedor-slider .plato6   {
+    width: 350px;
+    height: 350px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 580px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .menu .imagenMenu{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: auto;
+    }
+
+    .menu .itemFavoritos {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: auto;
+        height: auto;
+    }
+
+    .favoritos {
+        background-image: none;
+        width: 100%;
+        height: auto;
+    }
+    .btnMenu {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 0;
+        padding-left: 70px;
+    }
+
+    .btnMenu a{
+        padding: 10px 60px;
+    }
+}
+
+/* media responsive Banner principal Celular*/
+@media (width < 400px){
+
+    /* estilos banner principal */
+    .enlaceSuscripcion,
+    .enlaceMenu {
+        width: auto;
+        height: auto;
+        padding: 0 10px;
+    }
+
+    .enlaceMenu a,
+    .enlaceSuscripcion a{
+        padding: 2px 20px;
+        font-size: 12px;
+    }
+
+    .seccionEnlaces .enlaceMenu p,
+    .seccionEnlaces .enlaceSuscripcion p{
+        font-size: 12px;
+    }
+
+    .seccionEnlaces .enlaceMenu span,
+    .seccionEnlaces .enlaceSuscripcion span{
+        font-size: 12px;
+    }
+
+
+    .favoritosC{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        margin-bottom: 30px;
+    }
+
+    .sliderC {
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 100%;
+        height: 220px;
+        background-color: #703493;
+    }
+
+    .sliderC .plato1,
+    .sliderC .plato2,
+    .sliderC .plato3,
+    .sliderC .plato4,
+    .sliderC .plato5,
+    .sliderC .plato6{
+        position: absolute;
+        margin: 3% 0 0 20%;
+        background-color: aqua;
+    }
+
+    .sliderC .plato1 img,
+    .sliderC .plato2 img,
+    .sliderC .plato3 img,
+    .sliderC .plato4 img,
+    .sliderC .plato5 img,
+    .sliderC .plato6 img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .favoritoC .btnMenuC{
+        background-color: brown;
+        height: 50px;
+    }
+
+    .favoritoC .btnMenuC a{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 30px; 
+        border-radius: 50px;
+        border: 2px solid #70349E;
+        background-color: rgba(105, 91, 199, 0.534);
+        box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+
+
+}
