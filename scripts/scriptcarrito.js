@@ -10,46 +10,54 @@ console.log(listaCompras[0].subtotal);
 let productosAgregados = document.querySelector(".productosAgregados");
 let contenidoCarritoHTML = "";
 
+let indiceListaCompras = 0;
+
+let modalEliminar = document.getElementById("modalEliminarProducto");
+let textoModalEliminar = document.getElementById("textoModalEliminar");
+
 
 function actualizarCarrito(){
     
-    
     productos();
-    resumenDeCompra();
-
-    listaCompras.forEach(producto => {
-        producto.subtotal = producto.precio * producto.cantidad;
-        contenidoCarritoHTML += 
-        `<div class="producto">
-            <i class="bi bi-trash-fill botonEliminar" onclick = "eliminarProducto(${producto.id})"></i>
-            <img src="${producto.url}" alt="">
-            <p> ${producto.nombre} </p>
-            <div class="productoCantidad"> 
-                <div class="cantidad"> 
-                    <i class="bi bi-dash-circle-fill" onclick = "disminuirProducto(${producto.id})"></i>
-                    <input type="number" value="${producto.cantidad}"> 
-                    <i class="bi bi-plus-circle-fill" onclick = "aumentarProducto(${producto.id})"></i>  
-                </div> 
-            </div>
-            <p> <span>und:</span> $${producto.precio} </p>
-            <p> <span>subtotal:</span> $${producto.subtotal} </p>
-        </div> `
-    });
-
-    productosAgregados.innerHTML = contenidoCarritoHTML;
+    //resumenDeCompra();
 
     // localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
     localStorage.setItem('listaCompras',JSON.stringify(listaCompras));
 }
-//actualizarCarrito();
 
-//inicio resumenDeCompra();
+
+//inicio funcion productos la cual recopila en html los productos a dibujar;
 function productos(){
-    contenidoCarritoHTML = ""
+    contenidoCarritoHTML = "<hr>"
+    listaCompras.forEach(producto => {
+        producto.subtotal = producto.precio * producto.cantidad;
+        contenidoCarritoHTML += 
+        `<div class="productoCarrito">
+            <i class="bi bi-x-circle-fill botonEliminar" onclick = "eliminarProducto(${producto.id})"></i> 
+            <div class="productoCarritoImg">
+                <img src="${producto.url}" >
+            </div>
+            <div class="productoCarritoInfo">
+                <h5>${producto.nombre}</h5>
+                <p> $${producto.subtotal} </p>
+                <div class="productoCantidad"> 
+                    <div class="cantidad"> 
+                        <i class="bi bi-dash-square-fill" onclick = "disminuirProducto(${producto.id})"></i>
+                        <input type="number" value="${producto.cantidad}"> 
+                        <i class="bi bi-plus-square-fill" onclick = "aumentarProducto(${producto.id})"></i>  
+                    </div> 
+                </div>
+                <a href="">ver información</a>
+            </div>     
+        </div>   
+        <hr>`
+    });
+
+    productosAgregados.innerHTML = contenidoCarritoHTML;
 }
-// fin funcion resumenDeCompra();
+// fin funcion productos
 
-
+actualizarCarrito();
 
 //inicio resumenDeCompra();
 function resumenDeCompra(){
@@ -68,7 +76,7 @@ function encontrarIndiceListaObjetos(id){
 }
 
 function disminuirProducto(id){
-    let indiceListaCompras = encontrarIndiceListaObjetos(id);
+    indiceListaCompras = encontrarIndiceListaObjetos(id);
     if(listaCompras[indiceListaCompras].cantidad == 1){
         eliminarProducto(indiceListaCompras);
     }else{
@@ -78,7 +86,7 @@ function disminuirProducto(id){
 }
 
 function aumentarProducto(id){
-    let indiceListaCompras = encontrarIndiceListaObjetos(id);
+    indiceListaCompras = encontrarIndiceListaObjetos(id);
     listaCompras[indiceListaCompras].cantidad += 1;
     actualizarCarrito();
 }
@@ -86,8 +94,17 @@ function aumentarProducto(id){
 
 //función para eliminar un producto
 function eliminarProducto(id){
-    let indiceListaCompras = encontrarIndiceListaObjetos(id);
-    alert( ` Se eliminara el producto ${listaCompras[indiceListaCompras].nombre}, esta seguro` );
+    indiceListaCompras = encontrarIndiceListaObjetos(id);
+    textoModalEliminar.innerHTML = `<h5> Se eliminara el producto ${listaCompras[indiceListaCompras].nombre} del carrito,¿Esta seguro? </h5>`
+    modalEliminar.style.display = "block";
+}
+
+function cancelarEliminar(){
+    modalEliminar.style.display = "none";
+}
+
+function eliminarDefinitivo(){
     listaCompras.splice(indiceListaCompras,1);
     actualizarCarrito();
+    modalEliminar.style.display = "none";
 }

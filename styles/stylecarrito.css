@@ -29,94 +29,77 @@ main {
 /* Asignación de roboto bold 700 a títulos */
 h1,
 h2,
-h3 {
+h3,
+h5 {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: normal;
 }
 
-.titulo h1 {
+button{
+    cursor: pointer;
+}
+
+.titulo h1, .tituloCuadroCompras h5 {
     padding: 15px;
     color: #70349E;
     font-size: 45px;
     text-align: center;
-    /* Esto tendrá mayor especificidad */
-}
-
-/* Estilos comunes entre el titulo y cada uno de los productos agregados */
-.tituloCuadroCompras, .carrito{
-    margin: auto;
-    max-width: 1000px;
-    border-radius: 20px;
-    border: 2px solid black;
-    display: grid;
 }
 
 .carrito{
-    grid-template-columns: 1fr 1fr;
-}
-
-
-
-
-/* Estilos para el titulo de compras, este se distribuye en cuatro columnas la primera tiene el doble de tamaño que las demás */
-.tituloCuadroCompras{
-    margin-bottom: 10px ;
-    height: 38px ;
-    grid-template-columns: 2fr repeat(3 , 1fr);
-    grid-template-rows: 1fr;
-    place-items: center;
-    gap: 15px;
-}
-
-.tituloCuadroCompras h5{
-    width: 100%;
     margin: auto;
-    text-align: center;
+    max-width: 1000px;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Contenedor de todos los productos que se van agregando */
 /* Se le da un padding para separarlo del titulo de compras */
 
-.productoCarrito{
-    margin: auto;
-    max-width: 400px;
-    border-radius: 20px;
-    border: 2px solid black;
-    display: grid;
-} 
 .productosAgregados{
     padding: 1px;
 }
 
-/* contenedor del primer producto */
 .productoCarrito{
+    margin: auto;
+    padding: 10px;
+    width: 400px;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+    display: grid;
     margin-bottom: 20px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: 15px;
     position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
 }
 
+
 .productoCarrito img{
     border-radius: 20px;
-    margin: 10px;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
+    margin: 20px 0;
+    width: 150px;
+    height: 150px;
 }
 
-.productoCarrito p{
-    width: 100%;
-    margin: auto;
+.productoCarritoInfo{
+    padding-top: 40px;
     text-align: center;
-    place-items: center;
-    
 }
+.productoCarritoInfo p{
+    font-size: 18px;
+}
+
 
 /* Ya que en la parte de cantidad, necesitamos tres objetos, es necesario crear un div interno el cual permite centrarlos */
 .productoCantidad, .cantidad{
     display: grid;
     place-items: center;
+}
+.productoCantidad{
+    margin-bottom: 20px;
 }
 
 /* Div interno de productoCantidad */
@@ -129,7 +112,7 @@ h3 {
     width: 40px;
     height: 30px;
     margin: auto;
-    border: 2px solid black;
+    border: 0px solid black;
     text-align: center;
     background-color: #FFFEF4;
     font-size: 20px;
@@ -142,6 +125,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+
 /* Estilos para los iconos dentro de cantidad */
 .cantidad i{
     display: grid;
@@ -149,31 +133,27 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 25px;
     height: 25px;
     font-size: 25px;
-    border-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     color: rgba(105, 91, 199);
     cursor: pointer;
     box-shadow: 3px 3px rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.25);
 }
 
 .cantidad i:hover{
     color: rgb(29, 26, 198);
 }
 
-/* En span se encuentra mensajes de precio por unidad y subtotal de cada producto, que se mostraran en pantallas pequeñas */
-.productoCarrito span{
-    display: none;
-}
 
-/* EStilos para botón de eliminar */
+/* EStilos para el icono botón de eliminar */
 .botonEliminar{
     position: absolute; /* Elimina su posición normal  */
     top: 0px; /* Top y right determinan su ubicación en el primer contenedor que posea posición relativa */
     right: 5px;
     height: 30px;
     width: 24px;
-    font-size: 20px;
-    color: rgb(231, 99, 99);
+    font-size: 23px;
+    color: #8080806b;
     cursor: pointer;
 }
 
@@ -184,49 +164,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /*  */
 @media(width < 650px){
-    .tituloCuadroCompras{
-        display: none;
-    }
+  
 
-    .productosAgregados{
-        display: block;
-    }
-
-    /* contenedor del primer producto */
-    .productoCarrito{
-        padding: 5%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2px;
-    }
-
-    /* Poner el primer elemento párrafo el cual es el titulo de forma que ocupe dos columnas */
-    .productoCarrito p:first-of-type {
-        grid-column: 1/3;
-        
-    }
-
-    .productoCarrito img{
-        margin: auto;
-        grid-row-start: 2;
-        grid-row-end: 6;
-        width: 100px;
-        height: 100px;
-    }
-
-    /* Con las siguientes instrucciones manipulo la ubicación de los elementos internos para que se ajuste a lo deseado */
-    .productoCarrito div:first-of-type{
-        grid-row-start: 3;
-    }
-    .productoCarrito p:nth-of-type(2){
-        grid-row-start: 4;
-    }
-    .productoCarrito p:nth-of-type(3){
-        grid-row-start: 5;
-    }
-    .productoCarrito span{
-        display: inline-block;
-    }
+    
 }
 
 /* .producto{
@@ -234,3 +174,92 @@ input[type="number"]::-webkit-inner-spin-button {
     height: auto !important;
     } */
 
+
+/* Inicio Estilos modal ventana seguro desea eliminar el producto */
+.modal1{
+    display: none;
+    /* Desaparece el contenedor */
+    position: fixed;
+    /*Mantiene la pantalla fija asi se haga scroll  */
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+
+.modal1-contenedor {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    max-width: 400px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.cerrar{
+    color: rgb(231, 99, 99);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: right;
+    /* lo obliga a posicionarse a la derecha  */
+    position: absolute;
+    /* elimina su posición normal en un documento */
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cerrar:hover{
+    color: rgb(174, 59, 59);
+    cursor: pointer;
+}
+
+#textoModalEliminar{
+    text-align: center;
+}
+
+.modalAceptar {
+    text-align: center;
+    margin: 20px;
+}
+
+.modalAceptar button {
+    margin: auto;
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
+}
+
+.modalAceptar button:nth-of-type(2){
+    background-color: rgb(231, 99, 99);
+    border: 2px solid rgb(231, 99, 99);
+    color: white;
+}
+
+.modalAceptar button:nth-of-type(2):hover {
+    background-color: white;
+    color: rgb(231, 99, 99);
+}
+
+.modalAceptar button:nth-of-type(1) {
+    background-color: white;
+    border: 2px solid #70349E;
+    color: #70349E;
+}
+
+.modalAceptar button:nth-of-type(1):hover {
+    background-color: #70349E;
+    color: white;
+}
+
+/* Fin Estilos modal ventana seguro desea eliminar el producto */

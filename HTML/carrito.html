@@ -105,27 +105,31 @@
         
         <div class="cuadroCompras">
           <diV class = "tituloCuadroCompras" >
-              <h5> Producto </h5> 
-              <h5> Cantidad </h5>
-              <h5> Precio </h5>
-              <h5> Subtotal </h5>
+              <h5> Tu orden </h5> 
           </diV>
 
           <div class="productosAgregados">
 
               <div class="productoCarrito">
-                  <i class="bi bi-trash-fill botonEliminar"></i>
-                  <img src="https://img.freepik.com/foto-gratis/croissants-taza-cafe_144627-34824.jpg?t=st=1726959477~exp=1726963077~hmac=9ec90e91208ec76a87aa905ad4c54c0c39eaf17e5b56b435f6d76e2bf2df9ba8&w=900" alt="">
-                  <p> desayuno tradicional</p>
-                  <div class="productoCantidad"> 
-                      <div class="cantidad"> 
-                          <i class="bi bi-dash-circle-fill"></i>
-                          <input type="number" > 
-                          <i class="bi bi-plus-circle-fill"></i>  
-                      </div> 
+
+                  <i class="bi bi-x-circle-fill botonEliminar"></i>
+                  <div class="productoCarritoImg">
+                    <img src="../img_comidas/ALMUERZOS/bowl_junior.png" alt="">
                   </div>
-                  <p> <span>und:</span> $15000 </p>
-                  <p> <span>subtotal:</span> $15000 </p>
+
+                  <div class="productoCarritoInfo">
+                    <h5> desayuno tradicional</h5>
+                    <p> $15000 </p>
+                    <div class="productoCantidad"> 
+                        <div class="cantidad"> 
+                            <i class="bi bi-dash-square-fill"></i>
+                            <input type="number" > 
+                            <i class="bi bi-plus-square-fill"></i>  
+                        </div> 
+                    </div>
+                    <a href="">ver información</a>
+                  </div>
+                  
               </div> 
    
           </div>
@@ -156,6 +160,20 @@
         <!-- <div class="botonEliminar">
             
         </div> -->
+
+         <!-- Ventana emergente seguro desea eliminar el producto-->
+      <div id="modalEliminarProducto" class="modal1">
+        <div class="modal1-contenedor">
+          <i class="bi bi-x-circle-fill cerrar" onclick="cancelarEliminar()"></i>
+          <br>
+          <div id="textoModalEliminar"><h5>Seguro que desea eliminar el producto nombre del producto</h5></div>
+          <div class = "modalAceptar">
+            <button id="botonCancelarEliminar" onclick="cancelarEliminar()"> No </button>
+            <button id="botonAceptarEliminar" onclick="eliminarDefinitivo()"> Si </button>
+          </div>
+        </div>
+      </div>
+
 
     </main>
 
