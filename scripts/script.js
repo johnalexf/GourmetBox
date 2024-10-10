@@ -74,4 +74,72 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+/* se mostrara el titulo y el plato linea vertical 
+solo se mostrara un titulo el del plato que se ve */
+
+
+function mostrarTitulosC(){
+    let tituloActual = 1;
+    const titulos = document.querySelectorAll('.itemFavoritos > p > span');
+    const ubicacionTitulo = document.getElementById("tituloP");
+
+    function mostrarImagen() {
+        ubicacionTitulo.innerText = titulos[tituloActual].textContent;
+        tituloActual = (tituloActual + 1) % titulos.length;
+    }
+    setInterval(mostrarImagen, 3000);//cada 3s
+
+};
+
+
+
+/* espero a que el documento se cargue, guardo la images en una array
+y llamo a la funcion mostrar imagen que me recorreo el array y va 
+cambiando las caracteristicas de visibility y opacity se hace una espera entre transicion*/
+function mostrarImgC(){
+    let imagenActual = 0;
+    const platos = document.querySelectorAll('.sliderC > div');
+
+    function mostrarImagen() {
+
+        platos[imagenActual].querySelector('img').style.opacity = '0';
+        setTimeout(() => {
+        platos[imagenActual].querySelector('img').style.visibility = 'hidden';
+        imagenActual = (imagenActual + 1) % platos.length;
+        platos[imagenActual].querySelector('img').style.visibility = 'visible';
+        
+        setTimeout(() => {
+            platos[imagenActual].querySelector('img').style.opacity = '1';
+        }, 20);
+    },500);
+    }
+    setInterval(mostrarImagen, 3000);//cada 3s
+};
+
+
+
+/* si la pantalla es celular cambio la manera en que se ve 
+se cambia el div actual y se pone el exclusivo de mobil*/
+
+function ajustarVista(){
+    const favoritosG = document.getElementById("favoritos");
+    const favoritosC = document.getElementById("favoritosC");
+
+    if(window.innerWidth < 550){
+        favoritosG.style.display = "none";
+        favoritosC.style.display = "block";
+        mostrarTitulosC();
+        mostrarImgC();
+    }else{
+        favoritosG.style.visibility = "block";
+        favoritosC.style.opacity = "none";
+    }
+
+};
+
+
+window.addEventListener("resize", ajustarVista);
+ajustarVista();
+
+
 

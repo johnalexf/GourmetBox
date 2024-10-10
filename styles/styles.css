@@ -69,6 +69,7 @@ main {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+.favoritoC .btnMenuC a:hover,
 .btnMenu a:hover,
 .enlaceMenu a:hover,
 .enlaceSuscripcion a:hover {
@@ -451,24 +452,40 @@ main {
     .seccionEnlaces .enlaceSuscripcion span{
         font-size: 12px;
     }
+}
 
-
-    .favoritosC{
+    .favoritoC{
         width: 100%;
-        height: auto;
+        background-image: url("../img_comidas/CARRUSEL-INDEX/menu3.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300px 450px;
+        height: 450px;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: auto auto;
+        grid-template-rows: 150px 350px auto;
         margin-bottom: 30px;
+        transition: opacity 1s ease;
+        display: none;
     }
+
+    .tituloPlato {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 150px;
+        text-align: center;
+        color: white;
+        padding-top: 105px;
+        transition: 1s ease-in-out;
+    }
+
 
     .sliderC {
         position: relative;
         grid-column: 1/2;
-        grid-row: 1/2;
+        grid-row: 2/3;
         width: 100%;
-        height: 220px;
-        background-color: #703493;
+        height: 250px;
     }
 
     .sliderC .plato1,
@@ -478,8 +495,7 @@ main {
     .sliderC .plato5,
     .sliderC .plato6{
         position: absolute;
-        margin: 3% 0 0 20%;
-        background-color: aqua;
+        margin: 3% 0 0 25%;
     }
 
     .sliderC .plato1 img,
@@ -494,23 +510,37 @@ main {
     }
 
     .favoritoC .btnMenuC{
-        background-color: brown;
         height: 50px;
+        text-align: center;
+        padding-top: 8px;
     }
 
     .favoritoC .btnMenuC a{
         grid-column: 1/2;
-        grid-row: 2/3;
+        grid-row: 3/4;
         color: black;
         text-decoration: none;
         font-weight: 600;
-        padding: 5px 30px; 
+        padding: 2px 20px; 
+        font-size: 12px;
         border-radius: 50px;
         border: 2px solid #70349E;
         background-color: rgba(105, 91, 199, 0.534);
         box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
     }
 
-
-
+/* Cuando la pantalla sea menor a 550px la 
+distribución interna de la parte izquierda y 
+derecha pasa a ser de a una columna */
+@media(width < 550px) {
+    
+    .informacion {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .mapa{
+        width: 110%;
+    }
 }
