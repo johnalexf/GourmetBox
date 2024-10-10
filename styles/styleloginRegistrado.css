@@ -182,7 +182,6 @@ con un símbolo*/
 .botonesPerfil button:hover,
 .vistaIdYBotones i:hover,
 .cargar #botonCargarProducto:hover,
-.vistaPreviaAceptar button:hover,
 .cargar label:hover {
     cursor: pointer;
     background-color: white;
