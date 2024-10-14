@@ -1,6 +1,8 @@
 //let idProductosCarrito = []; 
 let listaCompras = [];
 
+import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
+
 //Obtener de local storage la lista de compras si esta creada
 if(localStorage.getItem('listaCompras')!=undefined){
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
@@ -10,7 +12,7 @@ if(localStorage.getItem('listaCompras')!=undefined){
 let carritoVacio = document.querySelector(".carritoVacio");
 let carrito = document.querySelector(".carrito");
 
-//Variables para maipular la vista de los productos agregados al carrito
+//Variables para manipular la vista de los productos agregados al carrito
 let productosAgregados = document.querySelector(".productosAgregados");
 let contenidoCarritoHTML = "";
 
@@ -27,6 +29,12 @@ function actualizarCarrito(){
     //resumenDeCompra();
 
     // localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
+
+    // actualizar numero de productos agregados que se ven sobre el icono de carrito del navbar
+    localStorage.setItem('cantidadListaCompras',listaCompras.length);
+    carritoCantidadAgregadaNavbar();
+    
+
     localStorage.setItem('listaCompras',JSON.stringify(listaCompras));
 }
 
@@ -79,7 +87,7 @@ function encontrarIndiceListaObjetos(id){
     return index
 }
 
-function disminuirProducto(id){
+export function disminuirProducto(id){
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     if(listaCompras[indiceListaCompras].cantidad == 1){
         eliminarProducto(indiceListaCompras);
@@ -87,29 +95,32 @@ function disminuirProducto(id){
         listaCompras[indiceListaCompras].cantidad -= 1;
         actualizarCarrito();
     }
-   
 }
+window.disminuirProducto = disminuirProducto;
 
-function aumentarProducto(id){
+export function aumentarProducto(id){
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     listaCompras[indiceListaCompras].cantidad += 1;
     actualizarCarrito();
 }
+window.aumentarProducto = aumentarProducto;
 
 //función para eliminar un producto
-function eliminarProducto(id){
+export function eliminarProducto(id){
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     textoModalEliminar.innerHTML = `<h5> Se eliminara el producto ${listaCompras[indiceListaCompras].nombre} del carrito,¿Esta seguro? </h5>`
     modalEliminar.style.display = "block";
 }
+window.eliminarProducto = eliminarProducto;
 
 //funcion para cancelar el modal de eliminar producto
-function cancelarEliminar(){
+export function cancelarEliminar(){
     modalEliminar.style.display = "none";
 }
+window.cancelarEliminar = cancelarEliminar;
 
 //funcion para eliminar definitivamente el producto del carrito
-function eliminarDefinitivo(){
+export function eliminarDefinitivo(){
     listaCompras.splice(indiceListaCompras,1);
     modalEliminar.style.display = "none";
     actualizarCarrito();
@@ -118,6 +129,7 @@ function eliminarDefinitivo(){
         carrito.style.display = "none";
     }
 }
+window.eliminarDefinitivo = eliminarDefinitivo;
 
 //condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
 if(listaCompras.length!=0){

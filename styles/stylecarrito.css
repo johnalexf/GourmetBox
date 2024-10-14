@@ -8,6 +8,11 @@ main {
     background-repeat: no-repeat; 
 }
 
+/* icono carrito del navbar */
+#carrito{
+    -webkit-text-stroke: 1px;
+  } 
+
 /* Para CEL (800px) */
 @media (max-width: 450px) {
     main {
