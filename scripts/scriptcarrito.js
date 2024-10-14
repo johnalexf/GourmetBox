@@ -6,12 +6,17 @@ if(localStorage.getItem('listaCompras')!=undefined){
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
 
-console.log(listaCompras[0].subtotal);
+//variables para la vista si el carrito esta vacio
+let carritoVacio = document.querySelector(".carritoVacio");
+let carrito = document.querySelector(".carrito");
+
+//Variables para maipular la vista de los productos agregados al carrito
 let productosAgregados = document.querySelector(".productosAgregados");
 let contenidoCarritoHTML = "";
 
 let indiceListaCompras = 0;
 
+//variables para mostrar el modal de seguro desea eliminar producto
 let modalEliminar = document.getElementById("modalEliminarProducto");
 let textoModalEliminar = document.getElementById("textoModalEliminar");
 
@@ -57,7 +62,6 @@ function productos(){
 }
 // fin funcion productos
 
-actualizarCarrito();
 
 //inicio resumenDeCompra();
 function resumenDeCompra(){
@@ -81,8 +85,9 @@ function disminuirProducto(id){
         eliminarProducto(indiceListaCompras);
     }else{
         listaCompras[indiceListaCompras].cantidad -= 1;
+        actualizarCarrito();
     }
-    actualizarCarrito();
+   
 }
 
 function aumentarProducto(id){
@@ -91,7 +96,6 @@ function aumentarProducto(id){
     actualizarCarrito();
 }
 
-
 //función para eliminar un producto
 function eliminarProducto(id){
     indiceListaCompras = encontrarIndiceListaObjetos(id);
@@ -99,12 +103,29 @@ function eliminarProducto(id){
     modalEliminar.style.display = "block";
 }
 
+//funcion para cancelar el modal de eliminar producto
 function cancelarEliminar(){
     modalEliminar.style.display = "none";
 }
 
+//funcion para eliminar definitivamente el producto del carrito
 function eliminarDefinitivo(){
     listaCompras.splice(indiceListaCompras,1);
-    actualizarCarrito();
     modalEliminar.style.display = "none";
+    actualizarCarrito();
+    if(listaCompras.length == 0){
+        carritoVacio.style.display = "flex";
+        carrito.style.display = "none";
+    }
 }
+
+//condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
+if(listaCompras.length!=0){
+    carritoVacio.style.display = "none";
+    carrito.style.display = "grid";
+    actualizarCarrito();
+}else{
+    carritoVacio.style.display = "flex";
+    carrito.style.display = "none";
+}
+    
