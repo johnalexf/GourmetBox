@@ -1,12 +1,7 @@
-//let idProductosCarrito = []; 
 let listaCompras = [];
 
+//importacion de la funcion que permite modificar el valor de numero que esta encima del carrito de navbar
 import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
-
-//Obtener de local storage la lista de compras si esta creada
-if(localStorage.getItem('listaCompras')!=undefined){
-    listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
-}
 
 //variables para la vista si el carrito esta vacio
 let carritoVacio = document.querySelector(".carritoVacio");
@@ -22,19 +17,26 @@ let indiceListaCompras = 0;
 let modalEliminar = document.getElementById("modalEliminarProducto");
 let textoModalEliminar = document.getElementById("textoModalEliminar");
 
+//Obtener de local storage la lista de compras si esta creada
+if(localStorage.getItem('listaCompras')!=undefined){
+    listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
+}
+
+//condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
+if(listaCompras.length!=0){
+    carritoVacio.style.display = "none";
+    carrito.style.display = "grid";
+    actualizarCarrito();
+}else{
+    carritoVacio.style.display = "flex";
+    carrito.style.display = "none";
+}
 
 function actualizarCarrito(){
-    
     productos();
     //resumenDeCompra();
-
-    // localStorage.setItem('idProducto',JSON.stringify(idProductosCarrito));
-
-    // actualizar numero de productos agregados que se ven sobre el icono de carrito del navbar
     localStorage.setItem('cantidadListaCompras',listaCompras.length);
     carritoCantidadAgregadaNavbar();
-    
-
     localStorage.setItem('listaCompras',JSON.stringify(listaCompras));
 }
 
@@ -56,7 +58,7 @@ function productos(){
                 <div class="productoCantidad"> 
                     <div class="cantidad"> 
                         <i class="bi bi-dash-square-fill" onclick = "disminuirProducto(${producto.id})"></i>
-                        <input type="number" value="${producto.cantidad}"> 
+                        <input type="number" id="input${producto.id}" name="${producto.id}" value="${producto.cantidad}" required> 
                         <i class="bi bi-plus-square-fill" onclick = "aumentarProducto(${producto.id})"></i>  
                     </div> 
                 </div>
@@ -100,8 +102,11 @@ window.disminuirProducto = disminuirProducto;
 
 export function aumentarProducto(id){
     indiceListaCompras = encontrarIndiceListaObjetos(id);
-    listaCompras[indiceListaCompras].cantidad += 1;
-    actualizarCarrito();
+    if(listaCompras[indiceListaCompras].cantidad != 20){
+        listaCompras[indiceListaCompras].cantidad += 1;
+        actualizarCarrito();
+    }
+    
 }
 window.aumentarProducto = aumentarProducto;
 
@@ -131,13 +136,36 @@ export function eliminarDefinitivo(){
 }
 window.eliminarDefinitivo = eliminarDefinitivo;
 
-//condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
-if(listaCompras.length!=0){
-    carritoVacio.style.display = "none";
-    carrito.style.display = "grid";
-    actualizarCarrito();
-}else{
-    carritoVacio.style.display = "flex";
-    carrito.style.display = "none";
+
+document.addEventListener('input',function(event){verificarCantidadNueva(event)});
+document.addEventListener('change',function(event){verificarCantidadNueva(event)});
+
+function verificarCantidadNueva(event){ 
+    let tipo = event.type;
+    let cantidadNueva = event.target.valueAsNumber;
+    let idProducto = event.target.name;
+    let entradaCantidadPlato = document.getElementById(event.target.id);
+    indiceListaCompras = encontrarIndiceListaObjetos(idProducto);
+    
+
+    if(cantidadNueva >= 1 && cantidadNueva <=20){
+        entradaCantidadPlato.setCustomValidity("",);
+        listaCompras[indiceListaCompras].cantidad = cantidadNueva;
+    }
+    else{
+        if(tipo == 'change'){
+            listaCompras[indiceListaCompras].cantidad = 1;
+        }      
+        entradaCantidadPlato.setCustomValidity( "Puedes pedir entre 1 a 20 platos, para mayor cantidad, contactanos",);
+    }
+
+    if(tipo == 'change'){
+        actualizarCarrito();
+    }
+    entradaCantidadPlato.reportValidity();
+    
 }
+
+
+  
     
