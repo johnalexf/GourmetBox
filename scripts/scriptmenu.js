@@ -1,5 +1,9 @@
 //import menu from './jsonproductos.json' with {type: 'json'};
 //let url = "http://localhost:3000/productos";  //Variable para usar con un servidor local ACTIVADO
+
+import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
+
+
 let url = "../scripts/baseDatos.json"; //Variable para solo acceder a los datos del JSON
 
 
@@ -56,6 +60,9 @@ let listaCompras = [];
 if (localStorage.getItem('listaCompras') != undefined) {
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
+
+
+
 
 function actualizarMenu() {
     menu.forEach(producto => {
@@ -127,7 +134,12 @@ export function adicionarCarrito(id) {
                     1
                 )
              )
-        
+
+        // actualizar numero de productos agregados que se ven sobre el icono de carrito del navbar
+        localStorage.setItem('cantidadListaCompras',listaCompras.length);
+    
+        carritoCantidadAgregadaNavbar();
+
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
         alert(`El producto ${menu[indiceMenu].nombre} ha sido agregado al carrito`);
     } else {

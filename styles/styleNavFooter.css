@@ -23,11 +23,11 @@ footer {
 #icon, #icon:visited{
     color: black;
 }
-.navbar li:hover, #icon:hover {
+.navbar a:hover, #icon:hover {
   color: blanchedalmond;
 }
 
-  .navbar {
+.navbar {
     background-color: #703493;
 }
 
@@ -42,6 +42,33 @@ footer {
 .navbar li {
     margin-right: 20px;
 }
-  
+
+#carrito{
+  line-height: 0px;
+  font-size: 24px;
+  /* -webkit-text-stroke: 1px; */
+  position: relative;
+} 
+
+
+#cantidadCarritoIcono{
+  display: none;
+  font-style: normal;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  right: 2px;
+  top: -5px;
+  width: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 50%;
+  border: 1px solid #70349E;
+  background-color: rgba(255, 255, 255, 0.719);
+}
+
+.navbar a:hover p{
+  color: black;
+}
   
  
