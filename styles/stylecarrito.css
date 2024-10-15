@@ -3,9 +3,16 @@ main {
     padding: 3% 12%;
     background-color: #FFFEF4;
     background-image: url('../img/FONDOCONTACTANOS.jpg');
-    background-size: cover;   /* Cubre todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; 
+    background-size: cover;
+    /* Cubre todo el contenedor */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+}
+
+/* icono carrito del navbar */
+#carrito {
+    -webkit-text-stroke: 1px;
 }
 
 /* Para CEL (800px) */
@@ -36,11 +43,13 @@ h5 {
     font-style: normal;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-.titulo h1, .tituloCuadroCompras h2 {
+.titulo h1,
+.tituloCuadroCompras h2,
+.carritoVacio {
     color: #70349E;
     text-align: center;
 }
@@ -49,31 +58,72 @@ button{
     font-size: 45px;
 }
 
-.tituloCuadroCompras h2{
-    
+.carritoVacio {
+    margin: auto;
+    padding-top: 30px;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 520px;
+    height: 100%;
+
 }
 
-hr{
+.tituloCarritoVacio {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.tituloCarritoVacio h1 {
+    display: flex;
+    align-items: end;
+}
+
+.carritoVacio h4 {
+    line-height: 38px;
+}
+
+.carritoVacio a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 22px;
+    margin: auto;
+    padding: 5px 30px;
+    border-radius: 50px;
+    border: 2px solid #70349E;
+    background-color: rgba(105, 91, 199, 0.534);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.carritoVacio a:hover {
+    color: #70349E;
+    background-color: white;
+}
+
+hr {
     line-height: 0px;
 }
 
-.carrito{
+.carrito {
     margin: auto;
     max-width: 1000px;
     border-radius: 20px;
     /* border: 2px solid black; */
-    display: grid;
+    display: none;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr;
 }
 
 /* Contenedor de todos los productos que se van agregando */
 /* Se le da un padding para separarlo del titulo de compras */
 
-.productosAgregados{
+.productosAgregados {
     padding: 1px;
 }
 
-.productoCarrito{
+.productoCarrito {
     margin: auto;
     width: 400px;
     border-radius: 20px;
@@ -82,42 +132,46 @@ hr{
     /* margin-bottom: 20px; */
     grid-template-columns: 1fr 2fr;
     gap: 15px;
-    position: relative; /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
+    position: relative;
+    /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
 }
 
 
-.productoCarrito img{
+.productoCarrito img {
     border-radius: 20px;
     margin: 20px 0;
     width: 150px;
     height: 150px;
 }
 
-.productoCarritoInfo{
+.productoCarritoInfo {
     padding-top: 40px;
     text-align: center;
 }
-.productoCarritoInfo p{
+
+.productoCarritoInfo p {
     font-size: 18px;
 }
 
 
 /* Ya que en la parte de cantidad, necesitamos tres objetos, es necesario crear un div interno el cual permite centrarlos */
-.productoCantidad, .cantidad{
+.productoCantidad,
+.cantidad {
     display: grid;
     place-items: center;
 }
-.productoCantidad{
+
+.productoCantidad {
     margin-bottom: 20px;
 }
 
 /* Div interno de productoCantidad */
-.cantidad{
+.cantidad {
     grid-template-columns: 1fr 2fr 1fr;
 }
 
 /* Estilos para la caja que muestra el numero de productos agregados */
-.cantidad input{
+.cantidad input {
     width: 40px;
     height: 30px;
     margin: auto;
@@ -136,7 +190,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /* Estilos para los iconos dentro de cantidad */
-.cantidad i{
+.cantidad i {
     font-weight: bold;
     display: grid;
     place-items: center;
@@ -146,19 +200,21 @@ input[type="number"]::-webkit-inner-spin-button {
     /* border: 1px solid black; */
     color: rgba(105, 91, 199);
     cursor: pointer;
-    box-shadow: 3px 3px rgba(0,0,0,0.25);
-    background-color: rgba(0,0,0,0.25);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-.cantidad i:hover{
+.cantidad i:hover {
     color: rgb(29, 26, 198);
 }
 
 
 /* EStilos para el icono botón de eliminar */
-.botonEliminar{
-    position: absolute; /* Elimina su posición normal  */
-    top: 0px; /* Top y right determinan su ubicación en el primer contenedor que posea posición relativa */
+.botonEliminar {
+    position: absolute;
+    /* Elimina su posición normal  */
+    top: 0px;
+    /* Top y right determinan su ubicación en el primer contenedor que posea posición relativa */
     right: 5px;
     height: 30px;
     width: 24px;
@@ -167,16 +223,27 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.botonEliminar:hover{
+.botonEliminar:hover {
     color: rgb(174, 59, 59);
 }
 
 
 /*  */
-@media(width < 650px){
-  
+@media(width < 650px) {
+    .carritoVacio {
+        width: auto;
+    }
 
-    
+    .tituloCarritoVacio {
+        grid-template-columns: 1fr;
+    }
+
+    .tituloCarritoVacio img {
+        grid-row-start: 1;
+        margin: auto;
+        border-radius: 20px;
+    }
+
 }
 
 /* .producto{
@@ -186,7 +253,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /* Inicio Estilos modal ventana seguro desea eliminar el producto */
-.modal1{
+.modal1 {
     display: none;
     /* Desaparece el contenedor */
     position: fixed;
@@ -211,7 +278,7 @@ input[type="number"]::-webkit-inner-spin-button {
     position: relative;
 }
 
-.cerrar{
+.cerrar {
     color: rgb(231, 99, 99);
     width: 25px;
     height: 25px;
@@ -226,12 +293,12 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.cerrar:hover{
+.cerrar:hover {
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
 
-#textoModalEliminar{
+#textoModalEliminar {
     text-align: center;
 }
 
@@ -249,7 +316,7 @@ input[type="number"]::-webkit-inner-spin-button {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
-.modalAceptar button:nth-of-type(2){
+.modalAceptar button:nth-of-type(2) {
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
     color: white;
@@ -272,3 +339,41 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* Fin Estilos modal ventana seguro desea eliminar el producto */
+
+/* Estilos para el resumen de compra */
+.resumenCompra {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.resumenCompra h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.resumenCompra .table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.resumenCompra .totales p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#botonPagar {
+    display: block;
+    width: 100%;
+    background-color: #695BC7;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#botonPagar:hover {
+    background-color: #5a4cba;
+}

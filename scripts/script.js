@@ -101,7 +101,7 @@ function mostrarImgC(){
     const platos = document.querySelectorAll('.sliderC > div');
 
     function mostrarImagen() {
-
+        console.log("Estoy llamando");
         platos[imagenActual].querySelector('img').style.opacity = '0';
         setTimeout(() => {
         platos[imagenActual].querySelector('img').style.visibility = 'hidden';
@@ -114,6 +114,7 @@ function mostrarImgC(){
     },500);
     }
     setInterval(mostrarImagen, 3000);//cada 3s
+    
 };
 
 
@@ -125,14 +126,16 @@ function ajustarVista(){
     const favoritosG = document.getElementById("favoritos");
     const favoritosC = document.getElementById("favoritosC");
 
-    if(window.innerWidth < 550){
+    console.log(window.innerWidth);
+    if(window.innerWidth < 750){
         favoritosG.style.display = "none";
         favoritosC.style.display = "block";
         mostrarTitulosC();
         mostrarImgC();
+        
     }else{
-        favoritosG.style.visibility = "block";
-        favoritosC.style.opacity = "none";
+        favoritosG.style.display = "grid";
+        favoritosC.style.display = "none";
     }
 
 };

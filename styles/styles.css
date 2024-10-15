@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body {
+    background-color: #FFFEF4;
+}
+
 /* letra para todo el documento */
 main {
     font-family: "Poppins", sans-serif;
@@ -28,11 +32,9 @@ main {
 .enlaceMenu {
     grid-column: 1/2;
     grid-row: 1/2;
-    width: 100%;
-    height: auto;
-    width: 580px;
+    width: auto;
     height: 300px;
-    text-align: center;
+    text-align: centerº;
     margin: auto;
 }
 
@@ -88,7 +90,7 @@ main {
 .enlaceSuscripcion {
     grid-column: 2/3;
     grid-row: 2/3;
-    width: 580px;
+    width: auto;
     height: 300px;
     text-align: center;
     margin: auto;
@@ -97,26 +99,24 @@ main {
 /* estilos carusel de platos y titulos en menu */
 /* Imagen de fondo tenedores y tamaño y estructura grid */
 .favoritos {
-    display: block;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: grid;
-    grid-template-columns: 40% 50%;
+    grid-template-columns: 55% 45%;
     grid-template-rows: 80% 20%;
     background-image: url("../img_comidas/CARRUSEL-INDEX/fondoC.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    justify-content: space-between;
+    justify-content: center;
 }
 /* lado derecho y centrado para contenedor imagen */
 .contenedor-slider {
-    width: 100%;
-    height: 480px;
+    width: 450px;
+    height: 550px;
     grid-column: 1/2;
     grid-row: 1/3;
     position: relative;
-    margin-left: 200px;
-    margin-top: 25px;
+    margin: auto;
 }
 
 .btnMenu {
@@ -124,7 +124,6 @@ main {
     grid-row: 2/3;
     width: 100%;
     text-align: center;
-    margin-left: 170px;
     padding-top: 35px;
 }
 
@@ -140,6 +139,7 @@ main {
     text-align: center;
     width: 450px;
     height: 450px;
+    /* left: 30%; */
 }
 
 /* las imagenes se ajustan a su contenedor y tiempo en transicion */
@@ -169,7 +169,7 @@ main {
 
 /* esta seccion se pondra el menu a la derecha */
 .menu {
-    width: 600px;
+    width: auto;
     display: grid;
     align-content: center; 
     place-content: center;
@@ -192,6 +192,8 @@ main {
 .imagenMenu img{
     width: 390px;
     height: 530px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px black;
 }
 
 /* misma posicion que la imagen letras blancas */
@@ -223,6 +225,8 @@ main {
 }
 
 
+
+
 /* seccion cinta de scroll lateral */
 /* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
@@ -236,6 +240,7 @@ main {
     height: 6vh;
     background-color: #703493;
     overflow: hidden;
+    margin-top: 40px;
 }
 
 .scroll {
@@ -278,7 +283,7 @@ main {
 
 .card {
     border-radius: 20px;
-    background-color: rgba(112, 52, 158, 0.158);
+    background-color: rgba(112, 52, 158, 0.507);
     width: 330px;
     height: 360px;
 }
@@ -342,7 +347,7 @@ main {
 }
 
 /* media responsive Banner principal tablet*/
-@media (min-width: 401px) and (max-width: 889px) {
+@media (min-width: 750px) and (max-width: 1050px) {
    
     .enlaceSuscripcion,
     .enlaceMenu {
@@ -350,6 +355,7 @@ main {
         height: auto;
         padding: 0 30px;
     }
+
 
     .enlaceMenu a,
     .enlaceSuscripcion a{
@@ -367,14 +373,8 @@ main {
     }
 
     .contenedor-slider {
-        width: 100%;
-        height: auto;
-        grid-column: 1/2;
-        grid-row: 1/3;
-        position: relative;
-        margin-left: 20px;
-        margin-top: 25px;
-        padding-top: 60px;
+        width: 350px;
+        height: 350px;
     }
 
     .contenedor-slider .plato1,
@@ -383,8 +383,8 @@ main {
     .contenedor-slider .plato4,
     .contenedor-slider .plato5,
     .contenedor-slider .plato6   {
-    width: 350px;
-    height: 350px;
+        width: 350px;
+        height: 350px;
     }
 
     .menu {
@@ -400,14 +400,7 @@ main {
     .menu .imagenMenu{
         grid-column: 1/2;
         grid-row: 1/2;
-        margin: auto;
-    }
-
-    .menu .itemFavoritos {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: auto;
-        height: auto;
+        width: 70%;
     }
 
     .favoritos {
@@ -415,20 +408,11 @@ main {
         width: 100%;
         height: auto;
     }
-    .btnMenu {
-        grid-column: 1/2;
-        grid-row: 2/3;
-        margin: 0;
-        padding-left: 70px;
-    }
 
-    .btnMenu a{
-        padding: 10px 60px;
-    }
 }
 
 /* media responsive Banner principal Celular*/
-@media (width < 400px){
+@media (width < 750px){
 
     /* estilos banner principal */
     .enlaceSuscripcion,
@@ -456,7 +440,7 @@ main {
 }
 
     .favoritoC{
-        width: 100%;
+        width: 400px;
         background-image: url("../img_comidas/CARRUSEL-INDEX/menu3.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -468,6 +452,7 @@ main {
         margin-bottom: 30px;
         transition: opacity 1s ease;
         display: none;
+        margin: auto;
     }
 
     .tituloPlato {
@@ -525,8 +510,8 @@ main {
         padding: 2px 20px; 
         font-size: 12px;
         border-radius: 50px;
-        border: 2px solid #70349E;
-        background-color: rgba(105, 91, 199, 0.534);
+        background-color: #70349E;
+        color: white;
         box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
     }
 
@@ -542,6 +527,7 @@ derecha pasa a ser de a una columna */
         margin: auto;
     }
     .mapa{
-        width: 110%;
+        width: 135%;
+        
     }
 }
