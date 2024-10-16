@@ -342,21 +342,31 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Estilos para el resumen de compra */
 .resumenCompra {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px auto;
+
+    align-items: center;
+    max-width: 340px;
 }
 
 .resumenCompra h3 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
 }
 
 .resumenCompra .table {
-    width: 100%;
+    width: 90%;
     margin-bottom: 20px;
+    align-items: center;
+
+
 }
 
 .resumenCompra .totales p {
@@ -369,11 +379,23 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
     background-color: #695BC7;
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 18px;
 }
 
 #botonPagar:hover {
-    background-color: #5a4cba;
+    background-color: white;
+    color: #695BC7;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 18px;
+    border-color: #695BC7;
+    border: 1px solid #695BC7;
+
+
 }
