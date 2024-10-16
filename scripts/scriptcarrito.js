@@ -16,6 +16,7 @@ let indiceListaCompras = 0;
 //variables para mostrar el modal de seguro desea eliminar producto
 let modalEliminar = document.getElementById("modalEliminarProducto");
 let textoModalEliminar = document.getElementById("textoModalEliminar");
+let producto = document.querySelector(".producto");
 
 //Obtener de local storage la lista de compras si esta creada
 if (localStorage.getItem('listaCompras') != undefined) {
@@ -62,7 +63,7 @@ function productos() {
                         <i class="bi bi-plus-square-fill" onclick = "aumentarProducto(${producto.id})"></i>  
                     </div> 
                 </div>
-                <a href="">ver información</a>
+                <p onclick="mostrarProducto(${producto.id})">ver información</p>
             </div>     
         </div>   
         <hr>`
@@ -72,8 +73,24 @@ function productos() {
 }
 // fin funcion productos
 
+export function mostrarProducto(id) {
+    indiceListaCompras = encontrarIndiceListaObjetos(id);
+    producto.innerHTML =
+        ` <div class="contenedorImagenCard">
+                <img src="${listaCompras[indiceListaCompras].url}" alt="">
+            </div>
+        
+             <div class="contenedorTituloCard">
+                 <h5>${listaCompras[indiceListaCompras].nombre}
+                 </h5>
+            </div>
+        
+            <div class="contenedorDescripcionCard">
+                <p>${listaCompras[indiceListaCompras].descripcion}</p>
+            </div>`
 
-
+}
+window.mostrarProducto = mostrarProducto;
 
 //inicio resumenDeCompra();
 function resumenDeCompra() {
