@@ -12,9 +12,11 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-
 }
 
+main{
+    background-color: #FFFEF4;
+}
 
 h1,
 h2,

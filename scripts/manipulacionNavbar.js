@@ -1,8 +1,11 @@
 //script para poner el nombre de usuario en todas las paginas
 let nameUser =  document.getElementById('sesion');
+export let usuarioLogiado = "";
+
 if(localStorage.getItem('usuario') != undefined){
     if( localStorage.getItem('usuario').length != 0 ){
-        nameUser.innerText = localStorage.getItem('usuario');
+        usuarioLogiado = localStorage.getItem('usuario')
+        nameUser.innerText = usuarioLogiado;
     }else{
         nameUser.innerText = "Ingresar";
     }

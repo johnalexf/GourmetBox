@@ -160,17 +160,16 @@
           <label for="telefonoUsuario">Teléfono</label>
           <input type="number" name="telefonoUsuario" id="telefonoUsuario" placeholder="Numero de teléfono del usuario"
             disabled>
-          <label for="suscripcion">Suscripción</label>
-          <input type="text" name="suscripcion" id="suscripcion" placeholder="Sin suscripción" disabled>
-          <label for="preferencias">Preferencias</label>
-          <input type="text" name="preferencias" id="preferencias" placeholder="Sin preferencias" disabled>
+          <label for="suscripcionUsuario">Suscripción</label>
+          <input type="text" name="suscripcionUsuario" id="suscripcionUsuario" placeholder="Sin suscripción" disabled>
+        </div>
+      
+        <div class="botonesPerfil">
+          <button type="submit" id="guardarCambiosPerfilUsuario">Guardar</button>
+          <button type="button" id="editarPerfilUsuario"> Editar Perfil </button>
+          <button type="button" id="cerrarSesionUsuario"> Cerrar Sesión </button>
         </div>
       </form>
-
-      <div class="botonesPerfil">
-        <button> Editar Perfil </button>
-        <button id="cerrarSesion"> Cerrar Sesión </button>
-      </div>
 
       <div class="suscripcionYPLatos">
         <div class="suscripciones">
@@ -218,12 +217,13 @@
           <label for="telefonoAdministrador">Teléfono</label>
           <input type="number" name="telefonoAdministrador" id="telefonoAdministrador" placeholder="Numero de teléfono del usuario" disabled>
         </div>
-      </form>
 
-      <div class="botonesPerfil">
-        <button> Editar Perfil </button>
-        <button id="cerrarSesion"> Cerrar Sesión </button>
-      </div>
+        <div class="botonesPerfil">
+          <button type="submit" id="guardarCambiosPerfilAdmin">Guardar</button>
+          <button type="button" id="editarPerfilAdmin"> Editar Perfil </button>
+          <button type="button" id="cerrarSesionAdmin"> Cerrar Sesión </button>
+        </div>
+      </form>
 
 
       <div class="modificarProducto">
@@ -390,6 +390,19 @@
       </div>
     </div>
 
+    <!-- Ventana emergente seguro desea eliminar-->
+    <div id="modalContrasenaEditarPerfil" class="modal1">
+      <div class="modal1-contenedor">
+        <i class="bi bi-x-circle-fill cerrar"></i>
+        <br>
+        <h5>Por favor escriba la contraseña para guardar los cambios en su perfil</h5>
+        <input type="password" name="contrasenaEditarPerfil" Id="contrasenaEditarPerfil" placeholder="Escribe tu contraseña" required>
+        <div class = "vistaPreviaAceptar">
+          <button id="botonGuardarEditarPerfil"> Guardar </button>
+        </div>
+      </div>
+    </div>
+
 
 
   </main>
@@ -407,6 +420,7 @@
 
   <script src="../scripts/scriptloginRegistro.js" type="module"></script>
   <script src="../scripts/scriptloginIngresando.js" type="module"></script>
+  <script src="../scripts/scriptModificandoUsuario.js" type="module"></script>
   <script src="../scripts/scriptModificarProducto.js" type="module"></script>
 
 </body>

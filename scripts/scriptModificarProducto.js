@@ -6,11 +6,13 @@ let html = "";
 
 //variable que contiene el formulario y después se obtienen todos los inputs para modificar su contenido interno
 //dependiendo del select escogido, ademas también se usan para guardar un nuevo producto dependiendo del caso
-let pNombreUrlImagen = document.getElementById('nombreUrlImagen');
 let formularioModificarCrearProducto = document.getElementById('modificarCrearProducto');
+
+let pNombreUrlImagen = document.getElementById('nombreUrlImagen');
 let inputsProducto = formularioModificarCrearProducto.querySelectorAll('input');
 let labelProducto = formularioModificarCrearProducto.querySelectorAll('label');
 let indiceSeleccionado = 1;
+
 // variable que contiene el Select de productos disponibles del formulario
 let productosDisponibles = document.getElementById('productosDisponibles');
 //variable que contiene el select de categoría de producto
