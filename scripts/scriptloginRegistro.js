@@ -180,9 +180,10 @@ formularioRegistro.addEventListener('submit', async function(event) {
 
 
     if(!usuarioRepetido){
-       //reescribirOCrearUsuario(usuario,nombre,correo,telefono,contrasena,Reescribir) 
+       //reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) 
       await modificarJSON.reescribirOCrearUsuario(
       formularioRegistro.usuarioR.value,
+      "usuario",
       formularioRegistro.nombreR.value,
       formularioRegistro.correo.value,
       formularioRegistro.telefono.value,

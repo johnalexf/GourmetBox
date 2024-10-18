@@ -15,12 +15,13 @@ let iconoContrasenaLogin = document.getElementById("iconoContrasenaLogin");
 //variable para asignar el nombre del usuario en el campo de ingresar del navbar
 let nameUser1 =  document.getElementById('sesion');
 
-let tipoUsuario = "";
+export let tipoUsuario = "";
 let indiceTipoUsuario = 0; //si el valor es 1 es administrador, si es 0 es un usuario
 let datosUsuario={}; //datos del usuario traídos de la base de datos
 
-let formularioInfoUsuario = document.getElementById('informacionUsuario');
-let formularioInfoAdmin = document.getElementById('informacionAdministrador');
+export let formularioInfoUsuario = document.getElementById('informacionUsuario');
+export let formularioInfoAdmin = document.getElementById('informacionAdministrador');
+
 
 // funcion para mostrar perfil ya sea de usuario o de administrador
 function mostrarPerfil(){
@@ -101,8 +102,8 @@ formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;
 formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
 }
 
-// lineas de código para validar el formulario de ingreso
 
+// lineas de código para validar el formulario de ingreso
 function usuarioVacio(){
   if(formularioIngreso.usuario.value.length == 0){
     formularioIngreso.usuario.setCustomValidity(
@@ -180,13 +181,14 @@ formularioIngreso.addEventListener( 'submit', async function(event) {
 
 
 //Cuando cierra sesión muestra los formularios y oculta el perfil de usuario o de administrador
-let botonCerrarSesion = document.querySelectorAll("#cerrarSesion");
+let botonCerrarSesionAdmin = document.getElementById("cerrarSesionAdmin");
+let botonCerrarSesionUsuario = document.getElementById("cerrarSesionUsuario");
 
 //cuando llamamos una funcion en cualquier punto, el sistema lee por primera vez el javascript
 //y si encuentra una function llamada en este ejemplo cerrarSesion() con los paréntesis, asi este adentro
 // de una condición, el sistema llamara a dicha funcion se cumpla o no la sentencia
-botonCerrarSesion[0].addEventListener('click',cerrarSesion);
-botonCerrarSesion[1].addEventListener('click',cerrarSesion);
+botonCerrarSesionAdmin.addEventListener('click',cerrarSesion);
+botonCerrarSesionUsuario.addEventListener('click',cerrarSesion);
 
 
 function cerrarSesion(){
