@@ -1,11 +1,14 @@
 * {
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
 
 }
 
-/* Prueba para poder mantener el footer siempre en la parte de abajo */
 body {
     height: 100%;
     font-family: "Poppins", sans-serif;
@@ -322,6 +325,7 @@ sale hacia la der */
     padding: 20px;
     max-width: 400px;
     width: 80%;
+    overflow: auto;
     border-radius: 10px;
     border: 1px solid black;
     position: relative;
@@ -356,8 +360,8 @@ h6 {
     /* lo obliga a posicionarse a la derecha  */
     position: absolute;
     /* elimina su posición normal en un documento */
-    top: 10px;
-    right: 15px;
+    top: 3px;
+    right: 10px;
     font-size: 25px;
     cursor: pointer;
     box-shadow: 3px 8px rgba(0, 0, 0, 0.25);
@@ -369,3 +373,19 @@ h6 {
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
+
+@media(width < 800px){
+    .modalterminos{
+        width: 95%;
+    }
+}
+
+@media (width < 450px){
+    .modal1-contenedor,
+    .modalVistaPreviaContenido {
+        margin: auto;
+        padding: 5px;
+        width: 95%;
+    }
+}
+

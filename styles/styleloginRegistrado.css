@@ -430,3 +430,11 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: center;
     margin: 20px;
 }
+
+@media (width < 365px){
+    .vistaPreviaAceptar{
+        display:grid;
+        grid-column: 1fr;
+        gap: 10px;
+    }
+}

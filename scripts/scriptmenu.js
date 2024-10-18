@@ -81,7 +81,9 @@ function actualizarMenu() {
             <p> <b>$  ${producto.precio}  COP</b> </p>
             </div>
             <!-- contenedor boton de la card -->
-            <div class="contenedorBotonCard"><button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})"><i class="bi bi-cart4 iconoBotonCard"></i>
+            <div class="contenedorBotonCard">
+                <button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})">
+                <i class="bi bi-cart4 iconoBotonCard"></i>
             </button>
             </div>
         </div>
