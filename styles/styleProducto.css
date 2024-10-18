@@ -1,4 +1,11 @@
 /* Cards de productos */
+p{
+    font-family: "Poppins", system-ui;
+    /* font-weight: 400; */
+    font-style: normal;
+}
+
+
 
 .producto{
     margin: auto;
@@ -6,7 +13,7 @@
     border: 2px solid #70349E;
     border-radius: 10%;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 20px;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
     width: 300px;
     height: 350px;
