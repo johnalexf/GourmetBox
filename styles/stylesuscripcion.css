@@ -1,4 +1,11 @@
 /* Estilos para el main */
+body {
+    background-color: #fffef4;
+}
+
+main {
+    background-color: #fffef4;
+}
 
 /* Estilos para el hero-content */
 .hero-content {
@@ -8,6 +15,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    background-color: #fffef4;
 }
 
 .hero-content img {
@@ -75,6 +83,7 @@
     margin: 0 auto;
     max-width: 100%;
     overflow-wrap: break-word;
+    background-color: #fffef4;
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
@@ -83,7 +92,8 @@
         grid-template-columns: repeat(3, 1fr);
         /* Solo 2 columnas en pantallas grandes */
         max-width: 90%;
-        /* Limita el ancho máximo en pantallas grandes */
+        background-color: #fffef4;
+
     }
 }
 
@@ -99,6 +109,7 @@
     margin: 0 auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -127,7 +138,8 @@
 /* Estilos para el texto dentro de la clase Suscripcion */
 .Suscripcion {
     font-family: 'Poppins', sans-serif;
-    color: white;
+    background-color: #fffef4;
+
 }
 
 .Objeto strong {
@@ -171,4 +183,6 @@ ul li {
     /* Mantiene la proporción de la imagen */
     display: block;
     /* Evita el espacio extra debajo de la imagen */
+
+
 }
