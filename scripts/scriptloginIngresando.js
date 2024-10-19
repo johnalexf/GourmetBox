@@ -96,10 +96,10 @@ function mostrarDatosPerfilUsuario(){
 }
 
 function mostrarDatosPerfilAdministrador(){
-formularioInfoAdmin.aliasAdministrador.value = datosUsuario.id;
-formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombre;
-formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;
-formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
+  formularioInfoAdmin.aliasAdministrador.value = datosUsuario.id;
+  formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombre;
+  formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;
+  formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
 }
 
 
@@ -181,8 +181,8 @@ formularioIngreso.addEventListener( 'submit', async function(event) {
 
 
 //Cuando cierra sesión muestra los formularios y oculta el perfil de usuario o de administrador
-let botonCerrarSesionAdmin = document.getElementById("cerrarSesionAdmin");
-let botonCerrarSesionUsuario = document.getElementById("cerrarSesionUsuario");
+export let botonCerrarSesionAdmin = document.getElementById("cerrarSesionAdmin");
+export let botonCerrarSesionUsuario = document.getElementById("cerrarSesionUsuario");
 
 //cuando llamamos una funcion en cualquier punto, el sistema lee por primera vez el javascript
 //y si encuentra una function llamada en este ejemplo cerrarSesion() con los paréntesis, asi este adentro

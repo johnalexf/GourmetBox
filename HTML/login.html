@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="../styles/stylelogin.css" />
   <link rel="stylesheet" href="../styles/styleloginRegistrado.css">
   <link rel="stylesheet" href="../styles/styleProducto.css">
+  <link rel="stylesheet" href="../styles/stylemodales.css">
 </head>
 
 <body>
@@ -99,7 +100,7 @@
                   <i id="iconoContrasenaLogin" class="bi bi-eye-fill"></i>
               </div>
               <input type="submit" value="Ingreso" id="realizarIngreso" />
-              <a class="olvidoContrasena">¿Olvido Contrasena?</a>
+              <!-- <a class="olvidoContrasena">¿Olvido Contrasena?</a> -->
             </form>
           </div>
 
@@ -167,6 +168,7 @@
         <div class="botonesPerfil">
           <button type="submit" id="guardarCambiosPerfilUsuario">Guardar</button>
           <button type="button" id="editarPerfilUsuario"> Editar Perfil </button>
+          <button type="button" id="cancelarCambiosPerfilUsuario"> Cancelar </button>
           <button type="button" id="cerrarSesionUsuario"> Cerrar Sesión </button>
         </div>
       </form>
@@ -221,6 +223,7 @@
         <div class="botonesPerfil">
           <button type="submit" id="guardarCambiosPerfilAdmin">Guardar</button>
           <button type="button" id="editarPerfilAdmin"> Editar Perfil </button>
+          <button type="button" id="cancelarCambiosPerfilAdmin"> Cancelar </button>
           <button type="button" id="cerrarSesionAdmin"> Cerrar Sesión </button>
         </div>
       </form>
@@ -277,10 +280,10 @@
 
     <!-- Ventana emergente mensaje enviado correctamente-->
     <div id="modalMensajeExitoso" class="modal1">
-      <div class="modal1-contenedor">
-        <i class="bi bi-x-circle-fill cerrar"></i>
+      <div class="modal1-contenedor modalPequeno">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarModalMensajeExitoso"></i>
         <!-- Icono sacado de Bootstrap-->
-        <h5>Bienvenido</h5>
+        <h5>Gracias por registrarte <span id="nombreUsuarioRegistrado"></span>, te invitamos a ingresar y adquirir nuestros productos</h5>
       </div>
     </div>
 
@@ -344,9 +347,9 @@
 
 
     <!-- Modal vista previa Producto -->
-    <div id="modalVistaPrevia" class="modalVistaPrevia">
-      <div class="modalVistaPreviaContenido">
-        <i class="bi bi-x-circle-fill cerrarVistaPrevia" id="cerrarVistaPrevia"></i>
+    <div id="modalVistaPrevia" class="modal1">
+      <div class="modal1-contenedor modalIntermedio">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarVistaPrevia"></i>
         <h4> Vista preliminar </h4>
         <div class="producto">
           <!-- contenedor imagen de la card -->
@@ -369,35 +372,39 @@
             </button>
           </div>
         </div>
-        <div class="vistaPreviaAceptar">
+        <div class="vistaPreviaMensaje">
           <p>Si estas de acuerdo con los cambios presiona 
             aceptar, en caso contrario presiona cancelar.</p>
-          <button id="cancelarCambios">Cancelar</button> <button id="aceptarCambios">Aceptar</button>
+        </div>
+        <div class="vistaPreviaAceptar botonesModalVistaPrevia">
+          <button id="cancelarCambios">Cancelar</button> 
+          <button id="aceptarCambios">Aceptar</button>
         </div>
       </div>
     </div>
 
      <!-- Ventana emergente seguro desea eliminar-->
      <div id="modalEliminarProducto" class="modal1">
-      <div class="modal1-contenedor">
-        <i class="bi bi-x-circle-fill cerrar"></i>
-        <br>
+      <div class="modal1-contenedor modalPequeno">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarModalEliminarProducto"></i>
         <h5>Seguro que desea eliminar el producto</h5>
-        <div class = "vistaPreviaAceptar">
+        <div class = "vistaPreviaAceptar botonesModalEliminarProducto">
           <button id="botonCancelarEliminar"> No </button>
           <button id="botonAceptarEliminar"> Si </button>
         </div>
       </div>
     </div>
 
-    <!-- Ventana emergente seguro desea eliminar-->
+    <!-- Ventana emergente verificación de contraseña-->
     <div id="modalContrasenaEditarPerfil" class="modal1">
-      <div class="modal1-contenedor">
-        <i class="bi bi-x-circle-fill cerrar"></i>
+      <div class="modal1-contenedor modalPequeno">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarModalContrasena"></i>
         <br>
         <h5>Por favor escriba la contraseña para guardar los cambios en su perfil</h5>
-        <input type="password" name="contrasenaEditarPerfil" Id="contrasenaEditarPerfil" placeholder="Escribe tu contraseña" required>
-        <div class = "vistaPreviaAceptar">
+        <div class="inputContrasenaEditarPerfil">
+          <input type="password" name="contrasenaEditarPerfil" Id="contrasenaEditarPerfil" placeholder="Escribe tu contraseña" required>
+        </div>
+        <div class = "contenedorBotonGuardarCambiosPerfil">
           <button id="botonGuardarEditarPerfil"> Guardar </button>
         </div>
       </div>
