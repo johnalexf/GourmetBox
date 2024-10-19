@@ -1,3 +1,12 @@
+/* Paleta de colores
+#FFFEF4
+#D6CB4F
+#71B344
+#869639
+#6A5BC7
+#70349E
+*/
+
 /* Estilos para la pantalla después de realizar un registro 
 Para perfiles de usuario y de administrador*/
 
@@ -117,8 +126,7 @@ con un símbolo*/
 
 .botonesPerfil button,
 .modificarProducto button,
-#botonCargarProducto,
-.vistaPreviaAceptar button {
+#botonCargarProducto {
     margin: auto;
     width: 130px;
     height: 40px;
@@ -130,46 +138,28 @@ con un símbolo*/
 }
 
 .botonesPerfil #guardarCambiosPerfilAdmin,
-.botonesPerfil #guardarCambiosPerfilUsuario
+.botonesPerfil #cancelarCambiosPerfilAdmin,
+.botonesPerfil #guardarCambiosPerfilUsuario,
+.botonesPerfil #cancelarCambiosPerfilUsuario
 {
     display: none;
 }
 
 /* Botones de cancelar  */
-.vistaPreviaAceptar button:nth-of-type(1),
 .vistaIdYBotones button,
-.botonesPerfil button:nth-of-type(3) {
+.botonesPerfil button:nth-of-type(4) {
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
     color: white;
 }
 
-.vistaPreviaAceptar button:nth-of-type(1):hover,
 .vistaIdYBotones button:hover,
-.botonesPerfil button:nth-of-type(3):hover {
+.botonesPerfil button:nth-of-type(4):hover {
     background-color: white;
     color: rgb(231, 99, 99);
 }
 
-.vistaPreviaAceptar button:nth-of-type(2) {
-    background-color: white;
-    border: 2px solid #70349E;
-    color: #70349E;
-}
 
-.vistaPreviaAceptar button:nth-of-type(2):hover {
-    background-color: #70349E;
-    color: white;
-}
-
-/* Paleta de colores
-#FFFEF4
-#D6CB4F
-#71B344
-#869639
-#6A5BC7
-#70349E
-*/
 
 /* Estilo adicional para el label de Cargar Imagen  */
 .divUrlProducto i {
@@ -186,9 +176,7 @@ con un símbolo*/
 
 
 .botonesPerfil button:hover,
-.vistaIdYBotones i:hover,
-.cargar #botonCargarProducto:hover,
-.cargar label:hover {
+.cargar #botonCargarProducto:hover{ 
     cursor: pointer;
     background-color: white;
     color: #70349E;
@@ -417,24 +405,4 @@ input[type="number"]::-webkit-inner-spin-button {
         margin-left: 7%;
     }
 
-}
-
-
-.modalVistaPrevia h4 {
-    text-align: center;
-    color: #70349E;
-}
-
-
-.vistaPreviaAceptar {
-    text-align: center;
-    margin: 20px;
-}
-
-@media (width < 365px){
-    .vistaPreviaAceptar{
-        display:grid;
-        grid-column: 1fr;
-        gap: 10px;
-    }
 }

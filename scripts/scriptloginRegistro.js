@@ -17,7 +17,8 @@ const bodyLogin = document.querySelector(".bodyLogin");
 
 // Variables para manipular ventanas emergentes
 const modalMensajeExitoso = document.getElementById("modalMensajeExitoso");
-const cerrarModalExitoso = document.querySelector(".cerrar"); 
+let nombreUsuarioRegistrado = document.getElementById("nombreUsuarioRegistrado");
+const cerrarModalExitoso = document.getElementById("cerrarModalMensajeExitoso"); 
 const modalTerminos = document.getElementById("modalTerminos");
 const cerrarTerminos = document.querySelector(".cerrarTerminos");
 const terminos = document.getElementById("terminosCondiciones");
@@ -27,6 +28,17 @@ let formularioRegistro = document.getElementById('formularioR');
 let iconoContrasenaR = document.getElementById('iconoContrasenaR');
 let iconoConfirmarContrasena = document.getElementById('iconoConfirmarContrasena');
 
+function mostrarModalRegistroExitoso(){
+  let seRegistro = localStorage.getItem('seRegistro');
+  if ( seRegistro != undefined && seRegistro.length > 0) {
+    nombreUsuarioRegistrado.innerText = seRegistro;
+    modalMensajeExitoso.style.display = 'block'; 
+    formularioRegistro.reset();
+  }
+}
+mostrarModalRegistroExitoso();
+
+
 // Cuando oprima el botón de registro para cambio de ventana, activa la funcionalidad de los contenedores para hacer el cambio de formularios
 registroBotonCambioVentana.onclick = function(){
     contieneFormulario.classList.add('active');
@@ -34,9 +46,11 @@ registroBotonCambioVentana.onclick = function(){
 }
 
 // Cuando oprima el botón de login para cambio de ventana, desactiva la funcionalidad de los contenedores para hacer el cambio de formularios
-loginBotonCambioVentana.onclick = function(){
-    contieneFormulario.classList.remove('active');
-    bodyLogin.classList.remove('active');
+loginBotonCambioVentana.onclick = cambioVentanaALogin;
+
+function cambioVentanaALogin(){
+  contieneFormulario.classList.remove('active');
+  bodyLogin.classList.remove('active');
 }
 
 //código para mostrar la contraseña
@@ -78,6 +92,7 @@ cerrarTerminos.addEventListener("click", () => {
 // Cerrar la ventana bienvenido cuando se haga clic en la "X"
 cerrarModalExitoso.onclick = function() {
   modalMensajeExitoso.style.display = "none";
+  localStorage.setItem('seRegistro',"");
 }
 
 
@@ -181,17 +196,22 @@ formularioRegistro.addEventListener('submit', async function(event) {
 
     if(!usuarioRepetido){
        //reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) 
-      await modificarJSON.reescribirOCrearUsuario(
-      formularioRegistro.usuarioR.value,
-      "usuario",
-      formularioRegistro.nombreR.value,
-      formularioRegistro.correo.value,
-      formularioRegistro.telefono.value,
-      modificarJSON.encrypt_data(formularioRegistro.contrasenaR.value),
-      false
-      );
-      modalMensajeExitoso.style.display = 'block'; 
-      formularioRegistro.reset();
+       let seRegistro = formularioRegistro.nombreR.value;
+       localStorage.setItem('seRegistro', seRegistro);
+       nombreUsuarioRegistrado.innerText = seRegistro;
+       modalMensajeExitoso.style.display = 'block'; 
+       
+        await modificarJSON.reescribirOCrearUsuario(
+            formularioRegistro.usuarioR.value,
+            "usuario",
+            formularioRegistro.nombreR.value,
+            formularioRegistro.correo.value,
+            formularioRegistro.telefono.value,
+            modificarJSON.encrypt_data(formularioRegistro.contrasenaR.value),
+            false
+          );
+          formularioRegistro.reset();
+          cambioVentanaALogin();
     }else{
       formularioRegistro.usuarioR.setCustomValidity('El usuario ya existe.');
       formularioRegistro.usuarioR.reportValidity();

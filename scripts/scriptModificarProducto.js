@@ -40,6 +40,7 @@ let reescribirProducto = false;
 let modalEliminarProducto = document.getElementById('modalEliminarProducto');
 let botonAceptarEliminar = document.getElementById('botonAceptarEliminar');
 let botonCancelarEliminar = document.getElementById('botonCancelarEliminar');
+let botonCerrarModalEliminarProducto = document.getElementById('cerrarModalEliminarProducto');
 
 //variable para guardar la imagen de forma de texto
 let imagen;
@@ -178,15 +179,16 @@ botonEliminarProducto.addEventListener('click', ()=>{
 })
 botonAceptarEliminar.addEventListener('click', async function(){
     await modificarJSON.eliminarProducto(inputsProducto[0].value);
+    cerrarModalEliminarProducto();
 })
 
-modalEliminarProducto.querySelector('.cerrar').addEventListener( 'click', ()=>{
-    modalEliminarProducto.style.display = "none";
-})
+botonCerrarModalEliminarProducto.addEventListener( 'click', cerrarModalEliminarProducto);
 
-botonCancelarEliminar.addEventListener('click', function(){
+botonCancelarEliminar.addEventListener('click', cerrarModalEliminarProducto);
+
+function cerrarModalEliminarProducto(){
     modalEliminarProducto.style.display = "none";
-})
+}
 
 
 formularioModificarCrearProducto.addEventListener('submit', (event)=>{
@@ -302,9 +304,9 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
     }
 })
 
-let clave = "John12/&%";
-console.log(clave);
-console.log(modificarJSON.encrypt_data(clave));
+// let clave = "John12/&%";
+// console.log(clave);
+// console.log(modificarJSON.encrypt_data(clave));
 
 
 

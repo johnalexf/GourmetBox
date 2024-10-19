@@ -29,8 +29,14 @@ h3 {
     font-style: normal;
 }
 
+#nombreUsuarioRegistrado{
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .ingreso h2,
 .registro h2 {
+    padding-bottom: 12px;
     font-size: 25px;
 }
 
@@ -58,6 +64,7 @@ h3 {
 .bodyLogin button {
     width: 200px;
     height: 40px;
+    font-weight: 700;
     border-radius: 15px;
     /* border: 2px solid #70349E; */
     background-color: rgba(105, 91, 199, 0.534);
@@ -240,7 +247,6 @@ sale hacia la der */
     border-radius: 15px;
     border: 2px solid #70349E;
     background-color: #70349e78;
-    ;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
@@ -301,91 +307,8 @@ sale hacia la der */
 }
 
 
-.modal1,
-.modalterminosP,
-.modalVistaPrevia {
-    display: none;
-    /* Desaparece el contenedor */
-    position: fixed;
-    /*Mantiene la pantalla fija asi se haga scroll  */
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.466);
-    transition: 3s ease-in-out;
-}
-
-
-.modal1-contenedor,
-.modalVistaPreviaContenido {
-    background-color: white;
-    margin: 5% auto;
-    padding: 20px;
-    max-width: 400px;
-    width: 80%;
-    overflow: auto;
-    border-radius: 10px;
-    border: 1px solid black;
-    position: relative;
-}
-
-.modalterminos {
-    background-color: rgb(255, 255, 255);
-    margin: 2% auto;
-    padding: 20px;
-    width: 60%;
-    height: 100%;
-    overflow: auto;
-    border-radius: 10px;
-    border: 1px solid black;
-    text-align: justify;
-    color: rgb(0, 0, 0);
-    position: relative;
-}
-.modalterminos h5,
-h6 {
-    text-align: center;
-}
-
-.cerrar,
-.cerrarTerminos,
-.cerrarVistaPrevia {
-    color: rgb(231, 99, 99);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    float: right;
-    /* lo obliga a posicionarse a la derecha  */
-    position: absolute;
-    /* elimina su posición normal en un documento */
-    top: 3px;
-    right: 10px;
-    font-size: 25px;
-    cursor: pointer;
-    box-shadow: 3px 8px rgba(0, 0, 0, 0.25);
-}
-
-.cerrar:hover,
-.cerrarTerminos:hover,
-.cerrarVistaPrevia:hover {
-    color: rgb(174, 59, 59);
-    cursor: pointer;
-}
-
-@media(width < 800px){
-    .modalterminos{
-        width: 95%;
-    }
-}
-
 @media (width < 450px){
-    .modal1-contenedor,
-    .modalVistaPreviaContenido {
-        margin: auto;
-        padding: 5px;
-        width: 95%;
+    .containerLogin {
+        width: 90%;
     }
 }
-
