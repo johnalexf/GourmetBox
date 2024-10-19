@@ -92,11 +92,11 @@ export async function obtenerBaseDatos() {
 export let urlUsuarios = "http://localhost:3000/usuarios";
 
 //funcion para agregar un nuevo producto o reescribirlo
-export async function reescribirOCrearUsuario(usuario,nombre,correo,telefono,contrasena,Reescribir) {
+export async function reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) {
     
     if(Reescribir == true){
         metodo = 'PUT';
-        urlEscribir = urlUsuarios + '/' + id;
+        urlEscribir = urlUsuarios + '/' + usuario;
     }else{
         metodo = 'POST';
         urlEscribir = urlUsuarios;
@@ -112,7 +112,7 @@ export async function reescribirOCrearUsuario(usuario,nombre,correo,telefono,con
             },
             body: JSON.stringify({
                 id: usuario,
-                rol: "usuario",
+                rol: rol,
                 nombre : nombre,
                 correo : correo,
                 telefono : telefono,
@@ -198,6 +198,38 @@ export async function verificarContrasena(usuario,contrasena) {
         console.error('Error:', error.message);
       } 
 }
+
+export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
+            
+    try {
+        // Realiza una solicitud fetch para obtener el JSON
+        const respuesta = await fetch(urlUsuariosLocal);
+        
+        // Verifica si la solicitud fue exitosa
+        if (!respuesta.ok) {
+          throw new Error('Error al obtener el JSON');
+        }
+    
+        // Convierte la respuesta a un objeto JavaScript
+        const datos = await respuesta.json();
+        const usuarios = await datos.usuarios;
+        let contrasenaCorrecta = false;
+
+        usuarios.forEach(element => {
+            if(element.id === usuario){
+                if(contrasena === element.contrasena ){
+                    contrasenaCorrecta = true;
+                }
+            }
+        });
+
+        return contrasenaCorrecta;
+      } catch (error) {
+        console.error('Error:', error.message);
+      } 
+}
+
+
 
 
 export function encrypt_data(string) {

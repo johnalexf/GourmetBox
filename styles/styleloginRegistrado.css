@@ -37,12 +37,12 @@ Para perfiles de usuario y de administrador*/
 }
 
 .modificarProducto {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .tituloPerfil h1 {
-    margin-top: 20px;
+    padding-top: 20px;
     font-size: 45px;
 }
 
@@ -129,10 +129,16 @@ con un símbolo*/
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
 }
 
+.botonesPerfil #guardarCambiosPerfilAdmin,
+.botonesPerfil #guardarCambiosPerfilUsuario
+{
+    display: none;
+}
+
 /* Botones de cancelar  */
 .vistaPreviaAceptar button:nth-of-type(1),
 .vistaIdYBotones button,
-.botonesPerfil button:nth-of-type(2) {
+.botonesPerfil button:nth-of-type(3) {
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
     color: white;
@@ -140,7 +146,7 @@ con un símbolo*/
 
 .vistaPreviaAceptar button:nth-of-type(1):hover,
 .vistaIdYBotones button:hover,
-.botonesPerfil button:nth-of-type(2):hover {
+.botonesPerfil button:nth-of-type(3):hover {
     background-color: white;
     color: rgb(231, 99, 99);
 }
@@ -423,4 +429,12 @@ input[type="number"]::-webkit-inner-spin-button {
 .vistaPreviaAceptar {
     text-align: center;
     margin: 20px;
+}
+
+@media (width < 365px){
+    .vistaPreviaAceptar{
+        display:grid;
+        grid-column: 1fr;
+        gap: 10px;
+    }
 }

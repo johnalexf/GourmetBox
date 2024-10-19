@@ -1,4 +1,11 @@
 /* Cards de productos */
+p{
+    font-family: "Poppins", sans-serif;
+    /* font-weight: 400; */
+    font-style: normal;
+}
+
+
 
 .producto{
     margin: auto;
@@ -6,14 +13,17 @@
     border: 2px solid #70349E;
     border-radius: 10%;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 20px;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
     width: 300px;
     height: 350px;
     }
     
     .producto button {
-    padding: 2vh 1.2vw;
+    /* padding: 2vh 1.2vw; */
+    width: 70px;
+    height: 70px;
+    border: 0px;
     border-radius: 50%;
     background-color: #70349E;
     }
@@ -32,12 +42,13 @@
         height: 5vh;
     }
     .iconoBotonCard{
-        font-size: 28px;
+        font-size: 35px;
         color: rgba(255, 255, 255);
     }
+
     .contenedorBotonCard{
         position: absolute;
-        right: -5px;
+        right: -8px;
         bottom: 0px;
     }
     .contenedorTituloCard h5{
@@ -45,10 +56,10 @@
         font-weight: bold;
     }
 
-    @media (width < 400px) {
+    @media (width < 360px) {
         .producto {
-            width: 230px;
-            height: 280px;
+            width: 95%;
+            height: auto;
         }
     }
     

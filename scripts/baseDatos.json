@@ -11,7 +11,7 @@
     {
       "id": "john",
       "rol": "usuario",
-      "nombre": "john forero",
+      "nombre": "john forer",
       "correo": "johnforero@hotmail.com",
       "telefono": "3201235654",
       "contrasena": "1d3828ef1337"
@@ -55,6 +55,14 @@
       "correo": "prueba@hotmail.com",
       "telefono": "32012345678",
       "contrasena": "1f932dfa268a1337"
+    },
+    {
+      "id": "perez",
+      "rol": "usuario",
+      "nombre": "John Alexander",
+      "correo": "johnalexfr@hotmail.com",
+      "telefono": "3202173409",
+      "contrasena": "1d3828ef1337"
     }
   ],
   "productos": [
