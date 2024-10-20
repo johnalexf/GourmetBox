@@ -80,6 +80,9 @@ main {
     background-color: white;
 }
 
+.btnMenu {
+    z-index: 2;
+}
 
 .fondoEnlaces {
     grid-column: 1/3;
@@ -196,6 +199,16 @@ main {
     box-shadow: 5px 10px 10px black;
 }
 
+.tituloCarta{
+    color: white;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    margin-inline: auto;
+    margin-top: 5%;
+    font-size: 2.5rem;
+}
+
+
 /* misma posicion que la imagen letras blancas */
 .itemFavoritos {
     margin: auto;
@@ -215,7 +228,7 @@ main {
 .tituloFavoritos,
 .tituloComentarios {
     /* background-image: url("../img_comidas/CARRUSEL-INDEX/banners_menu.jpg"); */
-    background-image: url("../img/Gourmet\ box\ v.jpg");
+    background-image: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
