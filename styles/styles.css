@@ -214,8 +214,12 @@ main {
 .tituloUbicanos,
 .tituloFavoritos,
 .tituloComentarios {
-    background-image: url("../img_comidas/CARRUSEL-INDEX/banners_menu.jpg");
+    /* background-image: url("../img_comidas/CARRUSEL-INDEX/banners_menu.jpg"); */
+    background-image: url("../img/Gourmet\ box\ v.jpg");
+    background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     place-content: center;
     text-align: center;
     width: 100%;
