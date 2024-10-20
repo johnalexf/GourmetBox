@@ -1,6 +1,5 @@
 .modal1,
-.modalterminosP
-{
+.modalterminosP {
     display: none;
     /* Desaparece el contenedor */
     position: fixed;
@@ -16,7 +15,7 @@
 
 
 .modal1-contenedor,
-.modalterminos{
+.modalterminos {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
@@ -25,7 +24,7 @@
     overflow: auto;
 }
 
-.modal1-contenedor{
+.modal1-contenedor {
     max-width: 400px;
     width: 80%;
     max-height: 95%;
@@ -39,11 +38,12 @@
     text-align: justify;
 }
 
-.modalPequeno{
+.modalPequeno {
     margin: 15% auto;
 }
 
-.modalIntermedio, .modalterminos{
+.modalIntermedio,
+.modalterminos {
     margin: 1% auto;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .cerrar,
-.cerrarTerminos{
+.cerrarTerminos {
     color: rgb(231, 99, 99);
     width: 25px;
     height: 25px;
@@ -75,15 +75,15 @@
 }
 
 .cerrar:hover,
-.cerrarTerminos:hover
-{
+.cerrarTerminos:hover {
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
 
-.vistaPreviaAceptar, .vistaPreviaMensaje, 
+.vistaPreviaAceptar,
+.vistaPreviaMensaje,
 .contenedorBotonGuardarCambiosPerfil,
-.inputContrasenaEditarPerfil{
+.inputContrasenaEditarPerfil {
     margin: 4% auto;
     width: 300px;
     text-align: center;
@@ -94,7 +94,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.inputContrasenaEditarPerfil input{
+.inputContrasenaEditarPerfil input {
     padding: 5px 10px;
     border-radius: 10px;
 }
@@ -111,14 +111,14 @@
 }
 
 .botonesModalVistaPrevia button:nth-of-type(1),
-.botonesModalEliminarProducto button:nth-of-type(2){
+.botonesModalEliminarProducto button:nth-of-type(2) {
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
     color: white;
 }
 
 .botonesModalVistaPrevia button:nth-of-type(1):hover,
-.botonesModalEliminarProducto button:nth-of-type(2):hover{
+.botonesModalEliminarProducto button:nth-of-type(2):hover {
     background-color: white;
     color: rgb(231, 99, 99);
 }
@@ -133,26 +133,118 @@
 
 .botonesModalVistaPrevia button:nth-of-type(2):hover,
 .botonesModalEliminarProducto button:nth-of-type(1):hover,
-.contenedorBotonGuardarCambiosPerfil button{
+.contenedorBotonGuardarCambiosPerfil button {
     background-color: #70349E;
     color: white;
 }
 
 
 
-@media(width < 840px){
-    .modalterminos{
+@media(width < 840px) {
+    .modalterminos {
         width: 95%;
     }
 }
 
-@media (width < 450px){
-    .vistaPreviaAceptar, .vistaPreviaMensaje, .modal1-contenedor{
+@media (width < 450px) {
+
+    .vistaPreviaAceptar,
+    .vistaPreviaMensaje,
+    .modal1-contenedor {
         width: 95%;
     }
+
     .vistaPreviaAceptar button {
         width: 120px;
     }
 }
 
+/* Modal */
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
 
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+/* Botón de cerrar */
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    /* Transición suave para el color de fondo */
+}
+
+/* Cambiar color de fondo al pasar el mouse */
+.close-button:hover {
+    background-color: darkred;
+    /* Color más oscuro al pasar el mouse */
+}
+
+
+/* Estilo para los botones dentro del modal */
+.modal-buttons {
+    margin-top: 20px;
+    /* Espaciado superior */
+}
+
+.agree-button,
+.cancel-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agree-button:hover {
+    background-color: #45a049;
+}
+
+.cancel-button {
+    background-color: #f44336;
+}
+
+.cancel-button:hover {
+    background-color: #e53935;
+}
