@@ -17,7 +17,7 @@ let nameUser1 =  document.getElementById('sesion');
 
 export let tipoUsuario = "";
 let indiceTipoUsuario = 0; //si el valor es 1 es administrador, si es 0 es un usuario
-let datosUsuario={}; //datos del usuario traídos de la base de datos
+export let datosUsuario={}; //datos del usuario traídos de la base de datos
 
 export let formularioInfoUsuario = document.getElementById('informacionUsuario');
 export let formularioInfoAdmin = document.getElementById('informacionAdministrador');
@@ -63,21 +63,23 @@ function mostrarDivBodyLogin(){
 
 
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
-if(localStorage.getItem('usuario') != undefined){
-  if( localStorage.getItem('usuario').length != 0 ){
-    datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
-    averiguarTipoUsuario();
+export function cargarDatosUsuario(){
+  if(localStorage.getItem('usuario') != undefined){
+    if( localStorage.getItem('usuario').length != 0 ){
+      datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
+      averiguarTipoUsuario();
 
-    if(indiceTipoUsuario == 1) mostrarDatosPerfilAdministrador();
-    else   mostrarDatosPerfilUsuario();
+      if(indiceTipoUsuario == 1) mostrarDatosPerfilAdministrador();
+      else   mostrarDatosPerfilUsuario();
 
-    divBodyLogin.style.display = 'none';
-    divUsuarioRegistrado[indiceTipoUsuario].style.display = 'block';
-    divUsuarioRegistrado[indiceTipoUsuario].classList.remove('ocultar');
-    divUsuarioRegistrado[indiceTipoUsuario].classList.add('mostrar');
+      divBodyLogin.style.display = 'none';
+      divUsuarioRegistrado[indiceTipoUsuario].style.display = 'block';
+      divUsuarioRegistrado[indiceTipoUsuario].classList.remove('ocultar');
+      divUsuarioRegistrado[indiceTipoUsuario].classList.add('mostrar');
+    }
   }
 }
-
+cargarDatosUsuario();
 //funcion para averiguar si el usuario es administrador
 function averiguarTipoUsuario(){
   tipoUsuario = datosUsuario.rol;

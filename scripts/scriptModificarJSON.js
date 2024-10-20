@@ -64,24 +64,23 @@ export async function eliminarProducto(id) {
 
 }
 
-let urlProductosLocal = "../scripts/baseDatos.json"; 
+//let urlProductosLocal = "../scripts/baseDatos.json"; 
+let urlProductosLocal = "http://localhost:3000/productos";
 
 export async function obtenerBaseDatos() {
     
     try {
-        // Realiza una solicitud fetch para obtener el JSON
         const respuesta = await fetch(urlProductosLocal);
         
-        // Verifica si la solicitud fue exitosa
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
         }
-    
-        // Convierte la respuesta a un objeto JavaScript
+
+        // const datos = await respuesta.json();
+        // return datos.productos;
+
         const datos = await respuesta.json();
-        
-        //console.log(datos)
-        return datos.productos;
+        return datos;
          
       } catch (error) {
         console.error('Error:', error.message);
@@ -130,21 +129,22 @@ export async function reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono
 
 }
 
-let urlUsuariosLocal = "../scripts/baseDatos.json"; 
+//let urlUsuariosLocal = "../scripts/baseDatos.json"; 
+let urlUsuariosLocal = "http://localhost:3000/usuarios"; 
 export async function verificarSiUsuarioExiste(usuario) {
             
     try {
-        // Realiza una solicitud fetch para obtener el JSON
         const respuesta = await fetch(urlUsuariosLocal);
         
-        // Verifica si la solicitud fue exitosa
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
         }
-    
-        // Convierte la respuesta a un objeto JavaScript
-        const datos = await respuesta.json();
-        const usuarios = await datos.usuarios;
+
+        // const datos = await respuesta.json();
+        // const usuarios = await datos.usuarios;
+
+        const usuarios = await respuesta.json(); 
+
         let retorno = false;
 
         usuarios.forEach(element => {
@@ -170,9 +170,11 @@ export async function verificarContrasena(usuario,contrasena) {
           throw new Error('Error al obtener el JSON');
         }
     
-        // Convierte la respuesta a un objeto JavaScript
-        const datos = await respuesta.json();
-        const usuarios = await datos.usuarios;
+        // const datos = await respuesta.json();
+        // const usuarios = await datos.usuarios;
+
+        const usuarios = await respuesta.json(); 
+
         let usuarioSiExiste = false;
         let contrasenaCorrecta = false;
         let datosUsuario = {};
@@ -210,9 +212,11 @@ export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
           throw new Error('Error al obtener el JSON');
         }
     
-        // Convierte la respuesta a un objeto JavaScript
-        const datos = await respuesta.json();
-        const usuarios = await datos.usuarios;
+        // const datos = await respuesta.json();
+        // const usuarios = await datos.usuarios;
+
+        const usuarios = await respuesta.json(); 
+
         let contrasenaCorrecta = false;
 
         usuarios.forEach(element => {

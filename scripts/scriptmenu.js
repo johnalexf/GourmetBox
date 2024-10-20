@@ -1,11 +1,9 @@
-//import menu from './jsonproductos.json' with {type: 'json'};
-//let url = "http://localhost:3000/productos";  //Variable para usar con un servidor local ACTIVADO
-
 import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
 
 
-let url = "../scripts/baseDatos.json"; //Variable para solo acceder a los datos del JSON
-
+//let url = "../scripts/baseDatos.json"; //Variable para solo acceder a los datos del JSON
+//url para poder hacer pruebas con live server y que este no recargue la pagina al cambiar el json
+let url = "http://localhost:3000/productos";  //Variable para usar con un servidor local ACTIVADO
 
 let menu;
 async function obtenerMenu() {

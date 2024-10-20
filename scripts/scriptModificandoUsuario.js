@@ -2,10 +2,9 @@
 import * as modificarJSON from "../scripts/scriptModificarJSON.js";
 
 import {formularioInfoUsuario , formularioInfoAdmin, tipoUsuario, 
-        botonCerrarSesionAdmin, botonCerrarSesionUsuario} 
+        botonCerrarSesionAdmin, botonCerrarSesionUsuario, cargarDatosUsuario , datosUsuario} 
         from "../scripts/scriptloginIngresando.js";
 
-import { usuarioLogiado } from "./manipulacionNavbar.js";
 
 let botonGuardarCambiosPerfilUsuario = document.getElementById("guardarCambiosPerfilUsuario");
 let botonEditarPerfilUsuario = document.getElementById("editarPerfilUsuario");
@@ -89,10 +88,10 @@ formularioInfoAdmin.addEventListener('submit', async (event)=>{
 
 botonGuardarEditarPerfil.addEventListener('click',async ()=>{
 
-    console.log("contrasena editar perfil");
+    console.log(datosUsuario.id)
     let contrasena = contrasenaEditarPerfil.value;
     let contrasenaAVerificar = modificarJSON.encrypt_data(contrasena);
-    if(await modificarJSON.confirmarContrasenaParaEditarPerfil(usuarioLogiado,contrasenaAVerificar)){
+    if(await modificarJSON.confirmarContrasenaParaEditarPerfil(datosUsuario.id,contrasenaAVerificar)){
         if(tipoUsuario == "admin"){
             //reescribirOCrearUsuario(usuario,nombre,correo,telefono,contrasena,Reescribir)
             await modificarJSON.reescribirOCrearUsuario(
@@ -104,9 +103,14 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
                 contrasenaAVerificar,
                 true
             );
-            desactivarInputAdministrador(true);
-            botonGuardarCambiosPerfilAdmin.style.display = "none";
-            botonEditarPerfilAdmin.style.display = "block";
+            localStorage.setItem('datosUsuario', 
+                `{"id": "${aliasAdministrador.value}",
+                "rol": "${tipoUsuario}",
+                "nombre": "${nombreAdministrador.value}",
+                "correo": "${correoAdministrador.value}",
+                "telefono": "${telefonoAdministrador.value}" }`
+            );
+            normalizarVistaEdicionPerfilAdmin();
         }else{
             await modificarJSON.reescribirOCrearUsuario(
                 aliasUsuario.value,
@@ -117,13 +121,17 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
                 contrasenaAVerificar,
                 true
             );
-
-            desactivarInputUsuario(true);
-            botonGuardarCambiosPerfilUsuario.style.display = "none";
-            botonEditarPerfilUsuario.style.display = "block";
+            localStorage.setItem('datosUsuario', 
+                `{"id": "${aliasUsuario.value}",
+                "rol": "${tipoUsuario}",
+                "nombre": "${nombreUsuario.value}",
+                "correo": "${correoUsuario.value}",
+                "telefono": "${telefonoUsuario.value}" }`
+            );
+            normalizarVistaEdicionPerfilUsuario();
         }
         modalContrasenaEditarPerfil.style.display = "none";
-
+        cargarDatosUsuario();
     }else{
         contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta", );
         contrasenaEditarPerfil.reportValidity();
