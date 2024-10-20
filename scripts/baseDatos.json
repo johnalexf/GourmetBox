@@ -41,25 +41,9 @@
       "contrasena": "204a281a1337"
     },
     {
-      "id": "petronilo",
-      "rol": "admin",
-      "nombre": "petronilo2",
-      "correo": "petronilo@gmail.com",
-      "telefono": "3222792799",
-      "contrasena": "20bc2cca29502df92b6e"
-    },
-    {
-      "id": "prueba",
+      "id": "John",
       "rol": "usuario",
-      "nombre": "prueba",
-      "correo": "prueba@hotmail.com",
-      "telefono": "32012345678",
-      "contrasena": "1f932dfa268a1337"
-    },
-    {
-      "id": "perez",
-      "rol": "usuario",
-      "nombre": "John Alexander",
+      "nombre": "john forero",
       "correo": "johnalexfr@hotmail.com",
       "telefono": "3202173409",
       "contrasena": "1d3828ef1337"

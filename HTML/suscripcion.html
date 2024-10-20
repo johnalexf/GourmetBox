@@ -19,6 +19,7 @@
   <!-- Estilos del Navbar, Footer y esta página -->
   <link rel="stylesheet" href="../styles/styleNavFooter.css">
   <link rel="stylesheet" href="../styles/stylesuscripcion.css">
+  <link rel="stylesheet" href="../styles/stylemodales.css">
 </head>
 
 <body>
@@ -43,7 +44,7 @@
             <li class="nav-item"><a class="nav-link" href="./contactanos.html" id="contactenos">Contáctenos</a></li>
             <li class="nav-item"><a class="nav-link" href="./login.html" id="sesion">Ingresar</a></li>
             <li class="nav-item" id="liCarrito">
-              <a class="nav-link" href="./carrito.html" >
+              <a class="nav-link" href="./carrito.html">
                 <i class="bi bi-cart4" id="carrito">
                   <p id="cantidadCarritoIcono">1</p>
                 </i>
@@ -184,6 +185,19 @@
 
     </section>
 
+    <!-- Modal -->
+    <div id="subscriptionModal" class="modal2">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p>Has adquirido el plan de suscripción "<span id="subscriptionName"></span>".</p>
+        <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
+        <div class="modal-buttons">
+          <button id="agreeButton" class="agree-button">Estoy de acuerdo</button>
+          <button id="cancelButton" class="cancel-button">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
 
   </main>
 
@@ -197,6 +211,7 @@
     crossorigin="anonymous"></script>
   <script src="../scripts/llamarNavFooter.js"></script>
   <script src="../scripts/manipulacionNavbar.js" type="module"></script>
+  <script src="../scripts/scriptsuscripcion.js"></script>
 
 </body>
 
