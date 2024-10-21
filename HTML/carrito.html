@@ -27,6 +27,7 @@
   <!-- EStilos propios de esta pagina -->
   <link rel="stylesheet" href="../styles/stylecarrito.css">
   <link rel="stylesheet" href="../styles/styleProducto.css">
+  <link rel="stylesheet" href="../styles/stylemodales.css">
 
 
 </head>
@@ -137,23 +138,6 @@
 
       <div class="vistaPreviaYResumenCompra">
 
-        <div class="producto">
-          <!-- contenedor imagen de la card -->
-          <div class="contenedorImagenCard">
-            <img src="../img/waffle primavera.png" alt="">
-          </div>
-          <!-- contenedor titulo de la card -->
-          <div class="contenedorTituloCard">
-            <h5>Waffle primavera
-            </h5>
-          </div>
-          <!-- contenedor descripcion de la card -->
-          <div class="contenedorDescripcionCard">
-            <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
-          </div>
-          <!-- contenedor precio de la card -->
-        </div>
-
         <!-- Inicio Resumen de compra --------------------->
         <div class="resumenCompra">
           <h3>RESUMEN DE COMPRA</h3>
@@ -192,15 +176,35 @@
 
     <!-- Ventana emergente seguro desea eliminar el producto-->
     <div id="modalEliminarProducto" class="modal1">
-      <div class="modal1-contenedor">
+      <div class="modal1-contenedor modalPequeno">
         <i class="bi bi-x-circle-fill cerrar" onclick="cancelarEliminar()"></i>
-        <br>
         <div id="textoModalEliminar">
           <h5>Seguro que desea eliminar el producto nombre del producto</h5>
         </div>
-        <div class="modalAceptar">
-          <button id="botonCancelarEliminar" onclick="cancelarEliminar()"> No </button>
-          <button id="botonAceptarEliminar" onclick="eliminarDefinitivo()"> Si </button>
+        <div class="modal-buttons">
+          <button id="botonCancelarEliminar" class = "botonAzul" onclick="cancelarEliminar()"> No </button>
+          <button id="botonAceptarEliminar" class = "botonRojo" onclick="eliminarDefinitivo()"> Si </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalVistaProducto" class="modal1">
+      <div class="modal1-contenedor modalIntermedio">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarVistaProducto"></i>
+        <div class="producto">
+          <div class="contenedorImagenCard">
+            <img src="../img/waffle primavera.png" alt="">
+          </div>
+          <div class="contenedorTituloCard">
+            <h5>Waffle primavera
+            </h5>
+          </div>
+          <div class="contenedorDescripcionCard">
+            <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
+          </div>
+          <div class="contenedorPrecioCard"></div>
+            <p> <b>$  ${producto.precio}  COP</b> </p>
+          </div>
         </div>
       </div>
     </div>
@@ -208,8 +212,6 @@
 
   </main>
 
-  <button onclick="mostrarmodal('1')"> prueba producto1</button>
-  <button> pruebas</button>
 
   <!-- Footer jalado con el javascript llamarNavFooter.js -->
   <footer>

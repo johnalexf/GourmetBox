@@ -41,6 +41,13 @@ let almuerzosHTML = "";
 let postresHTML = "";
 let contenidoMenuHTML = "";
 
+let modalAgregadoACarrito = document.getElementById("modalAgregadoACarrito");
+let mensajeModal = document.getElementById("mensajeModal");
+
+let botonContinuarAgregando = document.getElementById("botonContinuarAgregando");
+let botonCerrarModalAgregadoACarrito = document.getElementById("cerrarModalAgregadoACarrito");
+
+
 function productoCarrito(id, nombre, descripcion, categoria, precio, url, cantidad) {
     this.id = id;
     this.nombre = nombre;
@@ -141,11 +148,12 @@ export function adicionarCarrito(id) {
         carritoCantidadAgregadaNavbar();
 
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
-        alert(`El producto ${menu[indiceMenu].nombre} ha sido agregado al carrito`);
+        mensajeModal.innerHTML = `<h5> El producto  <b>${menu[indiceMenu].nombre} </b> ha sido agregado al carrito. </h5>`;
     } else {
-        alert("El producto ya se ha agregado al carrito");
+        mensajeModal.innerHTML = `<h5> El producto  <b>${menu[indiceMenu].nombre} </b> ya se ha agregado al carrito. </h5>`;
     }
 
+    modalAgregadoACarrito.style.display = "block";
 }
 
 //ya declarada la función para exportar, con la siguiente linea la ponemos de manera global en html
@@ -160,4 +168,14 @@ function encontrarIndiceListaObjetos(id) {
     }
     return index
 }
+
+function cerrarModalAgregadoACarrito(){
+    modalAgregadoACarrito.style.display = "none";
+}
+
+botonCerrarModalAgregadoACarrito.addEventListener('click', cerrarModalAgregadoACarrito);
+botonContinuarAgregando.addEventListener('click', cerrarModalAgregadoACarrito);
+
+
+
 

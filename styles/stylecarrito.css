@@ -8,7 +8,9 @@ main {
     background-position: center;
     /* Centra la imagen */
     background-repeat: no-repeat;
+    min-height: 80vh;
 }
+
 
 /* icono carrito del navbar */
 #carrito {
@@ -39,8 +41,11 @@ h2,
 h3,
 h5 {
     font-family: "Roboto", sans-serif;
-    font-weight: 900;
     font-style: normal;
+}
+
+h1, h2, h3{
+    font-weight: 900;
 }
 
 button {
@@ -89,7 +94,7 @@ button {
     text-decoration: none;
     font-weight: 300;
     font-size: 22px;
-    margin: auto;
+    margin: 20px auto auto;
     padding: 5px 30px;
     border-radius: 50px;
     border: 2px solid #70349E;
@@ -114,6 +119,7 @@ hr {
     display: none;
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 /* Contenedor de todos los productos que se van agregando */
@@ -125,7 +131,7 @@ hr {
 
 .productoCarrito {
     margin: auto;
-    width: 400px;
+    max-width: 450px;
     border-radius: 20px;
     /* border: 2px solid black; */
     display: grid;
@@ -200,12 +206,12 @@ input[type="number"]::-webkit-inner-spin-button {
     /* border: 1px solid black; */
     color: rgba(105, 91, 199);
     cursor: pointer;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .cantidad i:hover {
     color: rgb(29, 26, 198);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0);
 }
 
 
@@ -227,6 +233,77 @@ input[type="number"]::-webkit-inner-spin-button {
     color: rgb(174, 59, 59);
 }
 
+.verInformacion{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.infoPantallaPequena{
+    display: none;
+    text-align: center;
+}
+
+/* Estilos para el resumen de compra */
+.resumenCompra {
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px auto;
+    align-items: center;
+    max-width: 340px;
+    background-color: #FFFEF4;
+}
+
+.resumenCompra h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+}
+
+.resumenCompra .table {
+    width: 90%;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.resumenCompra .totales p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#botonPagar {
+    display: block;
+    width: 100%;
+    background-color: #695BC7;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 18px;
+    border: 1px solid #695BC7;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+#botonPagar:hover {
+    background-color: white;
+    color: #695BC7;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+@media(width < 860px){
+    .carrito {
+        grid-template-columns: 1fr;
+    }
+}
 
 /*  */
 @media(width < 650px) {
@@ -246,156 +323,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
-/* .producto{
-    width: auto !important; 
-    height: auto !important;
-    } */
-
-
-/* Inicio Estilos modal ventana seguro desea eliminar el producto */
-.modal1 {
-    display: none;
-    /* Desaparece el contenedor */
-    position: fixed;
-    /*Mantiene la pantalla fija asi se haga scroll  */
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.466);
-}
-
-
-.modal1-contenedor {
-    background-color: white;
-    margin: 5% auto;
-    padding: 20px;
-    max-width: 400px;
-    width: 80%;
-    border-radius: 10px;
-    border: 1px solid black;
-    position: relative;
-}
-
-.cerrar {
-    color: rgb(231, 99, 99);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    float: right;
-    /* lo obliga a posicionarse a la derecha  */
-    position: absolute;
-    /* elimina su posición normal en un documento */
-    top: 10px;
-    right: 15px;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.cerrar:hover {
-    color: rgb(174, 59, 59);
-    cursor: pointer;
-}
-
-#textoModalEliminar {
-    text-align: center;
-}
-
-.modalAceptar {
-    text-align: center;
-    margin: 20px;
-}
-
-.modalAceptar button {
-    margin: auto;
-    width: 130px;
-    height: 40px;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
-}
-
-.modalAceptar button:nth-of-type(2) {
-    background-color: rgb(231, 99, 99);
-    border: 2px solid rgb(231, 99, 99);
-    color: white;
-}
-
-.modalAceptar button:nth-of-type(2):hover {
-    background-color: white;
-    color: rgb(231, 99, 99);
-}
-
-.modalAceptar button:nth-of-type(1) {
-    background-color: white;
-    border: 2px solid #70349E;
-    color: #70349E;
-}
-
-.modalAceptar button:nth-of-type(1):hover {
-    background-color: #70349E;
-    color: white;
-}
-
-/* Fin Estilos modal ventana seguro desea eliminar el producto */
-
-/* Estilos para el resumen de compra */
-.resumenCompra {
-    padding: 20px;
-    border: 1px solid;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 30px auto;
-
-    align-items: center;
-    max-width: 340px;
-}
-
-.resumenCompra h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-    align-items: center;
-    text-align: center;
-}
-
-.resumenCompra .table {
-    width: 90%;
-    margin-bottom: 20px;
-    align-items: center;
-
-
-}
-
-.resumenCompra .totales p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-}
-
-#botonPagar {
-    display: block;
-    width: 100%;
-    background-color: #695BC7;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-items: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 18px;
-}
-
-#botonPagar:hover {
-    background-color: white;
-    color: #695BC7;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 18px;
-    border-color: #695BC7;
-    border: 1px solid #695BC7;
-
-
+@media(width < 450px){
+    .infoPantallaPequena{
+        display: block;
+    }
+    .infoPantallaGrande{
+        display: none;
+    }
 }

@@ -16,7 +16,10 @@ let indiceListaCompras = 0;
 //variables para mostrar el modal de seguro desea eliminar producto
 let modalEliminar = document.getElementById("modalEliminarProducto");
 let textoModalEliminar = document.getElementById("textoModalEliminar");
+
 let producto = document.querySelector(".producto");
+let modalVistaProducto = document.getElementById("modalVistaProducto");
+let botonCerrarVistaProducto = document.getElementById("cerrarVistaProducto");
 
 //Obtener de local storage la lista de compras si esta creada
 if (localStorage.getItem('listaCompras') != undefined) {
@@ -48,7 +51,7 @@ function productos() {
     listaCompras.forEach(producto => {
         producto.subtotal = producto.precio * producto.cantidad;
         contenidoCarritoHTML +=
-            `<div class="productoCarrito">
+        `<div class="productoCarrito">
             <i class="bi bi-x-circle-fill botonEliminar" onclick = "eliminarProducto(${producto.id})"></i> 
             <div class="productoCarritoImg">
                 <img src="${producto.url}" >
@@ -63,9 +66,10 @@ function productos() {
                         <i class="bi bi-plus-square-fill" onclick = "aumentarProducto(${producto.id})"></i>  
                     </div> 
                 </div>
-                <p onclick="mostrarProducto(${producto.id})">ver información</p>
-            </div>     
-        </div>   
+                <p class="verInformacion infoPantallaGrande" onclick="mostrarProducto(${producto.id})">ver información</p>
+            </div> 
+        </div>
+        <p class="verInformacion infoPantallaPequena" onclick="mostrarProducto(${producto.id})">ver información</p>      
         <hr>`
     });
 
@@ -87,10 +91,20 @@ export function mostrarProducto(id) {
         
             <div class="contenedorDescripcionCard">
                 <p>${listaCompras[indiceListaCompras].descripcion}</p>
-            </div>`
-
+            </div>
+            
+            <div class="contenedorPrecioCard"></div>
+                <p> <b>$  ${listaCompras[indiceListaCompras].precio}  COP</b> </p>
+            </div>
+            `
+            modalVistaProducto.style.display = "block";
 }
 window.mostrarProducto = mostrarProducto;
+
+botonCerrarVistaProducto.addEventListener('click' , ()=>{           
+     modalVistaProducto.style.display = "none"
+});
+
 
 //inicio resumenDeCompra();
 function resumenDeCompra() {
@@ -158,7 +172,8 @@ window.aumentarProducto = aumentarProducto;
 //función para eliminar un producto
 export function eliminarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
-    textoModalEliminar.innerHTML = `<h5> Se eliminara el producto ${listaCompras[indiceListaCompras].nombre} del carrito,¿Esta seguro? </h5>`
+    textoModalEliminar.innerHTML = `<p> Se eliminara el producto <b>${listaCompras[indiceListaCompras].nombre}</b> del carrito.</p>
+                                    <p> ¿Esta seguro? </p>`
     modalEliminar.style.display = "block";
 }
 window.eliminarProducto = eliminarProducto;
