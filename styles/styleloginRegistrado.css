@@ -73,10 +73,14 @@ Para perfiles de usuario y de administrador*/
     gap: 10px;
 }
 
+.suscripcionYPLatos{
+    margin-top: 30px;
+}
+
 /* Grid para todo los formularios de las diferentes vistas de perfil */
 .datosPerfil,
 .inputsProducto {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 5fr;
 }
 
 #divBotonCargar {
@@ -127,6 +131,7 @@ con un símbolo*/
 .botonesPerfil button,
 .modificarProducto button,
 #botonCargarProducto {
+    transition: 0.5s ease;
     margin: auto;
     width: 130px;
     height: 40px;
@@ -134,7 +139,7 @@ con un símbolo*/
     border-radius: 50px;
     border: 2px solid #70349E;
     background-color: rgba(105, 91, 199, 0.534);
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .botonesPerfil #guardarCambiosPerfilAdmin,
@@ -151,12 +156,16 @@ con un símbolo*/
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
     color: white;
+    transition: 0.5s ease;
 }
 
 .vistaIdYBotones button:hover,
 .botonesPerfil button:nth-of-type(4):hover {
+    transition: 0.5s ease;
     background-color: white;
     color: rgb(231, 99, 99);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
+
 }
 
 
@@ -176,10 +185,12 @@ con un símbolo*/
 
 
 .botonesPerfil button:hover,
-.cargar #botonCargarProducto:hover{ 
+.cargar #botonCargarProducto:hover{
+    transition: 0.5s ease; 
     cursor: pointer;
     background-color: white;
     color: #70349E;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 }
 
 #botonEliminarProducto {
@@ -283,24 +294,33 @@ modificar o crear desapareciendo el select de productos disponibles*/
     cursor: pointer;
 }
 
-.suscripciones .planes,
-.platos .platosBasicos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+.cardPlato, .cardSuscripcion {
+    margin: auto;
+    width: 212px;
+    height: 235px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
 }
 
-.suscripcionYPLatos img {
-    width: 130px;
-    height: 130px;
-    border: 1px solid black;
+.cardSuscripcion{
+    background-image: url("../img/cardSuscripcion.png");
+}
+
+.cardPlato{
+    background-image: url("../img/cardProducto.png");
+}
+
+.difuminado{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.064);
+    backdrop-filter: blur(2px);
     border-radius: 20px;
 }
 
-/* Clase para poder ubicar la imagen del costado izquierdo en posición junto a la imagen derecha */
-.imgIzquierda {
-    margin-left: 0%;
-}
 
 /* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
 input[type="number"]::-webkit-outer-spin-button,
@@ -319,10 +339,6 @@ input[type="number"]::-webkit-inner-spin-button {
     .botonesPerfil,
     .inputsProducto {
         max-width: 500px;
-    }
-
-    .imgIzquierda {
-        margin-left: 0%;
     }
 
     .vistaIdYBotones input {
@@ -395,14 +411,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .suscripcionYPLatos {
         gap: 20px;
-    }
-
-    .imgIzquierda {
-        margin-left: 0%;
-    }
-
-    .imgDerecha {
-        margin-left: 7%;
     }
 
 }

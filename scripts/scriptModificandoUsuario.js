@@ -19,6 +19,7 @@ let modalContrasenaEditarPerfil = document.getElementById("modalContrasenaEditar
 let botonGuardarEditarPerfil = document.getElementById("botonGuardarEditarPerfil");
 let contrasenaEditarPerfil = document.getElementById("contrasenaEditarPerfil");
 let botonCerrarModalContrasena = document.getElementById("cerrarModalContrasena");
+let iconoContrasenaEditarPerfil = document.getElementById("iconoContrasenaEditarPerfil");
 
 //funcion para activar o desactivar los inputs del perfil de usuario
 function desactivarInputUsuario(accion){
@@ -88,7 +89,6 @@ formularioInfoAdmin.addEventListener('submit', async (event)=>{
 
 botonGuardarEditarPerfil.addEventListener('click',async ()=>{
 
-    console.log(datosUsuario.id)
     let contrasena = contrasenaEditarPerfil.value;
     let contrasenaAVerificar = modificarJSON.encrypt_data(contrasena);
     if(await modificarJSON.confirmarContrasenaParaEditarPerfil(datosUsuario.id,contrasenaAVerificar)){
@@ -110,6 +110,7 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
                 "correo": "${correoAdministrador.value}",
                 "telefono": "${telefonoAdministrador.value}" }`
             );
+            contrasenaEditarPerfil.value="";
             normalizarVistaEdicionPerfilAdmin();
         }else{
             await modificarJSON.reescribirOCrearUsuario(
@@ -129,6 +130,7 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
                 "telefono": "${telefonoUsuario.value}" }`
             );
             normalizarVistaEdicionPerfilUsuario();
+            contrasenaEditarPerfil.value = "";
         }
         modalContrasenaEditarPerfil.style.display = "none";
         cargarDatosUsuario();
@@ -143,3 +145,16 @@ contrasenaEditarPerfil.addEventListener('input', ()=> {
     contrasenaEditarPerfil.setCustomValidity("", );
 })
 
+
+//código para mostrar la contraseña
+iconoContrasenaEditarPerfil.addEventListener("click",()=>{
+    if(iconoContrasenaEditarPerfil.classList[1] == 'bi-eye-fill'){
+      iconoContrasenaEditarPerfil.classList.remove('bi-eye-fill');
+      iconoContrasenaEditarPerfil.classList.add('bi-eye-slash');
+      contrasenaEditarPerfil.type  = "text";
+    }else{
+      iconoContrasenaEditarPerfil.classList.remove('bi-eye-slash');
+      iconoContrasenaEditarPerfil.classList.add('bi-eye-fill');
+      contrasenaEditarPerfil.type  = "password";
+    }
+  });

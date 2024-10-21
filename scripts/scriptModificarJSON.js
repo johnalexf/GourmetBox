@@ -34,10 +34,13 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 
         if (!respuesta.ok) {
             throw new Error(`Error agregando producto: ${respuesta.statusText}`);
+        }else{
+            return true;
         }
 
     } catch (error) {
         console.error('Error agregando producto:', error.message);
+        return false;
     }
 
 }
@@ -239,7 +242,7 @@ export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
 export function encrypt_data(string) {
 
     string = decodeURI(encodeURIComponent(string));
-    console.log(string);
+    // console.log(string);
     var newString = '', char, nextChar, combinedCharCode;
 
     for (var i = 0; i < string.length; i += 2) {

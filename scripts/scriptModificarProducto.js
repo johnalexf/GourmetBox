@@ -48,12 +48,7 @@ let imagen;
 
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
 async function mostrarProductoEnFormulario() {
-   
-            // let baseDatos ;
-            // baseDatos = await modificarJSON.obtenerBaseDatos();
-            // console.log(baseDatos)
-            // html = "";
-            // let productos = baseDatos.productos;
+
             html = "";
             let productos = await modificarJSON.obtenerBaseDatos();
             productos.forEach(element => {
@@ -66,6 +61,7 @@ async function mostrarProductoEnFormulario() {
                     inputsProducto[3].value = element.precio;
                     pNombreUrlImagen.textContent = "imagen cargada";
                     imagen = element.url;
+                    // console.log(imagen);
                 }
             });
             productosDisponibles.innerHTML = html;
@@ -156,7 +152,7 @@ botonNuevoProducto.addEventListener('click',()=>{
         cajaTexto.value = "";
     })
     inputsProducto[0].value = parseInt(productosDisponibles.options[productosDisponibles.length-1].value) + 1;
-    console.log(inputsProducto);
+    // console.log(inputsProducto);
     inputsProducto[5].value = "Cargar"
     pNombreUrlImagen.textContent = "no se ha cargado un archivo";
     cambioEditarProducto();
@@ -179,6 +175,8 @@ botonEliminarProducto.addEventListener('click', ()=>{
 })
 botonAceptarEliminar.addEventListener('click', async function(){
     await modificarJSON.eliminarProducto(inputsProducto[0].value);
+    indiceSeleccionado = 1;
+    mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
 })
 
@@ -193,19 +191,16 @@ function cerrarModalEliminarProducto(){
 
 formularioModificarCrearProducto.addEventListener('submit', (event)=>{
     event.preventDefault();
-    //console.log(inputsProducto[4].files[0])
     //instrucciones para obtener la imagen y guardarla en la variable imagen
     if(!(event.target[7].files[0] === undefined)){
         //código para leer la imagen y convertirlo a texto para poder almacenarlo
         const file = event.target[7].files[0];
-        console.log(event);
-        console.log(event.target[7])
         console.log(event.target[7].files[0])
         const reader = new FileReader(); // Crea un lector de archivos
         reader.onload = function(e) {
             //console.log(e);
             imagen = e.target.result;
-            console.log(imagen)
+            // console.log(imagen)
         };
         reader.readAsDataURL(file);
         //fin del código para leer la imagen
@@ -219,7 +214,7 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
 inputsProducto[4].addEventListener('change', function(){
    
         if(inputsProducto[4].files.length > 0){
-            let longitudFile = inputsProducto[4].files[0].name.length;
+            // let longitudFile = inputsProducto[4].files[0].name.length;
             console.log(inputsProducto[4].files[0].name)
             pNombreUrlImagen.textContent = inputsProducto[4].files[0].name;
         }
@@ -229,7 +224,6 @@ inputsProducto[4].addEventListener('change', function(){
 //Cuando el usuario oprima en cargar, se actualiza el contenido de divProducto dentro del modal y se muestra
 function vistaPreliminar() {
     console.log("entra en vista previa")
-    console.log(imagen);
     html = "";
     html =  `<div class="contenedorImagenCard"><img src="${imagen}" alt=""></div>
             <div class="contenedorTituloCard">
@@ -256,7 +250,7 @@ botonAceptarCambios.addEventListener('click', async ()=>{
 
 async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
-     await modificarJSON.reescribirOCrearProducto(
+     if (await modificarJSON.reescribirOCrearProducto(
         inputsProducto[0].value,
         inputsProducto[1].value,
         inputsProducto[2].value,
@@ -265,7 +259,12 @@ async function cargarProducto (){
         imagen,
         reescribirProducto
        )
-       imagen = "";
+    ){
+        indiceSeleccionado = inputsProducto[0].value;
+        mostrarProductoEnFormulario();
+        modalVistaPrevia.style.display = 'none';
+        cambioNoEditarProducto();
+    }
 }
 
 
@@ -298,7 +297,6 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
         if(inputsProducto[i].value == ""){
             inputsProducto[i].setCustomValidity(mensajeAlerta[i-1]);
         }else{
-            console.log(inputsProducto[i]);
             inputsProducto[i].setCustomValidity("");
         }
     }
