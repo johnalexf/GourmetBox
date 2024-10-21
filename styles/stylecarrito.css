@@ -246,7 +246,14 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* Estilos para el resumen de compra */
+
+.vistaPreviaYResumenCompra{
+    position: relative;
+
+}
+
 .resumenCompra {
+    position: sticky;
     padding: 20px;
     border: 1px solid;
     border-radius: 10px;

@@ -133,18 +133,20 @@
 }
 
 /* Boton color azul */
-.botonAzul {
+.botonAzul, .botonAzulInvertido:hover {
     background-color: white;
     border: 2px solid #70349E;
     color: #70349E;
 }
 
-.botonAzul:hover{
+.botonAzul:hover, .botonAzulInvertido{
     transition: background-color 0.5s;
     background-color: #70349E;
     color: white;
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
+}
 
+.botonAzul:hover, .botonAzulInvertido:hover{
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 }
 
 

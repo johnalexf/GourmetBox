@@ -9,7 +9,7 @@ Instalación de los paquetes necesarios
 3. npm install -g json-server
 
 Activación del servidor
-4. json-server --watch ./scripts/baseDatos.json
+4. json-server --watch ../baseDatos.js
 
 Para ingresar como administrador:
 usuario:    admin
