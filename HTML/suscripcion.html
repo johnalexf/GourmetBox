@@ -95,7 +95,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\BannerTarjeta.png" alt="DEBUG">
+            <img src="..\img\BannerTarjeta.png" alt="BOX SENIOR">
           </div>
           <ul>
             <li>5 Almuerzos de nuestra carta</li>
@@ -110,7 +110,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\BOXFRIENDS.png" alt="DEBUG">
+            <img src="..\img\BOXFRIENDS.png" alt="BOX FRIENDS">
           </div>
           <ul>
             <li>10 Almuerzos para compartir</li>
@@ -125,7 +125,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\BOXCODEBREAKFAST.png" alt="DEBUG">
+            <img src="..\img\BOXCODEBREAKFAST.png" alt="BOX CODE BREAKFAST">
           </div>
           <ul>
             <li>3 Desayunos (Personalizados)</li>
@@ -140,7 +140,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\DEBUGBOX.png" alt="DEBUG">
+            <img src="..\img\DEBUGBOX.png" alt="DEBUG BOX">
           </div>
           <ul>
             <li>3 Desayunos </li>
@@ -156,9 +156,9 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\BAKENDBOX.png" alt="DEBUG">
+            <img src="..\img\BAKENDBOX.png" alt="BAKEND POWER">
           </div>
-          <ul >
+          <ul>
             <li>4 Almuerzos (Personalizados)</li>
             <li>Bebida del día</li>
             <li>Sopa del día</li>
@@ -171,7 +171,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img src="..\img\CLOUDBOX.png" alt="DEBUG">
+            <img style="font-family: 'Poppins'; font-size: 19px;" src="..\img\CLOUDBOX.png" alt=" CLOUDBOX ">
           </div>
           <ul>
             <li>3 Desayunos (Personalizados)</li>
@@ -185,31 +185,33 @@
 
     </section>
 
-    <!-- Modal -->
-    <!-- <div id="subscriptionModal" class="modal1">
-      <div class="modal1-contenedor">
-        <span class="close-button">&times;</span>
-        <p>Has adquirido el plan de suscripción "<span id="subscriptionName"></span>".</p>
-        <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
-        <div class="modal-buttons">
-          <button id="agreeButton" class="agree-button">Estoy de acuerdo</button>
-          <button id="cancelButton" class="cancel-button">Cancelar</button>
-        </div>
-      </div>
-    </div> -->
 
-     <!-- Ventana emergente mensaje enviado correctamente-->
-     <div id="subscriptionModal" class="modal1">
+    <!-- Ventana emergente mensaje enviado correctamente -->
+    <div id="subscriptionModal" class="modal1">
       <div class="modal1-contenedor modalPequeno">
         <i class="bi bi-x-circle-fill cerrar close-button" id="cerrarModalMensajeExitoso"></i>
-        <p>Has adquirido el plan de suscripción "<span id="subscriptionName"></span>".</p>
-        <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
+        <p style="font-family: 'Poppins'; font-size: 19px;">
+          Vas a adquirir el plan de suscripción
+          <span id="subscriptionName"></span>.
+          <br>
+        </p>
+        <!-- Contenedor para centrar la imagen -->
+        <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+          <img id="modalImage" src="" alt=""
+            style="max-width: 55%; border: solid 1px lightgray; border-radius: 10px;" />
+
+        </div>
+        <p style="font-family: 'Poppins'; font-size: 19px;">
+          Si deseas continuar, dale clic al botón "Estoy de acuerdo".
+        </p>
         <div class="modal-buttons">
-          <button id="agreeButton" class="botonAzul">Estoy de acuerdo</button>
-          <button id="cancelButton" class="botonRojo">Cancelar</button>
-        </div>  
+          <button style="margin-bottom: 11px; margin-top: 5px;" id="agreeButton" class="botonAzul">Estoy de
+            acuerdo</button>
+          <button style="margin-bottom: 11px; margin-top: 5px;" id="cancelButton" class="botonRojo">Cancelar</button>
+        </div>
       </div>
     </div>
+
 
   </main>
 
