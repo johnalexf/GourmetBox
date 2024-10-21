@@ -9,6 +9,8 @@ Instalación de los paquetes necesarios
 3. npm install -g json-server
 
 Activación del servidor
+Copiar el archivo baseDatos.js por fuera de la carpeta de todo el proyecto
+Para que cuando se use el live server no se recargue sola la pagina.
 4. json-server --watch ../baseDatos.js
 
 Para ingresar como administrador:
