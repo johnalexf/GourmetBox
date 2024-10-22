@@ -30,7 +30,7 @@ const closeModal = () => {
 closeButton.addEventListener('click', closeModal);
 cancelButton.addEventListener('click', closeModal);
 agreeButton.addEventListener('click', () => {
-    alert("Has adquirido el plan de suscripción.");
+    // alert("Has adquirido el plan de suscripción.");
     closeModal();
 });
 window.addEventListener('click', (event) => {

@@ -153,7 +153,7 @@ export function adicionarCarrito(id) {
         mensajeModal.innerHTML = `<h5> El producto  <b>${menu[indiceMenu].nombre} </b> ya se ha agregado al carrito. </h5>`;
     }
 
-    modalAgregadoACarrito.style.display = "block";
+    modalAgregadoACarrito.style.display = "flex";
 }
 
 //ya declarada la función para exportar, con la siguiente linea la ponemos de manera global en html

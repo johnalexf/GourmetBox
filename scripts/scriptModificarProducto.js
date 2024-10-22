@@ -170,7 +170,7 @@ botonCancelarEdicionProducto.addEventListener('click', ()=>{
 })
 
 botonEliminarProducto.addEventListener('click', ()=>{
-    modalEliminarProducto.style.display = "block";
+    modalEliminarProducto.style.display = "flex";
     //modificarJSON.eliminarProducto(inputsProducto[0].value);
 })
 botonAceptarEliminar.addEventListener('click', async function(){
@@ -236,14 +236,14 @@ function vistaPreliminar() {
              </div>
              `;
     divProducto.innerHTML = html;
-    modalVistaPrevia.style.display = 'block';
+    modalVistaPrevia.style.display = 'flex';
 }
 
 //funcion llamada con el botón de cerrar de vista previa del producto
 cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
 botonCancelarCambios.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
 botonAceptarCambios.addEventListener('click', async ()=>{
-     modalVistaPrevia.style.display = 'block'
+     modalVistaPrevia.style.display = 'flex'
      await cargarProducto();
      ;});
 
