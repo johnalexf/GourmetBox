@@ -79,12 +79,12 @@ botonCerrarModalContrasena.addEventListener('click',()=>{
 
 formularioInfoUsuario.addEventListener('submit', (event)=>{
     event.preventDefault();
-    modalContrasenaEditarPerfil.style.display = "block";
+    modalContrasenaEditarPerfil.style.display = "flex";
 });
 
 formularioInfoAdmin.addEventListener('submit', async (event)=>{
     event.preventDefault();
-    modalContrasenaEditarPerfil.style.display = "block";
+    modalContrasenaEditarPerfil.style.display = "flex";
 });
 
 botonGuardarEditarPerfil.addEventListener('click',async ()=>{

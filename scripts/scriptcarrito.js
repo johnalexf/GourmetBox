@@ -97,7 +97,7 @@ export function mostrarProducto(id) {
                 <p> <b>$  ${listaCompras[indiceListaCompras].precio}  COP</b> </p>
             </div>
             `
-            modalVistaProducto.style.display = "block";
+            modalVistaProducto.style.display = "flex";
 }
 window.mostrarProducto = mostrarProducto;
 
@@ -174,7 +174,7 @@ export function eliminarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     textoModalEliminar.innerHTML = `<p> Se eliminara el producto <b>${listaCompras[indiceListaCompras].nombre}</b> del carrito.</p>
                                     <p> ¿Esta seguro? </p>`
-    modalEliminar.style.display = "block";
+    modalEliminar.style.display = "flex";
 }
 window.eliminarProducto = eliminarProducto;
 

@@ -13,9 +13,10 @@ if(localStorage.getItem('usuario') != undefined){
 
 // lineas de codigo para poner en negrita segun la pagina en la que se encuentre
 let seccionNavbar = document.getElementById(document.title.toLowerCase());
-seccionNavbar.style.fontWeight = "bold";
 
-
+if(seccionNavbar.id != "carrito"){
+    seccionNavbar.style.fontWeight = "bold";
+}
 
 //lineas de codigo para mostrar la cantidad de productos agregados en el carrito sobre el icono de nabvar 
 let cantidadCarritoIcono = document.getElementById('cantidadCarritoIcono');

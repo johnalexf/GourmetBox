@@ -32,7 +32,7 @@ function mostrarModalRegistroExitoso(){
   let seRegistro = localStorage.getItem('seRegistro');
   if ( seRegistro != undefined && seRegistro.length > 0) {
     nombreUsuarioRegistrado.innerText = seRegistro;
-    modalMensajeExitoso.style.display = 'block'; 
+    modalMensajeExitoso.style.display = 'flex'; 
     formularioRegistro.reset();
   }
 }
@@ -82,7 +82,7 @@ iconoConfirmarContrasena.addEventListener("click",()=>{
 
 // mostrar términos y condiciones
 terminos.addEventListener("click", () => {
-  modalTerminos.style.display = "block";
+  modalTerminos.style.display = "flex";
 });
 // Cerrar la ventana de términos y condiciones cuando se haga clic en la "X"
 cerrarTerminos.addEventListener("click", () => {
@@ -199,7 +199,7 @@ formularioRegistro.addEventListener('submit', async function(event) {
        let seRegistro = formularioRegistro.nombreR.value;
        localStorage.setItem('seRegistro', seRegistro);
        nombreUsuarioRegistrado.innerText = seRegistro;
-       modalMensajeExitoso.style.display = 'block'; 
+       modalMensajeExitoso.style.display = 'flex'; 
        
         await modificarJSON.reescribirOCrearUsuario(
             formularioRegistro.usuarioR.value,
