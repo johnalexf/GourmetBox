@@ -122,7 +122,7 @@
 }
 
 .botonRojo:hover {
-    transition: background-color 0.5s;
+    transition: 0.5s ease;
     background-color: white;
     color: rgb(231, 99, 99);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
@@ -145,6 +145,7 @@
 
 .botonAzul:hover,
 .botonAzulInvertido:hover {
+    transition: 0.5s ease;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 }
 
