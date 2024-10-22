@@ -202,10 +202,19 @@ main {
 .tituloCarta{
     color: white;
     grid-column: 1/2;
-    grid-row: 1/3;
+    grid-row: 1/2;
     margin-inline: auto;
-    margin-top: 5%;
+    margin-top: 3%;
+}
+
+.tituloCarta p{
+    margin: 0;
     font-size: 2.5rem;
+}
+
+.tituloCarta #soloF{
+    font-size: 1.6rem;
+    text-align: center;
 }
 
 
@@ -457,11 +466,13 @@ main {
 }
 
     .favoritoC{
-        width: 400px;
-        background-image: url("../img_comidas/CARRUSEL-INDEX/menu3.png");
+        width: 320px;
+        background-image: url("../img_comidas/CARRUSEL-INDEX/menu3_2.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 300px 450px;
+        background-size: cover;
+        background-color: #703493;
+        border-radius: 30px;
         height: 450px;
         display: grid;
         grid-template-columns: 100%;
@@ -472,13 +483,33 @@ main {
         margin: auto;
     }
 
+    .tituloCartaC{
+        padding-top: 6%;
+    }
+
+    .tituloCartaC p{
+        margin: 0;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .tituloCartaC p span{
+        font-size: 0.5em;
+    }
+
+    .tituloCartaC .subtituloF{
+        font-size: 1.5em;
+    }
+    
+
     .tituloPlato {
         grid-column: 1/2;
         grid-row: 1/2;
-        height: 150px;
+        height: 70px;
         text-align: center;
         color: white;
-        padding-top: 105px;
+        padding-top: 30px;
         transition: 1s ease-in-out;
     }
 
@@ -488,7 +519,7 @@ main {
         grid-column: 1/2;
         grid-row: 2/3;
         width: 100%;
-        height: 250px;
+        height: 240px;
     }
 
     .sliderC .plato1,
@@ -498,7 +529,7 @@ main {
     .sliderC .plato5,
     .sliderC .plato6{
         position: absolute;
-        margin: 3% 0 0 25%;
+        margin: 3% 0 0 20%;
     }
 
     .sliderC .plato1 img,
@@ -513,29 +544,24 @@ main {
     }
 
     .favoritoC .btnMenuC{
-        height: 50px;
         text-align: center;
-        padding-top: 8px;
     }
 
     .favoritoC .btnMenuC a{
         grid-column: 1/2;
         grid-row: 3/4;
-        color: black;
         text-decoration: none;
-        font-weight: 600;
         padding: 2px 20px; 
         font-size: 12px;
         border-radius: 50px;
         background-color: #70349E;
         color: white;
-        box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
     }
 
 /* Cuando la pantalla sea menor a 550px la 
 distribución interna de la parte izquierda y 
 derecha pasa a ser de a una columna */
-@media(width < 550px) {
+@media (width > 494px) and (width < 550px) {
     
     .informacion {
         width: 90%;
@@ -544,7 +570,33 @@ derecha pasa a ser de a una columna */
         margin: auto;
     }
     .mapa{
-        width: 135%;
+        width: 145%;
         
+    }
+
+    .tituloUbicanos,
+    .tituloFavoritos,
+    .tituloComentarios {
+        background-size: 145% 90%;    
+    }
+
+}
+
+@media (width < 493px) {    
+    .tituloUbicanos,
+    .tituloFavoritos,
+    .tituloComentarios {
+        background-size: cover;    
+        background-position: left;
+    }
+    
+    .informacion {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .mapa{
+        width: 108%;   
     }
 }
