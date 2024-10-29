@@ -1,3 +1,29 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    justify-content: center;
+
+}
+
+p{
+    font-size: 20px;
+}
+
+/* Asignación de roboto bold 700 a títulos */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
 /* Estilos para el main */
 body {
     background-color: #fffef4;

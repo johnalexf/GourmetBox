@@ -5,7 +5,9 @@ p{
     font-style: normal;
 }
 
-
+b{
+    font-size: 19px;
+}
 
 .producto{
     margin: auto;
