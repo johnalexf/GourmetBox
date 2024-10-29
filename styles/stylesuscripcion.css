@@ -185,3 +185,174 @@ main {
 
 
 }
+
+
+.contenedorPago {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(14, 13, 13, 0.755);
+    display: none;
+    transition: 1s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modalPago {
+    width: 60%;
+    height: auto;
+    background-color: rgba(27, 27, 27, 0.703);
+    border: 2px ridge blueviolet;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    margin: auto;
+}
+
+.tarjetaCredito {
+    background-image: linear-gradient(90deg, rgb(29, 29, 150), rgb(37, 37, 37));
+    width: 380px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(22, 22, 22);
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.frontal{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms ease;
+}
+
+.atrass {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
+
+.atrass #lineaNegra{
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    top: 30px;
+}
+
+.atrass #lineaBlanca{
+    width: 70%;
+    height: 25px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    color: black;
+    text-align: end;
+    padding-right: 20px;
+    align-content: center;
+}
+
+.atrass #textoCard {
+    font-size: 8px;
+    width: 60%;
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+}
+
+.atrass #barras {
+    width: 25%;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+
+#bank {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.tarjetaCredito #brand {
+    position: absolute;
+    right: 30px;
+    width: 50px;
+    bottom: 20px;
+}
+
+.tarjetaCredito #chip{
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 30px;
+}
+
+.tarjetaCredito #number{
+    position: absolute;
+    bottom: 70px;
+    left: 30px;
+}
+
+.tarjetaCredito #nameCreditCard{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+
+.tarjetaCredito #fechaV {
+    position: absolute;
+    bottom: 70px;
+    right: 40px;
+}
+
+.formularioTarjeta {
+    width: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.fechaCVV .expira #expiraDate,
+.fechaCVV .cvv #inputCVV,
+.formularioTarjeta #numberCT,
+.formularioTarjeta #nombreCT {
+    height: 25px;
+    border-radius: 8px;
+    border: none;
+    padding-left: 5px;
+}
+
+.fechaCVV {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.fechaCVV .expira,
+.fechaCVV .cvv {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+#realizarPago {
+    width: 40%;
+    background-color: rgb(73, 54, 141);
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    color: wheat;
+    align-self: center;
+}
+
+#realizarPago:hover {
+    box-shadow: none;
+    border: 1px ridge white;
+}

@@ -43,3 +43,62 @@ window.addEventListener('click', (event) => {
 window.addEventListener('load', () => {
     modal.style.display = 'none'; // Asegúrate de que el modal esté oculto al cargar
 });
+
+
+
+const botonAzul = document.querySelector(".botonAzul");
+
+botonAzul.addEventListener("click", () => {
+    const modalPago = document.querySelector(".contenedorPago");
+    modalPago.style.display = "block";
+});
+
+
+
+const numberTC = document.getElementById("number");
+const nombreTC = document.getElementById("nameCreditCard");
+const fechaV = document.getElementById("fechaV");
+const cvv = document.getElementById("inputCVV");
+const inputNumber = document.getElementById("numberCT");
+const inputNombre = document.getElementById("nombreCT");
+const expiraDate = document.getElementById("expiraDate");
+
+inputNumber.addEventListener("input", () => {
+    numberTC.textContent = inputNumber.value;
+});
+
+inputNombre.addEventListener("input", () => {
+    nombreTC.textContent = inputNombre.value;
+});
+
+expiraDate.addEventListener("input", () => {
+    const fecha = expiraDate.value;
+    const [year , mes] = fecha.split("-");
+    fechaV.textContent = `${mes}/${year.slice(-2)}`;
+});
+
+cvv.addEventListener("click", () => {
+
+    const frente = document.getElementById("frente");
+    const atras = document.getElementById("atras");
+
+    if(frente.style.visibility === "visible"){
+        frente.style.visibility = "hidden";
+        frente.style.opacity = "0";
+
+        atras.style.visibility = "visible";
+        atras.style.opacity = "1";
+    }else{
+        atras.style.visibility = "hidden";
+        atras.style.opacity = "0";
+
+        frente.style.visibility = "visible";
+        frente.style.opacity = "1";
+    }
+
+});
+
+cvv.addEventListener("input", () => {
+    const cvvP = document.getElementById("lineaBlanca");
+    cvvP.textContent = cvv.value;
+});
