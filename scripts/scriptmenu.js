@@ -83,7 +83,7 @@ function actualizarMenu() {
             <p>${producto.descripcion}</p>
             </div>
             <div class="contenedorPrecioCard">
-            <p> <b>$  ${producto.precio}  COP</b> </p>
+            <p> <b>$  ${producto.precio.toLocaleString()}  COP</b> </p>
             </div>
             <!-- contenedor boton de la card -->
             <div class="contenedorBotonCard">
@@ -148,9 +148,9 @@ export function adicionarCarrito(id) {
         carritoCantidadAgregadaNavbar();
 
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
-        mensajeModal.innerHTML = `<h5> El producto  <b>${menu[indiceMenu].nombre} </b> ha sido agregado al carrito. </h5>`;
+        mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre} </b> ha sido agregado al carrito. </p>`;
     } else {
-        mensajeModal.innerHTML = `<h5> El producto  <b>${menu[indiceMenu].nombre} </b> ya se ha agregado al carrito. </h5>`;
+        mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre} </b> ya se ha agregado al carrito. </p>`;
     }
 
     modalAgregadoACarrito.style.display = "flex";

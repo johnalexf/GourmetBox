@@ -10,6 +10,10 @@
 /* Estilos para la pantalla después de realizar un registro 
 Para perfiles de usuario y de administrador*/
 
+label{
+    font-size: 17px;
+}
+
 /* Estilos para que al hacer cambio de ventana tenga una transición mas amigable */
 .transicion-div {
     opacity: 0;
@@ -344,7 +348,7 @@ modificar o crear desapareciendo el select de productos disponibles*/
 
     .difuminado{
         transition: 1.5s ease;
-        background-color: rgba(255, 255, 255, 0.064);
+        background-color: rgba(10, 10, 10, 0.349);
         backdrop-filter: blur(4px);
         border-radius: 20px;
     }
@@ -443,3 +447,5 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
 }
+
+

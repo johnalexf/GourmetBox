@@ -29,7 +29,7 @@ main {
 
 /* Asignación de poppins regular 400 a párrafos */
 * {
-    font-family: "Poppins", system-ui;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
