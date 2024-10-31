@@ -4,6 +4,7 @@
 
 //javascript que realiza las funciones necesarias para eliminar o modificar un usuario
 import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import { datosUsuario } from "./scriptloginIngresando.js";
 
 /* variables para modificar los estilos de las ventanas de los formularios login y registro */
 // Botones para hacer el cambio de formulario
@@ -17,17 +18,25 @@ const bodyLogin = document.querySelector(".bodyLogin");
 
 // Variables para manipular ventanas emergentes
 const modalMensajeExitoso = document.getElementById("modalMensajeExitoso");
-let nombreUsuarioRegistrado = document.getElementById("nombreUsuarioRegistrado");
 const cerrarModalExitoso = document.getElementById("cerrarModalMensajeExitoso"); 
 const modalTerminos = document.getElementById("modalTerminos");
 const cerrarTerminos = document.querySelector(".cerrarTerminos");
+
+// términos es el link (a) que permite al hacer click abrir el modal de los términos y condiciones
 const terminos = document.getElementById("terminosCondiciones");
+
+//espacio de texto que va mostrar el nombre del usuario en el modal de registro exitoso
+let nombreUsuarioRegistrado = document.getElementById("nombreUsuarioRegistrado");
 
 //Formulario de registro
 let formularioRegistro = document.getElementById('formularioR');
+
+//iconos de los campos de contraseñas para poder mostrar la misma
 let iconoContrasenaR = document.getElementById('iconoContrasenaR');
 let iconoConfirmarContrasena = document.getElementById('iconoConfirmarContrasena');
 
+//en el localStorage.getItem('seRegistro') guardamos el nombre del usuario correctamente registrado
+//para asi mostrar en el modal el mensaje personalizado
 function mostrarModalRegistroExitoso(){
   let seRegistro = localStorage.getItem('seRegistro');
   if ( seRegistro != undefined && seRegistro.length > 0) {
@@ -84,6 +93,7 @@ iconoConfirmarContrasena.addEventListener("click",()=>{
 terminos.addEventListener("click", () => {
   modalTerminos.style.display = "flex";
 });
+
 // Cerrar la ventana de términos y condiciones cuando se haga clic en la "X"
 cerrarTerminos.addEventListener("click", () => {
   modalTerminos.style.display = "none";
@@ -95,7 +105,6 @@ cerrarModalExitoso.onclick = function() {
   localStorage.setItem('seRegistro',"");
 }
 
-
 //Código para validación de datos de correo y contraseña
 /* expresiones para validar correo y Contrasena */
 const expresiones = {
@@ -103,7 +112,6 @@ const expresiones = {
   correoE: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,3}(\.[a-zA-Z]{2,3})?$/,
   telefono: /^[36][0-9]{9,}$/
 }
-
 
 //funcion que realiza validación del valor de usuario, si contiene espacio
 //entre palabras se muestra un mensaje.
@@ -118,7 +126,6 @@ function validarUsuario(){
 
 //método de escucha sobre cambios en el input de usuario para verificar que cumpla la expresión
 formularioRegistro.usuarioR.addEventListener('input',validarUsuario)
-
 
 //método de escucha para cuando hay cambios en el input de correo y después de un submit activa el mensaje correspondiente
 formularioRegistro.correo.addEventListener('input', function(){
@@ -201,13 +208,15 @@ formularioRegistro.addEventListener('submit', async function(event) {
        nombreUsuarioRegistrado.innerText = seRegistro;
        modalMensajeExitoso.style.display = 'flex'; 
        
+       //creando usuario en la base de datos
         await modificarJSON.reescribirOCrearUsuario(
+            "0",
             formularioRegistro.usuarioR.value,
-            "usuario",
             formularioRegistro.nombreR.value,
             formularioRegistro.correo.value,
             formularioRegistro.telefono.value,
             modificarJSON.encrypt_data(formularioRegistro.contrasenaR.value),
+            "0",
             false
           );
           formularioRegistro.reset();

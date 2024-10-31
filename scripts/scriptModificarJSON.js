@@ -17,6 +17,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
     try {
         
         // Enviar la solicitud POST para agregar el nuevo producto
+        // o a traves de put modificar el producto
         const respuesta = await fetch(urlEscribir, {
             method: metodo,
             headers: {
@@ -94,31 +95,40 @@ export async function obtenerBaseDatos() {
 export let urlUsuarios = "http://localhost:3000/usuarios";
 
 //funcion para agregar un nuevo producto o reescribirlo
-export async function reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) {
-    
-    if(Reescribir == true){
-        metodo = 'PUT';
-        urlEscribir = urlUsuarios + '/' + usuario;
-    }else{
-        metodo = 'POST';
-        urlEscribir = urlUsuarios;
-    }
+export async function reescribirOCrearUsuario(id,usuario,nombre,correo,telefono,contrasena,esAdministrador,Reescribir) {
 
+    //variable reescribir si es verdadera es para hacer una reescripcion del usuario
+    //si el falsa se crea un nuevo usuario
+    
     try {
+
+        if(Reescribir == true){
+            metodo = 'PUT';
+            urlEscribir = urlUsuarios + '/' + id;
+        }else{
+            metodo = 'POST';
+            urlEscribir = urlUsuarios;
+    
+            const respuesta = await fetch(urlUsuariosLocal);
+            const usuarios = await respuesta.json();
+            id = (usuarios.length + 1).toString();
+        }
         
-        // Enviar la solicitud POST para agregar el nuevo producto
+        // Enviar la solicitud POST para agregar o editar usuario
         const respuesta = await fetch(urlEscribir, {
             method: metodo,
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: usuario,
-                rol: rol,
-                nombre : nombre,
+                id:id,
+                userName: usuario,
+                nombreUsuario : nombre,
                 correo : correo,
                 telefono : telefono,
-                contrasena : contrasena
+                contrasena : contrasena,
+                suscripcionId : "0",
+                esAdministrador: esAdministrador
             }),
         });
 
@@ -151,7 +161,7 @@ export async function verificarSiUsuarioExiste(usuario) {
         let retorno = false;
 
         usuarios.forEach(element => {
-            if(element.id == usuario){
+            if(element.userName == usuario){
                 retorno = true;
             }
         });
@@ -162,12 +172,15 @@ export async function verificarSiUsuarioExiste(usuario) {
       } 
 }
 
+//verifica si la contraseña coincide para el usuario y devuelve la información del perfil
 export async function verificarContrasena(usuario,contrasena) {
             
     try {
         // Realiza una solicitud fetch para obtener el JSON
         const respuesta = await fetch(urlUsuariosLocal);
         
+        
+
         // Verifica si la solicitud fue exitosa
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
@@ -183,16 +196,18 @@ export async function verificarContrasena(usuario,contrasena) {
         let datosUsuario = {};
 
         usuarios.forEach(element => {
-            if(element.id === usuario){
+            if(element.userName === usuario){
                 usuarioSiExiste = true;
                 if(contrasena === element.contrasena ){
                     contrasenaCorrecta = true;
                     datosUsuario = {
-                        id : element.id,
-                        rol: element.rol,
-                        nombre: element.nombre,
+                        id: element.id,
+                        userName : element.userName,
+                        nombreUsuario: element.nombreUsuario,
                         correo: element.correo,
-                        telefono : element.telefono
+                        telefono : element.telefono,
+                        suscripcionId : element.suscripcionId,
+                        esAdministrador : element.esAdministrador
                     }
                 }
             }
@@ -218,12 +233,12 @@ export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
         // const datos = await respuesta.json();
         // const usuarios = await datos.usuarios;
 
-        const usuarios = await respuesta.json(); 
+        const usuarios = await respuesta.json();
 
         let contrasenaCorrecta = false;
 
         usuarios.forEach(element => {
-            if(element.id === usuario){
+            if(element.userName === usuario){
                 if(contrasena === element.contrasena ){
                     contrasenaCorrecta = true;
                 }
