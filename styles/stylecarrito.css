@@ -50,6 +50,10 @@ button {
     cursor: pointer;
 }
 
+#resumenItems tr, #resumenItems td{
+    background-color: transparent;
+}
+
 .titulo h1,
 .tituloCuadroCompras h2,
 .carritoVacio {
