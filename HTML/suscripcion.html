@@ -1,361 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suscripcion</title>
 
-    <!-- Estilos de Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suscripcion</title>
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Estilos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- Estilos del Navbar, Footer y esta página -->
-    <link rel="stylesheet" href="../styles/styleNavFooter.css" />
-    <link rel="stylesheet" href="../styles/stylesuscripcion.css" />
-    <link rel="stylesheet" href="../styles/stylemodales.css" />
-    <link rel="stylesheet" href="../styles/stylePago.css" />
-  </head>
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet" />
 
-  <body>
-    <!-- Navbar -->
-    <header>
-      <nav
-        class="navbar navbar-expand-lg"
-        style="background-color: rgba(105, 91, 199, 0.534)"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              src="../img/logoo.png"
-              alt="Título Gourmet Box"
-              width="150"
-              class="Logonegro ms-4"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse text-end"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html" id="inicio">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./menu.html" id="menu">Menú</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./suscripcion.html" id="suscripcion"
-                  >Suscripción</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./conocenos.html" id="conocenos"
-                  >Conócenos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contactanos.html" id="contactenos"
-                  >Contáctenos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
-              </li>
-              <li class="nav-item" id="liCarrito">
-                <a class="nav-link" href="./carrito.html">
-                  <i class="bi bi-cart4" id="carrito">
-                    <p id="cantidadCarritoIcono">1</p>
-                  </i>
-                </a>
-              </li>
-            </ul>
+  <!-- Estilos del Navbar, Footer y esta página -->
+  <link rel="stylesheet" href="../styles/styleNavFooter.css" />
+  <link rel="stylesheet" href="../styles/stylesuscripcion.css" />
+  <link rel="stylesheet" href="../styles/stylemodales.css" />
+  <link rel="stylesheet" href="../styles/stylePago.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgba(105, 91, 199, 0.534)">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html" id="inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./menu.html" id="menu">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./suscripcion.html" id="suscripcion">Suscripción</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./conocenos.html" id="conocenos">Conócenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactanos.html" id="contactenos">Contáctenos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
+            </li>
+            <li class="nav-item" id="liCarrito">
+              <a class="nav-link" href="./carrito.html">
+                <i class="bi bi-cart4" id="carrito">
+                  <p id="cantidadCarritoIcono">1</p>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero-content">
+      <div class="imgdehero">
+        <img src="..\img\Herocontent.png" alt="Descripción del plan básico" />
+      </div>
+    </section>
+
+    <!-- cinta que se desplaza de manera automatica -->
+    <section class="subtitle">
+      <div class="cinta">
+        <div class="scroll">
+          <div class="RightToLeft">
+            <p>• Facil</p>
+            <p>• Rápido</p>
+            <p>• Gourmet</p>
+            <p>• Conveniente</p>
+            <p>• Facil</p>
+            <p>• Rápido</p>
+            <p>• Gourmet</p>
+            <p>• Conveniente</p>
+            <p>• Facil</p>
+            <p>• Rápido</p>
+            <p>• Gourmet</p>
+            <p>• Conveniente</p>
+            <p>• Facil</p>
+            <p>• Rápido</p>
+            <p>• Gourmet</p>
+            <p>• Conveniente</p>
           </div>
         </div>
-      </nav>
-    </header>
-    <main>
-      <section class="hero-content">
-        <div class="imgdehero">
-          <img src="..\img\Herocontent.png" alt="Descripción del plan básico" />
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- cinta que se desplaza de manera automatica -->
-      <section class="subtitle">
-        <div class="cinta">
-          <div class="scroll">
-            <div class="RightToLeft">
-              <p>• Facil</p>
-              <p>• Rápido</p>
-              <p>• Gourmet</p>
-              <p>• Conveniente</p>
-              <p>• Facil</p>
-              <p>• Rápido</p>
-              <p>• Gourmet</p>
-              <p>• Conveniente</p>
-              <p>• Facil</p>
-              <p>• Rápido</p>
-              <p>• Gourmet</p>
-              <p>• Conveniente</p>
-              <p>• Facil</p>
-              <p>• Rápido</p>
-              <p>• Gourmet</p>
-              <p>• Conveniente</p>
-            </div>
+    <!-- Contenedores suscripción -->
+    <!-- Contenedores suscripción -->
+    <section class="Suscripcion">
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img src="..\img\BannerTarjeta.png" alt="BOX SENIOR" />
           </div>
+          <ul>
+            <li>5 Almuerzos de nuestra carta</li>
+            <li>Postre gourmet</li>
+            <li>25 % de Cashback</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$250.000</span>
+            </li>
+          </ul>
         </div>
-      </section>
+        <button class="boton-circular">+</button>
+      </div>
 
-      <!-- Contenedores suscripción -->
-      <!-- Contenedores suscripción -->
-      <section class="Suscripcion">
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img src="..\img\BannerTarjeta.png" alt="BOX SENIOR" />
-            </div>
-            <ul>
-              <li>5 Almuerzos de nuestra carta</li>
-              <li>Postre gourmet</li>
-              <li>25 % de Cashback</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$320.000</span>
-              </li>
-            </ul>
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img src="..\img\BOXFRIENDS.png" alt="BOX FRIENDS" />
           </div>
-          <button class="boton-circular">+</button>
+          <ul>
+            <li>10 Almuerzos para compartir</li>
+            <li>Limonada natural</li>
+            <li>25 % de Cashback</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$290.000</span>
+            </li>
+          </ul>
         </div>
+        <button class="boton-circular">+</button>
+      </div>
 
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img src="..\img\BOXFRIENDS.png" alt="BOX FRIENDS" />
-            </div>
-            <ul>
-              <li>10 Almuerzos para compartir</li>
-              <li>Limonada natural</li>
-              <li>25 % de Cashback</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$320.000</span>
-              </li>
-            </ul>
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img src="..\img\BOXCODEBREAKFAST.png" alt="BOX CODE BREAKFAST" />
           </div>
-          <button class="boton-circular">+</button>
+          <ul>
+            <li>3 Desayunos (Personalizados)</li>
+            <li>Latte</li>
+            <li>Postre saludable</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$117.000</span>
+            </li>
+          </ul>
         </div>
+        <button class="boton-circular">+</button>
+      </div>
 
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img src="..\img\BOXCODEBREAKFAST.png" alt="BOX CODE BREAKFAST" />
-            </div>
-            <ul>
-              <li>3 Desayunos (Personalizados)</li>
-              <li>Latte</li>
-              <li>Postre saludable</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$320.000</span>
-              </li>
-            </ul>
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img src="..\img\DEBUGBOX.png" alt="DEBUG BOX" />
           </div>
-          <button class="boton-circular">+</button>
+          <ul>
+            <li>3 Desayunos</li>
+            <li>3 Almuerzos</li>
+            <li>Bebida del día</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$137.000</span>
+            </li>
+          </ul>
         </div>
+        <button class="boton-circular">+</button>
+      </div>
 
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img src="..\img\DEBUGBOX.png" alt="DEBUG BOX" />
-            </div>
-            <ul>
-              <li>3 Desayunos</li>
-              <li>3 Almuerzos</li>
-              <li>Bebida del día</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$350.000</span>
-              </li>
-            </ul>
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img src="..\img\BAKENDBOX.png" alt="BAKEND POWER" />
           </div>
-          <button class="boton-circular">+</button>
+          <ul>
+            <li>4 Almuerzos (Personalizados)</li>
+            <li>Bebida del día</li>
+            <li>Sopa del día</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$132.000</span>
+            </li>
+          </ul>
         </div>
+        <button class="boton-circular">+</button>
+      </div>
 
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img src="..\img\BAKENDBOX.png" alt="BAKEND POWER" />
-            </div>
-            <ul>
-              <li>4 Almuerzos (Personalizados)</li>
-              <li>Bebida del día</li>
-              <li>Sopa del día</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$350.000</span>
-              </li>
-            </ul>
+      <div class="Objeto">
+        <div class="Texto-Objeto">
+          <div class="imagen-contenedor">
+            <img style="font-family: 'Poppins'; font-size: 19px" src="..\img\CLOUDBOX.png" alt=" CLOUDBOX " />
           </div>
-          <button class="boton-circular">+</button>
+          <ul>
+            <li>3 Desayunos (Personalizados)</li>
+            <li>2 Almuerzos ligeros</li>
+            <li>Smooothie proteico</li>
+            <li>
+              <strong>Precio:</strong>
+              <span class="precio-color">$116.500</span>
+            </li>
+          </ul>
         </div>
+        <button class="boton-circular">+</button>
+      </div>
+    </section>
 
-        <div class="Objeto">
-          <div class="Texto-Objeto">
-            <div class="imagen-contenedor">
-              <img
-                style="font-family: 'Poppins'; font-size: 19px"
-                src="..\img\CLOUDBOX.png"
-                alt=" CLOUDBOX "
-              />
-            </div>
-            <ul>
-              <li>3 Desayunos (Personalizados)</li>
-              <li>2 Almuerzos ligeros</li>
-              <li>Smooothie proteico</li>
-              <li>
-                <strong>Precio:</strong>
-                <span class="precio-color">$320.000</span>
-              </li>
-            </ul>
-          </div>
-          <button class="boton-circular">+</button>
-        </div>
-      </section>
-
-      <!-- Ventana emergente mensaje enviado correctamente -->
-      <div id="subscriptionModal" class="modal1">
-        <div class="modal1-contenedor">
-          <i
-            class="bi bi-x-circle-fill cerrar close-button"
-            id="cerrarModalMensajeExitoso"
-          ></i>
-          <p>
-            Vas a adquirir el plan de suscripción
-            <span id="subscriptionName"></span>.
-            <br />
-          </p>
-          <!-- Contenedor para centrar la imagen -->
-          <div
-            style="display: flex; justify-content: center; margin-bottom: 10px"
-          >
-            <img
-              id="modalImage"
-              src=""
-              alt=""
-              style="
+    <!-- Ventana emergente mensaje enviado correctamente -->
+    <div id="subscriptionModal" class="modal1">
+      <div class="modal1-contenedor">
+        <i class="bi bi-x-circle-fill cerrar close-button" id="cerrarModalMensajeExitoso"></i>
+        <p>
+          Vas a adquirir el plan de suscripción
+          <span id="subscriptionName"></span>.
+          <br />
+        </p>
+        <!-- Contenedor para centrar la imagen -->
+        <div style="display: flex; justify-content: center; margin-bottom: 10px">
+          <img id="modalImage" src="" alt="" style="
                 max-width: 55%;
                 border: solid 1px lightgray;
                 border-radius: 10px;
-              "
-            />
-          </div>
-          <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
-          <div class="modal-buttons">
-            <button style="width: auto" id="agreeButton" class="botonAzul">
-              Estoy de acuerdo
-            </button>
-            <button id="cancelButton" class="botonRojo">Cancelar</button>
-          </div>
+              " />
+        </div>
+        <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
+        <div class="modal-buttons">
+          <button style="width: auto" id="agreeButton" class="botonAzul">
+            Estoy de acuerdo
+          </button>
+          <button id="cancelButton" class="botonRojo">Cancelar</button>
         </div>
       </div>
+    </div>
 
-      <div class="contenedorPago">
-        <div class="modalPago">
-          <i class="bi bi-x-circle-fill cerrarTerminos"></i>
-          <div class="tarjetaCredito">
-            <div class="frontal" id="frente">
-              <h3 id="bank">BANK QBank</h3>
-              <img src="../img/visa.png" alt="" id="brand" />
-              <img src="../img/chip.jfif" alt="" id="chip" />
-              <p id="number">92334 23423 2343 2343</p>
-              <p id="fechaV">00/00</p>
-              <p id="nameCreditCard">Name Owner</p>
-            </div>
-            <div class="atrass" id="atras">
-              <p id="lineaNegra"></p>
-              <p id="lineaBlanca">123</p>
-              <p id="textoCard">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                odit officiis accusamus dolor molestiae quidem nesciunt fugiat
-                veniam saepe in totam obcaecati, ad, voluptates praesentium illo
-                eos. Ab, minima nihil.
-              </p>
-              <img src="../img/barras.png" alt="" id="barras" />
-            </div>
+    <div class="contenedorPago">
+      <div class="modalPago">
+        <i class="bi bi-x-circle-fill cerrarTerminos"></i>
+        <div class="tarjetaCredito">
+          <div class="frontal" id="frente">
+            <h3 id="bank">BANK QBank</h3>
+            <img src="../img/visa.png" alt="" id="brand" />
+            <img src="../img/chip.jfif" alt="" id="chip" />
+            <p id="number">92334 23423 2343 2343</p>
+            <p id="fechaV">00/00</p>
+            <p id="nameCreditCard">Name Owner</p>
           </div>
-
-          <div class="formularioTarjeta">
-            <div class="numeroTC">
-              <label for="numero">Numero</label>
-              <input type="text" name="number" id="numberCT" />
-            </div>
-            <div class="nombreTC">
-              <label for="nombre">Nombre en Tarjeta</label>
-              <input type="text" name="nombre" id="nombreCT" />
-            </div>
-              <div class="expira">
-                <label for="fechaE">Fecha Expiracion</label>
-                <input type="month" name="" id="expiraDate" />
-              </div>
-              <div class="cvv">
-                <label for="cvv">CVV</label>
-                <input type="number" name="cvv" id="inputCVV" />
-              </div>
-              <div class="infoPagoS">
-                <label for="suscripcionInfo">Suscripcion</label>
-                <input type="text" name="infoSuscripcion" id="sInfo" disabled>
-              </div>
-              <div class="infoPagoT">
-                <label for="pagoInfo">Costo</label>
-                <input type="text" name="costo" id="costo" disabled>
-              </div>
-            <button id="realizarPago">Realizar Pago</button>
+          <div class="atrass" id="atras">
+            <p id="lineaNegra"></p>
+            <p id="lineaBlanca">123</p>
+            <p id="textoCard">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+              odit officiis accusamus dolor molestiae quidem nesciunt fugiat
+              veniam saepe in totam obcaecati, ad, voluptates praesentium illo
+              eos. Ab, minima nihil.
+            </p>
+            <img src="../img/barras.png" alt="" id="barras" />
           </div>
         </div>
+
+        <div class="formularioTarjeta">
+          <div class="numeroTC">
+            <label for="numero">Numero</label>
+            <input type="text" name="number" id="numberCT" />
+          </div>
+          <div class="nombreTC">
+            <label for="nombre">Nombre en Tarjeta</label>
+            <input type="text" name="nombre" id="nombreCT" />
+          </div>
+          <div class="expira">
+            <label for="fechaE">Fecha Expiracion</label>
+            <input type="month" name="" id="expiraDate" />
+          </div>
+          <div class="cvv">
+            <label for="cvv">CVV</label>
+            <input type="number" name="cvv" id="inputCVV" />
+          </div>
+          <div class="infoPagoS">
+            <label for="suscripcionInfo">Suscripcion</label>
+            <input type="text" name="infoSuscripcion" id="sInfo" disabled>
+          </div>
+          <div class="infoPagoT">
+            <label for="pagoInfo">Costo</label>
+            <input type="text" name="costo" id="costo" disabled>
+          </div>
+          <button id="realizarPago">Realizar Pago</button>
+        </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-      <div id="footer"></div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <div id="footer"></div>
+  </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../scripts/llamarNavFooter.js"></script>
-    <script src="../scripts/manipulacionNavbar.js" type="module"></script>
-    <script src="../scripts/scriptsuscripcion.js"></script>
-    <script src="../scripts/scriptPago.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="../scripts/llamarNavFooter.js"></script>
+  <script src="../scripts/manipulacionNavbar.js" type="module"></script>
+  <script src="../scripts/scriptsuscripcion.js"></script>
+  <script src="../scripts/scriptPago.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
 </html>
