@@ -15,9 +15,10 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
+
 }
 
-main{
+main {
     background-color: #FFFEF4;
 }
 
@@ -31,7 +32,7 @@ h5 {
     font-style: normal;
 }
 
-#nombreUsuarioRegistrado{
+#nombreUsuarioRegistrado {
     font-weight: 700;
     font-size: 20px;
 }
@@ -216,16 +217,16 @@ sale hacia la der */
     padding-left: 20px;
 }
 
-.divContrasena{
+.divContrasena {
     position: relative;
     padding: 0px;
 }
 
-.divContrasena input{
+.divContrasena input {
     width: 100%;
 }
 
-.divContrasena i{
+.divContrasena i {
     position: absolute;
     cursor: pointer;
     font-size: 20px;
@@ -234,7 +235,7 @@ sale hacia la der */
     right: 10px;
 }
 
-.divContrasena i:hover{
+.divContrasena i:hover {
     color: #70349E;
 }
 
@@ -309,7 +310,7 @@ sale hacia la der */
 }
 
 
-@media (width < 450px){
+@media (width < 450px) {
     .containerLogin {
         width: 90%;
     }

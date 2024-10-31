@@ -61,7 +61,7 @@
               <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
             </li>
             <li class="nav-item" id="liCarrito">
-              <a class="nav-link" href="./carrito.html" >
+              <a class="nav-link" href="./carrito.html">
                 <i class="bi bi-cart4" id="carrito">
                   <p id="cantidadCarritoIcono">1</p>
                 </i>
@@ -76,6 +76,7 @@
 
 
   <main>
+    <img src="../img/DibujoLogin.png" style="position: absolute;  margin-top:280px; width: 400px;" />
     <div class="bodyLogin transicion-div mostrar">
       <div class="containerLogin">
         <div class="zonagris">
@@ -97,7 +98,7 @@
               <div class="divContrasena">
                 <input title="Ingrese Contrasena" type="password" name="contrasena" id="contrasena"
                   placeholder="Contrasena" required />
-                  <i id="iconoContrasenaLogin" class="bi bi-eye-fill"></i>
+                <i id="iconoContrasenaLogin" class="bi bi-eye-fill"></i>
               </div>
               <input type="submit" value="Ingreso" id="realizarIngreso" />
               <!-- <a class="olvidoContrasena">¿Olvido Contrasena?</a> -->
@@ -117,12 +118,12 @@
               <div class="divContrasena">
                 <input title="Ingrese Contrasena" type="password" name="contrasenaR" id="contrasenaR"
                   placeholder="Contrasena" required />
-                  <i id="iconoContrasenaR" class="bi bi-eye-fill"></i>
+                <i id="iconoContrasenaR" class="bi bi-eye-fill"></i>
               </div>
               <div class="divContrasena">
                 <input title="Ingrese Nuevamente Contrasena" type="password" name="validarContrasena"
-                 id="validarContrasena" placeholder="Contrasena Nuevamente" required />
-                 <i id="iconoConfirmarContrasena" class="bi bi-eye-fill"></i> <!-- bi-eye-slash -->
+                  id="validarContrasena" placeholder="Contrasena Nuevamente" required />
+                <i id="iconoConfirmarContrasena" class="bi bi-eye-fill"></i> <!-- bi-eye-slash -->
               </div>
               <div class="terminos">
                 <label for="terminosCondiciones">Terminos & Condiciones</label>
@@ -164,7 +165,7 @@
           <label for="suscripcionUsuario">Suscripción</label>
           <input type="text" name="suscripcionUsuario" id="suscripcionUsuario" placeholder="Sin suscripción" disabled>
         </div>
-      
+
         <div class="botonesPerfil">
           <button type="submit" id="guardarCambiosPerfilUsuario">Guardar</button>
           <button type="button" id="editarPerfilUsuario"> Editar Perfil </button>
@@ -176,25 +177,25 @@
       <div class="suscripcionYPLatos">
         <div class="suscripciones">
           <a href="./suscripcion.html">Ver suscripciones</a>
-            <div class="cardSuscripcion">  
-              <a href="./suscripcion.html">
-                <div class="difuminado">
-                  <button class="tamanoGrande botonCard">
-                    Ver suscripciones
-                  </button>
-                </div>
-              </a>
-            </div>
+          <div class="cardSuscripcion">
+            <a href="./suscripcion.html">
+              <div class="difuminado">
+                <button class="tamanoGrande botonCard">
+                  Ver suscripciones
+                </button>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div class="platos">
           <a href="./menu.html">Ver menú</a>
-          <div class="cardPlato">  
+          <div class="cardPlato">
             <a href="./menu.html">
               <div class="difuminado">
-                  <button class="botonCard">
-                    Ver menú
-                  </button>
+                <button class="botonCard">
+                  Ver menú
+                </button>
               </div>
             </a>
           </div>
@@ -215,12 +216,14 @@
           <label for="aliasAdministrador">Usuario:</label>
           <input type="text" name="aliasAdministrador" id="aliasAdministrador" placeholder="Nombre de Usuario" disabled>
           <label for="nombreAdministrador">Nombre:</label>
-          <input type="text" name="nombreAdministrador" id="nombreAdministrador" placeholder="Nombre completo del usuario" disabled>
+          <input type="text" name="nombreAdministrador" id="nombreAdministrador"
+            placeholder="Nombre completo del usuario" disabled>
           <label for="correoAdministrador">Correo:</label>
-          <input type="email" name="correoAdministrador" id="correoAdministrador" placeholder="Correo registrado por el usuario"
-            disabled>
+          <input type="email" name="correoAdministrador" id="correoAdministrador"
+            placeholder="Correo registrado por el usuario" disabled>
           <label for="telefonoAdministrador">Teléfono</label>
-          <input type="number" name="telefonoAdministrador" id="telefonoAdministrador" placeholder="Numero de teléfono del usuario" disabled>
+          <input type="number" name="telefonoAdministrador" id="telefonoAdministrador"
+            placeholder="Numero de teléfono del usuario" disabled>
         </div>
 
         <div class="botonesPerfil">
@@ -234,7 +237,7 @@
 
       <div class="modificarProducto">
         <h2>Modificar o editar producto</h2>
-        <form id="modificarCrearProducto"  action="/upload" method="POST" enctype="multipart/form-data">
+        <form id="modificarCrearProducto" action="/upload" method="POST" enctype="multipart/form-data">
           <div class="inputsProducto">
 
             <label for="idProducto">Id :</label>
@@ -265,13 +268,15 @@
             <input type="number" name="precioProducto" id="precioProducto" disabled required>
 
             <p class="parrafoImagen"> Imagen :</p>
-            <div class="divUrlProducto" ><!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
+            <div class="divUrlProducto">
+              <!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
               <label for="urlProducto"><i class="bi bi-plus-square-fill"></i></label>
               <input type="file" name="urlProducto" id="urlProducto" accept=".jpeg,.jpg,.png,.svg" disabled required>
               <p id="nombreUrlImagen"> no se ha cargado un archivo </p>
             </div>
 
-            <div id="divBotonCargar"><!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
+            <div id="divBotonCargar">
+              <!--class="cargar"  clase que se le asigna al momento de dar en nuevo o editar producto-->
               <input type="submit" name="botonCargarProducto" id="botonCargarProducto" value="Cargar" disabled>
             </div>
           </div>
@@ -286,7 +291,8 @@
       <div class="modal1-contenedor modalPequeno">
         <i class="bi bi-x-circle-fill cerrar" id="cerrarModalMensajeExitoso"></i>
         <!-- Icono sacado de Bootstrap-->
-        <h5>Gracias por registrarte <span id="nombreUsuarioRegistrado"></span>, te invitamos a iniciar sesión y adquirir nuestros productos.</h5>
+        <h5>Gracias por registrarte <span id="nombreUsuarioRegistrado"></span>, te invitamos a iniciar sesión y adquirir
+          nuestros productos.</h5>
       </div>
     </div>
 
@@ -376,22 +382,22 @@
           </div>
         </div>
         <div class="vistaPreviaMensaje">
-          <p>Si estas de acuerdo con los cambios presiona 
+          <p>Si estas de acuerdo con los cambios presiona
             aceptar, en caso contrario presiona cancelar.</p>
         </div>
         <div class="vistaPreviaAceptar botonesModalVistaPrevia">
-          <button id="cancelarCambios" class="botonRojo">Cancelar</button> 
+          <button id="cancelarCambios" class="botonRojo">Cancelar</button>
           <button id="aceptarCambios" class="botonAzul">Aceptar</button>
         </div>
       </div>
     </div>
 
-     <!-- Ventana emergente seguro desea eliminar-->
-     <div id="modalEliminarProducto" class="modal1">
+    <!-- Ventana emergente seguro desea eliminar-->
+    <div id="modalEliminarProducto" class="modal1">
       <div class="modal1-contenedor modalPequeno">
         <i class="bi bi-x-circle-fill cerrar" id="cerrarModalEliminarProducto"></i>
         <p>Seguro que desea eliminar el producto</p>
-        <div class = "vistaPreviaAceptar botonesModalEliminarProducto">
+        <div class="vistaPreviaAceptar botonesModalEliminarProducto">
           <button id="botonCancelarEliminar" class="botonAzul"> No </button>
           <button id="botonAceptarEliminar" class="botonRojo"> Si </button>
         </div>
@@ -406,15 +412,20 @@
         <h5>Por favor escriba la contraseña para guardar los cambios en su perfil</h5>
 
         <div class="divContrasena inputContrasenaEditarPerfil">
-          <input type="password" name="contrasenaEditarPerfil" Id="contrasenaEditarPerfil" placeholder="Escribe tu contraseña" required>
+          <input type="password" name="contrasenaEditarPerfil" Id="contrasenaEditarPerfil"
+            placeholder="Escribe tu contraseña" required>
           <i id="iconoContrasenaEditarPerfil" class="bi bi-eye-fill"></i>
         </div>
 
-        <div class = "contenedorBotonGuardarCambiosPerfil">
+        <div class="contenedorBotonGuardarCambiosPerfil">
           <button id="botonGuardarEditarPerfil" class="botonAzul"> Guardar </button>
         </div>
       </div>
     </div>
+
+
+
+
 
 
 

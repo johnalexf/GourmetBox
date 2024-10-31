@@ -8,11 +8,13 @@
   font-size: 20px;
 }
 
-main{
+main {
   background-image: url("../img/fondosn.jpg");
   background-repeat: no-repeat;
-  background-size: cover; /* Cubre todo el contenedor */
-  background-position: center;/* Centra la imagen */
+  background-size: cover;
+  /* Cubre todo el contenedor */
+  background-position: center;
+  /* Centra la imagen */
 }
 
 #icon,
@@ -40,7 +42,7 @@ li:hover,
   padding-top: 20px;
 }
 
-.nuestra h2{
+.nuestra h2 {
   font-family: "Poppins", system-ui;
   font-weight: 900;
   font-size: 60px;
@@ -59,12 +61,15 @@ li:hover,
 }
 
 .imgNosotros img {
-  scale: 110%;
+  scale: 100%;
+  mask-image: linear-gradient(white 75%,
+      transparent);
 }
 
 .textoImg {
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .textoNosotros {
@@ -72,7 +77,8 @@ li:hover,
   text-align: justify;
   width: 40%;
 }
-.textoNosotros h5{
+
+.textoNosotros h5 {
   line-height: 26px;
 }
 
@@ -94,7 +100,7 @@ li:hover,
   margin-top: 50px;
   align-items: center;
   justify-content: center;
-  display: none;  
+  display: none;
 }
 
 
@@ -108,8 +114,8 @@ li:hover,
 }
 
 .contenedorPerfiles .fl:hover {
-filter: invert();
-transform: rotate(360deg);
+  filter: invert();
+  transform: rotate(360deg);
 }
 
 
@@ -122,7 +128,7 @@ transform: rotate(360deg);
 }
 
 .contenedorPerfiles {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 30px 0 50px;
@@ -131,8 +137,8 @@ transform: rotate(360deg);
 }
 
 .contenedorPerfiles .carta {
-  width: 260px; 
-  height: 350px; 
+  width: 260px;
+  height: 350px;
   position: relative;
 }
 
@@ -147,12 +153,13 @@ transform: rotate(360deg);
   text-align: center;
   padding: 30px 10px 10px 10px;
 }
+
 .contenedorSecundario li {
   list-style: none;
 }
 
 .contenedorSecundario .carta:hover {
-  background-color:  rgb(58, 57, 57);
+  background-color: rgb(58, 57, 57);
   border-radius: 15px;
 }
 
@@ -163,7 +170,9 @@ transform: rotate(360deg);
   box-shadow: 0px 0px 6px white;
   margin-bottom: 10px;
 }
-.contenedorSecundario h4, h5 {
+
+.contenedorSecundario h4,
+h5 {
   font-size: 18px;
 }
 
@@ -171,15 +180,15 @@ transform: rotate(360deg);
   margin: 15px 0px 15px 0px;
 }
 
-.contenedorSecundario .visible p{
+.contenedorSecundario .visible p {
   font-size: 16px;
   text-align: justify;
   padding: 0 12px 0 12px;
 }
 
-.contenedorSecundario .redes img{
-width: 30px;
-height: 30px;
+.contenedorSecundario .redes img {
+  width: 30px;
+  height: 30px;
 }
 
 .slider-wrapper {
@@ -204,49 +213,59 @@ height: 30px;
 
 .contenedorPrincipal .visible,
 .oculto {
-  grid-area: 1 / 1; /* Coloca ambas en la misma área */
+  grid-area: 1 / 1;
+  /* Coloca ambas en la misma área */
   transition: opacity 1s ease;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1; /* Comienza visible */
+  opacity: 1;
+  /* Comienza visible */
 }
 
 .oculto {
   padding: 15px 10px 0 10px;
-  opacity: 0; /* Oculta la cara trasera al inicio */
-  pointer-events: none; /* Desactiva eventos de clic */
+  opacity: 0;
+  /* Oculta la cara trasera al inicio */
+  pointer-events: none;
+  /* Desactiva eventos de clic */
   color: white;
   background-color: rgb(58, 57, 57);
   border-radius: 10px;
 }
 
 .contenedorPrincipal .carta-contenedor.show-oculto .visible {
-  opacity: 0; /* Desvanece la cara visible */
-  pointer-events: none; /* Desactiva eventos de clic */
+  opacity: 0;
+  /* Desvanece la cara visible */
+  pointer-events: none;
+  /* Desactiva eventos de clic */
 }
 
 .contenedorPrincipal .carta-contenedor.show-oculto .oculto {
-  opacity: 1; /* Muestra la cara oculta */
-  pointer-events: auto; /* Activa eventos de clic */
+  opacity: 1;
+  /* Muestra la cara oculta */
+  pointer-events: auto;
+  /* Activa eventos de clic */
 }
 
 
-@media (width < 500px){
-  .contenedorPrincipal{
+@media (width < 500px) {
+  .contenedorPrincipal {
     display: none;
   }
-  .contenedorSecundario{
+
+  .contenedorSecundario {
     display: block;
   }
+
   .imgNosotros img {
     width: 70%;
   }
 }
 
-@media (width < 800px){
+@media (width < 800px) {
   .textoNosotros {
     width: auto;
     padding: 0 40px 0 40px;
@@ -257,7 +276,7 @@ height: 30px;
     padding: 20px;
   }
 
-  .imgNosotros{
+  .imgNosotros {
     margin: auto;
   }
 
@@ -270,27 +289,28 @@ height: 30px;
 
 }
 
-.redes img{
+.redes img {
   width: 40px;
   height: 40px;
   transition: filter 0.3s ease;
 }
 
 .redes img:hover {
-  filter:invert(); 
+  filter: invert();
 }
 
 .redes {
   margin-top: 20px;
   word-spacing: 30px;
 }
+
 /* TARJETAS PERFILES HASTA AQUI */
 
 
 /* Acordion Yordi */
 /* Misión, visión y valores con flexbox y espacio entre cards */
 
-.acordion{
+.acordion {
   margin: 0 95px 0 95px;
 }
 
@@ -299,7 +319,7 @@ height: 30px;
   justify-content: space-around;
 }
 
-.accordion-body p{
+.accordion-body p {
   font-size: 18px;
   word-spacing: 2px;
   text-align: center;
@@ -310,7 +330,7 @@ height: 30px;
   color: #70349E;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
   color: white;
   background-color: #70349E;
 }
@@ -319,7 +339,7 @@ height: 30px;
   color: #70349E;
 }
 
-.accordion-button:not(.collapsed)::after{
+.accordion-button:not(.collapsed)::after {
   background-image: url("../img/image.png");
   color: white;
   background-color: #70349E;
@@ -338,8 +358,8 @@ height: 30px;
   }
 
   .accordion-collapse {
-    display: block !important; 
-    height: auto !important; 
+    display: block !important;
+    height: auto !important;
   }
 
 
@@ -351,42 +371,50 @@ height: 30px;
     display: inline-block;
   }
 
-  .acordion{
+  .acordion {
     margin: 0 38px 0 38px;
   }
+
   .accordion-button {
     pointer-events: auto;
     opacity: 1;
   }
 }
 
-@media (width < 1200px){
-  .primero{
+@media (width < 1200px) {
+  .primero {
     grid-template-columns: repeat(2, 1fr);
   }
-  .primero article:nth-child(3), .corregir{
+
+  .primero article:nth-child(3),
+  .corregir {
     grid-column: 1 /3;
-   }
+  }
 }
 
-@media (width < 800px){
-  .primero, .segundo{
+@media (width < 800px) {
+
+  .primero,
+  .segundo {
     grid-template-columns: 1fr;
   }
-  .primero article:nth-child(3), .corregir{
+
+  .primero article:nth-child(3),
+  .corregir {
     grid-column: 1 /2;
-   }
-   .cardss{
+  }
+
+  .cardss {
     margin-bottom: 60px;
-   }
-   #botonPersonalizado{
+  }
+
+  #botonPersonalizado {
     display: block;
-   }
+  }
 }
 
-@media(width < 500px){
-  .acordion{
+@media(width < 500px) {
+  .acordion {
     margin: 0 20px 0 20px;
   }
 }
-
