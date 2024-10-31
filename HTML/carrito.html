@@ -141,19 +141,19 @@
         <!-- Inicio Resumen de compra --------------------->
         <div class="resumenCompra">
           <h3>RESUMEN DE COMPRA</h3>
-          <table class="table">
+          <table class="table" style="background-color: transparent;">
             <thead>
               <tr>
-                <th scope="col">Producto</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Total</th>
+                <th scope="col" style="background-color: transparent;">Producto</th>
+                <th scope="col" style="background-color: transparent;">Cantidad</th>
+                <th scope="col" style="background-color: transparent;">Total</th>
               </tr>
             </thead>
-            <tbody id="resumenItems">
+            <tbody id="resumenItems" style="background-color: transparent;">
               <!-- Aquí se agregarán  los productos -->
             </tbody>
           </table>
-          <div class="totales">
+          <div class="totales " style="background-color: transparent;">
             <p><strong>TOTAL DE PRODUCTOS</strong> <span id="totalProductos">0</span></p>
             <p><strong>DOMICILIO:</strong> <span id="costoDomicilio">$12.000</span></p>
             <p><strong>TOTAL A PAGAR:</strong> <span id="totalPagar">$0</span></p>
@@ -182,8 +182,8 @@
           <h5>Seguro que desea eliminar el producto nombre del producto</h5>
         </div>
         <div class="modal-buttons">
-          <button id="botonCancelarEliminar" class = "botonAzul" onclick="cancelarEliminar()"> No </button>
-          <button id="botonAceptarEliminar" class = "botonRojo" onclick="eliminarDefinitivo()"> Si </button>
+          <button id="botonCancelarEliminar" class="botonAzul" onclick="cancelarEliminar()"> No </button>
+          <button id="botonAceptarEliminar" class="botonRojo" onclick="eliminarDefinitivo()"> Si </button>
         </div>
       </div>
     </div>
@@ -203,10 +203,10 @@
             <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
           </div>
           <div class="contenedorPrecioCard"></div>
-            <p> <b>$  ${producto.precio}  COP</b> </p>
-          </div>
+          <p> <b>$ ${producto.precio} COP</b> </p>
         </div>
       </div>
+    </div>
     </div>
 
 
