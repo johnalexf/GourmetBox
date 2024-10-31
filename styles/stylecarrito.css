@@ -22,7 +22,7 @@ main {
 
 /* Asignación de poppins regular 400 a párrafos */
 * {
-    font-family: "Poppins",  sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -39,8 +39,11 @@ h5 {
     font-style: normal;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
     font-weight: 900;
+    ;
 }
 
 button {
@@ -178,7 +181,7 @@ hr {
     margin: auto;
     border: 0px solid black;
     text-align: center;
-    background-color: #FFFEF4;
+
     font-size: 20px;
 }
 
@@ -228,21 +231,21 @@ input[type="number"]::-webkit-inner-spin-button {
     color: rgb(174, 59, 59);
 }
 
-.verInformacion{
+.verInformacion {
     cursor: pointer;
     color: blue;
     text-decoration: underline;
     font-size: 20px;
 }
 
-.infoPantallaPequena{
+.infoPantallaPequena {
     display: none;
     text-align: center;
 }
 
 /* Estilos para el resumen de compra */
 
-.vistaPreviaYResumenCompra{
+.vistaPreviaYResumenCompra {
     position: relative;
 
 }
@@ -256,22 +259,24 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 30px auto;
     align-items: center;
     max-width: 340px;
-    background-color: #FFFEF4;
+
 }
 
 .resumenCompra h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: bold;
     align-items: center;
     text-align: center;
+    background-color: transparent;
 }
 
 .resumenCompra .table {
     width: 90%;
     margin-bottom: 20px;
     align-items: center;
+    background-color: transparent;
 }
 
 .resumenCompra .totales p {
@@ -301,7 +306,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
-@media(width < 860px){
+@media(width < 860px) {
     .carrito {
         grid-template-columns: 1fr;
     }
@@ -325,11 +330,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
-@media(width < 450px){
-    .infoPantallaPequena{
+@media(width < 450px) {
+    .infoPantallaPequena {
         display: block;
     }
-    .infoPantallaGrande{
+
+    .infoPantallaGrande {
         display: none;
     }
 }
