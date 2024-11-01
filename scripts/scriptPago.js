@@ -1,8 +1,15 @@
+import {seccionNavbar} from './manipulacionNavbar.js';
+
+console.log(seccionNavbar.id);
+
 // se importa de script suscripción las variables que contienen
 // el precio del plan a pagar
 // el nombre de la suscripción a adquirir
 // el botón con el cual se acepta que esta de acuerdo adquirir el plan
-import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
+
+ import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
+
+    
 
 
 agreeButton.addEventListener("click", () => {

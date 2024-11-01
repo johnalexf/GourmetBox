@@ -106,7 +106,7 @@ actualizarMenu();
 //al ser de este tipo las variables y funciones no están de manera global
 export function adicionarCarrito(id) {
 
-    if(usuario == ""){
+    if(usuario == "" || usuario == undefined ){
         modalRealizarRegistro.style.display = "flex";
     }else{
 

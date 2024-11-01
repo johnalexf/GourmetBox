@@ -3,7 +3,7 @@ let nameUser =  document.getElementById('sesion');
 export let usuarioLogiado = "";
 
 // lineas de codigo para poner en negrita segun la pagina en la que se encuentre
-let seccionNavbar = document.getElementById(document.title.toLowerCase());
+export let seccionNavbar = document.getElementById(document.title.toLowerCase());
 
 if(seccionNavbar.id != "carrito"){
     seccionNavbar.style.fontWeight = "bold";

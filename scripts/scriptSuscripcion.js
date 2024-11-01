@@ -20,7 +20,7 @@ let usuario = localStorage.getItem('usuario');
 buttons.forEach((button) => {
     button.addEventListener('click', function() {
 
-        if(usuario == ""){
+        if(usuario == "" || usuario == undefined ){
                 modalRealizarRegistro.style.display = "flex";
         }else{
                 // Obtener la URL de la imagen

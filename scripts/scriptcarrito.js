@@ -30,7 +30,7 @@ if (localStorage.getItem('listaCompras') != undefined) {
 let usuario = localStorage.getItem('usuario');
 
 //condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
-if(usuario != ""){
+if(usuario != "" && usuario != undefined ){
     if (listaCompras.length != 0) {
         carritoVacio.style.display = "none";
         carrito.style.display = "grid";
