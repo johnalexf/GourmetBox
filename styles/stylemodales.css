@@ -93,7 +93,8 @@
 .vistaPreviaAceptar,
 .vistaPreviaMensaje,
 .contenedorBotonGuardarCambiosPerfil,
-.inputContrasenaEditarPerfil {
+.inputContrasenaEditarPerfil,
+.divBotonIrRegistro {
     margin-top: 35px;
     /* margin: auto;  */
     /* width: 300px; */
@@ -115,7 +116,8 @@
 
 .vistaPreviaAceptar button,
 .contenedorBotonGuardarCambiosPerfil button,
-.modal-buttons button {
+.modal-buttons button,
+.divBotonIrRegistro button {
     margin: auto;
     width: 150px;
     height: 40px;

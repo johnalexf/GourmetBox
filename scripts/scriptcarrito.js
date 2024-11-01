@@ -26,14 +26,19 @@ if (localStorage.getItem('listaCompras') != undefined) {
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
 
+//variable para verificar si hay un usuario registrado
+let usuario = localStorage.getItem('usuario');
+
 //condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
-if (listaCompras.length != 0) {
-    carritoVacio.style.display = "none";
-    carrito.style.display = "grid";
-    actualizarCarrito();
-} else {
-    carritoVacio.style.display = "flex";
-    carrito.style.display = "none";
+if(usuario != ""){
+    if (listaCompras.length != 0) {
+        carritoVacio.style.display = "none";
+        carrito.style.display = "grid";
+        actualizarCarrito();
+    } else {
+        carritoVacio.style.display = "flex";
+        carrito.style.display = "none";
+    }
 }
 
 function actualizarCarrito() {
@@ -77,6 +82,7 @@ function productos() {
 }
 // fin funcion productos
 
+//funcion para mostrar la información del producto con el párrafo (ver información) de cada producto agregado
 export function mostrarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     producto.innerHTML =
@@ -134,10 +140,9 @@ function resumenDeCompra() {
     document.getElementById("totalProductos").innerText = `$${subtotalProductos.toLocaleString()}`;
     document.getElementById("totalPagar").innerText = `$${totalPagar.toLocaleString()}`;
 }
-
-
 // fin funcion resumenDeCompra();
 
+//funcion para encontrar el indice en la lista de compras donde esta ubicado el producto a buscar
 function encontrarIndiceListaObjetos(id) {
     let index = 0;
     for (let i = 0; i < listaCompras.length; i++) {
@@ -148,6 +153,7 @@ function encontrarIndiceListaObjetos(id) {
     return index
 }
 
+//funcion para disminuir la cantidad del producto con el botón de menos
 export function disminuirProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     if (listaCompras[indiceListaCompras].cantidad == 1) {
@@ -159,6 +165,7 @@ export function disminuirProducto(id) {
 }
 window.disminuirProducto = disminuirProducto;
 
+//funcion para aumentar la cantidad del producto con el botón de mas
 export function aumentarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     if (listaCompras[indiceListaCompras].cantidad != 20) {
@@ -169,7 +176,8 @@ export function aumentarProducto(id) {
 }
 window.aumentarProducto = aumentarProducto;
 
-//función para eliminar un producto
+
+//función para eliminar un producto la cual abre un modal para confirmar antes de eliminar
 export function eliminarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     textoModalEliminar.innerHTML = `<p> Se eliminara el producto <b>${listaCompras[indiceListaCompras].nombre}</b> del carrito.</p>
@@ -178,11 +186,13 @@ export function eliminarProducto(id) {
 }
 window.eliminarProducto = eliminarProducto;
 
+
 //funcion para cancelar el modal de eliminar producto
 export function cancelarEliminar() {
     modalEliminar.style.display = "none";
 }
 window.cancelarEliminar = cancelarEliminar;
+
 
 //funcion para eliminar definitivamente el producto del carrito
 export function eliminarDefinitivo() {
@@ -200,6 +210,7 @@ window.eliminarDefinitivo = eliminarDefinitivo;
 document.addEventListener('input', function (event) { verificarCantidadNueva(event) });
 document.addEventListener('change', function (event) { verificarCantidadNueva(event) });
 
+//funcion para verificar si el usuario escribió una cantidad de platos en el input y actualizar el valor en lista de compras
 function verificarCantidadNueva(event) {
     let tipo = event.type;
     let cantidadNueva = event.target.valueAsNumber;

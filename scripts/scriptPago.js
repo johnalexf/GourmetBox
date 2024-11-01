@@ -1,53 +1,11 @@
-// Obtener elementos del DOM
-const buttons = document.querySelectorAll('.boton-circular');
-const modal = document.getElementById('subscriptionModal');
-const modalImage = document.getElementById('modalImage'); // Referencia a la imagen del modal
-const closeButton = document.querySelector('.close-button');
-const cancelButton = document.getElementById('cancelButton');
-const agreeButton = document.getElementById('agreeButton'); // Botón "Estoy de acuerdo"
-let precio = "";
-let nombreSuscripcion = "";
-
-// Función para mostrar el modal con la imagen
-buttons.forEach((button) => {
-    button.addEventListener('click', function() {
-        // Obtener la URL de la imagen
-        const imageUrl = button.parentElement.querySelector('img').getAttribute('src');
-
-        // Establecer la imagen en el modal
-        modalImage.src = imageUrl; // Establece la URL de la imagen en el modal
-
-        modal.style.display = 'flex'; // Muestra el modal
-        document.querySelector('.modal1-contenedor').style.display = 'block'; // Asegúrate de que el contenido esté visible
-        
-        const objetoC = this.closest(".Objeto");
-        precio = objetoC.querySelector(".precio-color").textContent;
-        nombreSuscripcion = objetoC.querySelector(".imagen-contenedor img").alt;
-    });
-});
-
-// Función para cerrar el modal
-const closeModal = () => {
-    modal.style.display = 'none'; // Oculta el modal
-    document.querySelector('.modal1-contenedor').style.display = 'none'; // Oculta el contenido del modal también
-};
-
-// Eventos para cerrar el modal
-closeButton.addEventListener('click', closeModal);
-cancelButton.addEventListener('click', closeModal);
-agreeButton.addEventListener('click', () => {
-    closeModal();
-});
-
-// Ocultar el modal al cargar la página
-window.addEventListener('load', () => {
-    modal.style.display = 'none'; // Asegúrate de que el modal esté oculto al cargar
-});
+// se importa de script suscripción las variables que contienen
+// el precio del plan a pagar
+// el nombre de la suscripción a adquirir
+// el botón con el cual se acepta que esta de acuerdo adquirir el plan
+import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
 
 
-const botonAzul = document.querySelector(".botonAzul");
-
-botonAzul.addEventListener("click", () => {
+agreeButton.addEventListener("click", () => {
     const costo = document.getElementById("costo");
     costo.value = precio;
 

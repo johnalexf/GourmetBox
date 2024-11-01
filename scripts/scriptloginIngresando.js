@@ -6,6 +6,10 @@
 //javascript que realiza las funciones necesarias para modificar un usuario
 import * as modificarJSON from "../scripts/scriptModificarJSON.js";
 
+//importar la funcion para mostrar la cantidad de productos agregados si la tiene
+import { carritoCantidadAgregadaNavbar, cantidadCarritoIcono } from "./manipulacionNavbar.js";
+
+
 //ventana de ingreso y registro de usuario
 let divBodyLogin = document.querySelector(".bodyLogin");
 // lista de las ventana de un usuario registrado, 0 => usuario normal 1=> usuario administrador
@@ -36,6 +40,7 @@ function averiguarTipoUsuario(){
 
 // funcion para mostrar perfil ya sea de usuario o de administrador
 function mostrarPerfil(){
+    carritoCantidadAgregadaNavbar();
     averiguarTipoUsuario();
     if(indiceTipoUsuario == 1) mostrarDatosPerfilAdministrador();
     else   mostrarDatosPerfilUsuario();
@@ -55,6 +60,7 @@ function mostrarPerfil(){
 
 //funcion para mostrar los formularios de inicio de sesión y de registro cuando se cierre la sesión
 function mostrarDivBodyLogin(){
+    cantidadCarritoIcono.style.display = "none"; 
     averiguarTipoUsuario();
     divUsuarioRegistrado[indiceTipoUsuario].classList.remove('mostrar');
     divUsuarioRegistrado[indiceTipoUsuario].classList.add('ocultar');

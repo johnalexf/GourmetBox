@@ -185,7 +185,7 @@ hr {
     margin: auto;
     border: 0px solid black;
     text-align: center;
-
+    background-color: transparent;
     font-size: 20px;
 }
 
