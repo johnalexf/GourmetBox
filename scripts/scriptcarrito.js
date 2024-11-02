@@ -90,9 +90,9 @@ export function mostrarProducto(id) {
                 <img src="${listaCompras[indiceListaCompras].url}" alt="">
             </div>
         
-             <div class="contenedorTituloCard">
-                 <h5>${listaCompras[indiceListaCompras].nombre}
-                 </h5>
+            <div class="contenedorTituloCard">
+                <h5>${listaCompras[indiceListaCompras].nombre}
+                </h5>
             </div>
         
             <div class="contenedorDescripcionCard">
@@ -108,7 +108,7 @@ export function mostrarProducto(id) {
 window.mostrarProducto = mostrarProducto;
 
 botonCerrarVistaProducto.addEventListener('click' , ()=>{           
-     modalVistaProducto.style.display = "none"
+    modalVistaProducto.style.display = "none"
 });
 
 
@@ -273,7 +273,14 @@ const inputNombre = document.getElementById("nombreCT");
 const expiraDate = document.getElementById("expiraDate");
 
 inputNumber.addEventListener("input", () => {
-    numberTC.textContent = inputNumber.value;
+    if ((/[^0-9\s]/).test(inputNumber.value)) {
+        inputNumber.setCustomValidity("Solo se permiten números y espacios");
+    } else {
+        numberTC.textContent = inputNumber.value;
+        inputNumber.setCustomValidity("");
+    }
+
+    inputNumber.reportValidity();    
 });
 
 inputNombre.addEventListener("input", () => {

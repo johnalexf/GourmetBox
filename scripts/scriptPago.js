@@ -33,7 +33,14 @@ const inputNombre = document.getElementById("nombreCT");
 const expiraDate = document.getElementById("expiraDate");
 
 inputNumber.addEventListener("input", () => {
-    numberTC.textContent = inputNumber.value;
+    if ((/[^0-9\s]/).test(inputNumber.value)) {
+        inputNumber.setCustomValidity("Solo se permiten números y espacios");
+    } else {
+        numberTC.textContent = inputNumber.value;
+        inputNumber.setCustomValidity("");
+    }
+
+    inputNumber.reportValidity(); 
 });
 
 inputNombre.addEventListener("input", () => {
