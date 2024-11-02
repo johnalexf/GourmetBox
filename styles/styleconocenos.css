@@ -322,7 +322,7 @@ h5 {
 .accordion-body p {
   font-size: 18px;
   word-spacing: 2px;
-  text-align: center;
+  word-spacing: 0.2px;
   letter-spacing: 0.5px;
 }
 

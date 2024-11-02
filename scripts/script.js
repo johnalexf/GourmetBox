@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         platos[imagenActual].querySelector('img').style.opacity = '0';
         platos[imagenActual].querySelector('img').style.visibility = 'hidden';
         imagenActual = (imagenActual + 1) % platos.length;
-       
         
         platos[imagenActual].querySelector('img').style.visibility = 'visible';
         setTimeout(() => {
@@ -101,7 +100,6 @@ function mostrarImgC(){
     const platos = document.querySelectorAll('.sliderC > div');
 
     function mostrarImagen() {
-        console.log("Estoy llamando");
         platos[imagenActual].querySelector('img').style.opacity = '0';
         setTimeout(() => {
         platos[imagenActual].querySelector('img').style.visibility = 'hidden';
@@ -126,7 +124,6 @@ function ajustarVista(){
     const favoritosG = document.getElementById("favoritos");
     const favoritosC = document.getElementById("favoritosC");
 
-    console.log(window.innerWidth);
     if(window.innerWidth < 750){
         favoritosG.style.display = "none";
         favoritosC.style.display = "block";
