@@ -7,7 +7,7 @@ console.log(seccionNavbar.id);
 // el nombre de la suscripción a adquirir
 // el botón con el cual se acepta que esta de acuerdo adquirir el plan
 
- import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
+import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
 
     
 
@@ -97,3 +97,4 @@ btnPago.addEventListener("click", () => {
         swal("Debes Verificar!", "Asegurate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
     }
 });
+

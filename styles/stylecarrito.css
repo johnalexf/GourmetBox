@@ -1,6 +1,6 @@
 main {
     /* height: 100vh; */
-    padding: 3% 12%;
+    /* padding: 3% 12%; */
     background-color: #FFFEF4;
     background-image: url('../img/FONDOCONTACTANOS.jpg');
     background-size: cover;
@@ -10,6 +10,7 @@ main {
     background-repeat: no-repeat;
     min-height: 80vh;
 }
+
 
 
 /* Para CEL (800px) */
@@ -313,6 +314,11 @@ input[type="number"]::-webkit-inner-spin-button {
 @media(width < 860px) {
     .carrito {
         grid-template-columns: 1fr;
+    }
+
+    .carrito,
+    .carritoVacio {
+    padding: 0 12%;
     }
 }
 

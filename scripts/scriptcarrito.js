@@ -112,6 +112,7 @@ botonCerrarVistaProducto.addEventListener('click' , ()=>{
 });
 
 
+
 //inicio resumenDeCompra();
 function resumenDeCompra() {
     let totalProductos = 0;
@@ -123,7 +124,7 @@ function resumenDeCompra() {
     listaCompras.forEach(producto => {
         subtotalProductos += producto.subtotal; // Suma de los subtotales de los productos
         totalProductos += producto.cantidad; // Suma de las cantidades de productos
-
+        
         resumenHTML += `
             <tr>
                 <td>${producto.nombre}</td>
@@ -131,6 +132,7 @@ function resumenDeCompra() {
                 <td>$${producto.subtotal.toLocaleString()}</td>
             </tr>
         `;
+        
     });
 
     totalPagar = subtotalProductos + costoDomicilio; // Calcula el total a pagar sumando el domicilio
@@ -139,6 +141,7 @@ function resumenDeCompra() {
     document.getElementById("resumenItems").innerHTML = resumenHTML;
     document.getElementById("totalProductos").innerText = `$${subtotalProductos.toLocaleString()}`;
     document.getElementById("totalPagar").innerText = `$${totalPagar.toLocaleString()}`;
+
 }
 // fin funcion resumenDeCompra();
 
@@ -207,8 +210,18 @@ export function eliminarDefinitivo() {
 window.eliminarDefinitivo = eliminarDefinitivo;
 
 
-document.addEventListener('input', function (event) { verificarCantidadNueva(event) });
-document.addEventListener('change', function (event) { verificarCantidadNueva(event) });
+
+document.addEventListener('input', function (event) {
+    if (!event.target.closest('.modalPago')) {
+        verificarCantidadNueva(event);
+    }
+});
+
+document.addEventListener('change', function (event) {
+    if (!event.target.closest('.modalPago')) {
+        verificarCantidadNueva(event);
+    }
+});
 
 //funcion para verificar si el usuario escribió una cantidad de platos en el input y actualizar el valor en lista de compras
 function verificarCantidadNueva(event) {
@@ -238,4 +251,93 @@ function verificarCantidadNueva(event) {
 }
 
 
+//modal pago
+const btnPagarCarrito = document.getElementById("botonPagar");
+btnPagarCarrito.addEventListener("click", () => {
+    
+    const costo = document.getElementById("costo");
+    const total = document.getElementById("totalPagar");
+    costo.value = `     ${total.textContent}`;
+    
+    const modalPago = document.querySelector(".contenedorPago");
+    modalPago.style.display = "block";
+});
 
+
+const numberTC = document.getElementById("number");
+const nombreTC = document.getElementById("nameCreditCard");
+const fechaV = document.getElementById("fechaV");
+const cvv = document.getElementById("inputCVV");
+const inputNumber = document.getElementById("numberCT");
+const inputNombre = document.getElementById("nombreCT");
+const expiraDate = document.getElementById("expiraDate");
+
+inputNumber.addEventListener("input", () => {
+    numberTC.textContent = inputNumber.value;
+});
+
+inputNombre.addEventListener("input", () => {
+    nombreTC.textContent = inputNombre.value;
+});
+
+expiraDate.addEventListener("input", () => {
+    const fecha = expiraDate.value;
+    const [year , mes] = fecha.split("-");
+    fechaV.textContent = `${mes}/${year.slice(-2)}`;
+});
+
+cvv.addEventListener("click", () => {
+
+    const frente = document.getElementById("frente");
+    const atras = document.getElementById("atras");
+
+    frente.style.visibility = "hidden";
+    frente.style.opacity = "0";
+
+    atras.style.visibility = "visible";
+    atras.style.opacity = "1";
+
+});
+
+cvv.addEventListener("mouseout", () => {
+    const frente = document.getElementById("frente");
+    const atras = document.getElementById("atras");
+
+    atras.style.visibility = "hidden";
+    atras.style.opacity = "0";
+
+    frente.style.visibility = "visible";
+    frente.style.opacity = "1";    
+});
+
+
+cvv.addEventListener("input", () => {
+    const cvvP = document.getElementById("lineaBlanca");
+    cvvP.textContent = cvv.value;
+});
+
+
+const cerrar = document.querySelector(".cerrarTerminos");
+
+cerrar.addEventListener("click", () => {
+    const modalPago = document.querySelector(".contenedorPago");
+    modalPago.style.display = "none";
+});
+
+
+
+
+
+
+const btnPago = document.getElementById("realizarPago");
+
+btnPago.addEventListener("click", () => {
+    
+    if(cvv.value != "" && inputNumber.value != "" && inputNombre.value != "" && expiraDate.value != ""){
+        swal("Pago Recibido!", "Bienvenido a la Familia GBox!", "success");
+        const modalPago = document.querySelector(".contenedorPago");
+        modalPago.style.display = "none";
+    }else{
+        swal("Debes Verificar!", "Asegurate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
+    }
+});

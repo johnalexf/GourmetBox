@@ -16,6 +16,7 @@
     display: none;
     transition: 1s ease;
     font-family: 'Poppins', sans-serif;
+    align-content: center;
 }
 
 .modalPago {
@@ -141,13 +142,9 @@
         width: 90%;
     }
 
-
-
 }
 
 @media (width < 450px) {
-
-
 
     .tarjetaCredito #fechaV,
     .tarjetaCredito #nameCreditCard,
@@ -208,10 +205,29 @@
     min-width: 45%;
 }
 
+
 .infoPagoT #costo,
 .infoPagoS #sInfo {
     color: white;
 }
+
+.infoPagoScarrito,
+.infoPagoTcarrito {
+    min-width: 45%;
+}
+
+.infoPagoScarrito {
+    text-align: right;
+}
+
+.infoPagoTcarrito #costo {
+    height: 25px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+}
+
+
 
 #realizarPago {
     color: black;
@@ -251,3 +267,4 @@
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
+

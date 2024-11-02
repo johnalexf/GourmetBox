@@ -1,230 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito</title>
+    <!-- Estilos de Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <!-- Estilos de Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Poppins Regular 400 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Poppins Regular 400 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Roboto Bold 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Roboto Bold 700 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Estilos del Navbar y Footer -->
+    <link rel="stylesheet" href="../styles/styleNavFooter.css" />
 
-  <!-- Estilos del Navbar y Footer -->
-  <link rel="stylesheet" href="../styles/styleNavFooter.css">
+    <!-- EStilos propios de esta pagina -->
+    <link rel="stylesheet" href="../styles/stylecarrito.css" />
+    <link rel="stylesheet" href="../styles/styleProducto.css" />
+    <link rel="stylesheet" href="../styles/stylemodales.css" />
+    <link rel="stylesheet" href="../styles/stylePago.css" />
+  </head>
 
-  <!-- EStilos propios de esta pagina -->
-  <link rel="stylesheet" href="../styles/stylecarrito.css">
-  <link rel="stylesheet" href="../styles/styleProducto.css">
-  <link rel="stylesheet" href="../styles/stylemodales.css">
+  <body>
+    <!-- Navbar jalado con el javascript llamarNavFooter.js -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg"
+        style="background-color: rgba(105, 91, 199, 0.534)"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="../img/logoo.png"
+              alt="Título Gourmet Box"
+              width="150"
+              class="Logonegro ms-4"
+            />
+          </a>
 
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-</head>
-
-<body>
-
-  <!-- Navbar jalado con el javascript llamarNavFooter.js -->
-  <header>
-    <nav class="navbar navbar-expand-lg" style="background-color: rgba(105, 91, 199, 0.534)">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="../img/logoo.png" alt="Título Gourmet Box" width="150" class="Logonegro ms-4" />
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../index.html" id="inicio">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./menu.html" id="menu">Menú</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./suscripcion.html" id="suscripcion">Suscripción</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./conocenos.html" id="conocenos">Conócenos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contactanos.html" id="contactenos">Contáctenos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
-            </li>
-            <li class="nav-item" id="liCarrito">
-              <a class="nav-link" href="./carrito.html">
-                <i class="bi bi-cart4" id="carrito">
-                  <p id="cantidadCarritoIcono">1</p>
-                </i>
-              </a>
-            </li>
-          </ul>
+          <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            style="text-align: right"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../index.html"
+                  id="inicio"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./menu.html" id="menu">Menú</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./suscripcion.html" id="suscripcion"
+                  >Suscripción</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./conocenos.html" id="conocenos"
+                  >Conócenos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactanos.html" id="contactenos"
+                  >Contáctenos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
+              </li>
+              <li class="nav-item" id="liCarrito">
+                <a class="nav-link" href="./carrito.html">
+                  <i class="bi bi-cart4" id="carrito">
+                    <p id="cantidadCarritoIcono">1</p>
+                  </i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-
-  <main>
-
-    <div class="titulo">
-      <h1> Carrito </h1>
-    </div>
-
-    <div class="carritoVacio">
-
-      <div class="tituloCarritoVacio">
-        <h1>Tú carrito esta vacío!!</h1>
-        <img src="../img/cajitaVacia.png" alt="">
+    <main>
+      <div class="titulo">
+        <h1>Carrito</h1>
       </div>
 
-      <h4>Explora nuestro menú y empieza a disfrutar la experiencia Gbox</h4>
-      <a href="./menu.html"> Nuestro Menú </a>
+      <div class="carritoVacio">
+        <div class="tituloCarritoVacio">
+          <h1>Tú carrito esta vacío!!</h1>
+          <img src="../img/cajitaVacia.png" alt="" />
+        </div>
 
-    </div>
+        <h4>Explora nuestro menú y empieza a disfrutar la experiencia Gbox</h4>
+        <a href="./menu.html"> Nuestro Menú </a>
+      </div>
 
-    <div class="carrito">
+      <div class="carrito">
+        <div class="cuadroCompras">
+          <div class="tituloCuadroCompras">
+            <h2>Tu orden</h2>
+          </div>
 
-
-      <div class="cuadroCompras">
-        <diV class="tituloCuadroCompras">
-          <h2> Tu orden </h2>
-        </diV>
-
-        <div class="productosAgregados">
-
-          <div class="productoCarrito">
-
-            <i class="bi bi-x-circle-fill botonEliminar"></i>
-            <div class="productoCarritoImg">
-              <img src="../img_comidas/ALMUERZOS/bowl_junior.png" alt="">
-            </div>
-
-            <div class="productoCarritoInfo">
-              <h5> desayuno tradicional</h5>
-              <p> $15000 </p>
-              <div class="productoCantidad">
-                <div class="cantidad">
-                  <i class="bi bi-dash-square-fill"></i>
-                  <input type="number">
-                  <i class="bi bi-plus-square-fill"></i>
-                </div>
+          <div class="productosAgregados">
+            <div class="productoCarrito">
+              <i class="bi bi-x-circle-fill botonEliminar"></i>
+              <div class="productoCarritoImg">
+                <img src="../img_comidas/ALMUERZOS/bowl_junior.png" alt="" />
               </div>
-              <a href="">ver información</a>
+
+              <div class="productoCarritoInfo">
+                <h5>desayuno tradicional</h5>
+                <p>$15000</p>
+                <div class="productoCantidad">
+                  <div class="cantidad">
+                    <i class="bi bi-dash-square-fill"></i>
+                    <input type="number" />
+                    <i class="bi bi-plus-square-fill"></i>
+                  </div>
+                </div>
+                <a href="">ver información</a>
+              </div>
             </div>
-
           </div>
-
         </div>
 
-      </div>
-
-
-      <div class="vistaPreviaYResumenCompra">
-
-        <!-- Inicio Resumen de compra --------------------->
-        <div class="resumenCompra">
-          <h3>RESUMEN DE COMPRA</h3>
-          <table class="table" style="background-color: transparent;">
-            <thead>
-              <tr>
-                <th scope="col" style="background-color: transparent;">Producto</th>
-                <th scope="col" style="background-color: transparent;">Cantidad</th>
-                <th scope="col" style="background-color: transparent;">Total</th>
-              </tr>
-            </thead>
-            <tbody id="resumenItems" style="background-color: transparent;">
-              <!-- Aquí se agregarán  los productos -->
-            </tbody>
-          </table>
-          <div class="totales " style="background-color: transparent;">
-            <p><strong>TOTAL DE PRODUCTOS</strong> <span id="totalProductos">0</span></p>
-            <p><strong>DOMICILIO:</strong> <span id="costoDomicilio">$12.000</span></p>
-            <p><strong>TOTAL A PAGAR:</strong> <span id="totalPagar">$0</span></p>
+        <div class="vistaPreviaYResumenCompra">
+          <!-- Inicio Resumen de compra --------------------->
+          <div class="resumenCompra">
+            <h3>RESUMEN DE COMPRA</h3>
+            <table class="table" style="background-color: transparent">
+              <thead>
+                <tr>
+                  <th scope="col" style="background-color: transparent">
+                    Producto
+                  </th>
+                  <th scope="col" style="background-color: transparent">
+                    Cantidad
+                  </th>
+                  <th scope="col" style="background-color: transparent">
+                    Total
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="resumenItems" style="background-color: transparent">
+                <!-- Aquí se agregarán  los productos -->
+              </tbody>
+            </table>
+            <div class="totales" style="background-color: transparent">
+              <p>
+                <strong>TOTAL DE PRODUCTOS</strong>
+                <span id="totalProductos">0</span>
+              </p>
+              <p>
+                <strong>DOMICILIO:</strong>
+                <span id="costoDomicilio">$12.000</span>
+              </p>
+              <p>
+                <strong>TOTAL A PAGAR:</strong> <span id="totalPagar">$0</span>
+              </p>
+            </div>
+            <button class="btn btn-primary" id="botonPagar">PAGAR</button>
           </div>
-          <button class="btn btn-primary" id="botonPagar">PAGAR</button>
+
+          <!-- Fin Resumen de compra --------------------->
         </div>
-
-        <!-- Fin Resumen de compra --------------------->
-
-
       </div>
 
-
-
-    </div>
-
-    <!-- <div class="botonEliminar">
+      <!-- <div class="botonEliminar">
             
         </div> -->
 
-    <!-- Ventana emergente seguro desea eliminar el producto-->
-    <div id="modalEliminarProducto" class="modal1">
-      <div class="modal1-contenedor modalPequeno">
-        <i class="bi bi-x-circle-fill cerrar" onclick="cancelarEliminar()"></i>
-        <div id="textoModalEliminar">
-          <h5>Seguro que desea eliminar el producto nombre del producto</h5>
-        </div>
-        <div class="modal-buttons">
-          <button id="botonCancelarEliminar" class="botonAzul" onclick="cancelarEliminar()"> No </button>
-          <button id="botonAceptarEliminar" class="botonRojo" onclick="eliminarDefinitivo()"> Si </button>
-        </div>
-      </div>
-    </div>
-
-    <div id="modalVistaProducto" class="modal1">
-      <div class="modal1-contenedor modalCardCarrito">
-        <i class="bi bi-x-circle-fill cerrar" id="cerrarVistaProducto"></i>
-        <div class="producto">
-          <div class="contenedorImagenCard">
-            <img src="../img/waffle primavera.png" alt="">
+      <!-- Ventana emergente seguro desea eliminar el producto-->
+      <div id="modalEliminarProducto" class="modal1">
+        <div class="modal1-contenedor modalPequeno">
+          <i
+            class="bi bi-x-circle-fill cerrar"
+            onclick="cancelarEliminar()"
+          ></i>
+          <div id="textoModalEliminar">
+            <h5>Seguro que desea eliminar el producto nombre del producto</h5>
           </div>
-          <div class="contenedorTituloCard">
-            <h5>Waffle primavera
-            </h5>
+          <div class="modal-buttons">
+            <button
+              id="botonCancelarEliminar"
+              class="botonAzul"
+              onclick="cancelarEliminar()"
+            >
+              No
+            </button>
+            <button
+              id="botonAceptarEliminar"
+              class="botonRojo"
+              onclick="eliminarDefinitivo()"
+            >
+              Si
+            </button>
           </div>
-          <div class="contenedorDescripcionCard">
-            <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
-          </div>
-          <div class="contenedorPrecioCard"></div>
-          <p> <b>$ ${producto.precio} COP</b> </p>
         </div>
       </div>
-    </div>
-    </div>
 
+      <div id="modalVistaProducto" class="modal1">
+        <div class="modal1-contenedor modalCardCarrito">
+          <i class="bi bi-x-circle-fill cerrar" id="cerrarVistaProducto"></i>
+          <div class="producto">
+            <div class="contenedorImagenCard">
+              <img src="../img/waffle primavera.png" alt="" />
+            </div>
+            <div class="contenedorTituloCard">
+              <h5>Waffle primavera</h5>
+            </div>
+            <div class="contenedorDescripcionCard">
+              <p>Waffle con crema dulce y naranja en conserva caramelizada.</p>
+            </div>
+            <div class="contenedorPrecioCard">
+              <p><b>$ ${producto.precio} COP</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  </main>
+      <!-- Modal Pago -->
+      <div class="contenedorPago">
+        <div class="modalPago">
+          <i class="bi bi-x-circle-fill cerrarTerminos"></i>
+          <div class="tarjetaCredito">
+            <div class="frontal" id="frente">
+              <h3 id="bank">BANK QBank</h3>
+              <img src="../img/visa.png" alt="" id="brand" />
+              <img src="../img/chip.jfif" alt="" id="chip" />
+              <p id="number">92334 23423 2343 2343</p>
+              <p id="fechaV">00/00</p>
+              <p id="nameCreditCard">Name Owner</p>
+            </div>
+            <div class="atrass" id="atras">
+              <p id="lineaNegra"></p>
+              <p id="lineaBlanca">123</p>
+              <p id="textoCard">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                odit officiis accusamus dolor molestiae quidem nesciunt fugiat
+                veniam saepe in totam obcaecati, ad, voluptates praesentium illo
+                eos. Ab, minima nihil.
+              </p>
+              <img src="../img/barras.png" alt="" id="barras" />
+            </div>
+          </div>
 
+          <div class="formularioTarjeta">
+            <div class="numeroTC">
+              <label for="numero">Numero</label>
+              <input type="text" name="number" id="numberCT" />
+            </div>
+            <div class="nombreTC">
+              <label for="nombre">Nombre en Tarjeta</label>
+              <input type="text" name="nombre" id="nombreCT" />
+            </div>
+            <div class="expira">
+              <label for="fechaE">Fecha Expiracion</label>
+              <input type="month" name="" id="expiraDate" />
+            </div>
+            <div class="cvv">
+              <label for="cvv">CVV</label>
+              <input type="number" name="cvv" id="inputCVV" />
+            </div>
+            <div class="infoPagoScarrito">
+              <label for="suscripcionInfo">Costo Total de la Compra</label>
+            </div>
+            <div class="infoPagoTcarrito">
+              <input type="text" name="costo" id="costo" disabled />
+            </div>
+            <button id="realizarPago">Realizar Pago</button>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  <!-- Footer jalado con el javascript llamarNavFooter.js -->
-  <footer>
-    <div id="footer"></div>
-  </footer>
+    <!-- Footer jalado con el javascript llamarNavFooter.js -->
+    <footer>
+      <div id="footer"></div>
+    </footer>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="../scripts/llamarNavFooter.js"></script>
-  <script src="../scripts/scriptcarrito.js" type="module"></script>
-  <script src="../scripts/manipulacionNavbar.js" type="module"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/llamarNavFooter.js"></script>
+    <script src="../scripts/scriptcarrito.js" type="module"></script>
+    <script src="../scripts/manipulacionNavbar.js" type="module"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="../scripts/scriptPago.js"></script>
+  </body>
 </html>
