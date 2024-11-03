@@ -92,6 +92,8 @@ export async function obtenerBaseDatos() {
     
 }
 
+
+//script para comunicación con la base de datos de usuarios
 export let urlUsuarios = "http://localhost:3000/usuarios";
 
 //funcion para agregar un nuevo producto o reescribirlo

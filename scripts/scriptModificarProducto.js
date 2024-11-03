@@ -1,5 +1,5 @@
 //javascript que realiza las funciones necesarias para eliminar o modificar un producto
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 
 // variable para almacenar modificaciones que se van a insertar en HTML
 let html = "";
@@ -50,17 +50,18 @@ let imagen;
 async function mostrarProductoEnFormulario() {
 
             html = "";
-            let productos = await modificarJSON.obtenerBaseDatos();
+            let productos = await bd.obtenerBaseDatos();
+            console.log(productos);
             productos.forEach(element => {
-                html +=  `<option value="${element.id}">${element.nombre}</option>` ;
-                if(element.id == indiceSeleccionado){
-                    inputsProducto[0].value = element.id;
-                    inputsProducto[1].value = element.nombre;
-                    inputsProducto[2].value = element.descripcion;
+                html +=  `<option value="${element.id_producto}">${element.nombre_producto}</option>` ;
+                if(element.id_producto == indiceSeleccionado){
+                    inputsProducto[0].value = element.id_producto;
+                    inputsProducto[1].value = element.nombre_producto;
+                    inputsProducto[2].value = element.descripcion_producto;
                     categoriaProducto.value = element.categoria;
-                    inputsProducto[3].value = element.precio;
+                    inputsProducto[3].value = element.precio_producto;
                     pNombreUrlImagen.textContent = "imagen cargada";
-                    imagen = element.url;
+                    imagen = element.img_producto;
                     // console.log(imagen);
                 }
             });
@@ -171,10 +172,11 @@ botonCancelarEdicionProducto.addEventListener('click', ()=>{
 
 botonEliminarProducto.addEventListener('click', ()=>{
     modalEliminarProducto.style.display = "flex";
-    //modificarJSON.eliminarProducto(inputsProducto[0].value);
+    //bd.eliminarProducto(inputsProducto[0].value);
 })
 botonAceptarEliminar.addEventListener('click', async function(){
-    await modificarJSON.eliminarProducto(inputsProducto[0].value);
+    //await bd.eliminarProducto(inputsProducto[0].value)
+    bd.eliminarProducto(inputsProducto[0].value);
     indiceSeleccionado = 1;
     mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
@@ -250,7 +252,7 @@ botonAceptarCambios.addEventListener('click', async ()=>{
 
 async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
-     if (await modificarJSON.reescribirOCrearProducto(
+     if (await bd.reescribirOCrearProducto(
         inputsProducto[0].value,
         inputsProducto[1].value,
         inputsProducto[2].value,
@@ -304,7 +306,7 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
 
 // let clave = "John12/&%";
 // console.log(clave);
-// console.log(modificarJSON.encrypt_data(clave));
+// console.log(bd.encrypt_data(clave));
 
 
 

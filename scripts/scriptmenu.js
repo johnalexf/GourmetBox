@@ -2,9 +2,9 @@
 import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
 
 //javascript que realiza las funciones necesarias para traer todos los productos
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 
-const menu = await modificarJSON.obtenerBaseDatos();
+const menu = await bd.obtenerBaseDatos();
 console.log(menu);
 
 // variables que contienen el div de cada categoría de comida
@@ -57,20 +57,20 @@ function actualizarMenu() {
         contenidoMenuHTML =
         `
         <div class="producto">
-            <div class="contenedorImagenCard"><img src="${producto.url}" alt=""></div>
+            <div class="contenedorImagenCard"><img src="${producto.img_producto}" alt=""></div>
             <div class="contenedorTituloCard">
-            <h5> ${producto.nombre}
+            <h5> ${producto.nombre_producto}
             </h5>
             </div>
             <div class="contenedorDescripcionCard">
-            <p>${producto.descripcion}</p>
+            <p>${producto.descripcion_producto}</p>
             </div>
             <div class="contenedorPrecioCard">
-            <p> <b>$  ${producto.precio.toLocaleString()}  COP</b> </p>
+            <p> <b>$  ${producto.precio_producto.toLocaleString()}  COP</b> </p>
             </div>
             <!-- contenedor boton de la card -->
             <div class="contenedorBotonCard">
-                <button class="botonCardMenu" onclick="adicionarCarrito(${producto.id})">
+                <button class="botonCardMenu" onclick="adicionarCarrito(${producto.id_producto})">
                 <i class="bi bi-cart4 iconoBotonCard"></i>
             </button>
             </div>
@@ -89,7 +89,7 @@ function actualizarMenu() {
                 postresHTML += contenidoMenuHTML;
                 break;
             default:
-                console.log(`categoría incorrecta ${productos.categoria}`);
+                console.log(`categoría incorrecta ${producto.categoria}`);
         }
 
     });
@@ -104,29 +104,33 @@ actualizarMenu();
 
 // Se exporta la función ya que este javascript se esta llamando como tipo modulo,
 //al ser de este tipo las variables y funciones no están de manera global
+// id representa el id del producto a agregar
 export function adicionarCarrito(id) {
 
+    //si el usuario no esta registrado muestra el modal del realizar el ingreso
     if(usuario == "" || usuario == undefined ){
         modalRealizarRegistro.style.display = "flex";
     }else{
 
+        //preguntar en el menu donde esta la posición del producto
         let indiceMenu = 0;
         for (let i = 0; i < menu.length; i++) {
-            if (menu[i].id == id) {
+            if (menu[i].id_producto == id) {
                 indiceMenu = i;
             }
         }
 
+
         if (!encontrarIndiceListaObjetos(id)) {
             listaCompras.push(
                     new productoCarrito(
-                        menu[indiceMenu].id,
-                        menu[indiceMenu].nombre,
-                        menu[indiceMenu].descripcion,
+                        menu[indiceMenu].id_producto,
+                        menu[indiceMenu].nombre_producto,
+                        menu[indiceMenu].descripcion_producto,
                         menu[indiceMenu].categoria,
-                        menu[indiceMenu].precio,
-                        menu[indiceMenu].url,
-                        1
+                        menu[indiceMenu].precio_producto,
+                        menu[indiceMenu].img_producto,
+                        1 //cantidad inicial en el carrito
                     )
                 )
 
@@ -136,9 +140,9 @@ export function adicionarCarrito(id) {
             carritoCantidadAgregadaNavbar();
 
             localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
-            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre} </b> ha sido agregado al carrito. </p>`;
+            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre_producto} </b> ha sido agregado al carrito. </p>`;
         } else {
-            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre} </b> ya se ha agregado al carrito. </p>`;
+            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre_producto} </b> ya se ha agregado al carrito. </p>`;
         }
 
         modalAgregadoACarrito.style.display = "flex";
@@ -148,6 +152,7 @@ export function adicionarCarrito(id) {
 //ya declarada la función para exportar, con la siguiente linea la ponemos de manera global en html
 window.adicionarCarrito = adicionarCarrito;
 
+//funcion para determinar si el producto ya ha sido agregado a la lista de compras
 function encontrarIndiceListaObjetos(id) {
     let index = false;
     for (let i = 0; i < listaCompras.length; i++) {

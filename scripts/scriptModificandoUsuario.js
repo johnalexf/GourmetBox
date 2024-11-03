@@ -1,5 +1,5 @@
 //javascript que realiza las funciones necesarias para modificar un usuario
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 
 import {formularioInfoUsuario , formularioInfoAdmin, tipoUsuario, 
         botonCerrarSesionAdmin, botonCerrarSesionUsuario, cargarDatosUsuario , datosUsuario} 
@@ -93,12 +93,13 @@ formularioInfoAdmin.addEventListener('submit', async (event)=>{
 botonGuardarEditarPerfil.addEventListener('click',async ()=>{
 
     let contrasena = contrasenaEditarPerfil.value;
-    let contrasenaAVerificar = modificarJSON.encrypt_data(contrasena);
-    if(await modificarJSON.confirmarContrasenaParaEditarPerfil(datosUsuario.userName,contrasenaAVerificar)){
+    let contrasenaAVerificar = bd.encrypt_data(contrasena);
+    if(await bd.confirmarContrasenaParaEditarPerfil(datosUsuario.userName,contrasenaAVerificar)){
         if(tipoUsuario == "admin"){
 
             //
-            await modificarJSON.reescribirOCrearUsuario(
+            //await bd.reescribirOCrearUsuario(
+            bd.reescribirOCrearUsuario(
                 datosUsuario.id,
                 aliasAdministrador.value,
                 nombreAdministrador.value,
@@ -121,7 +122,8 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
             normalizarVistaEdicionPerfilAdmin();
         }else{
 
-            await modificarJSON.reescribirOCrearUsuario(
+            //await bd.reescribirOCrearUsuario(
+            bd.reescribirOCrearUsuario(
                 datosUsuario.id,
                 aliasUsuario.value,
                 nombreUsuario.value,

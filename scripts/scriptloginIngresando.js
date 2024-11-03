@@ -4,7 +4,7 @@
 //el indice 0 es el perfil de un usuario, y el indice 1 es el perfil de un administrador
 
 //javascript que realiza las funciones necesarias para modificar un usuario
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 
 //importar la funcion para mostrar la cantidad de productos agregados si la tiene
 import { carritoCantidadAgregadaNavbar, cantidadCarritoIcono } from "./manipulacionNavbar.js";
@@ -163,9 +163,9 @@ formularioIngreso.addEventListener( 'submit', async function(event) {
   let usuarioExiste = false;
   let usuario = formularioIngreso.usuario.value;
   let contrasenaCorrecta = false;
-  let contrasenaAVerificar = modificarJSON.encrypt_data(formularioIngreso.contrasena.value);
+  let contrasenaAVerificar = bd.encrypt_data(formularioIngreso.contrasena.value);
   
-  [usuarioExiste, contrasenaCorrecta, datosUsuario] = await modificarJSON.verificarContrasena(usuario,contrasenaAVerificar);
+  [usuarioExiste, contrasenaCorrecta, datosUsuario] = await bd.verificarContrasena(usuario,contrasenaAVerificar);
 
   if(usuarioExiste){
     if(contrasenaCorrecta){

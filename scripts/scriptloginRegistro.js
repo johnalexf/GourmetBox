@@ -3,7 +3,7 @@
 //validaciones de los campos requeridos y almacenándolos en baseDatos.json
 
 //javascript que realiza las funciones necesarias para eliminar o modificar un usuario
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 import { datosUsuario } from "./scriptloginIngresando.js";
 
 /* variables para modificar los estilos de las ventanas de los formularios login y registro */
@@ -198,7 +198,7 @@ formularioRegistro.addEventListener('submit', async function(event) {
     
     let usuarioRepetido;
     let usuario = formularioRegistro.usuarioR.value;
-    usuarioRepetido = await modificarJSON.verificarSiUsuarioExiste(usuario);
+    usuarioRepetido = await bd.verificarSiUsuarioExiste(usuario);
 
 
     if(!usuarioRepetido){
@@ -209,13 +209,13 @@ formularioRegistro.addEventListener('submit', async function(event) {
        modalMensajeExitoso.style.display = 'flex'; 
        
        //creando usuario en la base de datos
-        await modificarJSON.reescribirOCrearUsuario(
+        await bd.reescribirOCrearUsuario(
             "0",
             formularioRegistro.usuarioR.value,
             formularioRegistro.nombreR.value,
             formularioRegistro.correo.value,
             formularioRegistro.telefono.value,
-            modificarJSON.encrypt_data(formularioRegistro.contrasenaR.value),
+            bd.encrypt_data(formularioRegistro.contrasenaR.value),
             "0",
             false
           );
