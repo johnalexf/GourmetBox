@@ -200,9 +200,12 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
         console.log(event.target[7].files[0])
         const reader = new FileReader(); // Crea un lector de archivos
         reader.onload = function(e) {
-            //console.log(e);
-            imagen = e.target.result;
-            // console.log(imagen)
+            
+            //comentado para pruebas mientras se configura el backend
+            //imagen = e.target.result;
+            
+            imagen = "../img/BOXFRIENDS.png"
+
         };
         reader.readAsDataURL(file);
         //fin del código para leer la imagen

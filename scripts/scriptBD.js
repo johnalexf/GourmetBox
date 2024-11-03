@@ -21,51 +21,6 @@ export async function obtenerBaseDatos() {
     
 }
 
-//urlProductos = "http://localhost:8080/producto/";
-//funcion para agregar un nuevo producto o reescribirlo
-export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,precio,urlImg,Reescribir) {
-    
-    if(Reescribir == true){
-        metodo = 'PUT';
-        urlEscribir = urlProductos + id;
-    }else{
-        metodo = 'POST';
-        urlEscribir = urlProductos;
-    }
-
-
-    try {
-        
-        // Enviar la solicitud POST para agregar el nuevo producto
-        // o a traves de put modificar el producto
-        const respuesta = await fetch(urlEscribir, {
-            method: metodo,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: id,
-                nombre: nombre,
-                descripcion: descripcion,
-                categoria: categoria,
-                precio: precio,
-                url: urlImg
-            }),
-        });
-
-        if (!respuesta.ok) {
-            throw new Error(`Error agregando producto: ${respuesta.statusText}`);
-        }else{
-            return true;
-        }
-
-    } catch (error) {
-        console.error('Error agregando producto:', error.message);
-        return false;
-    }
-
-}
-
 //borrar un usuario por el id
 export function eliminarProducto(id) {
 
@@ -91,30 +46,71 @@ export function eliminarProducto(id) {
     xhr.send();
 }
 
-// export async function eliminarProducto(id) {
+
+//variable de la urlProductos = "http://localhost:8080/producto/";
+//funcion para agregar un nuevo producto o reescribirlo
+export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,precio,urlImg,Reescribir) {
     
-//     try{
-//         const deleteResponse = await fetch(urlProductos + 'borrar/' + id, {
-//             method: 'DELETE',
-//         });
+    const xhr = new XMLHttpRequest();
+    let url;
+    //Funcion con AJAX
+    if (Reescribir) {
+        url = `${urlUsuario}editar/${id}?
+                nombre_producto=${nombre}
+                &descripcion_producto=${descripcion} 
+                &categoria=${categoria}
+                &img_producto=${img_produto}
+                &precio_producto=${precio}`;
+        xhr.open('PUT', url, true);
+    } else {
+        url = urlUsuario + "crear/";
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+    }
 
-//         if (deleteResponse.status === 404) {
-//             console.error(`Error borrando al producto: no encontrado`);
-//             return;
-//         } else if (!deleteResponse.ok) {
-//             throw new Error(`Error borrando al producto: ${deleteResponse.statusText}`);
-//         }
+    xhr.onload = function () {
+        if (this.status === 200) {
+            try {
+                const response = JSON.parse(this.responseText);
+                console.log('Respuesta del servidor:', response);
+            } catch (error) {
+                console.error('Error al parsear la respuesta:', error);
+            }
+        } else {
+            console.error('Error:', this.statusText, 'Código de estado:', this.status);
+            // Mostrar un mensaje de error al usuario basado en el código de estado
+            if (this.status === 404) {
+                alert('Producto no encontrado');
+            } else {
+                alert('Ocurrió un error al procesar la solicitud');
+            }
+        }
+    };
 
-//         console.log(`Producto con id ${id} borrado correctamente.`);
 
-//     }catch (error) {
-//             console.error('Error:', error.message);
-//     }
-
-// }
+    xhr.onerror = function () {
+        console.error('Error de red');
+    };
 
 
-//script para comunicación con la base de datos de usuarios
+    if (!Reescribir) {
+        xhr.send(JSON.stringify({
+            nombre_producto : nombre,
+            descripcion_producto : descripcion,
+            categoria : categoria,
+            img_produto : urlImg,
+            precio_producto : precio
+        }));
+    } else {
+        xhr.send();
+    }
+
+
+}
+
+
+
+//sección para comunicación con la base de datos de usuarios
 export let urlUsuario = "http://localhost:8080/usuario/";
 
 //funcion para agregar un nuevo producto o reescribirlo

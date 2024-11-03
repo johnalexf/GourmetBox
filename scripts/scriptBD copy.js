@@ -1,3 +1,9 @@
+//script para usar la base de datos local por medio del servidor JSON
+//al ejecutarla con json-server --watch ../baseDatos.js para mas informacion consulta
+//Activar_SErvidor.txt
+
+//Si deseas probarlo le cambias el nombre del archivo a scriptBD.js
+
 export let urlProductos = "http://localhost:3000/productos";
 export let urlEscribir = "";
 export let metodo = '';
@@ -123,14 +129,14 @@ export async function reescribirOCrearUsuario(id,usuario,nombre,correo,telefono,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id:id,
-                userName: usuario,
-                nombreUsuario : nombre,
+                id_usuario:id,
+                user_name: usuario,
+                nombre_usuario : nombre,
                 correo : correo,
                 telefono : telefono,
                 contrasena : contrasena,
-                suscripcionId : "0",
-                esAdministrador: esAdministrador
+                suscripcion_id : "0",
+                es_administrador: esAdministrador
             }),
         });
 
@@ -155,9 +161,6 @@ export async function verificarSiUsuarioExiste(usuario) {
           throw new Error('Error al obtener el JSON');
         }
 
-        // const datos = await respuesta.json();
-        // const usuarios = await datos.usuarios;
-
         const usuarios = await respuesta.json(); 
 
         let retorno = false;
@@ -181,15 +184,10 @@ export async function verificarContrasena(usuario,contrasena) {
         // Realiza una solicitud fetch para obtener el JSON
         const respuesta = await fetch(urlUsuariosLocal);
         
-        
-
         // Verifica si la solicitud fue exitosa
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
         }
-    
-        // const datos = await respuesta.json();
-        // const usuarios = await datos.usuarios;
 
         const usuarios = await respuesta.json(); 
 
@@ -231,9 +229,6 @@ export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
         }
-    
-        // const datos = await respuesta.json();
-        // const usuarios = await datos.usuarios;
 
         const usuarios = await respuesta.json();
 
