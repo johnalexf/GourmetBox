@@ -55,56 +55,55 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
     let url;
     //Funcion con AJAX
     if (Reescribir) {
-        url = `${urlUsuario}editar/${id}?
-                nombre_producto=${nombre}
-                &descripcion_producto=${descripcion} 
-                &categoria=${categoria}
-                &img_producto=${img_produto}
-                &precio_producto=${precio}`;
+        url = `${urlProductos}editar/${id}?nombre=${nombre}&descripcion=${descripcion}&categoria=${categoria}&image=${urlImg}&precio=${precio}`;
         xhr.open('PUT', url, true);
+        console.log(url)
     } else {
-        url = urlUsuario + "crear/";
+        url = urlProductos + "crear";
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
     }
 
-    xhr.onload = function () {
-        if (this.status === 200) {
-            try {
-                const response = JSON.parse(this.responseText);
-                console.log('Respuesta del servidor:', response);
-            } catch (error) {
-                console.error('Error al parsear la respuesta:', error);
-            }
-        } else {
-            console.error('Error:', this.statusText, 'Código de estado:', this.status);
-            // Mostrar un mensaje de error al usuario basado en el código de estado
-            if (this.status === 404) {
-                alert('Producto no encontrado');
+    return new Promise((resolve, reject) => {
+        xhr.onload = function() {
+            if (this.status === 200) {
+                try {
+                    let response;
+                    if(Reescribir){
+                        response = JSON.parse(this.responseText);
+                    }else{
+                        response = this.responseText;
+                    }
+                    
+                    console.log('Respuesta del servidor:', response);
+                    resolve(true); // Resuelve la promesa con true si la operación fue exitosa
+                } catch (error) {
+                    console.error('Error al parsear la respuesta:', error);
+                    reject(error);
+                }
             } else {
-                alert('Ocurrió un error al procesar la solicitud');
+                console.error('Error:', this.statusText, 'Código de estado:', this.status);
+                reject(new Error('Error en la solicitud'));
             }
+        };
+
+        xhr.onerror = function() {
+            console.error('Error de red');
+            reject(new Error('Error de red'));
+        };
+
+        if (!Reescribir) {
+            xhr.send(JSON.stringify({
+                nombre_producto : nombre,
+                descripcion_producto : descripcion,
+                categoria : categoria,
+                img_producto : urlImg,
+                precio_producto : precio
+            }));
+        } else {
+            xhr.send();
         }
-    };
-
-
-    xhr.onerror = function () {
-        console.error('Error de red');
-    };
-
-
-    if (!Reescribir) {
-        xhr.send(JSON.stringify({
-            nombre_producto : nombre,
-            descripcion_producto : descripcion,
-            categoria : categoria,
-            img_produto : urlImg,
-            precio_producto : precio
-        }));
-    } else {
-        xhr.send();
-    }
-
+    });
 
 }
 

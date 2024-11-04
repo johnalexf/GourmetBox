@@ -11,7 +11,7 @@ let formularioModificarCrearProducto = document.getElementById('modificarCrearPr
 let pNombreUrlImagen = document.getElementById('nombreUrlImagen');
 let inputsProducto = formularioModificarCrearProducto.querySelectorAll('input');
 let labelProducto = formularioModificarCrearProducto.querySelectorAll('label');
-let indiceSeleccionado = 1;
+let indiceSeleccionado = 0;
 
 // variable que contiene el Select de productos disponibles del formulario
 let productosDisponibles = document.getElementById('productosDisponibles');
@@ -52,6 +52,11 @@ async function mostrarProductoEnFormulario() {
             html = "";
             let productos = await bd.obtenerBaseDatos();
             console.log(productos);
+
+            if(indiceSeleccionado ==0){
+                indiceSeleccionado = productos[0].id_producto;
+            }
+
             productos.forEach(element => {
                 html +=  `<option value="${element.id_producto}">${element.nombre_producto}</option>` ;
                 if(element.id_producto == indiceSeleccionado){
@@ -66,9 +71,9 @@ async function mostrarProductoEnFormulario() {
                 }
             });
             productosDisponibles.innerHTML = html;
-            if(indiceSeleccionado !=0){
-                productosDisponibles.value = indiceSeleccionado;
-            }
+           
+            productosDisponibles.value = indiceSeleccionado;
+
             //ya que traemos la imagen de la base de datos, no requerimos cargar una imagen
             //de igual forma si el usuario desea cargar una nueva, lo puede hacer
             inputsProducto[4].required = false; 
@@ -174,10 +179,11 @@ botonEliminarProducto.addEventListener('click', ()=>{
     modalEliminarProducto.style.display = "flex";
     //bd.eliminarProducto(inputsProducto[0].value);
 })
+
 botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
     bd.eliminarProducto(inputsProducto[0].value);
-    indiceSeleccionado = 1;
+    indiceSeleccionado = 0;
     mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
 })
@@ -246,25 +252,28 @@ function vistaPreliminar() {
 
 //funcion llamada con el botón de cerrar de vista previa del producto
 cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
+
 botonCancelarCambios.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
+
 botonAceptarCambios.addEventListener('click', async ()=>{
-     modalVistaPrevia.style.display = 'flex'
+     modalVistaPrevia.style.display = 'none';
      await cargarProducto();
      ;});
 
 
 async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
-     if (await bd.reescribirOCrearProducto(
-        inputsProducto[0].value,
-        inputsProducto[1].value,
-        inputsProducto[2].value,
-        categoriaProducto.value,
-        parseInt(inputsProducto[3].value),
-        imagen,
-        reescribirProducto
-       )
-    ){
+     let respuesta = await bd.reescribirOCrearProducto(
+                                        inputsProducto[0].value,
+                                        inputsProducto[1].value,
+                                        inputsProducto[2].value,
+                                        categoriaProducto.value,
+                                        parseInt(inputsProducto[3].value),
+                                        imagen,
+                                        reescribirProducto
+                                    );
+    console.log(respuesta);
+     if (respuesta){
         indiceSeleccionado = inputsProducto[0].value;
         mostrarProductoEnFormulario();
         modalVistaPrevia.style.display = 'none';
