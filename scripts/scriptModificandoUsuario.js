@@ -1,5 +1,5 @@
-//javascript que realiza las funciones necesarias para eliminar o modificar un usuario
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+//javascript que realiza las funciones necesarias para modificar un usuario
+import * as bd from "../scripts/scriptBD.js";
 
 import {formularioInfoUsuario , formularioInfoAdmin, tipoUsuario, 
         botonCerrarSesionAdmin, botonCerrarSesionUsuario, cargarDatosUsuario , datosUsuario} 
@@ -42,6 +42,7 @@ function normalizarVistaEdicionPerfilUsuario(){
     botonCancelarCambiosPerfilUsuario.style.display = "none";
     botonEditarPerfilUsuario.style.display = "block";
     botonCerrarSesionUsuario.style.display = "block";
+    cargarDatosUsuario();
 }
 
 botonCancelarCambiosPerfilUsuario.addEventListener( 'click' , normalizarVistaEdicionPerfilUsuario);
@@ -69,6 +70,7 @@ function normalizarVistaEdicionPerfilAdmin(){
     botonCancelarCambiosPerfilAdmin.style.display = "none";
     botonEditarPerfilAdmin.style.display = "block";
     botonCerrarSesionAdmin.style.display = "block";
+    cargarDatosUsuario();
 }
 
 botonCancelarCambiosPerfilAdmin.addEventListener('click', normalizarVistaEdicionPerfilAdmin);
@@ -87,53 +89,61 @@ formularioInfoAdmin.addEventListener('submit', async (event)=>{
     modalContrasenaEditarPerfil.style.display = "flex";
 });
 
+//boton dentro del modal de confirmar contraseña para editar perfil
 botonGuardarEditarPerfil.addEventListener('click',async ()=>{
 
     let contrasena = contrasenaEditarPerfil.value;
-    let contrasenaAVerificar = modificarJSON.encrypt_data(contrasena);
-    if(await modificarJSON.confirmarContrasenaParaEditarPerfil(datosUsuario.id,contrasenaAVerificar)){
+    let contrasenaAVerificar = bd.encrypt_data(contrasena);
+    if(await bd.confirmarContrasenaParaEditarPerfil(datosUsuario.userName,contrasenaAVerificar)){
         if(tipoUsuario == "admin"){
-            //reescribirOCrearUsuario(usuario,nombre,correo,telefono,contrasena,Reescribir)
-            await modificarJSON.reescribirOCrearUsuario(
+
+            //
+            //await bd.reescribirOCrearUsuario(
+            bd.reescribirOCrearUsuario(
+                datosUsuario.id,
                 aliasAdministrador.value,
-                tipoUsuario,
                 nombreAdministrador.value,
                 correoAdministrador.value,
                 telefonoAdministrador.value,
                 contrasenaAVerificar,
+                tipoUsuario,
                 true
             );
-            localStorage.setItem('datosUsuario', 
-                `{"id": "${aliasAdministrador.value}",
-                "rol": "${tipoUsuario}",
-                "nombre": "${nombreAdministrador.value}",
-                "correo": "${correoAdministrador.value}",
-                "telefono": "${telefonoAdministrador.value}" }`
-            );
+
+            datosUsuario.userName = aliasAdministrador.value;
+            datosUsuario.nombreUsuario = nombreAdministrador.value;
+            datosUsuario.correo = correoAdministrador.value;
+            datosUsuario.telefono = telefonoAdministrador.value;
+            // datosUsuario.suscripcionId = 
+            // datosUsuario.esAdministrador = tipoUsuario;
+            localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario) );
+
             contrasenaEditarPerfil.value="";
             normalizarVistaEdicionPerfilAdmin();
         }else{
-            await modificarJSON.reescribirOCrearUsuario(
+
+            //await bd.reescribirOCrearUsuario(
+            bd.reescribirOCrearUsuario(
+                datosUsuario.id,
                 aliasUsuario.value,
-                tipoUsuario,
                 nombreUsuario.value,
                 correoUsuario.value,
                 telefonoUsuario.value,
                 contrasenaAVerificar,
+                tipoUsuario,
                 true
             );
-            localStorage.setItem('datosUsuario', 
-                `{"id": "${aliasUsuario.value}",
-                "rol": "${tipoUsuario}",
-                "nombre": "${nombreUsuario.value}",
-                "correo": "${correoUsuario.value}",
-                "telefono": "${telefonoUsuario.value}" }`
-            );
+
+            datosUsuario.userName = aliasUsuario.value;
+            datosUsuario.nombreUsuario = nombreUsuario.value;
+            datosUsuario.correo = correoUsuario.value;
+            datosUsuario.telefono = telefonoUsuario.value;
+            localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario) );
+
             normalizarVistaEdicionPerfilUsuario();
             contrasenaEditarPerfil.value = "";
         }
         modalContrasenaEditarPerfil.style.display = "none";
-        cargarDatosUsuario();
     }else{
         contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta", );
         contrasenaEditarPerfil.reportValidity();

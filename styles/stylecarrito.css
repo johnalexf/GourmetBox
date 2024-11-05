@@ -1,6 +1,6 @@
 main {
     /* height: 100vh; */
-    padding: 3% 12%;
+    /* padding: 3% 12%; */
     background-color: #FFFEF4;
     background-image: url('../img/FONDOCONTACTANOS.jpg');
     background-size: cover;
@@ -9,6 +9,10 @@ main {
     /* Centra la imagen */
     background-repeat: no-repeat;
     min-height: 80vh;
+}
+
+.titulo{
+    padding-top: 3%;
 }
 
 
@@ -48,6 +52,10 @@ h3 {
 
 button {
     cursor: pointer;
+}
+
+#resumenItems tr, #resumenItems td{
+    background-color: transparent;
 }
 
 .titulo h1,
@@ -181,7 +189,7 @@ hr {
     margin: auto;
     border: 0px solid black;
     text-align: center;
-
+    background-color: transparent;
     font-size: 20px;
 }
 
@@ -309,6 +317,11 @@ input[type="number"]::-webkit-inner-spin-button {
 @media(width < 860px) {
     .carrito {
         grid-template-columns: 1fr;
+    }
+
+    .carrito,
+    .carritoVacio {
+    padding: 0 12%;
     }
 }
 

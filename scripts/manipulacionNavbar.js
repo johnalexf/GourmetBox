@@ -2,24 +2,15 @@
 let nameUser =  document.getElementById('sesion');
 export let usuarioLogiado = "";
 
-if(localStorage.getItem('usuario') != undefined){
-    if( localStorage.getItem('usuario').length != 0 ){
-        usuarioLogiado = localStorage.getItem('usuario')
-        nameUser.innerText = usuarioLogiado;
-    }else{
-        nameUser.innerText = "Ingresar";
-    }
-}
-
 // lineas de codigo para poner en negrita segun la pagina en la que se encuentre
-let seccionNavbar = document.getElementById(document.title.toLowerCase());
+export let seccionNavbar = document.getElementById(document.title.toLowerCase());
 
 if(seccionNavbar.id != "carrito"){
     seccionNavbar.style.fontWeight = "bold";
 }
 
 //lineas de codigo para mostrar la cantidad de productos agregados en el carrito sobre el icono de nabvar 
-let cantidadCarritoIcono = document.getElementById('cantidadCarritoIcono');
+export let cantidadCarritoIcono = document.getElementById('cantidadCarritoIcono');
 
 export function carritoCantidadAgregadaNavbar(){
     let cantidad = localStorage.getItem('cantidadListaCompras');
@@ -33,6 +24,16 @@ export function carritoCantidadAgregadaNavbar(){
     }
 }
 
-carritoCantidadAgregadaNavbar();
+
+if(localStorage.getItem('usuario') != undefined){
+    if( localStorage.getItem('usuario').length != 0 ){
+        usuarioLogiado = localStorage.getItem('usuario')
+        nameUser.innerText = usuarioLogiado;
+        carritoCantidadAgregadaNavbar();
+    }else{
+        nameUser.innerText = "Ingresar";
+    }
+}
+
     
 
