@@ -315,3 +315,17 @@ sale hacia la der */
         width: 90%;
     }
 }
+
+@media (min-width: 1024px) {
+    .DibujoLogin {
+        display: block;
+        /* Asegura que se muestre en pantallas grandes */
+    }
+}
+
+@media (max-width: 1023px) {
+    .DibujoLogin {
+        display: none;
+        /* Oculta la imagen en pantallas pequeñas */
+    }
+}
