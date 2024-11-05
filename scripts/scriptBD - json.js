@@ -31,11 +31,11 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
             },
             body: JSON.stringify({
                 id: id,
-                nombre: nombre,
-                descripcion: descripcion,
+                nombre_producto: nombre,
+                descripcion_producto: descripcion,
                 categoria: categoria,
-                precio: precio,
-                url: urlImg
+                precio_producto: precio,
+                img_producto: urlImg
             }),
         });
 
@@ -85,9 +85,6 @@ export async function obtenerBaseDatos() {
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
         }
-
-        // const datos = await respuesta.json();
-        // return datos.productos;
 
         const datos = await respuesta.json();
         return datos;
