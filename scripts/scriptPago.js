@@ -1,53 +1,18 @@
-// Obtener elementos del DOM
-const buttons = document.querySelectorAll('.boton-circular');
-const modal = document.getElementById('subscriptionModal');
-const modalImage = document.getElementById('modalImage'); // Referencia a la imagen del modal
-const closeButton = document.querySelector('.close-button');
-const cancelButton = document.getElementById('cancelButton');
-const agreeButton = document.getElementById('agreeButton'); // Botón "Estoy de acuerdo"
-let precio = "";
-let nombreSuscripcion = "";
+import {seccionNavbar} from './manipulacionNavbar.js';
 
-// Función para mostrar el modal con la imagen
-buttons.forEach((button) => {
-    button.addEventListener('click', function() {
-        // Obtener la URL de la imagen
-        const imageUrl = button.parentElement.querySelector('img').getAttribute('src');
+console.log(seccionNavbar.id);
 
-        // Establecer la imagen en el modal
-        modalImage.src = imageUrl; // Establece la URL de la imagen en el modal
+// se importa de script suscripción las variables que contienen
+// el precio del plan a pagar
+// el nombre de la suscripción a adquirir
+// el botón con el cual se acepta que esta de acuerdo adquirir el plan
 
-        modal.style.display = 'flex'; // Muestra el modal
-        document.querySelector('.modal1-contenedor').style.display = 'block'; // Asegúrate de que el contenido esté visible
-        
-        const objetoC = this.closest(".Objeto");
-        precio = objetoC.querySelector(".precio-color").textContent;
-        nombreSuscripcion = objetoC.querySelector(".imagen-contenedor img").alt;
-    });
-});
+import {precio,nombreSuscripcion,agreeButton} from './scriptSuscripcion.js';
 
-// Función para cerrar el modal
-const closeModal = () => {
-    modal.style.display = 'none'; // Oculta el modal
-    document.querySelector('.modal1-contenedor').style.display = 'none'; // Oculta el contenido del modal también
-};
-
-// Eventos para cerrar el modal
-closeButton.addEventListener('click', closeModal);
-cancelButton.addEventListener('click', closeModal);
-agreeButton.addEventListener('click', () => {
-    closeModal();
-});
-
-// Ocultar el modal al cargar la página
-window.addEventListener('load', () => {
-    modal.style.display = 'none'; // Asegúrate de que el modal esté oculto al cargar
-});
+    
 
 
-const botonAzul = document.querySelector(".botonAzul");
-
-botonAzul.addEventListener("click", () => {
+agreeButton.addEventListener("click", () => {
     const costo = document.getElementById("costo");
     costo.value = precio;
 
@@ -68,7 +33,14 @@ const inputNombre = document.getElementById("nombreCT");
 const expiraDate = document.getElementById("expiraDate");
 
 inputNumber.addEventListener("input", () => {
-    numberTC.textContent = inputNumber.value;
+    if ((/[^0-9\s]/).test(inputNumber.value)) {
+        inputNumber.setCustomValidity("Solo se permiten números y espacios");
+    } else {
+        numberTC.textContent = inputNumber.value;
+        inputNumber.setCustomValidity("");
+    }
+
+    inputNumber.reportValidity(); 
 });
 
 inputNombre.addEventListener("input", () => {
@@ -132,3 +104,4 @@ btnPago.addEventListener("click", () => {
         swal("Debes Verificar!", "Asegurate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
     }
 });
+

@@ -1,5 +1,5 @@
 //javascript que realiza las funciones necesarias para eliminar o modificar un producto
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+import * as bd from "../scripts/scriptBD.js";
 
 // variable para almacenar modificaciones que se van a insertar en HTML
 let html = "";
@@ -11,7 +11,7 @@ let formularioModificarCrearProducto = document.getElementById('modificarCrearPr
 let pNombreUrlImagen = document.getElementById('nombreUrlImagen');
 let inputsProducto = formularioModificarCrearProducto.querySelectorAll('input');
 let labelProducto = formularioModificarCrearProducto.querySelectorAll('label');
-let indiceSeleccionado = 1;
+let indiceSeleccionado = 0;
 
 // variable que contiene el Select de productos disponibles del formulario
 let productosDisponibles = document.getElementById('productosDisponibles');
@@ -50,24 +50,30 @@ let imagen;
 async function mostrarProductoEnFormulario() {
 
             html = "";
-            let productos = await modificarJSON.obtenerBaseDatos();
+            let productos = await bd.obtenerBaseDatos();
+            console.log(productos);
+
+            if(indiceSeleccionado ==0){
+                indiceSeleccionado = productos[0].id_producto;
+            }
+
             productos.forEach(element => {
-                html +=  `<option value="${element.id}">${element.nombre}</option>` ;
-                if(element.id == indiceSeleccionado){
-                    inputsProducto[0].value = element.id;
-                    inputsProducto[1].value = element.nombre;
-                    inputsProducto[2].value = element.descripcion;
+                html +=  `<option value="${element.id_producto}">${element.nombre_producto}</option>` ;
+                if(element.id_producto == indiceSeleccionado){
+                    inputsProducto[0].value = element.id_producto;
+                    inputsProducto[1].value = element.nombre_producto;
+                    inputsProducto[2].value = element.descripcion_producto;
                     categoriaProducto.value = element.categoria;
-                    inputsProducto[3].value = element.precio;
+                    inputsProducto[3].value = element.precio_producto;
                     pNombreUrlImagen.textContent = "imagen cargada";
-                    imagen = element.url;
+                    imagen = element.img_producto;
                     // console.log(imagen);
                 }
             });
             productosDisponibles.innerHTML = html;
-            if(indiceSeleccionado !=0){
-                productosDisponibles.value = indiceSeleccionado;
-            }
+           
+            productosDisponibles.value = indiceSeleccionado;
+
             //ya que traemos la imagen de la base de datos, no requerimos cargar una imagen
             //de igual forma si el usuario desea cargar una nueva, lo puede hacer
             inputsProducto[4].required = false; 
@@ -171,11 +177,13 @@ botonCancelarEdicionProducto.addEventListener('click', ()=>{
 
 botonEliminarProducto.addEventListener('click', ()=>{
     modalEliminarProducto.style.display = "flex";
-    //modificarJSON.eliminarProducto(inputsProducto[0].value);
+    //bd.eliminarProducto(inputsProducto[0].value);
 })
+
 botonAceptarEliminar.addEventListener('click', async function(){
-    await modificarJSON.eliminarProducto(inputsProducto[0].value);
-    indiceSeleccionado = 1;
+    //await bd.eliminarProducto(inputsProducto[0].value)
+    bd.eliminarProducto(inputsProducto[0].value);
+    indiceSeleccionado = 0;
     mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
 })
@@ -198,9 +206,12 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
         console.log(event.target[7].files[0])
         const reader = new FileReader(); // Crea un lector de archivos
         reader.onload = function(e) {
-            //console.log(e);
-            imagen = e.target.result;
-            // console.log(imagen)
+            
+            //comentado para pruebas mientras se configura el backend
+            //imagen = e.target.result;
+            
+            imagen = "../img/BOXFRIENDS.png"
+
         };
         reader.readAsDataURL(file);
         //fin del código para leer la imagen
@@ -241,25 +252,28 @@ function vistaPreliminar() {
 
 //funcion llamada con el botón de cerrar de vista previa del producto
 cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
+
 botonCancelarCambios.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
+
 botonAceptarCambios.addEventListener('click', async ()=>{
-     modalVistaPrevia.style.display = 'flex'
+     modalVistaPrevia.style.display = 'none';
      await cargarProducto();
      ;});
 
 
 async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
-     if (await modificarJSON.reescribirOCrearProducto(
-        inputsProducto[0].value,
-        inputsProducto[1].value,
-        inputsProducto[2].value,
-        categoriaProducto.value,
-        parseInt(inputsProducto[3].value),
-        imagen,
-        reescribirProducto
-       )
-    ){
+     let respuesta = await bd.reescribirOCrearProducto(
+                                        inputsProducto[0].value,
+                                        inputsProducto[1].value,
+                                        inputsProducto[2].value,
+                                        categoriaProducto.value,
+                                        parseInt(inputsProducto[3].value),
+                                        imagen,
+                                        reescribirProducto
+                                    );
+    console.log(respuesta);
+     if (respuesta){
         indiceSeleccionado = inputsProducto[0].value;
         mostrarProductoEnFormulario();
         modalVistaPrevia.style.display = 'none';
@@ -304,7 +318,7 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
 
 // let clave = "John12/&%";
 // console.log(clave);
-// console.log(modificarJSON.encrypt_data(clave));
+// console.log(bd.encrypt_data(clave));
 
 
 

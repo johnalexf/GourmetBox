@@ -3,10 +3,16 @@
 //divUsuarioRegistrado es la clase de los dos tipos de perfiles, las traemos en un arreglo, donde 
 //el indice 0 es el perfil de un usuario, y el indice 1 es el perfil de un administrador
 
-//javascript que realiza las funciones necesarias para eliminar o modificar un usuario
-import * as modificarJSON from "../scripts/scriptModificarJSON.js";
+//javascript que realiza las funciones necesarias para modificar un usuario
+import * as bd from "../scripts/scriptBD.js";
 
+//importar la funcion para mostrar la cantidad de productos agregados si la tiene
+import { carritoCantidadAgregadaNavbar, cantidadCarritoIcono } from "./manipulacionNavbar.js";
+
+
+//ventana de ingreso y registro de usuario
 let divBodyLogin = document.querySelector(".bodyLogin");
+// lista de las ventana de un usuario registrado, 0 => usuario normal 1=> usuario administrador
 let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
 
 let formularioIngreso = document.getElementById("formulario");
@@ -22,9 +28,19 @@ export let datosUsuario={}; //datos del usuario traídos de la base de datos
 export let formularioInfoUsuario = document.getElementById('informacionUsuario');
 export let formularioInfoAdmin = document.getElementById('informacionAdministrador');
 
+//funcion para averiguar si el usuario es administrador
+function averiguarTipoUsuario(){
+  tipoUsuario = datosUsuario.esAdministrador;
+  if(tipoUsuario == '1'){
+      indiceTipoUsuario = 1 ;
+  }else{
+    indiceTipoUsuario = 0 ;
+  }
+}
 
 // funcion para mostrar perfil ya sea de usuario o de administrador
 function mostrarPerfil(){
+    carritoCantidadAgregadaNavbar();
     averiguarTipoUsuario();
     if(indiceTipoUsuario == 1) mostrarDatosPerfilAdministrador();
     else   mostrarDatosPerfilUsuario();
@@ -44,6 +60,7 @@ function mostrarPerfil(){
 
 //funcion para mostrar los formularios de inicio de sesión y de registro cuando se cierre la sesión
 function mostrarDivBodyLogin(){
+    cantidadCarritoIcono.style.display = "none"; 
     averiguarTipoUsuario();
     divUsuarioRegistrado[indiceTipoUsuario].classList.remove('mostrar');
     divUsuarioRegistrado[indiceTipoUsuario].classList.add('ocultar');
@@ -80,26 +97,17 @@ export function cargarDatosUsuario(){
   }
 }
 cargarDatosUsuario();
-//funcion para averiguar si el usuario es administrador
-function averiguarTipoUsuario(){
-  tipoUsuario = datosUsuario.rol;
-  if(tipoUsuario == 'admin'){
-      indiceTipoUsuario = 1 ;
-  }else{
-    indiceTipoUsuario = 0 ;
-  }
-}
 
 function mostrarDatosPerfilUsuario(){
-  formularioInfoUsuario.aliasUsuario.value = datosUsuario.id;
-  formularioInfoUsuario.nombreUsuario.value = datosUsuario.nombre;
+  formularioInfoUsuario.aliasUsuario.value = datosUsuario.userName;
+  formularioInfoUsuario.nombreUsuario.value = datosUsuario.nombreUsuario;
   formularioInfoUsuario.correoUsuario.value = datosUsuario.correo;
   formularioInfoUsuario.telefonoUsuario.value = datosUsuario.telefono;
 }
 
 function mostrarDatosPerfilAdministrador(){
-  formularioInfoAdmin.aliasAdministrador.value = datosUsuario.id;
-  formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombre;
+  formularioInfoAdmin.aliasAdministrador.value = datosUsuario.userName;
+  formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombreUsuario;
   formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;
   formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
 }
@@ -155,15 +163,14 @@ formularioIngreso.addEventListener( 'submit', async function(event) {
   let usuarioExiste = false;
   let usuario = formularioIngreso.usuario.value;
   let contrasenaCorrecta = false;
-  let contrasenaAVerificar = modificarJSON.encrypt_data(formularioIngreso.contrasena.value);
+  let contrasenaAVerificar = bd.encrypt_data(formularioIngreso.contrasena.value);
   
-  
-  [usuarioExiste, contrasenaCorrecta, datosUsuario] = await modificarJSON.verificarContrasena(usuario,contrasenaAVerificar);
+  [usuarioExiste, contrasenaCorrecta, datosUsuario] = await bd.verificarContrasena(usuario,contrasenaAVerificar);
 
   if(usuarioExiste){
     if(contrasenaCorrecta){
       localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
-      localStorage.setItem( 'usuario', datosUsuario.id);
+      localStorage.setItem( 'usuario', datosUsuario.userName);
       mostrarPerfil();
       nameUser1.innerText = localStorage.getItem('usuario');
       formularioIngreso.reset();

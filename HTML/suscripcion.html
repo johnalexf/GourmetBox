@@ -196,7 +196,7 @@
       <div class="Objeto">
         <div class="Texto-Objeto">
           <div class="imagen-contenedor">
-            <img style="font-family: 'Poppins'; font-size: 19px" src="..\img\CLOUDBOX.png" alt=" CLOUDBOX " />
+            <img  src="..\img\CLOUDBOX.png" alt=" CLOUDBOX ">
           </div>
           <ul>
             <li>3 Desayunos (Personalizados)</li>
@@ -211,6 +211,21 @@
         <button class="boton-circular">+</button>
       </div>
     </section>
+
+    <!-- Ventana emergente porfavor realiza tu registro-->
+    <div id="modalRealizarRegistro" class="modal1">
+      <div class="modal1-contenedor modalPequeno">
+        <i class="bi bi-x-circle-fill cerrar" id="cerrarModalRealizarRegistro"></i>
+        <div>
+          <P>Nos complace que desees adquirir nuestros planes, 
+            por favor regístrate y/o inicia sesión.</P>
+        </div>
+        <div class = "divBotonIrRegistro">
+          <a href="./login.html"> <button class="botonAzul"  > Ingresar </button> </a>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Ventana emergente mensaje enviado correctamente -->
     <div id="subscriptionModal" class="modal1">
@@ -231,7 +246,7 @@
         </div>
         <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
         <div class="modal-buttons">
-          <button style="width: auto" id="agreeButton" class="botonAzul">
+          <button style="width: auto" id="agreeButton" class="botonAzul" id="realizarPago"> 
             Estoy de acuerdo
           </button>
           <button id="cancelButton" class="botonRojo">Cancelar</button>
@@ -305,8 +320,8 @@
     crossorigin="anonymous"></script>
   <script src="../scripts/llamarNavFooter.js"></script>
   <script src="../scripts/manipulacionNavbar.js" type="module"></script>
-  <script src="../scripts/scriptsuscripcion.js"></script>
-  <script src="../scripts/scriptPago.js"></script>
+  <script src="../scripts/scriptSuscripcion.js" type="module"></script>
+  <script src="../scripts/scriptPago.js" type="module"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
