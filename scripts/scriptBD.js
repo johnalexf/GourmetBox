@@ -122,7 +122,7 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
         url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}&contrasena=${contrasena}`;
         xhr.open('PUT', url, true);
     } else {
-        url = urlUsuario + "crear/";
+        url = urlUsuario + "crear";
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
     }
@@ -130,7 +130,13 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
     xhr.onload = function () {
         if (this.status === 200) {
             try {
-                const response = JSON.parse(this.responseText);
+                let response;
+                    if(Reescribir){
+                        response = JSON.parse(this.responseText);
+                    }else{
+                        response = this.responseText;
+                    }
+                    
                 console.log('Respuesta del servidor:', response);
             } catch (error) {
                 console.error('Error al parsear la respuesta:', error);
@@ -159,7 +165,7 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
             correo: correo,
             telefono: telefono,
             contrasena: contrasena,
-            es_administrador: esAdministrador
+            es_administrador: false
         }));
     } else {
         xhr.send();
