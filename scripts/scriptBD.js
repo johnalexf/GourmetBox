@@ -119,7 +119,8 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
     let url;
     //Funcion con AJAX
     if (Reescribir) {
-        url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}&contrasena=${contrasena}`;
+        url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}`;
+        console.log(url);
         xhr.open('PUT', url, true);
     } else {
         url = urlUsuario + "crear";

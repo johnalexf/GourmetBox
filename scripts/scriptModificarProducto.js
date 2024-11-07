@@ -1,6 +1,9 @@
 //javascript que realiza las funciones necesarias para eliminar o modificar un producto
 import * as bd from "../scripts/scriptBD.js";
 
+//funcion que permite mostrar el modal despues de una operacion de editar usuario, modificar, crear o eliminar producto.
+import {mostrarModalConfirmacion} from "../scripts/scriptModificandoUsuario.js";
+
 // variable para almacenar modificaciones que se van a insertar en HTML
 let html = "";
 
@@ -46,6 +49,7 @@ let botonCerrarModalEliminarProducto = document.getElementById('cerrarModalElimi
 let imagen;
 
 
+
 //función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
 async function mostrarProductoEnFormulario() {
 
@@ -55,6 +59,8 @@ async function mostrarProductoEnFormulario() {
 
             if(indiceSeleccionado ==0){
                 indiceSeleccionado = productos[0].id_producto;
+            }else if(indiceSeleccionado == -1){
+                indiceSeleccionado = productos[productos.length-1].id_producto
             }
 
             productos.forEach(element => {
@@ -186,6 +192,7 @@ botonAceptarEliminar.addEventListener('click', async function(){
     indiceSeleccionado = 0;
     mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
+    mostrarModalConfirmacion(1);
 })
 
 botonCerrarModalEliminarProducto.addEventListener( 'click', cerrarModalEliminarProducto);
@@ -208,9 +215,10 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
         reader.onload = function(e) {
             
             //comentado para pruebas mientras se configura el backend
-            //imagen = e.target.result;
-            
-            imagen = "../img/BOXFRIENDS.png"
+            imagen = e.target.result;
+            console.log(imagen);
+
+            //imagen = "../img/BOXFRIENDS.png"
 
         };
         reader.readAsDataURL(file);
@@ -274,7 +282,12 @@ async function cargarProducto (){
                                     );
     console.log(respuesta);
      if (respuesta){
-        indiceSeleccionado = inputsProducto[0].value;
+        if(!reescribirProducto){
+            indiceSeleccionado = -1;
+            mostrarModalConfirmacion(3);
+        }else{
+            mostrarModalConfirmacion(2);
+        }
         mostrarProductoEnFormulario();
         modalVistaPrevia.style.display = 'none';
         cambioNoEditarProducto();
@@ -315,6 +328,9 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
         }
     }
 })
+
+
+
 
 // let clave = "John12/&%";
 // console.log(clave);

@@ -36,7 +36,7 @@ export let formularioInfoAdmin = document.getElementById('informacionAdministrad
 //funcion para averiguar si el usuario es administrador
 function averiguarTipoUsuario(){
   tipoUsuario = datosUsuario.esAdministrador;
-  if(tipoUsuario == '1'){
+  if(tipoUsuario){
       indiceTipoUsuario = 1 ;
   }else{
     indiceTipoUsuario = 0 ;
