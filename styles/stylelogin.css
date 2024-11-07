@@ -62,7 +62,7 @@ main {
 
 .contieneViaje #casa {
     position: absolute;
-    width: 15%;
+    width: 23%;
     bottom: 0px;
     left: -10px;
     animation: adiosCasita 10s ease-in infinite;
