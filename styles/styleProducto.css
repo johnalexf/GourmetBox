@@ -17,7 +17,7 @@ b{
     text-align: center;
     padding: 10px 20px;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-    width: 300px;
+    width: 298px;
     height: 350px;
     }
     
@@ -60,9 +60,9 @@ b{
 
     @media (width < 360px) {
         .producto {
-            width: 95%;
+            width: 80%;
             height: auto;
         }
     }
-    
+
     
