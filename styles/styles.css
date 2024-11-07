@@ -299,6 +299,7 @@ main {
 
 .slide-content {
     margin-left: 2%;
+    margin-bottom: 40px;
 }
 
 .card .textoCard img{
@@ -330,6 +331,16 @@ main {
     font-size: 20px;
 }
 
+.swiper-pagination-bullet {
+    width: 16px; /* Aumenta el ancho de los botones */
+    height: 16px; /* Aumenta la altura de los botones */
+    margin: 0 10px; /* Espacio entre los botones */
+}
+  /* Opcional: Si quieres que los botones estén más destacados */
+.swiper-pagination-bullet-active {
+    background-color: #0c0c0c; /* Cambia el color de fondo del botón activo */
+    transform: scale(1.5); /* Aumenta el tamaño del botón activo */
+}
 
 /* Estilos para la sección de ubicación y datos de la empresa
     El estilo principal del contenedor información es el mismo que el de formulario

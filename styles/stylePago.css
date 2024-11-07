@@ -236,13 +236,14 @@
     padding: 3px 40px; 
     border-radius: 50px;
     border: 2px solid #70349E;
-    background-color: rgba(105, 91, 199, 0.726);
+    color: #70349E;
+    background-color: white;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 #realizarPago:hover {
-    color: #70349E;
-    background-color: white;
+    color: #ffffff;
+    background-color: rgb(68, 39, 196);
 }
 
 .cerrarTerminos {

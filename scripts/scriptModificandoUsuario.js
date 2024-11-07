@@ -183,7 +183,8 @@ iconoContrasenaEditarPerfil.addEventListener("click",()=>{
 
 export function mostrarModalConfirmacion(index, texto){
     contenidoConfirmacion.innerHTML = `<p> ${mensajesSegunConfirmacion[index]} <b>${texto}</b>  </p>`; 
-    modalConfirmacionDeOperacion.style.display = "flex";
+   // modalConfirmacionDeOperacion.style.display = "flex";
+   swal("Operacion Exitosa", mensajesSegunConfirmacion[index] + " " + texto, "success");
 }
 
 cerrarModalConfirmacionOperacion.addEventListener('click',()=>{
