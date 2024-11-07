@@ -361,6 +361,8 @@ btnPago.addEventListener("click", () => {
         modalPago.style.display = "none";
         listaCompras.length=0;
         localStorage.removeItem('listaCompras');
+        localStorage.setItem('cantidadListaCompras', listaCompras.length);
+        carritoCantidadAgregadaNavbar();
         inicializarVista();
 
     }else{
