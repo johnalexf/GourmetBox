@@ -190,9 +190,9 @@ botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
     bd.eliminarProducto(inputsProducto[0].value);
     indiceSeleccionado = 0;
+    mostrarModalConfirmacion(1,inputsProducto[1].value);
     mostrarProductoEnFormulario();
     cerrarModalEliminarProducto();
-    mostrarModalConfirmacion(1);
 })
 
 botonCerrarModalEliminarProducto.addEventListener( 'click', cerrarModalEliminarProducto);
@@ -284,9 +284,9 @@ async function cargarProducto (){
      if (respuesta){
         if(!reescribirProducto){
             indiceSeleccionado = -1;
-            mostrarModalConfirmacion(3);
+            mostrarModalConfirmacion(3, inputsProducto[1].value);
         }else{
-            mostrarModalConfirmacion(2);
+            mostrarModalConfirmacion(2 , inputsProducto[1].value);
         }
         mostrarProductoEnFormulario();
         modalVistaPrevia.style.display = 'none';

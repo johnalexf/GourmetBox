@@ -155,7 +155,7 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
             contrasenaEditarPerfil.value = "";
         }
         modalContrasenaEditarPerfil.style.display = "none";
-        mostrarModalConfirmacion(0);
+        mostrarModalConfirmacion(0,"");
     }else{
         contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta", );
         contrasenaEditarPerfil.reportValidity();
@@ -181,8 +181,8 @@ iconoContrasenaEditarPerfil.addEventListener("click",()=>{
     }
   });
 
-export function mostrarModalConfirmacion(index){
-    contenidoConfirmacion.innerHTML = `<p> ${mensajesSegunConfirmacion[index]} </p>`; 
+export function mostrarModalConfirmacion(index, texto){
+    contenidoConfirmacion.innerHTML = `<p> ${mensajesSegunConfirmacion[index]} <b>${texto}</b>  </p>`; 
     modalConfirmacionDeOperacion.style.display = "flex";
 }
 
