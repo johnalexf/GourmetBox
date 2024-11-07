@@ -29,6 +29,7 @@ if(localStorage.getItem('usuario') != undefined){
     if( localStorage.getItem('usuario').length != 0 ){
         usuarioLogiado = localStorage.getItem('usuario')
         nameUser.innerText = usuarioLogiado;
+        nameUser.style.fontWeight = "bold";
         carritoCantidadAgregadaNavbar();
     }else{
         nameUser.innerText = "Ingresar";
