@@ -10,10 +10,15 @@ import * as bd from "../scripts/scriptBD.js";
 import { carritoCantidadAgregadaNavbar, cantidadCarritoIcono } from "./manipulacionNavbar.js";
 
 
+//div del dinamismo del repartidor de gourmet box
+let divViaje = document.querySelector(".viaje");
+
 //ventana de ingreso y registro de usuario
 let divBodyLogin = document.querySelector(".bodyLogin");
 // lista de las ventana de un usuario registrado, 0 => usuario normal 1=> usuario administrador
 let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
+
+
 
 let formularioIngreso = document.getElementById("formulario");
 let iconoContrasenaLogin = document.getElementById("iconoContrasenaLogin");
@@ -47,6 +52,7 @@ function mostrarPerfil(){
 
     divBodyLogin.classList.remove('mostrar');
     divBodyLogin.classList.add('ocultar');
+    divViaje.style.display= "none" ;
     setTimeout( function(){
         divBodyLogin.style.display = 'none';
         divUsuarioRegistrado[indiceTipoUsuario].style.display = 'block';
@@ -64,6 +70,7 @@ function mostrarDivBodyLogin(){
     averiguarTipoUsuario();
     divUsuarioRegistrado[indiceTipoUsuario].classList.remove('mostrar');
     divUsuarioRegistrado[indiceTipoUsuario].classList.add('ocultar');
+    divViaje.style.display="block";
     setTimeout( function(){
         divBodyLogin.style.display = 'flex';
         divUsuarioRegistrado[indiceTipoUsuario].style.display = 'none';
@@ -90,6 +97,7 @@ export function cargarDatosUsuario(){
       else   mostrarDatosPerfilUsuario();
 
       divBodyLogin.style.display = 'none';
+      divViaje.style.display = "none";
       divUsuarioRegistrado[indiceTipoUsuario].style.display = 'block';
       divUsuarioRegistrado[indiceTipoUsuario].classList.remove('ocultar');
       divUsuarioRegistrado[indiceTipoUsuario].classList.add('mostrar');
