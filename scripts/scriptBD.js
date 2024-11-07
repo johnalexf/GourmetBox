@@ -130,7 +130,13 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
     xhr.onload = function () {
         if (this.status === 200) {
             try {
-                const response = JSON.parse(this.responseText);
+                let response;
+                    if(Reescribir){
+                        response = JSON.parse(this.responseText);
+                    }else{
+                        response = this.responseText;
+                    }
+                    
                 console.log('Respuesta del servidor:', response);
             } catch (error) {
                 console.error('Error al parsear la respuesta:', error);
