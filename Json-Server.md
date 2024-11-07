@@ -10,11 +10,12 @@ Instalar node.js, en el proyecto abres la terminal y ejecutas el siguiente coman
 Instalar json-server, ejecuta el siguiente comando npm install -g json-server 
 
 3.Paso
-Para poner en marcha tu servidor local, escribe json-server --watch ./scripts/jsonproductos.json
-en este caso ./scripts/jsonproductos.json es la ubicación de la base de datos que quieres simular como API
+Copiar el archivo baseDatos.js por fuera de la carpeta de todo el proyecto
+Para que cuando se use el live server no se recargue sola la pagina.
+Para poner en marcha tu servidor local, escribe json-server --watch ../baseDatos.json
+en este caso ../baseDatos.json es la ubicación de la base de datos que quieres simular como API
 
-
-json-server --watch ./scripts/baseDatos.json
+json-server --watch ../baseDatos.json
 
 Aquí una breve explicación para que entiendas que hace cada comando
 

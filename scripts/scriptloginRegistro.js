@@ -229,3 +229,11 @@ formularioRegistro.addEventListener('submit', async function(event) {
 });
    
 
+  // Desplazamiento suave al formulario
+  // Usamos scrollIntoView para hacer el scroll hacia el div "formulario"
+
+contieneFormulario.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+});
+

@@ -11,7 +11,7 @@ Instalación de los paquetes necesarios
 Activación del servidor
 Copiar el archivo baseDatos.js por fuera de la carpeta de todo el proyecto
 Para que cuando se use el live server no se recargue sola la pagina.
-4. json-server --watch ../baseDatos.js
+4. json-server --watch ../baseDatos.json
 
 Para ingresar como administrador:
 usuario:    admin

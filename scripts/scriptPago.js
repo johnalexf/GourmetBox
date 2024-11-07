@@ -31,9 +31,19 @@ const cvv = document.getElementById("inputCVV");
 const inputNumber = document.getElementById("numberCT");
 const inputNombre = document.getElementById("nombreCT");
 const expiraDate = document.getElementById("expiraDate");
+const brand = document.getElementById("brand");
 
 inputNumber.addEventListener("input", () => {
-    if ((/[^0-9\s]/).test(inputNumber.value)) {
+
+    if (inputNumber.value[0]==="4") {
+        brand.src = "../img/visa.png";
+    }else if (inputNumber.value[0]==="5") {
+        brand.src = "../img/master.png"; 
+        } else {
+            brand.src = "../img/visa.png";
+        }
+
+    if (/[^0-9\s]/.test(inputNumber.value)) {
         inputNumber.setCustomValidity("Solo se permiten números y espacios");
     } else {
         numberTC.textContent = inputNumber.value;

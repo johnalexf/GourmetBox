@@ -30,16 +30,21 @@ if (localStorage.getItem('listaCompras') != undefined) {
 let usuario = localStorage.getItem('usuario');
 
 //condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
-if(usuario != "" && usuario != undefined ){
-    if (listaCompras.length != 0) {
-        carritoVacio.style.display = "none";
-        carrito.style.display = "grid";
-        actualizarCarrito();
-    } else {
-        carritoVacio.style.display = "flex";
-        carrito.style.display = "none";
+function inicializarVista(){
+    if(usuario != "" && usuario != undefined ){
+        if (listaCompras.length != 0) {
+            carritoVacio.style.display = "none";
+            carrito.style.display = "grid";
+            actualizarCarrito();
+        } else {
+            carritoVacio.style.display = "flex";
+            carrito.style.display = "none";
+        }
     }
 }
+
+inicializarVista();
+
 
 function actualizarCarrito() {
     productos();
@@ -271,8 +276,18 @@ const cvv = document.getElementById("inputCVV");
 const inputNumber = document.getElementById("numberCT");
 const inputNombre = document.getElementById("nombreCT");
 const expiraDate = document.getElementById("expiraDate");
+const brand = document.getElementById("brand");
 
 inputNumber.addEventListener("input", () => {
+
+    if (inputNumber.value[0]==="4") {
+        brand.src = "../img/visa.png";
+    }else if (inputNumber.value[0]==="5") {
+        brand.src = "../img/master.png"; 
+        } else {
+            brand.src = "../img/visa.png";
+        }
+
     if ((/[^0-9\s]/).test(inputNumber.value)) {
         inputNumber.setCustomValidity("Solo se permiten números y espacios");
     } else {
@@ -344,6 +359,12 @@ btnPago.addEventListener("click", () => {
         swal("Pago Recibido!", "Bienvenido a la Familia GBox!", "success");
         const modalPago = document.querySelector(".contenedorPago");
         modalPago.style.display = "none";
+        listaCompras.length=0;
+        localStorage.removeItem('listaCompras');
+        localStorage.setItem('cantidadListaCompras', listaCompras.length);
+        carritoCantidadAgregadaNavbar();
+        inicializarVista();
+
     }else{
         swal("Debes Verificar!", "Asegurate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
     }
