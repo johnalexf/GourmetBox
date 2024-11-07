@@ -55,7 +55,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
     let url;
     //Funcion con AJAX
     if (Reescribir) {
-        url = `${urlProductos}editar/${id}?nombre=${nombre}&descripcion=${descripcion}&categoria=${categoria}&image=${urlImg}&precio=${precio}`;
+        url = `${urlProductos}editar/${id}?nombre=${nombre}&descripcion=${descripcion}&categoria=${categoria}&image=""&precio=${precio}`;
         xhr.open('PUT', url, true);
         console.log(url)
     } else {
@@ -101,7 +101,9 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
                 precio_producto : precio
             }));
         } else {
-            xhr.send();
+            xhr.send(
+                urlImg
+            );
         }
     });
 
