@@ -103,15 +103,15 @@
 .tarjetaCredito #brand {
     position: absolute;
     right: 30px;
-    width: 50px;
+    width: 70px;
     bottom: 20px;
 }
 
 .tarjetaCredito #chip{
     position: absolute;
-    left: 20px;
+    left: 30px;
     top: 50px;
-    width: 30px;
+    width: 40px;
 }
 
 

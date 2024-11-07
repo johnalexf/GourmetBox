@@ -298,7 +298,7 @@ main {
 }
 
 .slide-content {
-    margin: 0 40px;
+    margin-left: 2%;
 }
 
 .card .textoCard img{
@@ -310,7 +310,7 @@ main {
 .card {
     border-radius: 20px;
     background-color: rgba(112, 52, 158, 0.507);
-    width: 330px;
+    width: 320px;
     height: 360px;
 }
 

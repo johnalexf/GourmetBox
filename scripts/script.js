@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         titulos[tituloActual].style.color = 'white';
         titulos[tituloActual].style.textDecoration = 'none';
         tituloActual = (tituloActual + 1) % titulos.length;
-       
             titulos[tituloActual].style.fontSize = '20px';
             titulos[tituloActual].style.color = '#70349E';
             titulos[tituloActual].style.textDecoration = 'underline';
@@ -57,20 +56,20 @@ document.addEventListener('DOMContentLoaded', function () {
         grabCursor: true,
         spaceBetween: 30,
         slidesPerView: "auto",
-      
+
         // paginacion botones
         pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          dynamicBullets: true
-        },
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+    },
 
          // Navegacion botones
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-  });
+    });
 });
 
 /* se mostrara el titulo y el plato linea vertical 
@@ -120,6 +119,8 @@ function mostrarImgC(){
 /* si la pantalla es celular cambio la manera en que se ve 
 se cambia el div actual y se pone el exclusivo de mobil*/
 
+let intervaloTitulos, intervaloImg;
+
 function ajustarVista(){
     const favoritosG = document.getElementById("favoritos");
     const favoritosC = document.getElementById("favoritosC");
@@ -127,8 +128,11 @@ function ajustarVista(){
     if(window.innerWidth < 750){
         favoritosG.style.display = "none";
         favoritosC.style.display = "block";
+        
         mostrarTitulosC();
         mostrarImgC();
+        // Reiniciar y empezar los intervalos cuando se cambia el tamaño
+        
         
     }else{
         favoritosG.style.display = "grid";

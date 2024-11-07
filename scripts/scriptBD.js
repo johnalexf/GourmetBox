@@ -122,7 +122,7 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
         url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}&contrasena=${contrasena}`;
         xhr.open('PUT', url, true);
     } else {
-        url = urlUsuario + "crear/";
+        url = urlUsuario + "crear";
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
     }
@@ -159,7 +159,7 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
             correo: correo,
             telefono: telefono,
             contrasena: contrasena,
-            es_administrador: esAdministrador
+            es_administrador: false
         }));
     } else {
         xhr.send();
