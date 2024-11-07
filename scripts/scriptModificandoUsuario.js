@@ -21,6 +21,17 @@ let contrasenaEditarPerfil = document.getElementById("contrasenaEditarPerfil");
 let botonCerrarModalContrasena = document.getElementById("cerrarModalContrasena");
 let iconoContrasenaEditarPerfil = document.getElementById("iconoContrasenaEditarPerfil");
 
+
+// variable que contiene el modal de confirmación de operación
+let modalConfirmacionDeOperacion = document.getElementById("modalConfirmacionDeOperacion");
+let contenidoConfirmacion = document.getElementById("contenidoConfirmacion");
+let cerrarModalConfirmacionOperacion = document.getElementById("cerrarModalConfirmacionDeOperacion");
+let mensajesSegunConfirmacion = ["Tu Perfil se ha editado correctamente", 
+                                "Se ha borrado el producto",
+                                "Se ha editado el producto",
+                                "Se ha guardado el producto" ];
+
+
 //funcion para activar o desactivar los inputs del perfil de usuario
 function desactivarInputUsuario(accion){
     nombreUsuario.disabled = accion;
@@ -95,7 +106,7 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
     let contrasena = contrasenaEditarPerfil.value;
     let contrasenaAVerificar = bd.encrypt_data(contrasena);
     if(await bd.confirmarContrasenaParaEditarPerfil(datosUsuario.userName,contrasenaAVerificar)){
-        if(tipoUsuario == "admin"){
+        if(tipoUsuario){
 
             //
             //await bd.reescribirOCrearUsuario(
@@ -144,6 +155,7 @@ botonGuardarEditarPerfil.addEventListener('click',async ()=>{
             contrasenaEditarPerfil.value = "";
         }
         modalContrasenaEditarPerfil.style.display = "none";
+        mostrarModalConfirmacion(0);
     }else{
         contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta", );
         contrasenaEditarPerfil.reportValidity();
@@ -168,3 +180,12 @@ iconoContrasenaEditarPerfil.addEventListener("click",()=>{
       contrasenaEditarPerfil.type  = "password";
     }
   });
+
+export function mostrarModalConfirmacion(index){
+    contenidoConfirmacion.innerHTML = `<p> ${mensajesSegunConfirmacion[index]} </p>`; 
+    modalConfirmacionDeOperacion.style.display = "flex";
+}
+
+cerrarModalConfirmacionOperacion.addEventListener('click',()=>{
+    modalConfirmacionDeOperacion.style.display = "none";
+});
