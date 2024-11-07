@@ -164,3 +164,13 @@ main{
 .sectionFondo2{
     background-color: rgba(0, 0, 0, 0.100);
 }
+
+@media screen and (max-width: 650px){
+    .contenidoMenu{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding:5%;
+        gap: 8px
+    }
+}
+
