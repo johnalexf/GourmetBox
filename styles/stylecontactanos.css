@@ -276,8 +276,12 @@ input[type="number"]::-webkit-inner-spin-button {
 /* Cuando la pantalla sea menor a 500px la distribución interna de la parte izquierda y derecha pasa a ser de a una columna */
 @media(width < 600px) {
     
-    .informacion {
+    .divContenidoFormulario, .informacion, .parrafoIntermedio {
         width: 360px;
+        grid-template-columns: 1fr;
+    }
+
+    .informacion {
         display: flex;
         flex-wrap: wrap;
     }
