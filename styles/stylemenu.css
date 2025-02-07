@@ -132,9 +132,10 @@ main{
 }
 
 .sectionMenu{
+    height: 80vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, 50%);
     margin-bottom: 1%;
 }
 
@@ -144,7 +145,7 @@ main{
     justify-content: center;
     font-family: "Roboto", sans-serif;
     width: 32.9vw;
-    height: 35vh;
+    /* height: 35vh; */
 }
 
 .sectionMenu h2{
@@ -152,8 +153,8 @@ main{
     color: white;
 }
 .sectionMenu img{
-    width: 28vw;
-    height: 28vh;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
 }
 
@@ -165,6 +166,12 @@ main{
     background-color: rgba(0, 0, 0, 0.100);
 }
 
+@media(width < 1200px){
+    .carruselbanners img{
+        height: 50vh;
+    }
+}
+
 @media screen and (max-width: 650px){
     .contenidoMenu{
         display: grid;
@@ -172,5 +179,12 @@ main{
         padding:5%;
         gap: 8px
     }
+    .sectionMenu{
+        height: 45vh;
+    }
+    .carruselbanners img{
+        height: 30vh;
+    }
+    
 }
 
