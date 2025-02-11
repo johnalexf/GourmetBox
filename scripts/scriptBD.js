@@ -1,4 +1,5 @@
-export let urlProductos = "http://54.144.182.202/producto/";
+export let urlProductos = "http://18.231.148.6/producto/";
+//export let urlProductos = "http://localhost:8080/producto/";
 export let urlEscribir = "";
 export let metodo = '';
 
@@ -112,7 +113,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 
 
 //sección para comunicación con la base de datos de usuarios
-export let urlUsuario = "http://54.144.182.202/usuario/";
+export let urlUsuario = "http://18.231.148.6/usuario/";
 
 //funcion para agregar un nuevo producto o reescribirlo
 export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, contrasena, esAdministrador, Reescribir) {
