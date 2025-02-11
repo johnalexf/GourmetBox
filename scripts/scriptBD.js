@@ -7,7 +7,10 @@ export let metodo = '';
 export async function obtenerBaseDatos() {
     
     try {
-        const respuesta = await fetch(urlProductos + "traer");
+        // const respuesta = await fetch(urlProductos + "traer");
+        const respuesta = await fetch(urlProductos + "traer", {
+            credentials: 'include'
+          });
         
         if (!respuesta.ok) {
           throw new Error('Error al obtener el JSON');
