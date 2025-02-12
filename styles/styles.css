@@ -92,6 +92,18 @@ main {
     z-index: 2;
 }
 
+/* imagen de los títulos intermedios */
+.tituloIntermedio{
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 0;
+    background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y center center;
+    /* background: url("../img_comidas/CARRUSEL-INDEX/bannerCel.png") no-repeat center center; */
+    background-size: 100%;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
 
 
 
@@ -229,23 +241,7 @@ main {
     transition: 1s ease;
 }
 
-/* imagen del titulo Favoritos */
-.tituloUbicanos,
-.tituloFavoritos,
-.tituloComentarios {
-    /* background-image: url("../img_comidas/CARRUSEL-INDEX/banners_menu.jpg"); */
-    background-image: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    place-content: center;
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
-    padding: 20px 0;
-    color: white;
-}
+
 
 
 
@@ -380,48 +376,7 @@ main {
     border: 1px solid #70349E;
 }
 
-/* media responsive Banner principal tablet*/
-@media (min-width: 750px) and (max-width: 1050px) {
 
-    
-    .contenedor-slider {
-        width: 350px;
-        height: 350px;
-    }
-
-    .contenedor-slider .plato1,
-    .contenedor-slider .plato2,
-    .contenedor-slider .plato3,
-    .contenedor-slider .plato4,
-    .contenedor-slider .plato5,
-    .contenedor-slider .plato6   {
-        width: 350px;
-        height: 350px;
-    }
-
-    .menu {
-        width: 100%;
-        height: 580px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-columns: 1fr;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .menu .imagenMenu{
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: 70%;
-    }
-
-    .favoritos {
-        background-image: none;
-        width: 100%;
-        height: auto;
-    }
-
-}
 
 
     .favoritoC{
@@ -517,6 +472,50 @@ main {
         color: white;
     }
 
+/* media responsive Banner principal tablet*/
+@media (min-width: 750px) and (max-width: 1050px) {
+
+    
+    .contenedor-slider {
+        width: 350px;
+        height: 350px;
+    }
+
+    .contenedor-slider .plato1,
+    .contenedor-slider .plato2,
+    .contenedor-slider .plato3,
+    .contenedor-slider .plato4,
+    .contenedor-slider .plato5,
+    .contenedor-slider .plato6   {
+        width: 350px;
+        height: 350px;
+    }
+
+    .menu {
+        width: 100%;
+        height: 580px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .menu .imagenMenu{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 70%;
+    }
+
+    .favoritos {
+        background-image: none;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
 /* Cuando la pantalla sea menor a 550px la 
 distribución interna de la parte izquierda y 
 derecha pasa a ser de a una columna */
@@ -533,11 +532,6 @@ derecha pasa a ser de a una columna */
         
     }
 
-    .tituloUbicanos,
-    .tituloFavoritos,
-    .tituloComentarios {
-        background-size: 145% 90%;    
-    }
 
 }
 
@@ -566,13 +560,5 @@ derecha pasa a ser de a una columna */
         width: 108%;   
     }
 
-    .tituloUbicanos,
-    .tituloFavoritos,
-    .tituloComentarios {
-        background-image: url("../img_comidas/CARRUSEL-INDEX/bannerCel.png");
-        background-size: auto;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat; 
-    }
+
 }

@@ -117,6 +117,7 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 
 //sección para comunicación con la base de datos de usuarios
 export let urlUsuario = "https://gourmetboxbackend-production.up.railway.app/usuario/";
+//export let urlUsuario = "http://localhost:8080/usuario/";
 
 //funcion para agregar un nuevo producto o reescribirlo
 export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, contrasena, esAdministrador, Reescribir) {
