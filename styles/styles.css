@@ -14,74 +14,14 @@ main {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-    justify-content: center;
 }
 
-
-/* dos secciones centrado */
+/* Inicio estilos del banner principal */
 .seccionEnlaces {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    justify-content: space-between;
-    place-content: center;
-    align-items: center;
-}
-
-/* ocupa arriba a la izquierda tamaño fijo */
-.enlaceMenu {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    width: auto;
-    height: 300px;
-    text-align: centerº;
-    margin: auto;
-}
-
-.seccionEnlaces{
-    width: 100%; 
-    text-align: center;
-}
-.seccionEnlaces .fondoEnlaces img{
-    width: 100%;
-}    
-
-.enlaceMenu span,
-.enlaceSuscripcion span{
-    color: #70349E;
-    font-weight: 600;
-    font-size: 32px;
-}
-
-.seccionEnlaces p{
-    font-size: 32px;
-}
-
-
-.btnMenu a,
-.enlaceMenu a,
-.enlaceSuscripcion a{
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 22px;
-    padding: 10px 100px; 
-    border-radius: 50px;
-    border: 2px solid #70349E;
-    background-color: rgba(105, 91, 199, 0.534);
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.favoritoC .btnMenuC a:hover,
-.btnMenu a:hover,
-.enlaceMenu a:hover,
-.enlaceSuscripcion a:hover {
-    color: #70349E;
-    background-color: white;
-}
-
-.btnMenu {
-    z-index: 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100vw;
 }
 
 .fondoEnlaces {
@@ -90,14 +30,71 @@ main {
     width: 100%;
 }
 
+.seccionEnlaces .fondoEnlaces img{
+    width: 100%;
+    height: 100%;
+} 
+
+.seccionEnlaces p{
+    font-size: calc(0.6rem + 1.5vw);
+}
+
+.seccionEnlaces span{
+    color: #70349E;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* ocupa arriba a la izquierda tamaño fijo */
+.enlaceMenu {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* ocupa abajo a la derecha */
 .enlaceSuscripcion {
     grid-column: 2/3;
     grid-row: 2/3;
-    width: auto;
-    height: 300px;
-    text-align: center;
-    margin: auto;
 }
+
+.enlaceMenu,
+.enlaceSuscripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    padding: 10% 10%;
+    text-align: center;
+}
+
+
+.btnEnlace{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: calc(0.4rem + 1.5vw);
+    margin: 2% auto;
+    padding: 7px 15%;
+    border-radius: 50px;
+    border: 2px solid #70349E;
+    background-color: rgba(105, 91, 199, 0.534);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.favoritoC .btnMenuC a:hover,
+.btnEnlace:hover {
+    color: #70349E;
+    background-color: white;
+}
+
+.btnMenu {
+    z-index: 2;
+}
+
+
+
+
 
 /* estilos carusel de platos y titulos en menu */
 /* Imagen de fondo tenedores y tamaño y estructura grid */
@@ -385,30 +382,8 @@ main {
 
 /* media responsive Banner principal tablet*/
 @media (min-width: 750px) and (max-width: 1050px) {
-   
-    .enlaceSuscripcion,
-    .enlaceMenu {
-        width: auto;
-        height: auto;
-        padding: 0 30px;
-    }
 
-
-    .enlaceMenu a,
-    .enlaceSuscripcion a{
-        padding: 10px 50px;
-    }
-
-    .seccionEnlaces .enlaceMenu p,
-    .seccionEnlaces .enlaceSuscripcion p{
-        font-size: 26px;
-    }
-
-    .seccionEnlaces .enlaceMenu span,
-    .seccionEnlaces .enlaceSuscripcion span{
-        font-size: 26px;
-    }
-
+    
     .contenedor-slider {
         width: 350px;
         height: 350px;
@@ -448,33 +423,6 @@ main {
 
 }
 
-/* media responsive Banner principal Celular*/
-@media (width < 750px){
-
-    /* estilos banner principal */
-    .enlaceSuscripcion,
-    .enlaceMenu {
-        width: auto;
-        height: auto;
-        padding: 0 10px;
-    }
-
-    .enlaceMenu a,
-    .enlaceSuscripcion a{
-        padding: 2px 20px;
-        font-size: 12px;
-    }
-
-    .seccionEnlaces .enlaceMenu p,
-    .seccionEnlaces .enlaceSuscripcion p{
-        font-size: 12px;
-    }
-
-    .seccionEnlaces .enlaceMenu span,
-    .seccionEnlaces .enlaceSuscripcion span{
-        font-size: 12px;
-    }
-}
 
     .favoritoC{
         width: 320px;
@@ -526,8 +474,8 @@ main {
 
 
     .sliderC {
-        position: relative;
-        grid-column: 1/2;
+        position: relative; 
+        grid-column: 1/2;   
         grid-row: 2/3;
         width: 100%;
         height: 240px;
@@ -593,7 +541,14 @@ derecha pasa a ser de a una columna */
 
 }
 
-@media (width < 493px) {    
+@media (width < 493px) { 
+    
+    .enlaceMenu,
+    .enlaceSuscripcion {
+        padding: 25% 10%;
+    }
+    
+
     .tituloUbicanos,
     .tituloFavoritos,
     .tituloComentarios {
