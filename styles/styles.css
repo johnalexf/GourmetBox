@@ -81,7 +81,7 @@ main {
   color: black;
   text-decoration: none;
   font-weight: 600;
-  font-size: calc(0.4rem + 1.4vw);
+  font-size: calc(0.8rem + 1vw);
   margin: 2% auto;
   padding: 3px 8%;
   border-radius: 50px;
