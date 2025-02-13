@@ -97,12 +97,19 @@ main {
   width: 100%;
   margin: 20px 0;
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
   background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y
     center center;
   background-size: 100%;
   background-attachment: fixed;
-  text-align: center;
   color: white;
+
+  h2{
+    width: fit-content;
+    background-color: #54545496;
+    border-radius: 10px;
+  }
 }
 
 /* estilos carousel de platos y títulos en la imagen de menu  */
