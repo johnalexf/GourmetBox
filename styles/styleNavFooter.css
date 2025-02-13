@@ -1,19 +1,30 @@
-footer {
-    min-height: 8vh;
-  }
 
-  footer, nav{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-  }
-  
-  * {
-    font-size: 16px;
-  }
+*{
+  box-sizing: border-box;
+}
+/* Para darle espacio al navbar que esta como fixed-top */
+main{
+  padding-top: 85px;
+}
+
+footer, nav{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+nav{
+  width: 100vw;
+  background-color: rgba(170, 135, 193, 0.98)!important;
+}
+
+footer {
+    min-height: 10vh;
+}
+
 
 /* Aumenta el tamaño del elemento al pasar el mouse */
 .nav-link:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     transform: translateX(-5px);
   }
 #icon, #icon:visited{
@@ -21,10 +32,6 @@ footer {
 }
 .navbar a:hover, #icon:hover {
   color: blanchedalmond;
-}
-
-.navbar {
-    background-color: #703493;
 }
 
 .navbar ul {
