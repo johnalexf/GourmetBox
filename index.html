@@ -1,330 +1,370 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
 
     <!-- Estilos Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!-- Estilos de Boostrap -->
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
     />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
     <!-- Poppins Regular 400 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Roboto Bold 700 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./styles/styleNavFooter.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-
-  <!-- barra de navegacion -->
+    <link rel="stylesheet" href="./styles/styleNavFooter.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- barra de navegacion -->
     <header>
-        <nav
-          class="navbar navbar-expand-lg"
-          style="background-color: rgba(105, 91, 199, 0.534)"
-        >
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img
-                src="./img/logoo.png"
-                alt="Título Gourmet Box"
-                width="150"
-                class="Logonegro ms-4"
-              />
-            </a>
-  
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-  
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="./index.html" id="inicio">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./HTML/menu.html" id="menu">Menú</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./HTML/suscripcion.html" id="suscripcion">Suscripción</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./HTML/conocenos.html" id="conocenos">Conócenos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./HTML/contactanos.html" id="contactenos">Contáctenos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./HTML/login.html" id="sesion">Ingresar</a>
-                </li>
-                <li class="nav-item" id="liCarrito">
-                  <a class="nav-link" href="./HTML/carrito.html" >
-                    <i class="bi bi-cart4" id="carrito">
-                      <p id="cantidadCarritoIcono">1</p>
-                    </i>
-                  </a>
-                </li>
-              </ul>
-            </div>
+      <nav
+        class="navbar navbar-expand-lg"
+        style="background-color: rgba(105, 91, 199, 0.534)"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./img/logoo.png"
+              alt="Título Gourmet Box"
+              width="150"
+              class="Logonegro ms-4"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            style="text-align: right"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./index.html"
+                  id="inicio"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./HTML/menu.html" id="menu">Menú</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="./HTML/suscripcion.html"
+                  id="suscripcion"
+                  >Suscripción</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./HTML/conocenos.html" id="conocenos"
+                  >Conócenos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="./HTML/contactanos.html"
+                  id="contactenos"
+                  >Contáctenos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./HTML/login.html" id="sesion"
+                  >Ingresar</a
+                >
+              </li>
+              <li class="nav-item" id="liCarrito">
+                <a class="nav-link" href="./HTML/carrito.html">
+                  <i class="bi bi-cart4" id="carrito">
+                    <p id="cantidadCarritoIcono">1</p>
+                  </i>
+                </a>
+              </li>
+            </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
     </header>
-  
-    
-    
-  <main>
 
-    <!-- Banner principal -->
-    <div class="seccionEnlaces">
+    <main>
+      <!-- Banner principal -->
+      <div class="seccionEnlaces">
+        <div class="fondoEnlaces">
+          <img src="./img_comidas/CARRUSEL-INDEX/fondoEnlaces.jpg" alt="" />
+        </div>
 
-      <div class="fondoEnlaces">
-        <img src="./img_comidas/CARRUSEL-INDEX/fondoEnlaces.jpg" alt="">
+        <div class="enlaceMenu">
+          <p>
+            LA EXPERIENCIA GASTRONÓMICA QUE MERECES,
+            <span>SIN SALIR DE CASA</span>
+          </p>
+          <p>¡Prueba tu primer <span>GBOX</span> gourmet hoy!</p>
+          <a class="btnEnlace" href="./HTML/menu.html">Menú</a>
+        </div>
+
+        <div class="enlaceSuscripcion">
+          <p>TENEMOS UN <span>PLAN GOURMET</span> PARA CADA ESTILO DE VIDA</p>
+          <p>Descubre tu <span>suscripción</span> ideal</p>
+          <a class="btnEnlace" href="./HTML/suscripcion.html">Suscripciones</a>
+        </div>
       </div>
-
-      <div class="enlaceMenu">
-        <p>LA EXPERIENCIA GASTRONÓMICA QUE MERECES, <span>SIN SALIR DE CASA</span></p>
-        <P>¡Prueba tu primer <span>GBOX</span> gourmet hoy!</P>
-        <a class="btnEnlace" href="./HTML/menu.html">Menú</a>
-      </div>
-
-      <div class="enlaceSuscripcion">
-        <p>TENEMOS UN <span>PLAN GOURMET</span> PARA CADA ESTILO DE VIDA</p>
-        <P>Descubre tu <span>suscripción</span> ideal</P>
-        <a class="btnEnlace"  href="./HTML/suscripcion.html">Suscripciones</a>
-      </div>
-      
-
-    </div>
-
 
       <!-- seccion de Recomendados -->
-    <div class="tituloIntermedio">
-      <h2>RECOMENDADOS</h2>
-    </div>
-
-    <!-- slider y menu dinamico -->
-    <div class="favoritos" id="favoritos">
-
-      <div class="contenedor-slider">
-
-        <div class="plato1">
-          <img src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png" alt="Exotic">
-        </div>
-        <div class="plato2">
-          <img src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png" alt="Wafle">
-        </div>
-        <div class="plato3">
-          <img src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png" alt="BowlJunior">
-        </div>
-        <div class="plato4">
-          <img src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png" alt="marinadoSenior">
-        </div>
-        <div class="plato5">
-          <img src="./img_comidas/CARRUSEL-INDEX/porstreescarlata.png" alt="RojoEscarlata">
-        </div>
-        <div class="plato6">
-          <img src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.png" alt="VainillaInvierno">
-        </div>
+      <div class="tituloIntermedio">
+        <h2>RECOMENDADOS</h2>
       </div>
 
-      <div class="btnMenu">
-        <a class="btnEnlace" href="./HTML/menu.html">Ver más</a>
-      </div>
+      <!-- slider y menu dinamico -->
+      <div class="favoritos" id="favoritos">
 
-      <div class="menu">       
-        <div class="imagenMenu">
-          <img src="./img_comidas/CARRUSEL-INDEX//menu3_2.png" alt="">
-        </div>
-        <div class="tituloCarta"><p>Menu<span> GBOX</span></p><p id="soloF">Favoritos</p></div>
-        <div class="itemFavoritos">
-          <h5>Desayuno</h5>
-          <p><span>Bowl Exotic................$18500</span></p>
-          <p><span>Wafle Primavera............$12500</span></p>
-          <h5>Almuerzos</h5>
-          <p><span>Bowl Junior................$22500</span></p>
-          <p><span>Marinado Senior............$34500</span></p>
-          <h5>Postres</h5>
-          <p><span>Rojo Escarlata.............$16500</span></p>
-          <p><span>Vainilla Invierno..........$12500</span></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- slider para Celular -->
-
-      <div class="favoritoC" id="favoritosC">
-        <div class="tituloCartaC">
-          <p>Menu <span>GBOX</span></p>
-          <P class="subtituloF">Favoritos</P>
-        </div>
-
-        <div class="tituloPlato"><p id="tituloP">Bowl Exotic................$18500</p></div>
-
-        <div class="sliderC">
-          <div class="plato1">
-            <img src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png" alt="Exotic">
-          </div>
-          <div class="plato2">
-            <img src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png" alt="Wafle">
-          </div>
-          <div class="plato3">
-            <img src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png" alt="BowlJunior">
-          </div>
-          <div class="plato4">
-            <img src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png" alt="marinadoSenior">
-          </div>
-          <div class="plato5">
-            <img src="./img_comidas/CARRUSEL-INDEX/porstreescarlata.png" alt="RojoEscarlata">
-          </div>
-          <div class="plato6">
-            <img src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.png" alt="VainillaInvierno">
-          </div>
-        </div>
-        <div class="btnMenuC">
-          <a href="./HTML/menu.html">Ver mas</a>
-        </div>
-      </div>
-
-
-    <!-- cinta que se desplaza de manera automatica -->
-    <section class="subtitle">
-      <div class="cinta">
-        <div class="scroll">
-          <div class="RightToLeft">
-            <p>• Facil</p>
-            <p>• Rápido</p>
-            <p>• Gourmet</p>
-            <p>• Conveniente</p>
-            <p>• Facil</p>
-            <p>• Rápido</p>
-            <p>• Gourmet</p>
-            <p>• Conveniente</p>
-            <p>• Facil</p>
-            <p>• Rápido</p>
-            <p>• Gourmet</p>
-            <p>• Conveniente</p>
-            <p>• Facil</p>
-            <p>• Rápido</p>
-            <p>• Gourmet</p>
-            <p>• Conveniente</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- seccion de cometarios -->
-    <div class="tituloIntermedio">
-      <h2>NOS PREFIEREN</h2>
-    </div>
-
-    <!-- slider comentarios -->
-    <div class="slide-container swiper" >
-      <div class="slide-content">
-        <div class="card-wrapper swiper-wrapper">
-          <!-- primer slide -->
-          <div class="card swiper-slide">
-            <div class="textoCard">
-              <h2>Mengana Cifuentez</h2>
-              <h4>Super</h4>
-              <p>"Excelente servicio al cliente y entrega puntual. Cada caja de Gourmet Box está llena de sorpresas y sabores únicos. Las recetas son variadas y siempre deliciosas. ¡Recomiendo totalmente esta plataforma!"</p>
-              <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
+        <div class="imgPlatosYBoton">
+          <div class="contenedor-slider">
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/Bowl_exotic.png"
+                alt="Exotic"
+              />
+            </div>
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/Wafle_primavera.png"
+                alt="Wafle"
+              />
+            </div>
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/bowl_junior.png"
+                alt="BowlJunior"
+              />
+            </div>
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/marinado_senior.png"
+                alt="marinadoSenior"
+              />
+            </div>
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/porstreescarlata.png"
+                alt="RojoEscarlata"
+              />
+            </div>
+            <div class="plato">
+              <img
+                src="./img_comidas/CARRUSEL-INDEX/Postreinvierno.png"
+                alt="VainillaInvierno"
+              />
             </div>
           </div>
-          <!-- segundo slide -->
-          <div class="card swiper-slide">
-            <div class="textoCard">
-              <h2>Fulanito Perez</h2>
-              <h4>Sorprende</h4>
-              <p>Super Recomendado, llegue por casulidad y decidi probar y ahora ya llevo tres meses con ellos y siempre llegan a tiempo y caliente, los sabores son increíbles, la atención es amable y rápida, super Recomendado</p>
-              <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
-            </div>
+
+          <div class="btnMenu">
+            <a class="btnEnlace" href="./HTML/menu.html">Ver más</a>
           </div>
-          <!-- tercer slide -->
-          <div class="card swiper-slide">
-            <div class="textoCard">
-              <h2>Mariano Mash</h2>
-              <h4>Excelente Calidad</h4>
-              <p>"Me encanta Gourmet Box. La calidad de los productos es excepcional y las recetas son creativas y sabrosas. Además, su atención al cliente es impecable. ¡Una experiencia culinaria que vale la pena!"</p>
-              <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
-            </div>
+        </div>
+
+        <div class="menu">
+          <div class="imagenMenu">
+            <img src="./img_comidas/CARRUSEL-INDEX//menu3_2.png" alt="" />
           </div>
-          <!-- cuarto slide -->
-          <div class="card swiper-slide">
-            <div class="textoCard">
-              <h2 class="nombre">Juliana Martinez</h2>
-              <h4>Recomendado</h4>
-              <p>"Estoy muy satisfecho con Gourmet Box. Las entregas son puntuales y las cajas siempre incluyen productos de excelente calidad. Las recetas son innovadoras. ¡Sin duda los recomiendo!"</p>
-              <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="">
+
+          
+
+          <div class="tituloCarta">
+            <p>Menu<span> GBOX</span></p>
+            <p>Favoritos</p>
+            <p id="tituloPlatoCelular">Bowl Exotic................$18500</p>
+          </div>
+          
+          <div class="itemFavoritos">
+            <h5>Desayuno</h5>
+            <p><span class="tituloResaltado">Bowl Exotic..............................$18500</span></p>
+            <p><span>Wafle Primavera................$12500</span></p>
+            <h5>Almuerzos</h5>
+            <p><span>Bowl Junior............................$22500</span></p>
+            <p><span>Marinado Senior...............$34500</span></p>
+            <h5>Postres</h5>
+            <p><span>Rojo Escarlata......................$16500</span></p>
+            <p><span>Vainilla Invierno..................$12500</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- cinta que se desplaza de manera automatica -->
+      <section class="subtitle">
+        <div class="cinta">
+          <div class="scroll">
+            <div class="RightToLeft">
+              <p>• Facil</p>
+              <p>• Rápido</p>
+              <p>• Gourmet</p>
+              <p>• Conveniente</p>
+              <p>• Facil</p>
+              <p>• Rápido</p>
+              <p>• Gourmet</p>
+              <p>• Conveniente</p>
+              <p>• Facil</p>
+              <p>• Rápido</p>
+              <p>• Gourmet</p>
+              <p>• Conveniente</p>
+              <p>• Facil</p>
+              <p>• Rápido</p>
+              <p>• Gourmet</p>
+              <p>• Conveniente</p>
             </div>
           </div>
         </div>
-      </div>  
-       <!-- Botones Paginacion slider -->
-        
-       <div class="swiper-pagination"></div>
+      </section>
 
-       <!-- Botones de Navegacion slider -->
-       <!-- <div class="swiper-button-prev"></div>
+      <!-- seccion de cometarios -->
+      <div class="tituloIntermedio">
+        <h2>NOS PREFIEREN</h2>
+      </div>
+
+      <!-- slider comentarios -->
+      <div class="slide-container swiper">
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <!-- primer slide -->
+            <div class="card swiper-slide">
+              <div class="textoCard">
+                <h2>Mengana Cifuentez</h2>
+                <h4>Super</h4>
+                <p>
+                  "Excelente servicio al cliente y entrega puntual. Cada caja de
+                  Gourmet Box está llena de sorpresas y sabores únicos. Las
+                  recetas son variadas y siempre deliciosas. ¡Recomiendo
+                  totalmente esta plataforma!"
+                </p>
+                <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="" />
+              </div>
+            </div>
+            <!-- segundo slide -->
+            <div class="card swiper-slide">
+              <div class="textoCard">
+                <h2>Fulanito Perez</h2>
+                <h4>Sorprende</h4>
+                <p>
+                  Super Recomendado, llegue por casulidad y decidi probar y
+                  ahora ya llevo tres meses con ellos y siempre llegan a tiempo
+                  y caliente, los sabores son increíbles, la atención es amable
+                  y rápida, super Recomendado
+                </p>
+                <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="" />
+              </div>
+            </div>
+            <!-- tercer slide -->
+            <div class="card swiper-slide">
+              <div class="textoCard">
+                <h2>Mariano Mash</h2>
+                <h4>Excelente Calidad</h4>
+                <p>
+                  "Me encanta Gourmet Box. La calidad de los productos es
+                  excepcional y las recetas son creativas y sabrosas. Además, su
+                  atención al cliente es impecable. ¡Una experiencia culinaria
+                  que vale la pena!"
+                </p>
+                <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="" />
+              </div>
+            </div>
+            <!-- cuarto slide -->
+            <div class="card swiper-slide">
+              <div class="textoCard">
+                <h2 class="nombre">Juliana Martinez</h2>
+                <h4>Recomendado</h4>
+                <p>
+                  "Estoy muy satisfecho con Gourmet Box. Las entregas son
+                  puntuales y las cajas siempre incluyen productos de excelente
+                  calidad. Las recetas son innovadoras. ¡Sin duda los
+                  recomiendo!"
+                </p>
+                <img src="./img_comidas/CARRUSEL-INDEX/estrellas.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Botones Paginacion slider -->
+
+        <div class="swiper-pagination"></div>
+
+        <!-- Botones de Navegacion slider -->
+        <!-- <div class="swiper-button-prev"></div>
        <div class="swiper-button-next"></div> -->
-    </div>
-
-    <!-- seccion de ubicacion -->
-    <div class="tituloIntermedio">
-      <h2>UBICANOS</h2>
-    </div>
-
-    <!-- contenedor de la información de la empresa y contiene un mapa (el cual esta generando warnings por una futura actualización de google chrome que bloqueara una cookie que usa el mapa) -->
-    <div class="informacion">
-      <div class="datos">
-        <p class="ajusteParrafo">Ubicación : </p>
-        <p>Colombia, Medellin, Trinidad Carrera 65C Calle 25 -68</p>
-        <p class="ajusteParrafo">Teléfono : </p>
-        <p>555-55555</p>
-        <p class="ajusteParrafo">Correo : </p>
-        <p>softwaresinfoni@gmail.com</p>
-        <p class="ajusteParrafo">Horario : </p>
-        <p>Lunes a Domingo de 8:00 am a 2:00 pm</p>
       </div>
-      <div class="ubicacion">
-        <iframe class="mapa"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.1413391990873!2d-75.58645609527545!3d6.227200389543579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429c80d129989%3A0x1110527907574dc6!2sCra.%2065C%20%2325-68%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1726643132966!5m2!1ses-419!2sco"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+
+      <!-- seccion de ubicacion -->
+      <div class="tituloIntermedio">
+        <h2>UBICANOS</h2>
       </div>
-    </div> 
 
-  </main>
+      <!-- contenedor de la información de la empresa y contiene un mapa (el cual esta generando warnings por una futura actualización de google chrome que bloqueara una cookie que usa el mapa) -->
+      <div class="informacion">
+        <div class="datos">
+          <p class="ajusteParrafo">Ubicación :</p>
+          <p>Colombia, Medellin, Trinidad Carrera 65C Calle 25 -68</p>
+          <p class="ajusteParrafo">Teléfono :</p>
+          <p>555-55555</p>
+          <p class="ajusteParrafo">Correo :</p>
+          <p>softwaresinfoni@gmail.com</p>
+          <p class="ajusteParrafo">Horario :</p>
+          <p>Lunes a Domingo de 8:00 am a 2:00 pm</p>
+        </div>
+        <div class="ubicacion">
+          <iframe
+            class="mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.1413391990873!2d-75.58645609527545!3d6.227200389543579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429c80d129989%3A0x1110527907574dc6!2sCra.%2065C%20%2325-68%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Guayabal%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses-419!2sco!4v1726643132966!5m2!1ses-419!2sco"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </main>
 
-    <footer
-      class="p-4"
-      style="background-color: rgba(105, 91, 199, 0.534)"
-    >
+    <footer class="p-4" style="background-color: rgba(105, 91, 199, 0.534)">
       <div class="container-fluid text-center">
         <div class="row align-items-center">
           <div class="col-12 col-md-6 mb-3 mb-md-0">
@@ -360,12 +400,11 @@
       </div>
     </footer>
 
-
     <!-- script bootstrap -->
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
     ></script>
 
     <!-- script propios -->
@@ -373,8 +412,5 @@
     <script src="./scripts/script.js"></script>
     <!-- script swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-</body>
-  
+  </body>
 </html>

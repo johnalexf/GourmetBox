@@ -1,338 +1,344 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #FFFEF4;
+  background-color: #fffef4;
 }
 
 /* letra para todo el documento */
 main {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
 }
 
 /* Inicio estilos del banner principal */
 .seccionEnlaces {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100vw;
 }
 
 .fondoEnlaces {
-    grid-column: 1/3;
-    grid-row: 1/3;
-    width: 100%;
+  grid-column: 1/3;
+  grid-row: 1/3;
+  width: 100%;
 }
 
-.seccionEnlaces .fondoEnlaces img{
-    width: 100%;
-    height: 100%;
-} 
-
-.seccionEnlaces p{
-    font-size: calc(0.6rem + 1.5vw);
+.seccionEnlaces .fondoEnlaces img {
+  width: 100%;
+  height: 100%;
 }
 
-.seccionEnlaces span{
-    color: #70349E;
-    font-weight: 600;
-    font-size: 1em;
+.seccionEnlaces p {
+  font-size: calc(0.6rem + 1.5vw);
+}
+
+.seccionEnlaces span {
+  color: #70349e;
+  font-weight: 600;
+  font-size: 1em;
 }
 
 /* ocupa arriba a la izquierda tamaño fijo */
 .enlaceMenu {
-    grid-column: 1/2;
-    grid-row: 1/2;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 /* ocupa abajo a la derecha */
 .enlaceSuscripcion {
-    grid-column: 2/3;
-    grid-row: 2/3;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .enlaceMenu,
 .enlaceSuscripcion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: auto;
-    height: 100%;
-    padding: 10% 10%;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+  padding: 10% 10%;
+  text-align: center;
 }
 
-
-.btnEnlace{
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: calc(0.4rem + 1.5vw);
-    margin: 2% auto;
-    padding: 7px 15%;
-    border-radius: 50px;
-    border: 2px solid #70349E;
-    background-color: rgba(105, 91, 199, 0.534);
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+.btnEnlace {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: calc(0.4rem + 1.5vw);
+  margin: 2% auto;
+  padding: 7px 15%;
+  border-radius: 50px;
+  border: 2px solid #70349e;
+  background-color: rgba(105, 91, 199, 0.534);
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .favoritoC .btnMenuC a:hover,
 .btnEnlace:hover {
-    color: #70349E;
-    background-color: white;
-}
-
-.btnMenu {
-    z-index: 2;
+  color: #70349e;
+  background-color: white;
 }
 
 /* imagen de los títulos intermedios */
-.tituloIntermedio{
-    width: 100%;
-    margin: 20px 0;
-    padding: 20px 0;
-    background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y center center;
-    /* background: url("../img_comidas/CARRUSEL-INDEX/bannerCel.png") no-repeat center center; */
-    background-size: 100%;
-    background-attachment: fixed;
-    text-align: center;
-    color: white;
+.tituloIntermedio {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px 0;
+  background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y
+    center center;
+  /* background: url("../img_comidas/CARRUSEL-INDEX/bannerCel.png") no-repeat center center; */
+  background-size: 100%;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
 }
 
 
-
-
-/* estilos carusel de platos y titulos en menu */
-/* Imagen de fondo tenedores y tamaño y estructura grid */
+/* estilos carousel de platos y títulos en la imagen de menu  */
 .favoritos {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 55% 45%;
-    grid-template-rows: 80% 20%;
-    background-image: url("../img_comidas/CARRUSEL-INDEX/fondoC.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+
+  background-image: url("../img_comidas/CARRUSEL-INDEX/fondoC.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-/* lado derecho y centrado para contenedor imagen */
+
+.imgPlatosYBoton {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .contenedor-slider {
-    width: 450px;
-    height: 550px;
-    grid-column: 1/2;
-    grid-row: 1/3;
-    position: relative;
-    margin: auto;
+  position: relative;
+  width: 450px;
+  height: 450px;
 }
 
-.btnMenu {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    width: 100%;
-    text-align: center;
-    padding-top: 35px;
-}
+/* dentro de su contenedor las imágenes se ubican centradas y con un tamaño */
+.plato {
+  position: absolute;
+  place-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 
-/* dentro de su contenedor las imagenes se ubican centradas y con un tamaño */
-.contenedor-slider .plato1,
-.contenedor-slider .plato2,
-.contenedor-slider .plato3,
-.contenedor-slider .plato4,
-.contenedor-slider .plato5,
-.contenedor-slider .plato6 {
-    position: absolute;
-    place-content: center;
-    text-align: center;
-    width: 450px;
-    height: 450px;
-    /* left: 30%; */
-}
-
-/* las imagenes se ajustan a su contenedor y tiempo en transicion */
-.contenedor-slider img{
+  /* las imágenes se ajustan a su contenedor y tiempo en transición */
+  img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
-    transition: opacity 1s ease;
-}
-
-/* inicialmente el plato 1 es el que se muestra */
-.contenedor-slider .plato1 img {
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/* Los demas se ocultan  */
-.contenedor-slider .plato2 img,
-.contenedor-slider .plato3 img,
-.contenedor-slider .plato4 img,
-.contenedor-slider .plato5 img,
-.contenedor-slider .plato6 img {
     visibility: hidden;
     opacity: 0;
+    transition: opacity 2s ease;
+  }
+
+  /* inicialmente el plato 1 es el que se muestra */
+  &:nth-of-type(1) img {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
-/* esta seccion se pondra el menu a la derecha */
+.btnMenu {
+  width: 100%;
+  text-align: center;
+}
+
 .menu {
-    width: auto;
-    display: grid;
-    align-content: center; 
-    place-content: center;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    position: relative;
-    grid-column: 2/3;
-    grid-row: 1/3;
+  width: auto;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
-
 /* la imagen que ira debajo de la descripcion del menu posicion por grid*/
-.imagenMenu{
-    width: 100%;
-    height: 100%;
-    grid-column: 1/2;
-    grid-row: 1/3;
-}
-
-/* se le da un tamaño a la imagen */
-.imagenMenu img{
+.imagenMenu {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  /* se le da un tamaño a la imagen */
+  img {
     width: 390px;
     height: 530px;
     border-radius: 20px;
     box-shadow: 5px 10px 10px black;
+  }
 }
 
-.tituloCarta{
-    color: white;
-    grid-column: 1/2;
-    grid-row: 1/2;
-    margin-inline: auto;
-    margin-top: 3%;
-}
+.tituloCarta {
+  margin: auto;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  color: white;
+  text-align: center;
 
-.tituloCarta p{
+  p {
     margin: 0;
+  }
+
+  p:nth-child(1) {
     font-size: 2.5rem;
-}
-
-.tituloCarta #soloF{
+  }
+  p:nth-child(2) {
     font-size: 1.6rem;
-    text-align: center;
+  }
 }
 
+/* Este titulo aparece en pantallas pequeñas */
+#tituloPlatoCelular {
+    display: none;
+    padding-top: 30px;
+    transition: 1s ease-in-out;
+}
 
-/* misma posicion que la imagen letras blancas */
+/* Esta clase es del contenedor de la lista del menu de favoritos
+la cual desaparece en pantallas pequeñas */
 .itemFavoritos {
-    margin: auto;
-    padding-top: 130px;
-    color: white;
-    grid-column: 1/2;
-    grid-row: 1/2;
+  margin: auto;
+  margin-left: 15%;
+  color: white;
+  grid-column: 1/2;
+  grid-row: 2/3;
+
+  /* tiempo en transición del cambio en tamaño letra y color */
+  /* p span {
+    transition: 0.6s linear;
+  } */
+
+  h5 {
+    font-weight: bold;
+  }
 }
 
-/* tiempo en transicion del cambio en tamaño letra y color */
-.itemFavoritos p span {
-    transition: 1s ease;
+/* Estilo agregado en javascript para darle dinamismo al menu */
+.tituloResaltado{
+    /* font-size: 20px;
+    color: #70349E;
+    text-decoration: underline; */
+    animation-name: resaltarParrafo;
+    animation-duration: 1.75s;
+    animation-timing-function: linear;
+    /* animation-fill-mode: forwards; */
+    animation-direction: alternate;
+    animation-iteration-count: 2;
 }
 
+@keyframes resaltarParrafo {
+    from{
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    to{
+        font-size: 20px;
+        color: #70349E;
+        text-decoration: underline;
+    }
+}
 
-
-
-
-
-/* seccion cinta de scroll lateral */
+/* sección cinta de scroll lateral */
 /* Estilos para el subtitle, cinta que se desplaza de manera automatica */
 .subtitle {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .cinta {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    height: 6vh;
-    background-color: #703493;
-    overflow: hidden;
-    margin-top: 40px;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  height: 6vh;
+  background-color: #703493;
+  overflow: hidden;
+  margin-top: 40px;
 }
 
 .scroll {
-    white-space: nowrap;
-    margin: 0 2em;
-    transition: transform 0.2s ease; 
+  white-space: nowrap;
+  margin: 0 2em;
+  transition: transform 0.2s ease;
 }
 
 .scroll div {
-    display: flex;
-    gap: 2em;
+  display: flex;
+  gap: 2em;
 }
 
 .scroll p {
-    font-size: 25px;
-    color: rgb(217, 217, 87);
-    font-weight: bold;
-    margin-bottom: 0;
-    line-height: 10px;
+  font-size: 25px;
+  color: rgb(217, 217, 87);
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 10px;
 }
-
-
 
 /* Estilos cards de  Recomendaciones*/
 
-.slide-container{
-    max-width: 1200px;
-    width: 100%;
+.slide-container {
+  max-width: 1200px;
+  width: 100%;
 }
 
 .slide-content {
-    margin-left: 2%;
-    margin-bottom: 40px;
+  margin-left: 2%;
+  margin-bottom: 40px;
 }
 
-.card .textoCard img{
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
+.card .textoCard img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .card {
-    border-radius: 20px;
-    background-color: rgba(112, 52, 158, 0.507);
-    width: 320px;
-    height: 360px;
+  border-radius: 20px;
+  background-color: rgba(112, 52, 158, 0.507);
+  width: 320px;
+  height: 360px;
 }
 
-.textoCard{
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+.textoCard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .textoCard h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
-.textoCard h4{
-    font-size: 20px;
+.textoCard h4 {
+  font-size: 20px;
 }
 
 .swiper-pagination-bullet {
-    width: 16px; /* Aumenta el ancho de los botones */
-    height: 16px; /* Aumenta la altura de los botones */
-    margin: 0 10px; /* Espacio entre los botones */
+  width: 16px; /* Aumenta el ancho de los botones */
+  height: 16px; /* Aumenta la altura de los botones */
+  margin: 0 10px; /* Espacio entre los botones */
 }
-  /* Opcional: Si quieres que los botones estén más destacados */
+/* Opcional: Si quieres que los botones estén más destacados */
 .swiper-pagination-bullet-active {
-    background-color: #0c0c0c; /* Cambia el color de fondo del botón activo */
-    transform: scale(1.5); /* Aumenta el tamaño del botón activo */
+  background-color: #0c0c0c; /* Cambia el color de fondo del botón activo */
+  transform: scale(1.5); /* Aumenta el tamaño del botón activo */
 }
 
 /* Estilos para la sección de ubicación y datos de la empresa
@@ -340,225 +346,131 @@ main {
 */
 
 .informacion {
-    width: 100%;
-    justify-content: space-between;
-    padding: 40px 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 40px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
 }
 
 .informacion .datos {
-    grid-column: 1/2;
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 30px;
-    padding: 20px;
-    border: 1px solid #70349E;
+  grid-column: 1/2;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  border: 1px solid #70349e;
 }
 
 /* párrafos dentro de información de contacto */
 .ajusteParrafo {
-    margin: 0%;
+  margin: 0%;
 }
 
 /* Estilo para el div que contiene el mapa */
 .ubicacion {
-    grid-column: 2/3;
-    border-radius: 30px;
+  grid-column: 2/3;
+  border-radius: 30px;
 }
 
 .mapa {
-    height: 100%;
-    width: 100%;
-    border-radius: 30px;
-    border: 1px solid #70349E;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid #70349e;
 }
 
 
 
-
-    .favoritoC{
-        width: 320px;
-        background-image: url("../img_comidas/CARRUSEL-INDEX/menu3_2.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: #703493;
-        border-radius: 30px;
-        height: 450px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 150px 350px auto;
-        margin-bottom: 30px;
-        transition: opacity 1s ease;
-        display: none;
-        margin: auto;
-    }
-
-    .tituloCartaC{
-        padding-top: 6%;
-    }
-
-    .tituloCartaC p{
-        margin: 0;
-        color: white;
-        font-size: 2em;
-        text-align: center;
-    }
-
-    .tituloCartaC p span{
-        font-size: 0.5em;
-    }
-
-    .tituloCartaC .subtituloF{
-        font-size: 1.5em;
-    }
-    
-
-    .tituloPlato {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        height: 70px;
-        text-align: center;
-        color: white;
-        padding-top: 30px;
-        transition: 1s ease-in-out;
-    }
-
-
-    .sliderC {
-        position: relative; 
-        grid-column: 1/2;   
-        grid-row: 2/3;
-        width: 100%;
-        height: 240px;
-    }
-
-    .sliderC .plato1,
-    .sliderC .plato2,
-    .sliderC .plato3,
-    .sliderC .plato4,
-    .sliderC .plato5,
-    .sliderC .plato6{
-        position: absolute;
-        margin: 3% 0 0 20%;
-    }
-
-    .sliderC .plato1 img,
-    .sliderC .plato2 img,
-    .sliderC .plato3 img,
-    .sliderC .plato4 img,
-    .sliderC .plato5 img,
-    .sliderC .plato6 img{
-        border-radius: 50%;
-        width: 200px;
-        height: 200px;
-    }
-
-    .favoritoC .btnMenuC{
-        text-align: center;
-    }
-
-    .favoritoC .btnMenuC a{
-        grid-column: 1/2;
-        grid-row: 3/4;
-        text-decoration: none;
-        padding: 2px 20px; 
-        font-size: 12px;
-        border-radius: 50px;
-        background-color: #70349E;
-        color: white;
-    }
-
 /* media responsive Banner principal tablet*/
-@media (min-width: 750px) and (max-width: 1050px) {
-
-    
+@media (max-width: 1050px) {
     .contenedor-slider {
         width: 350px;
         height: 350px;
+      }
+    .itemFavoritos{
+        margin-left: 10%;
+    }
+    .imagenMenu img {
+        width: 360px;
+        height: 480px;
     }
 
-    .contenedor-slider .plato1,
-    .contenedor-slider .plato2,
-    .contenedor-slider .plato3,
-    .contenedor-slider .plato4,
-    .contenedor-slider .plato5,
-    .contenedor-slider .plato6   {
-        width: 350px;
-        height: 350px;
+}
+
+@media (max-width: 760px){
+    
+    .favoritos{
+        position: relative;
+        max-width: 360px;
+        margin: auto;
+        grid-template-columns: 1fr;      
     }
 
-    .menu {
+    #tituloPlatoCelular {
+        display: block;
+    }
+
+    .itemFavoritos{
+        display: none;
+    }
+
+    .imgPlatosYBoton{
         width: 100%;
-        height: 580px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-columns: 1fr;
-        margin: 0px;
-        padding: 0px;
+        position: absolute;
+        bottom: 0px;
+    }
+    .contenedor-slider {
+        width: 280px;
+        height: 280px;
     }
 
-    .menu .imagenMenu{
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: 70%;
+    .plato img{
+        width: 80%;
+        height: 80%;
     }
+    .btnMenu{
+        height: 50px;
 
-    .favoritos {
-        background-image: none;
-        width: 100%;
-        height: auto;
+        a{
+            border-radius: 50px;
+            background-color: #70349e;
+            color: white;
+        }
     }
-
 }
 
 
 /* Cuando la pantalla sea menor a 550px la 
 distribución interna de la parte izquierda y 
 derecha pasa a ser de a una columna */
-@media (width > 494px) and (width < 550px) {
-    
-    .informacion {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    .mapa{
-        width: 145%;
-        
-    }
-
-
+@media (max-width : 550px) {
+  .informacion {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .mapa {
+    width: 145%;
+  }
 }
 
-@media (width < 493px) { 
-    
-    .enlaceMenu,
-    .enlaceSuscripcion {
-        padding: 25% 10%;
-    }
-    
+@media (width < 493px) {
+  .enlaceMenu,
+  .enlaceSuscripcion {
+    padding: 25% 10%;
+  }
 
-    .tituloUbicanos,
-    .tituloFavoritos,
-    .tituloComentarios {
-        background-size: cover;    
-        background-position: left;
-    }
-    
-    .informacion {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    .mapa{
-        width: 108%;   
-    }
-
-
+  .informacion {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .mapa {
+    width: 108%;
+  }
 }
