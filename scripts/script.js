@@ -66,16 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* cuando se realiza desplazaminteo en el eje y el objeto scroll se desplaza de iz a der o inversa */
-const scrollContainer = document.querySelector(".scroll");
-let sumaScroll = 0;
-
-window.addEventListener("scroll", () => {
-  sumaScroll = window.scrollY;
-  scrollContainer.style.transform = `translateX(-${sumaScroll * 0.5}px)`;
-});
-
-
 /* inicializo el script libreria swiper */
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".slide-content", {

@@ -120,6 +120,7 @@ main {
 .favoritos {
   width: 100vw;
   height: 100%;
+  margin-bottom: 40px;
   padding-left: 10%;
   padding-right: 12%;
 
@@ -252,41 +253,6 @@ la cual desaparece en pantallas pequeñas */
     color: #70349e;
     text-decoration: underline;
   }
-}
-
-/* sección cinta de scroll lateral */
-/* Estilos para el subtitle, cinta que se desplaza de manera automatica */
-.subtitle {
-  grid-column: 1 / -1;
-}
-
-.cinta {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  height: 6vh;
-  background-color: #703493;
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.scroll {
-  white-space: nowrap;
-  margin: 0 2em;
-  transition: transform 0.2s ease;
-}
-
-.scroll div {
-  display: flex;
-  gap: 2em;
-}
-
-.scroll p {
-  font-size: 25px;
-  color: rgb(217, 217, 87);
-  font-weight: bold;
-  margin-bottom: 0;
-  line-height: 10px;
 }
 
 /* Estilos cards de  Recomendaciones*/

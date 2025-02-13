@@ -1,0 +1,41 @@
+
+/* Estilos para el subtitle, cinta que se desplaza de manera automática */
+
+.cinta {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 6vh;
+    background-color: #703493;
+    overflow: hidden;
+}
+
+.scroll {
+    white-space: nowrap;
+}
+
+.rightToLeft {
+    display: flex;
+    /* No se configura el gap ya que este genera un espacio entre los párrafos
+    y no un espacio al inicio y al final de todo el conjunto, lo que no permite 
+    realizar una transición fluida, por ello se le asigna un padding-left a cada párrafo  */
+    /* gap: 2em; */
+    animation: rightToLeft 8s linear 0.2s infinite normal none;
+    /* animation: rightToLeft 8s infinite linear; */
+
+    p {
+        margin: 0;
+        padding-left: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(217, 217, 87);
+    }
+}
+
+@keyframes rightToLeft {
+    to {
+        transform: translateX(-25%);
+    }
+}
+/* Fin de estilos para el subtitle, cinta que se desplaza de manera automatica */
