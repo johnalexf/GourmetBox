@@ -23,22 +23,26 @@ main {
 
 /* Inicio estilos del banner principal */
 .seccionEnlaces {
+  width: 100vw;
+  margin-bottom: -20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 100vw;
+  
 }
 
 .fondoEnlaces {
   grid-column: 1/3;
   grid-row: 1/3;
   width: 100%;
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.seccionEnlaces .fondoEnlaces img {
-  width: 100%;
-  height: 100%;
-}
+
 
 .seccionEnlaces p {
   font-size: calc(0.6rem + 1.5vw);
@@ -459,9 +463,12 @@ derecha pasa a ser de a una columna */
 }
 
 @media (width < 493px) {
-  .enlaceMenu,
+  .enlaceMenu {
+    padding-bottom: 25%;
+  }
+
   .enlaceSuscripcion {
-    padding: 25% 10%;
+    padding-top: 25%;
   }
 
   .informacion {

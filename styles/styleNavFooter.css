@@ -11,10 +11,6 @@ footer {
     font-size: 16px;
   }
 
-  header {
-    min-height: 8vh;
-  }
-
 /* Aumenta el tamaño del elemento al pasar el mouse */
 .nav-link:hover {
     transform: scale(1.2);
