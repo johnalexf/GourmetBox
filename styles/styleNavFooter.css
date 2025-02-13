@@ -1,5 +1,6 @@
 
 *{
+  font-size: 16px;
   box-sizing: border-box;
 }
 /* Para darle espacio al navbar que esta como fixed-top */

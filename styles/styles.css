@@ -25,7 +25,7 @@ main {
 /* Inicio estilos del banner principal */
 .seccionEnlaces {
   width: 100%;
-  margin-bottom: -20px;
+  margin-bottom: -18px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
