@@ -2,7 +2,11 @@
 y llamo a la funcion mostrar imagen que me recorre el array y va 
 cambiando las características de visibility y opacity se hace una espera entre transición*/
 
-const tiempoCambioPlatos = 3500;
+const tiempoCambioPlatos = 4500;
+
+//asignamos el mismo valor del tiempo de cambio de platos a la variable 
+const raiz = document.documentElement;
+raiz.style.setProperty('--duracionAnimacionTitulos', tiempoCambioPlatos.toString() + 'ms');
 
 /*
 funcion carruselPLatos() para obtener cada div interno de .contenedor-slider los cuales
@@ -24,7 +28,7 @@ function carruselPlatos() {
       platos[imagenActual].style.opacity = "1";
     }, 20);
   }
-  setInterval(mostrarImagen, tiempoCambioPlatos); //cada 3s
+  setInterval(mostrarImagen, tiempoCambioPlatos);
 }
 
 /*
@@ -37,19 +41,18 @@ function resaltarTituloPlatos(){
   const titulos = document.querySelectorAll(".itemFavoritos > p > span");
   const tituloPlatoCelular = document.getElementById("tituloPlatoCelular");
 
-  console.log("entro en funcion resaltar")
   function resaltarTitulo() {
     titulos[tituloActual].classList.remove("tituloResaltado");
 
     tituloActual = (tituloActual + 1) % titulos.length;
+    titulos[tituloActual].classList.add("tituloResaltado");
 
     tituloPlatoCelular.innerText = titulos[tituloActual].textContent;
     tituloPlatoCelular.classList.remove("tituloResaltado");
+    // Se le da un tiempo de espera para asignar la clase que contiene la animación
+    //y asi esta funcione correctamente.
     setTimeout(()=>{tituloPlatoCelular.classList.add("tituloResaltado")},200);
 
-    titulos[tituloActual].classList.add("tituloResaltado");
-
-    
   }
   
   setInterval(resaltarTitulo , tiempoCambioPlatos); //cada 3s

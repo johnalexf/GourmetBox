@@ -1,3 +1,8 @@
+:root {
+  /* Esta variable se modifica en el  javascript script.js*/
+  --duracionAnimacionTitulos: 0s;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -72,41 +77,40 @@ main {
   color: black;
   text-decoration: none;
   font-weight: 600;
-  font-size: calc(0.4rem + 1.5vw);
+  font-size: calc(0.4rem + 1.4vw);
   margin: 2% auto;
-  padding: 7px 15%;
+  padding: 3px 8%;
   border-radius: 50px;
   border: 2px solid #70349e;
   background-color: rgba(105, 91, 199, 0.534);
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+
+  &:hover{
+    color: #70349e;
+    background-color: white;
+  }
 }
 
-.favoritoC .btnMenuC a:hover,
-.btnEnlace:hover {
-  color: #70349e;
-  background-color: white;
-}
 
-/* imagen de los títulos intermedios */
+/* estilos de los títulos intermedios */
 .tituloIntermedio {
   width: 100%;
   margin: 20px 0;
   padding: 20px 0;
   background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y
     center center;
-  /* background: url("../img_comidas/CARRUSEL-INDEX/bannerCel.png") no-repeat center center; */
   background-size: 100%;
   background-attachment: fixed;
   text-align: center;
   color: white;
 }
 
-
 /* estilos carousel de platos y títulos en la imagen de menu  */
 .favoritos {
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  padding: 0 10%;
+  padding-left: 10%;
+  padding-right: 12%;
 
   display: grid;
   justify-content: center;
@@ -167,7 +171,7 @@ main {
   align-content: center;
   justify-content: center;
 }
-/* la imagen que ira debajo de la descripcion del menu posicion por grid*/
+/* la imagen que ira debajo de la descripción del menu posición por grid*/
 .imagenMenu {
   width: 100%;
   height: 100%;
@@ -203,9 +207,8 @@ main {
 
 /* Este titulo aparece en pantallas pequeñas */
 #tituloPlatoCelular {
-    display: none;
-    padding-top: 30px;
-    transition: 1s ease-in-out;
+  display: none;
+  padding-top: 30px;
 }
 
 /* Esta clase es del contenedor de la lista del menu de favoritos
@@ -217,41 +220,27 @@ la cual desaparece en pantallas pequeñas */
   grid-column: 1/2;
   grid-row: 2/3;
 
-  /* tiempo en transición del cambio en tamaño letra y color */
-  /* p span {
-    transition: 0.6s linear;
-  } */
-
   h5 {
     font-weight: bold;
   }
 }
 
 /* Estilo agregado en javascript para darle dinamismo al menu */
-.tituloResaltado{
-    /* font-size: 20px;
-    color: #70349E;
-    text-decoration: underline; */
-    animation-name: resaltarParrafo;
-    animation-duration: 1.75s;
-    animation-timing-function: linear;
-    /* animation-fill-mode: forwards; */
-    animation-direction: alternate;
-    animation-iteration-count: 2;
+.tituloResaltado {
+  animation-name: resaltarParrafo;
+
+  /* La duración de la animación se asigna desde javascript con el fin
+   de usar la misma variable para el ciclo de las imágenes de los platos*/
+  animation-duration: var(--duracionAnimacionTitulos); 
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes resaltarParrafo {
-    from{
-        font-size: 16px;
-        color: white;
-        text-decoration: none;
-    }
-    
-    to{
-        font-size: 20px;
-        color: #70349E;
-        text-decoration: underline;
-    }
+    25%, 75% {
+    font-size: 20px;
+    color: #70349e;
+    text-decoration: underline;
+  }
 }
 
 /* sección cinta de scroll lateral */
@@ -382,71 +371,75 @@ la cual desaparece en pantallas pequeñas */
   border: 1px solid #70349e;
 }
 
-
-
-/* media responsive Banner principal tablet*/
+/* media responsive sección favoritos para tablet*/
 @media (max-width: 1050px) {
-    .contenedor-slider {
-        width: 350px;
-        height: 350px;
-      }
-    .itemFavoritos{
-        margin-left: 10%;
-    }
-    .imagenMenu img {
-        width: 360px;
-        height: 480px;
-    }
-
+  .contenedor-slider {
+    width: 350px;
+    height: 350px;
+  }
+  .itemFavoritos {
+    margin-left: 10%;
+  }
+  .imagenMenu img {
+    width: 360px;
+    height: 480px;
+  }
 }
 
-@media (max-width: 760px){
-    
-    .favoritos{
-        position: relative;
-        max-width: 360px;
-        margin: auto;
-        grid-template-columns: 1fr;      
-    }
+/* media responsive sección favoritos para celular y tablet */
+@media (max-width: 760px) {
+  .favoritos {
+    position: relative;
+    padding-left: 0%;
+    padding-right: 10px;
+    grid-template-columns: 1fr;
+  }
 
-    #tituloPlatoCelular {
-        display: block;
-    }
+  .imagenMenu img{
+    width: 360px;
+  }
+  .tituloCarta{
+    padding-top: 10px;
+  }
 
-    .itemFavoritos{
-        display: none;
-    }
+  #tituloPlatoCelular {
+    display: block;
+  }
 
-    .imgPlatosYBoton{
-        width: 100%;
-        position: absolute;
-        bottom: 0px;
-    }
-    .contenedor-slider {
-        width: 280px;
-        height: 280px;
-    }
+  .itemFavoritos {
+    display: none;
+  }
 
-    .plato img{
-        width: 80%;
-        height: 80%;
-    }
-    .btnMenu{
-        height: 50px;
+  .imgPlatosYBoton {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+  }
+  .contenedor-slider {
+    width: 275px;
+    height: 275px;
+  }
 
-        a{
-            border-radius: 50px;
-            background-color: #70349e;
-            color: white;
-        }
+  .plato img {
+    width: 80%;
+    height: 80%;
+  }
+  .btnMenu {
+    height: 50px;
+
+    a {
+      border-radius: 50px;
+      background-color: #70349e;
+      color: white;
     }
+  }
 }
-
 
 /* Cuando la pantalla sea menor a 550px la 
 distribución interna de la parte izquierda y 
 derecha pasa a ser de a una columna */
-@media (max-width : 550px) {
+@media (max-width: 550px) {
+ 
   .informacion {
     width: 90%;
     display: flex;
@@ -472,5 +465,18 @@ derecha pasa a ser de a una columna */
   }
   .mapa {
     width: 108%;
+  }
+}
+
+@media(width < 370px){
+  .imagenMenu img{
+    width: 310px;
+  }
+  @keyframes resaltarParrafo {
+    25%, 75% {
+      font-size: 18px;
+      color: #70349e;
+     text-decoration: underline;
+    }
   }
 }
