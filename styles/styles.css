@@ -4,6 +4,7 @@
 }
 
 * {
+  font-size: 16px;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,12 +20,11 @@ main {
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  /* padding-top: 83px; */
 }
 
 /* Inicio estilos del banner principal */
 .seccionEnlaces {
-  width: 100vw;
+  width: 100%;
   margin-bottom: -20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -42,8 +42,6 @@ main {
     height: 100%;
   }
 }
-
-
 
 .seccionEnlaces p {
   font-size: calc(0.6rem + 1.5vw);
@@ -119,11 +117,12 @@ main {
 
 /* estilos carousel de platos y títulos en la imagen de menu  */
 .favoritos {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   margin-bottom: 40px;
   padding-left: 10%;
   padding-right: 12%;
+  box-sizing: border-box;
 
   display: grid;
   justify-content: center;
