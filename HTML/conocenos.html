@@ -29,17 +29,13 @@
 
     <!-- Menu de navegación desplegable y responsive -->
     <header>
-      <nav
-        class="navbar navbar-expand-lg"
-        style="background-color: rgba(105, 91, 199, 0.534)"
-      >
+      <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="../index.html">
             <img
               src="../img/logoo.png"
               alt="Título Gourmet Box"
-              width="150"
-              class="Logonegro ms-4"
+              class="logo ms-4"
             />
           </a>
 
@@ -55,28 +51,43 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right;">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div
+            class="collapse navbar-collapse text-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../index.html" id="inicio">Inicio</a>
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../index.html"
+                  id="inicio"
+                  >Inicio</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./menu.html" id="menu">Menú</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./suscripcion.html" id="suscripcion">Suscripción</a>
+                <a class="nav-link" href="./suscripcion.html" id="suscripcion"
+                  >Suscripción</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./conocenos.html" id="conocenos">Conócenos</a>
+                <a class="nav-link" href="./conocenos.html" id="conocenos"
+                  >Conócenos</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./contactanos.html" id="contactenos">Contáctenos</a>
+                <a class="nav-link" href="./contactanos.html" id="contactenos"
+                  >Contáctenos</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./login.html" id="sesion">Ingresar</a>
               </li>
               <li class="nav-item" id="liCarrito">
-                <a class="nav-link" href="./carrito.html" >
+                <a class="nav-link" href="./carrito.html">
                   <i class="bi bi-cart4" id="carrito">
                     <p id="cantidadCarritoIcono">1</p>
                   </i>
