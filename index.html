@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,15 +42,13 @@
     <link rel="stylesheet" href="./styles/styleNavFooter.css" />
 
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/styleCintaDinamica.css">
+    <link rel="stylesheet" href="./styles/styleCintaDinamica.css" />
   </head>
 
   <body>
     <!-- barra de navegación -->
     <header>
-      <nav
-        class="navbar navbar-expand-lg fixed-top"
-      >
+      <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
@@ -139,7 +136,7 @@
         </div>
 
         <div class="enlaceMenu">
-          <p>
+          <p class="d-none d-sm-block">
             LA EXPERIENCIA GASTRONÓMICA QUE MERECES,
             <span>SIN SALIR DE CASA</span>
           </p>
@@ -148,7 +145,9 @@
         </div>
 
         <div class="enlaceSuscripcion">
-          <p>TENEMOS UN <span>PLAN GOURMET</span> PARA CADA ESTILO DE VIDA</p>
+          <p class="d-none d-sm-block">
+            TENEMOS UN <span>PLAN GOURMET</span> PARA CADA ESTILO DE VIDA
+          </p>
           <p>Descubre tu <span>suscripción</span> ideal</p>
           <a class="btnEnlace" href="./HTML/suscripcion.html">Suscripciones</a>
         </div>
@@ -161,7 +160,6 @@
 
       <!-- slider y menu dinámico -->
       <div class="favoritos" id="favoritos">
-
         <div class="imgPlatosYBoton">
           <div class="contenedor-slider">
             <div class="plato">
@@ -209,20 +207,24 @@
 
         <div class="menu">
           <div class="imagenMenu">
-            <img src="./img_comidas/CARRUSEL-INDEX//menu3_2.png" alt="" />
+            <img src="./img_comidas/CARRUSEL-INDEX/menu3_2.png" alt="" />
           </div>
-
-          
 
           <div class="tituloCarta">
             <p>Menu<span> GBOX</span></p>
             <p>Favoritos</p>
-            <p class="tituloResaltado" id="tituloPlatoCelular">Bowl Exotic................$18500</p>
+            <p class="tituloResaltado" id="tituloPlatoCelular">
+              Bowl Exotic................$18500
+            </p>
           </div>
-          
+
           <div class="itemFavoritos">
             <h5>Desayuno</h5>
-            <p><span class="tituloResaltado">Bowl Exotic..............................$18500</span></p>
+            <p>
+              <span class="tituloResaltado"
+                >Bowl Exotic..............................$18500</span
+              >
+            </p>
             <p><span>Wafle Primavera................$12500</span></p>
             <h5>Almuerzos</h5>
             <p><span>Bowl Junior............................$22500</span></p>
@@ -232,7 +234,6 @@
             <p><span>Vainilla Invierno..................$12500</span></p>
           </div>
         </div>
-
       </div>
 
       <!-- cinta que se desplaza de manera automática -->

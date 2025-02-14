@@ -16,6 +16,7 @@ body {
 
 /* letra para todo el documento */
 main {
+  display: block;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -59,6 +60,7 @@ main {
   grid-row: 1/2;
 }
 
+
 /* ocupa abajo a la derecha */
 .enlaceSuscripcion {
   grid-column: 2/3;
@@ -80,7 +82,7 @@ main {
   color: black;
   text-decoration: none;
   font-weight: 600;
-  font-size: calc(0.8rem + 1vw);
+  font-size: calc(0.6rem + 1.2vw);
   margin: 2% auto;
   padding: 4px 10%;
   border-radius: 50px;
@@ -102,6 +104,7 @@ main {
   padding: 20px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: url("../img_comidas/CARRUSEL-INDEX/Banner_titulos.png") repeat-y
     center center;
   background-size: 100%;
@@ -109,8 +112,9 @@ main {
   color: white;
 
   h2{
-    width: fit-content;
-    background-color: #54545496;
+    /* width: fit-content; */
+    margin: 0;
+    background-color: #545454db;
     border-radius: 10px;
   }
 }
@@ -311,21 +315,18 @@ la cual desaparece en pantallas pequeñas */
 */
 
 .informacion {
-  width: 100%;
-  justify-content: space-between;
-  padding: 40px 10px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   gap: 20px;
 }
 
 .informacion .datos {
-  grid-column: 1/2;
-  border: 1px solid black;
+  padding: 20px;
   background-color: white;
   border-radius: 30px;
-  padding: 20px;
   border: 1px solid #70349e;
 }
 
@@ -336,7 +337,6 @@ la cual desaparece en pantallas pequeñas */
 
 /* Estilo para el div que contiene el mapa */
 .ubicacion {
-  grid-column: 2/3;
   border-radius: 30px;
 }
 
@@ -362,7 +362,7 @@ la cual desaparece en pantallas pequeñas */
   }
 }
 
-/* media responsive sección favoritos para celular y tablet */
+/* media responsive sección favoritos e información para celular y tablet */
 @media (max-width: 760px) {
   .favoritos {
     position: relative;
@@ -409,25 +409,16 @@ la cual desaparece en pantallas pequeñas */
       color: white;
     }
   }
-}
 
-/* Cuando la pantalla sea menor a 550px la 
-distribución interna de la parte izquierda y 
-derecha pasa a ser de a una columna */
-@media (max-width: 550px) {
- 
   .informacion {
     width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-  }
-  .mapa {
-    width: 145%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 3fr;
+    justify-content: center;
   }
 }
 
-@media (width < 493px) {
+@media (width < 500px) {
   .enlaceMenu {
     padding-bottom: 25%;
   }
@@ -436,14 +427,8 @@ derecha pasa a ser de a una columna */
     padding-top: 25%;
   }
 
-  .informacion {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-  }
-  .mapa {
-    width: 108%;
+  .informacion{
+    padding: 40px 2%;
   }
 }
 
