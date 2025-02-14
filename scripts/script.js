@@ -60,31 +60,34 @@ function resaltarTituloPlatos(){
   
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    carruselPlatos();
-    resaltarTituloPlatos();
-});
 
 
-/* inicializo el script libreria swiper */
-document.addEventListener("DOMContentLoaded", function () {
+/* inicializo el script librería swiper */
+function inicializarSwiper() {
   const swiper = new Swiper(".slide-content", {
     loop: true,
     grabCursor: true,
     spaceBetween: 30,
     slidesPerView: "auto",
 
-    // paginacion botones
+    // pagination botones
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
       dynamicBullets: true,
     },
 
-    // Navegacion botones
+    // Navegación botones
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  carruselPlatos();
+  resaltarTituloPlatos();
+  inicializarSwiper();
 });
+
