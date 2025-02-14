@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    max-height: 70px;
     height: 6vh;
     background-color: #703493;
     overflow: hidden;

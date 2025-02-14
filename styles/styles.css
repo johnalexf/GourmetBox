@@ -266,21 +266,20 @@ la cual desaparece en pantallas pequeñas */
 }
 
 .slide-content {
-  margin-left: 2%;
   margin-bottom: 40px;
+  padding: 0 5%;
 }
 
-.card .textoCard img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
+.card .estrellas img {
+  width: 35px;
+  margin-top: 25px;
 }
 
 .card {
   border-radius: 20px;
   background-color: rgba(112, 52, 158, 0.507);
-  width: 320px;
-  height: 360px;
+  max-width: 320px;
+  height: auto;
 }
 
 .textoCard {
@@ -316,8 +315,8 @@ la cual desaparece en pantallas pequeñas */
 
 .informacion {
   max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+  margin: 0px auto;
+  padding: 0 40px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -412,6 +411,7 @@ la cual desaparece en pantallas pequeñas */
 
   .informacion {
     width: 90%;
+    padding: 0 0 40px;
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 3fr;
     justify-content: center;
@@ -427,9 +427,6 @@ la cual desaparece en pantallas pequeñas */
     padding-top: 25%;
   }
 
-  .informacion{
-    padding: 40px 2%;
-  }
 }
 
 @media(width < 370px){

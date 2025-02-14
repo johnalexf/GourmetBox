@@ -2,7 +2,7 @@
 y llamo a la funcion mostrar imagen que me recorre el array y va 
 cambiando las características de visibility y opacity se hace una espera entre transición*/
 
-const tiempoCambioPlatos = 3500;
+const tiempoCambioPlatos = 3400;
 
 //asignamos el mismo valor del tiempo de cambio de platos a la variable 
 const raiz = document.documentElement;
