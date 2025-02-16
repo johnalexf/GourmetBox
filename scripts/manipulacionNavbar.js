@@ -1,5 +1,5 @@
 //script para poner el nombre de usuario en todas las paginas
-let nameUser =  document.getElementById('sesion');
+let sesionNavbar =  document.getElementById('sesion');
 export let usuarioLogiado = "";
 
 // lineas de codigo para poner en negrita segun la pagina en la que se encuentre
@@ -14,7 +14,7 @@ export let cantidadCarritoIcono = document.getElementById('cantidadCarritoIcono'
 
 export function carritoCantidadAgregadaNavbar(){
     let cantidad = localStorage.getItem('cantidadListaCompras');
-    if ( cantidad != undefined) {
+    if ( cantidad ) {
         if(cantidad > 0){
             cantidadCarritoIcono.style.display = "block";
             cantidadCarritoIcono.innerText = cantidad; 
@@ -25,14 +25,14 @@ export function carritoCantidadAgregadaNavbar(){
 }
 
 
-if(localStorage.getItem('usuario') != undefined){
+if(localStorage.getItem('usuario')){
     if( localStorage.getItem('usuario').length != 0 ){
         usuarioLogiado = localStorage.getItem('usuario')
-        nameUser.innerText = usuarioLogiado;
-        nameUser.style.fontWeight = "bold";
+        sesionNavbar.innerText = usuarioLogiado;
+        sesionNavbar.style.fontWeight = "bold";
         carritoCantidadAgregadaNavbar();
     }else{
-        nameUser.innerText = "Ingresar";
+        sesionNavbar.innerText = "Ingresar";
     }
 }
 

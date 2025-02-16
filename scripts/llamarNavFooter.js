@@ -1,5 +1,12 @@
 // Cargar el contenido del footer
-fetch('../HTML/footer.html')
+
+let urlFooter = "";
+
+document.title == "Inicio"?
+    urlFooter = './HTML/footer.html':
+    urlFooter = '../HTML/footer.html'
+
+fetch(urlFooter)
     .then(response => response.text())
     .then(data => {
     document.getElementById('footer').innerHTML = data;
