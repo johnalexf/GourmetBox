@@ -1,5 +1,5 @@
-export let urlProductos = "https://gourmetboxbackend-production.up.railway.app/producto/";
-//export let urlProductos = "http://localhost:8080/producto/";
+// export let urlProductos = "https://gourmetboxbackend-production.up.railway.app/producto/";
+export let urlProductos = "http://localhost:8080/producto/";
 export let urlEscribir = "";
 export let metodo = '';
 
@@ -50,8 +50,6 @@ export function eliminarProducto(id) {
     xhr.send();
 }
 
-
-//variable de la urlProductos = "http://localhost:8080/producto/";
 //funcion para agregar un nuevo producto o reescribirlo
 export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,precio,urlImg,Reescribir) {
     
@@ -113,11 +111,9 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 
 }
 
-
-
 //sección para comunicación con la base de datos de usuarios
-export let urlUsuario = "https://gourmetboxbackend-production.up.railway.app/usuario/";
-//export let urlUsuario = "http://localhost:8080/usuario/";
+// export let urlUsuario = "https://gourmetboxbackend-production.up.railway.app/usuario/";
+export let urlUsuario = "http://localhost:8080/usuario/";
 
 //funcion para agregar un nuevo producto o reescribirlo
 export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, contrasena, esAdministrador, Reescribir) {
@@ -182,63 +178,6 @@ export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, c
 }
 
 //No funciono con fetch para hacer PUT o POST
-
-// export async function reescribirOCrearUsuario(id,usuario,nombre,correo,telefono,contrasena,esAdministrador,Reescribir) {
-
-//     //variable reescribir si es verdadera es para hacer una reescribir del usuario
-//     //si es falsa se crea un nuevo usuario
-    
-//     try {
-
-//         let respuesta;
-
-//         if(Reescribir == true){
-//             urlEscribir = urlUsuario + 'editar/' + id + "?";
-
-//             respuesta = await fetch(`${urlEscribir}nombre=${nombre}&telefono=${telefono}&correo=${correo}`,
-//                { method: 'PATCH'
-//                }
-//             );
-
-//             if (!respuesta.ok) {
-//                 throw new Error(`Error al conectarse con la pagina: ${respuesta.statusText}`);
-//             }
-    
-
-//             console.log(await respuesta.json());
-            
-//         }else{
-   
-//          // Enviar la solicitud POST para agregar o editar usuario
-//           respuesta = await fetch(urlUsuario + "crear/", {
-//                 method: "POST",
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify({
-//                     user_name: usuario,
-//                     nombre_usuario : nombre,
-//                     correo : correo,
-//                     telefono : telefono,
-//                     contrasena : contrasena,
-//                     es_administrador: esAdministrador
-//                 }),
-//             });
-
-//             if (!respuesta.ok) {
-//                 throw new Error(`Error al conectarse con la pagina: ${respuesta.statusText}`);
-//             }
- 
-//         }
-
-        
-//     } catch (error) {
-//         console.error('Error agregando o modificando usuario:', error.message);
-//     }
-
-// }
-
-
 export async function verificarSiUsuarioExiste(usuario) {
             
         try {
@@ -343,8 +282,6 @@ export async function confirmarContrasenaParaEditarPerfil(usuario,contrasena) {
         console.error('Error:', error.message);
       } 
 }
-
-
 
 //funcion para encriptar la contraseña
 export function encrypt_data(string) {

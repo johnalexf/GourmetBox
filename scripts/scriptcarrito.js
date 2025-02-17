@@ -1,9 +1,9 @@
 let listaCompras = [];
 
-//importacion de la funcion que permite modificar el valor de numero que esta encima del carrito de navbar
+//importación de la funcion que permite modificar el valor de numero que esta encima del carrito de navbar
 import { carritoCantidadAgregadaNavbar } from './manipulacionNavbar.js';
 
-//variables para la vista si el carrito esta vacio
+//variables para la vista si el carrito esta vació
 let carritoVacio = document.querySelector(".carritoVacio");
 let carrito = document.querySelector(".carrito");
 
@@ -22,16 +22,16 @@ let modalVistaProducto = document.getElementById("modalVistaProducto");
 let botonCerrarVistaProducto = document.getElementById("cerrarVistaProducto");
 
 //Obtener de local storage la lista de compras si esta creada
-if (localStorage.getItem('listaCompras') != undefined) {
+if (localStorage.getItem('listaCompras')) {
     listaCompras = JSON.parse(localStorage.getItem('listaCompras'));
 }
 
 //variable para verificar si hay un usuario registrado
 let usuario = localStorage.getItem('usuario');
 
-//condicional para poner en vista al carrito vacio o al carrito con productos dependiendo del caso
+//condicional para poner en vista al carrito vació o al carrito con productos dependiendo del caso
 function inicializarVista(){
-    if(usuario != "" && usuario != undefined ){
+    if(usuario != "" && usuario){
         if (listaCompras.length != 0) {
             carritoVacio.style.display = "none";
             carrito.style.display = "grid";
@@ -44,7 +44,6 @@ function inicializarVista(){
 }
 
 inicializarVista();
-
 
 function actualizarCarrito() {
     productos();
@@ -115,8 +114,6 @@ window.mostrarProducto = mostrarProducto;
 botonCerrarVistaProducto.addEventListener('click' , ()=>{           
     modalVistaProducto.style.display = "none"
 });
-
-
 
 //inicio resumenDeCompra();
 function resumenDeCompra() {
@@ -214,20 +211,6 @@ export function eliminarDefinitivo() {
 }
 window.eliminarDefinitivo = eliminarDefinitivo;
 
-
-
-document.addEventListener('input', function (event) {
-    if (!event.target.closest('.modalPago')) {
-        verificarCantidadNueva(event);
-    }
-});
-
-document.addEventListener('change', function (event) {
-    if (!event.target.closest('.modalPago')) {
-        verificarCantidadNueva(event);
-    }
-});
-
 //funcion para verificar si el usuario escribió una cantidad de platos en el input y actualizar el valor en lista de compras
 function verificarCantidadNueva(event) {
     let tipo = event.type;
@@ -257,6 +240,18 @@ function verificarCantidadNueva(event) {
 
 
 //modal pago
+document.addEventListener('input', function (event) {
+    if (!event.target.closest('.modalPago')) {
+        verificarCantidadNueva(event);
+    }
+});
+
+document.addEventListener('change', function (event) {
+    if (!event.target.closest('.modalPago')) {
+        verificarCantidadNueva(event);
+    }
+});
+
 const btnPagarCarrito = document.getElementById("botonPagar");
 btnPagarCarrito.addEventListener("click", () => {
     
@@ -346,11 +341,6 @@ cerrar.addEventListener("click", () => {
     modalPago.style.display = "none";
 });
 
-
-
-
-
-
 const btnPago = document.getElementById("realizarPago");
 
 btnPago.addEventListener("click", () => {
@@ -366,6 +356,6 @@ btnPago.addEventListener("click", () => {
         inicializarVista();
 
     }else{
-        swal("Debes Verificar!", "Asegurate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
+        swal("Debes Verificar!", "Asegúrate de Ingresar los Datos de tu Tarjeta Correctamente", "warning");
     }
 });

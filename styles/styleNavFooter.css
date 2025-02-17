@@ -17,6 +17,11 @@ nav, footer{
   background-color: rgb(170, 135, 193);
 }
 
+footer{
+  position: relative;
+  z-index: 20;
+}
+
 /* Aumenta el tamaño del elemento al pasar el mouse */
 .nav-item a:hover{
   transform:scale(1.2) translateX(-5px);

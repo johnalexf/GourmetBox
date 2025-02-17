@@ -6,11 +6,14 @@ document.title == "Inicio"?
     urlFooter = './HTML/footer.html':
     urlFooter = '../HTML/footer.html'
 
-fetch(urlFooter)
+
+
+function insertarHTMLPrincipal(url, palabraFiltro){
+    fetch(url)
     .then(response => response.text())
     .then(data => {
         //con el fin de extraer solo el footer realizamos un filtro de todo el html footer.html
-        let palabraFiltro = "footer";
+        // let palabraFiltro = "footer";
         const inicio = data.indexOf("<"+ palabraFiltro);
         const fin = data.indexOf(palabraFiltro + ">", inicio); // Busca desde la posición de inicio
         let texto;
@@ -18,10 +21,13 @@ fetch(urlFooter)
         if (inicio !== -1 && fin !== -1) {
             texto = data.slice(inicio, (fin + palabraFiltro.length + 1)); // Extraer
         } 
-        document.getElementById('footer').innerHTML = texto;
+        document.getElementById(palabraFiltro).innerHTML = texto;
         console.log(typeof(texto))
         console.log(texto)
     })
-    .catch(error => console.error('Error al cargar el footer:', error));
- 
+    .catch(error => console.error(`Error al cargar el ${palabraFiltro}footer:`, error));
+}
+
+insertarHTMLPrincipal(urlFooter,'footer');
+
  

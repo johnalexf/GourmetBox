@@ -2,14 +2,14 @@
 let sesionNavbar =  document.getElementById('sesion');
 export let usuarioLogiado = "";
 
-// lineas de codigo para poner en negrita segun la pagina en la que se encuentre
+// lineas de código para poner en negrita según la pagina en la que se encuentre
 export let seccionNavbar = document.getElementById(document.title.toLowerCase());
 
 if(seccionNavbar.id != "carrito"){
     seccionNavbar.style.fontWeight = "bold";
 }
 
-//lineas de codigo para mostrar la cantidad de productos agregados en el carrito sobre el icono de nabvar 
+//lineas de código para mostrar la cantidad de productos agregados en el carrito sobre el icono de navbar 
 export let cantidadCarritoIcono = document.getElementById('cantidadCarritoIcono');
 
 export function carritoCantidadAgregadaNavbar(){
@@ -35,6 +35,7 @@ if(localStorage.getItem('usuario')){
         sesionNavbar.innerText = "Ingresar";
     }
 }
+
 
     
 

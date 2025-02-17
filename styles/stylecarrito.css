@@ -1,28 +1,3 @@
-main {
-    /* height: 100vh; */
-    /* padding: 3% 12%; */
-    background-color: #FFFEF4;
-    background-image: url('../img/FONDOCONTACTANOS.jpg');
-    background-size: cover;
-    /* Cubre todo el contenedor */
-    background-position: center;
-    /* Centra la imagen */
-    background-repeat: no-repeat;
-    min-height: 80vh;
-}
-
-.titulo{
-    padding-top: 3%;
-}
-
-
-/* Para CEL (800px) */
-@media (max-width: 450px) {
-    main {
-        background-image: url('../img/FONDOCELULAR.jpg');
-        /* Agregar la extensión correcta, como .jpg */
-    }
-}
 
 /* Asignación de poppins regular 400 a párrafos */
 * {
@@ -54,13 +29,60 @@ button {
     cursor: pointer;
 }
 
-#resumenItems tr, #resumenItems td{
-    background-color: transparent;
+hr {
+    line-height: 0px;
+}
+
+/* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFEF4;
+}
+
+main {
+    flex: 1;
+    position: relative;
+}
+
+.imagenFondoManipulable{
+    width: 200px;
+    position: absolute;
+    z-index: -1;
+
+    img{
+        width: 100%;
+        height: 100%;
+    };
+}
+
+.imagenSuperiorDerecha{
+    top: 50px;
+    right: 0;
+}
+.imagenInferiorIzquierda{
+    bottom: -70px;
+}
+.imagenInferiorDerecha{
+    bottom: 0;
+    right: 0;
+}
+
+
+.titulo{
+    padding-top: 3%;
 }
 
 .titulo h1,
-.tituloCuadroCompras h2,
-.carritoVacio {
+.carritoVacio,
+.tituloCuadroCompras h2 {
     color: #70349E;
     text-align: center;
 }
@@ -70,60 +92,47 @@ button {
 }
 
 .carritoVacio {
+    flex: 1;
     margin: auto;
-    padding-top: 30px;
-    /* display: none; */
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 520px;
-    height: 100%;
-
+    justify-content: center;
+    gap: 30px;
+    width: 600px;
 }
 
 .tituloCarritoVacio {
     display: grid;
     grid-template-columns: 3fr 1fr;
-}
-
-.tituloCarritoVacio h1 {
-    display: flex;
     align-items: end;
 }
 
-.carritoVacio h4 {
-    line-height: 38px;
-}
-
 .carritoVacio a {
+    margin: 0px auto;
+    padding: 5px 30px;
     color: white;
     text-decoration: none;
     font-weight: 300;
     font-size: 22px;
-    margin: 20px auto auto;
-    padding: 5px 30px;
     border-radius: 50px;
     border: 2px solid #70349E;
-    background-color: rgba(105, 91, 199, 0.534);
+    background-color:#afa8dc;
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
-}
 
-.carritoVacio a:hover {
-    color: #70349E;
-    background-color: white;
-}
-
-hr {
-    line-height: 0px;
+    &:hover {
+        color: #70349E;
+        background-color: white;
+    }
 }
 
 .carrito {
+    display: none;
     margin: auto;
     max-width: 1000px;
     border-radius: 20px;
-    /* border: 2px solid black; */
-    display: none;
-    /* display: grid; */
+    
+    /* display: grid; javascript*/
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
@@ -148,7 +157,6 @@ hr {
     /* Es necesario para poder acomodar el botón de eliminar de forma flotante */
 }
 
-
 .productoCarrito img {
     border-radius: 20px;
     margin: 20px 0;
@@ -165,8 +173,8 @@ hr {
     font-size: 18px;
 }
 
-
-/* Ya que en la parte de cantidad, necesitamos tres objetos, es necesario crear un div interno el cual permite centrarlos */
+/* Ya que en la parte de cantidad, necesitamos tres objetos, 
+es necesario crear un div interno el cual permite centrarlos */
 .productoCantidad,
 .cantidad {
     display: grid;
@@ -193,50 +201,38 @@ hr {
     font-size: 20px;
 }
 
-/* Para eliminar botones que trae por defecto un input numérico navegadores basados en WebKit (Chrome, Safari, etc.) */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-
 /* Estilos para los iconos dentro de cantidad */
 .cantidad i {
-    font-weight: bold;
-    display: grid;
-    place-items: center;
     width: 25px;
     height: 25px;
+    display: grid;
+    place-items: center;
     font-size: 25px;
-    /* border: 1px solid black; */
+    font-weight: bold;
     color: rgba(105, 91, 199);
-    cursor: pointer;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-}
+    cursor: pointer;
 
-.cantidad i:hover {
-    color: rgb(29, 26, 198);
-    box-shadow: 3px 3px rgba(0, 0, 0, 0);
+    &:hover {
+        color: rgb(29, 26, 198);
+        box-shadow: 3px 3px rgba(0, 0, 0, 0);
+    }
 }
-
 
 /* EStilos para el icono botón de eliminar */
 .botonEliminar {
-    position: absolute;
-    /* Elimina su posición normal  */
-    top: 0px;
-    /* Top y right determinan su ubicación en el primer contenedor que posea posición relativa */
-    right: 5px;
     height: 30px;
     width: 24px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
     font-size: 23px;
     color: #8080806b;
     cursor: pointer;
-}
 
-.botonEliminar:hover {
-    color: rgb(174, 59, 59);
+    &:hover {
+        color: rgb(174, 59, 59);
+    }
 }
 
 .verInformacion {
@@ -252,22 +248,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* Estilos para el resumen de compra */
-
 .vistaPreviaYResumenCompra {
     position: relative;
-
 }
 
 .resumenCompra {
     position: sticky;
+    max-width: 340px;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid;
     border-radius: 10px;
     overflow: hidden;
-    margin: 30px auto;
     align-items: center;
-    max-width: 340px;
-
+    
+    background-color: #fffef4ea;
 }
 
 .resumenCompra h3 {
@@ -290,6 +285,10 @@ input[type="number"]::-webkit-inner-spin-button {
 .resumenCompra .totales p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+}
+
+#resumenItems tr, #resumenItems td{
+    background-color: transparent;
 }
 
 #botonPagar {
@@ -315,12 +314,15 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media(width < 860px) {
+
+    .imagenFondoManipulable{
+        width: 120px;
+    }
     .carrito {
         grid-template-columns: 1fr;
     }
 
-    .carrito,
-    .carritoVacio {
+    .carrito{
     padding: 0 12%;
     }
 }
