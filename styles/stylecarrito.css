@@ -284,12 +284,10 @@ es necesario crear un div interno el cual permite centrarlos */
     }
 }
 
-
 .resumenCompra .totales p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
-
 
 #botonPagar {
     display: block;
@@ -333,10 +331,8 @@ es necesario crear un div interno el cual permite centrarlos */
         flex-direction: column;
         padding: 0 6%;
     }
-
 }
 
-/*  */
 @media(width < 650px) {
     .carritoVacio {
         width: auto;

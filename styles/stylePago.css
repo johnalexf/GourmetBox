@@ -1,22 +1,14 @@
-* {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    justify-content: center;
-
-}
-
-
 .contenedorPago {
+    display: none;
     position: fixed;
     top: 0;
+    /* z-index de 1030 para superar o igualar el de por defecto de bootstrap para el navbar */
+    z-index: 1030;
     width: 100%;
     height: 100vh;
-    background-color: rgba(14, 13, 13, 0.755);
-    display: none;
-    transition: 1s ease;
-    font-family: 'Poppins', sans-serif;
     align-content: center;
+    background-color: rgba(14, 13, 13, 0.755);
+    transition: 1s ease;
 }
 
 .modalPago {
@@ -135,7 +127,7 @@
 
 @media (width < 820px) {
     .modalPago{
-        width: 100%;
+        width: 98%;
     }
 
     .formularioTarjeta {
@@ -226,8 +218,6 @@
     background-color: white;
     color: black;
 }
-
-
 
 #realizarPago {
     color: black;
