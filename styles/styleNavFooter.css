@@ -14,7 +14,7 @@ footer, nav{
 
 nav, footer{
   width: 100%;
-  background-color: rgba(170, 135, 193, 0.98);
+  background-color: rgb(170, 135, 193);
 }
 
 /* Aumenta el tamaño del elemento al pasar el mouse */

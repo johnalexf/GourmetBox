@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: 16px;
 
 }
 
@@ -14,17 +14,12 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
-
 }
 
 main {
     background-color: #FFFEF4;
     position: relative;
 }
-
-
-
 
 .viaje {
     position: absolute;
@@ -40,7 +35,6 @@ main {
     flex-direction: row;
     animation: RightToLeft 20s infinite linear;
 }
-
 
 @keyframes RightToLeft {
     from {
