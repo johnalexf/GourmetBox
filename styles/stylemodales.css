@@ -18,18 +18,18 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.466);
-    transition: 3s ease-in-out;
+    transition: 3s ease-out;
 }
 
 
 .modal1-contenedor,
 .modalterminos {
+    position: relative;
     margin: auto;
+    padding: 40px 5%;
     background-color: white;
-    padding: 40px 35px;
     border-radius: 10px;
     border: 1px solid black;
-    position: relative;
     overflow: auto;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .modalterminos {
-    width: 60%;
+    width: 80%;
     height: 95%;
     text-align: justify;
 }
