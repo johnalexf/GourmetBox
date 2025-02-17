@@ -34,7 +34,7 @@ function inicializarVista(){
     if(usuario != "" && usuario){
         if (listaCompras.length != 0) {
             carritoVacio.style.display = "none";
-            carrito.style.display = "grid";
+            carrito.style.display = "flex";
             actualizarCarrito();
         } else {
             carritoVacio.style.display = "flex";
@@ -62,9 +62,7 @@ function productos() {
         contenidoCarritoHTML +=
         `<div class="productoCarrito">
             <i class="bi bi-x-circle-fill botonEliminar" onclick = "eliminarProducto(${producto.id})"></i> 
-            <div class="productoCarritoImg">
-                <img src="${producto.url}" >
-            </div>
+            <img src="${producto.url}" >
             <div class="productoCarritoInfo">
                 <h5>${producto.nombre}</h5>
                 <p> $${producto.subtotal.toLocaleString()} </p>
@@ -75,10 +73,9 @@ function productos() {
                         <i class="bi bi-plus-square-fill" onclick = "aumentarProducto(${producto.id})"></i>  
                     </div> 
                 </div>
-                <p class="verInformacion infoPantallaGrande" onclick="mostrarProducto(${producto.id})">ver información</p>
             </div> 
+            <p class="verInformacion" onclick="mostrarProducto(${producto.id})">ver información</p>      
         </div>
-        <p class="verInformacion infoPantallaPequena" onclick="mostrarProducto(${producto.id})">ver información</p>      
         <hr>`
     });
 
