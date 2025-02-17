@@ -155,51 +155,34 @@
           </div>
 
           <div class="productosAgregados">
-            <div class="productoCarrito">
-              <i class="bi bi-x-circle-fill botonEliminar"></i>
-              <div class="productoCarritoImg">
-                <img src="../img_comidas/ALMUERZOS/bowl_junior.png" alt="" />
-              </div>
-
-              <div class="productoCarritoInfo">
-                <h5>desayuno tradicional</h5>
-                <p>$15000</p>
-                <div class="productoCantidad">
-                  <div class="cantidad">
-                    <i class="bi bi-dash-square-fill"></i>
-                    <input type="number" />
-                    <i class="bi bi-plus-square-fill"></i>
-                  </div>
-                </div>
-                <a href="">ver información</a>
-              </div>
-            </div>
+            <!-- productos insertados con javascript -->
           </div>
+          
         </div>
 
         <div class="vistaPreviaYResumenCompra">
           <!-- Inicio Resumen de compra --------------------->
           <div class="resumenCompra">
             <h3>RESUMEN DE COMPRA</h3>
-            <table class="table" style="background-color: transparent">
+            <table>
               <thead>
                 <tr>
-                  <th scope="col" style="background-color: transparent">
+                  <th scope="col">
                     Producto
                   </th>
-                  <th scope="col" style="background-color: transparent">
+                  <th scope="col">
                     Cantidad
                   </th>
-                  <th scope="col" style="background-color: transparent">
+                  <th scope="col">
                     Total
                   </th>
                 </tr>
               </thead>
-              <tbody id="resumenItems" style="background-color: transparent">
+              <tbody id="resumenItems">
                 <!-- Aquí se agregarán  los productos -->
               </tbody>
             </table>
-            <div class="totales" style="background-color: transparent">
+            <div class="totales">
               <p>
                 <strong>TOTAL DE PRODUCTOS</strong>
                 <span id="totalProductos">0</span>
@@ -214,7 +197,6 @@
             </div>
             <button class="btn btn-primary" id="botonPagar">PAGAR</button>
           </div>
-
           <!-- Fin Resumen de compra --------------------->
         </div>
       </div>

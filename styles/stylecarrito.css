@@ -261,7 +261,6 @@ es necesario crear un div interno el cual permite centrarlos */
     border-radius: 10px;
     overflow: hidden;
     align-items: center;
-    
     background-color: #fffef4ea;
 }
 
@@ -275,21 +274,21 @@ es necesario crear un div interno el cual permite centrarlos */
     background-color: transparent;
 }
 
-.resumenCompra .table {
+.resumenCompra table {
     width: 90%;
     margin-bottom: 20px;
-    align-items: center;
-    background-color: transparent;
+   
+    td:not(:first-child), th{
+        text-align: center;
+    }
 }
+
 
 .resumenCompra .totales p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
-#resumenItems tr, #resumenItems td{
-    background-color: transparent;
-}
 
 #botonPagar {
     display: block;
@@ -318,6 +317,17 @@ es necesario crear un div interno el cual permite centrarlos */
     .imagenFondoManipulable{
         width: 120px;
     }
+
+    .tituloCarritoVacio {
+        grid-template-columns: 1fr;
+
+        img {
+            grid-row-start: 1;
+            margin: auto;
+            border-radius: 20px;
+        }
+    }
+
     .carrito {
         grid-template-columns: 1fr;
     }
@@ -332,17 +342,6 @@ es necesario crear un div interno el cual permite centrarlos */
     .carritoVacio {
         width: auto;
     }
-
-    .tituloCarritoVacio {
-        grid-template-columns: 1fr;
-    }
-
-    .tituloCarritoVacio img {
-        grid-row-start: 1;
-        margin: auto;
-        border-radius: 20px;
-    }
-
 }
 
 @media(width < 450px) {
