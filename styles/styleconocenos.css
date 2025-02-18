@@ -133,8 +133,13 @@ main {
 
 .accordion-button:not(.collapsed)::after {
   background-image: url("../img/image.png");
-  color: white;
 }
+
+.accordion-button::after {
+  background-image: url("../img/flechaAbajo.png");
+  color: #70349E;
+}
+
 
 
 /* Inicio TARJETAS PERFILES */
