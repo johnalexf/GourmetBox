@@ -16,12 +16,12 @@ body{
 main {
   max-width: 1400px;
   margin: auto;
-  padding: 50px;
+  padding: 20px 50px;
 }
 
 /* Estilos para las imágenes de fondo */
 .imagenFondoManipulable{
-  width: 14vw;
+  width: 200px ;
   position: absolute;
   z-index: -1;
 
@@ -41,12 +41,18 @@ main {
 }
 
 @media (width < 992px){
+  .imagenFondoManipulable{
+    width: 150px ;
+  }
   .imagenInferiorIzquierda{
     bottom: 120px;
   }
 }
 
 @media (width < 576px){
+  .imagenFondoManipulable{
+    width: 80px ;
+  }
   .imagenInferiorIzquierda{
     bottom: 140px;
   }
