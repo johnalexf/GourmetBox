@@ -132,7 +132,7 @@ main {
 }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: url("../img/image.png");
+  background-image: url("../img/flechaArriba.png");
 }
 
 .accordion-button::after {
@@ -140,10 +140,7 @@ main {
   color: #70349E;
 }
 
-
-
 /* Inicio TARJETAS PERFILES */
-
 .contenedorPrincipal {
   display: block;
 }
