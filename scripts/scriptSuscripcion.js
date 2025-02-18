@@ -4,7 +4,7 @@ const modal = document.getElementById('subscriptionModal');
 const modalImage = document.getElementById('modalImage'); // Referencia a la imagen del modal
 const closeButton = document.querySelector('.close-button');
 const cancelButton = document.getElementById('cancelButton');
-export const agreeButton = document.getElementById('agreeButton'); // Botón "Estoy de acuerdo"
+export const agreeButton = document.getElementById('agreeButton'); // Botón "Aceptar"
 export let precio = "";
 export let nombreSuscripcion = "";
 
@@ -30,7 +30,6 @@ buttons.forEach((button) => {
                 modalImage.src = imageUrl; // Establece la URL de la imagen en el modal
 
                 modal.style.display = 'flex'; // Muestra el modal
-                document.querySelector('.modal1-contenedor').style.display = 'block'; // Asegúrate de que el contenido esté visible
                 
                 const objetoC = this.closest(".Objeto");
                 precio = objetoC.querySelector(".precio-color").textContent;
@@ -44,7 +43,6 @@ buttons.forEach((button) => {
 // Función para cerrar el modal
 const closeModal = () => {
     modal.style.display = 'none'; // Oculta el modal
-    document.querySelector('.modal1-contenedor').style.display = 'none'; // Oculta el contenido del modal también
 };
 
 // Eventos para cerrar el modal

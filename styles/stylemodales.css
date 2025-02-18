@@ -1,17 +1,10 @@
-.modal1-contenedor p{
-    font-size: 20px;
-}
-
 .producto p{
     font-size: 16px;
 }
 
-.modal1,
-.modalterminosP {
+.modal1 {
     display: none;
-    /* Desaparece el contenedor */
-    position: fixed;
-    /*Mantiene la pantalla fija asi se haga scroll  */
+    position: fixed;  /*Mantiene la pantalla fija asi se haga scroll  */
     z-index: 2000;
     top: 0;
     left: 0;
@@ -21,12 +14,11 @@
     transition: 3s ease-out;
 }
 
-
 .modal1-contenedor,
 .modalterminos {
     position: relative;
     margin: auto;
-    padding: 40px 5%;
+    padding: 40px;
     background-color: white;
     border-radius: 10px;
     border: 1px solid black;
@@ -38,36 +30,46 @@
     width: 80%;
     max-height: 97%;
     height: auto;
-    text-align: justify;
+    text-align: center;
+
+    /* b  */
+    &>p, b{  
+        margin: 0;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    h4,h3{
+        color: #70349E;
+    }
+
+    input {
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    
+    button {
+        margin: auto;
+        width: 150px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.7);
+    }
 }
+
 
 .modalterminos {
     width: 80%;
     height: 95%;
     text-align: justify;
+
+    h5,h6{
+        text-align: center;
+    }
 }
 
-.modal1 b,
-#textoModalEliminar p {
-    text-align: center;
-    font-size: 20px;
-}
-
-.modal1 h4, .modal1 h3 {
-    text-align: center;
-    color: #70349E;
-}
-.modal1 h3{
-    margin-bottom: 20px;
-}
-
-.modalterminos h5,
-.modalterminos h6 {
-    text-align: center;
-}
-
-.cerrar,
-.cerrarTerminos {
+.cerrar {
     color: rgb(231, 99, 99);
     width: 25px;
     height: 25px;
@@ -83,51 +85,21 @@
     box-shadow: 1px 8px rgba(0, 0, 0, 0.25);
 }
 
-.cerrar:hover,
-.cerrarTerminos:hover {
+.cerrar:hover {
     box-shadow: 3px 8px rgba(0, 0, 0, 0);
     color: rgb(174, 59, 59);
     cursor: pointer;
 }
 
-.vistaPreviaAceptar,
-.vistaPreviaMensaje,
-.contenedorBotonGuardarCambiosPerfil,
-.inputContrasenaEditarPerfil,
-.divBotonIrRegistro {
-    margin-top: 35px;
-    /* margin: auto;  */
-    /* width: 300px; */
-    text-align: center;
-}
-
-.vistaPreviaAceptar,
 .modal-buttons {
     margin-top: 35px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    text-align: center;
 }
 
-.inputContrasenaEditarPerfil input {
-    padding: 5px 10px;
-    border-radius: 10px;
-}
 
-.vistaPreviaAceptar button,
-.contenedorBotonGuardarCambiosPerfil button,
-.modal-buttons button,
-.divBotonIrRegistro button {
-    margin: auto;
-    width: 150px;
-    height: 40px;
-    font-weight: bold;
-    border-radius: 50px;
-    /* background-color: rgba(105, 91, 199, 0.534); */
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-/* Boton color rojo */
+/* Botón color rojo */
 .botonRojo {
     background-color: rgb(231, 99, 99);
     border: 2px solid rgb(231, 99, 99);
@@ -141,7 +113,7 @@
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 }
 
-/* Boton color azul */
+/* Botón color azul */
 .botonAzul,
 .botonAzulInvertido:hover {
     background-color: white;
@@ -162,13 +134,11 @@
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 }
 
-#contenidoConfirmacion p{
-    text-align: center;
-    margin: 0;
-}
-
-
 @media(width < 840px) {
+    .modal1-contenedor,
+    .modalterminos {
+        padding: 40px 5%;
+    }
     .modalterminos {
         width: 95%;
     }
@@ -176,19 +146,11 @@
 
 @media (width < 450px) {
 
-    .vistaPreviaAceptar,
-    .modal-buttons,
-    .vistaPreviaMensaje,
     .modal1-contenedor {
         width: 95%;
     }
 
-    .vistaPreviaAceptar button,
     .modal-buttons button {
         width: 120px;
     }
-}
-
-.subscriptionName {
-    font-size: 19px;
 }

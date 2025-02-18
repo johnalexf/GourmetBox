@@ -24,10 +24,10 @@ var botonNo = document.getElementById("botonNo");
 const validacion = localStorage.getItem('validacion');
 
 if( validacion == 'enviado'){
-  modalMensajeExitoso.style.display = "block"; //Abrir ventana Mensaje Exitoso
+  modalMensajeExitoso.style.display = "flex"; //Abrir ventana Mensaje Exitoso
 }else{
   if( localStorage.getItem('contenidoFormulario') != undefined &&  localStorage.getItem('contenidoFormulario').length > 16){
-    modalContinuarFormulario.style.display = "block"; //Abrir ventana Continuar Formulario
+    modalContinuarFormulario.style.display = "flex"; //Abrir ventana Continuar Formulario
   }
 }
 
@@ -118,5 +118,5 @@ function verificarEmail(){
 formulario.addEventListener('submit', function(event) {
   localStorage.removeItem('contenidoFormulario');
   localStorage.setItem('validacion','enviado');
-  modalMensajeExitoso.style.display = "block"
+  modalMensajeExitoso.style.display = "flex"
 });

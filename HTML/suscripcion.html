@@ -132,7 +132,6 @@
     </section>
 
     <!-- Contenedores suscripción -->
-    <!-- Contenedores suscripción -->
     <section class="Suscripcion">
       <div class="Objeto">
         <div class="Texto-Objeto">
@@ -243,17 +242,15 @@
       </div>
     </section>
 
-    <!-- Ventana emergente porfavor realiza tu registro-->
+    <!-- Ventana emergente por favor realiza tu registro-->
     <div id="modalRealizarRegistro" class="modal1">
-      <div class="modal1-contenedor modalPequeno">
+      <div class="modal1-contenedor">
         <i class="bi bi-x-circle-fill cerrar" id="cerrarModalRealizarRegistro"></i>
-        <div>
-          <P>Nos complace que desees adquirir nuestros planes, 
-            por favor regístrate y/o inicia sesión.</P>
-        </div>
-        <div class = "divBotonIrRegistro">
-          <a href="./login.html"> <button class="botonAzul"  > Ingresar </button> </a>
-        </div>
+        <P>Nos complace que desees adquirir nuestros planes, 
+          por favor regístrate y/o inicia sesión.</P>
+        <a href="./login.html"> 
+          <button class="botonAzulInvertido mt-4"> Ingresar </button>
+        </a>
       </div>
     </div>
 
@@ -264,21 +261,20 @@
         <i class="bi bi-x-circle-fill cerrar close-button" id="cerrarModalMensajeExitoso"></i>
         <p>
           Vas a adquirir el plan de suscripción
-          <span id="subscriptionName"></span>.
-          <br />
+          <span id="subscriptionName"></span>
         </p>
         <!-- Contenedor para centrar la imagen -->
-        <div style="display: flex; justify-content: center; margin-bottom: 10px">
+        <div style="display: flex; justify-content: center; margin: 20px">
           <img id="modalImage" src="" alt="" style="
-                max-width: 55%;
+                max-width: 70%;
                 border: solid 1px lightgray;
                 border-radius: 10px;
               " />
         </div>
-        <p>Si deseas continuar, dale clic al botón "Estoy de acuerdo".</p>
+        <p>Si deseas continuar, dale clic al botón "Aceptar".</p>
         <div class="modal-buttons">
-          <button style="width: auto" id="agreeButton" class="botonAzul" id="realizarPago"> 
-            Estoy de acuerdo
+          <button  id="agreeButton" class="botonAzul"> 
+            Aceptar
           </button>
           <button id="cancelButton" class="botonRojo">Cancelar</button>
         </div>

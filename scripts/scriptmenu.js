@@ -140,9 +140,9 @@ export function adicionarCarrito(id) {
             carritoCantidadAgregadaNavbar();
 
             localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
-            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre_producto} </b> ha sido agregado al carrito. </p>`;
+            mensajeModal.innerHTML = `El producto  <b>${menu[indiceMenu].nombre_producto} </b> ha sido agregado al carrito.`;
         } else {
-            mensajeModal.innerHTML = `<p> El producto  <b>${menu[indiceMenu].nombre_producto} </b> ya se ha agregado al carrito. </p>`;
+            mensajeModal.innerHTML = `El producto  <b>${menu[indiceMenu].nombre_producto} </b> ya se ha agregado al carrito. `;
         }
 
         modalAgregadoACarrito.style.display = "flex";

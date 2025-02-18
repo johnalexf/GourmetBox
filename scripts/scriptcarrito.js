@@ -15,9 +15,9 @@ let indiceListaCompras = 0;
 
 //variables para mostrar el modal de seguro desea eliminar producto
 let modalEliminar = document.getElementById("modalEliminarProducto");
-let textoModalEliminar = document.getElementById("textoModalEliminar");
+let productoAEliminar = document.getElementById("productoAEliminar");
 
-let producto = document.querySelector(".producto");
+let producto = document.querySelector("#producto");
 let modalVistaProducto = document.getElementById("modalVistaProducto");
 let botonCerrarVistaProducto = document.getElementById("cerrarVistaProducto");
 
@@ -182,8 +182,7 @@ window.aumentarProducto = aumentarProducto;
 //función para eliminar un producto la cual abre un modal para confirmar antes de eliminar
 export function eliminarProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
-    textoModalEliminar.innerHTML = `<p> Se eliminara el producto <b>${listaCompras[indiceListaCompras].nombre}</b> del carrito.</p>
-                                    <p> ¿Esta seguro? </p>`
+    productoAEliminar.innerText = `${listaCompras[indiceListaCompras].nombre}`
     modalEliminar.style.display = "flex";
 }
 window.eliminarProducto = eliminarProducto;
