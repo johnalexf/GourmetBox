@@ -76,6 +76,11 @@ main {
     right: 0;
 }
 
+@media(width < 860px) {
+    .imagenFondoManipulable{
+        width: 120px;
+    }
+}
 
 .titulo{
     padding: 20px;
@@ -312,10 +317,6 @@ es necesario crear un div interno el cual permite centrarlos */
 }
 
 @media(width < 860px) {
-
-    .imagenFondoManipulable{
-        width: 120px;
-    }
 
     .tituloCarritoVacio {
         grid-template-columns: 1fr;

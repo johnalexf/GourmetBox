@@ -1,28 +1,9 @@
-/* Paleta de colores
-#FFFEF4
-#D6CB4F
-#71B344
-#869639
-#6A5BC7
-#70349E
-*/
-
-main {
-    background-color: rgba(112, 179, 68, 0.2);
-    padding: 10px 15%;
-    background-image: url('../img/fondo5contactenos.jpg');
-    background-size: cover; /* Cubre todo el contenedor */
-    background-position: center;/* Centra la imagen */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: grid;
-    place-items: center;
+body{
+    background-color: #FFFEF4;
 }
 
-@media (max-width: 1100px) {
-    main {
-        background-image: url('../img/FONDOCELULAR.jpg');
-    }
+main {
+    position: relative;
 }
 
 /* Asignación de poppins regular 400 a párrafos */
@@ -32,7 +13,6 @@ main {
     font-style: normal;
     font-size: 16px;
     justify-content: center;
-
 }
 
 /* Asignación de roboto bold 700 a títulos */
@@ -40,6 +20,7 @@ h1,
 h2,
 h3,
 span {
+    margin: 0;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-style: normal;
@@ -47,6 +28,36 @@ span {
 
 button {
     font-weight: bold;
+}
+
+/* Estilos para las imágenes de fondo */
+.imagenFondoManipulable{
+    width: 14vw;
+    position: fixed;
+    z-index: -1;
+
+    img{
+        width: 100%;
+        height: 100%;
+    };
+}
+
+.imagenSuperiorDerecha{
+    top: 80px;
+    right: 0;
+}
+.imagenInferiorIzquierda{
+    bottom: 0px;
+}
+.imagenInferiorDerecha{
+    bottom: 0;
+    right: 0;
+}
+
+@media(width< 470px){
+    .imagenFondoManipulable{
+        display: none;
+    }
 }
 
  /* Titulo principal */
@@ -61,10 +72,11 @@ button {
 .divContenidoFormulario, .informacion, .parrafoIntermedio {
     width: 800px;
     padding: 30px 10px;
+    margin: auto;
 }
 
-.parrafoIntermedio{
-    padding-bottom: 0px;
+.parrafoIntermedio p{
+    margin: 0;
 }
 
 .divContenidoFormulario, .informacion {
@@ -199,12 +211,12 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 
-/* Cuando el tamaño de la pantalla sea menor a 830px cambia la vista
+/* Cuando el tamaño de la pantalla sea menor a 992px cambia la vista
  a una columna y el botón se asigna un espacio de ocupación de una columna */
-@media(width < 830px) {
+@media(width < 992px) {
     
     .textoTitulo h1{
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .textoParrafo h5{
@@ -223,6 +235,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
         width: 500px;
+        padding: 20px 10px;
     }
 
     .divContenidoFormulario, .informacion {
@@ -257,8 +270,12 @@ input[type="number"]::-webkit-inner-spin-button {
  parte izquierda y derecha pasa a ser de a una columna */
 @media(width < 600px) {
     
+    .titulo h1 {
+        font-size: 40px;
+    }
+
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
-        width: 360px;  
+        max-width: 360px;  
     }
 
     .divContenidoFormulario{
@@ -280,23 +297,11 @@ input[type="number"]::-webkit-inner-spin-button {
         padding: 0%;
     }
 
-    .parrafo{
-        padding: 20px;
-    }
 }
 
 @media(width < 400px){
     .divContenidoFormulario, .informacion, .parrafoIntermedio {
-        width: 300px;
-        grid-template-columns: 1fr;
-    }
-
-    .titulo h1 {
-        font-size: 45px;
-    }
-
-    .mapa{
-        width: 100%;
+        width: 96vw;
     }
 }
 
