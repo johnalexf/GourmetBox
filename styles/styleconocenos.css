@@ -104,6 +104,37 @@ main {
   font-weight: bold;
 }
 
+/* Estilos para los acordeones */
+.accordion-body p {
+  font-size: 18px;
+  word-spacing: 2px;
+  word-spacing: 0.2px;
+  letter-spacing: 0.5px;
+}
+
+/* Oculta la flecha y desactiva el botón en pantallas grandes */
+.accordion-button {
+  pointer-events: none;
+  &::after {
+    display: none;
+  }
+}
+
+.collapsed{
+  color: #70349E;
+  background-color: white; 
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: #70349E;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../img/image.png");
+  color: white;
+}
+
 
 /* Inicio TARJETAS PERFILES */
 
@@ -267,12 +298,6 @@ h5 {
 }
 
 
-
-@media (width < 800px) {
-  
-
-}
-
 .redes img {
   width: 40px;
   height: 40px;
@@ -288,78 +313,7 @@ h5 {
   word-spacing: 30px;
 }
 
-/* TARJETAS PERFILES HASTA AQUI */
-
-
-/* Acordion Yordi */
-/* Misión, visión y valores con flexbox y espacio entre cards */
-
-/* .acordion {
-  margin: 0 95px 0 95px;
-} */
-
-#mision {
-  display: flex;
-  justify-content: space-around;
-}
-
-.accordion-body p {
-  font-size: 18px;
-  word-spacing: 2px;
-  word-spacing: 0.2px;
-  letter-spacing: 0.5px;
-}
-
-.accordion-button {
-  color: #70349E;
-}
-
-.accordion-button:not(.collapsed) {
-  color: white;
-  background-color: #70349E;
-}
-
-.accordion-button::after {
-  color: #70349E;
-}
-
-.accordion-button:not(.collapsed)::after {
-  background-image: url("../img/image.png");
-  color: white;
-  background-color: #70349E;
-}
-
-/* Oculta la flecha y desactiva el botón en pantallas grandes */
-@media (min-width: 992px) {
-  .accordion-button::after {
-    display: none;
-  }
-
-  .accordion-button {
-    pointer-events: none;
-    color: white;
-    background-color: #70349E;
-  }
-
-  .accordion-collapse {
-    display: block !important;
-    height: auto !important;
-  }
-
-
-}
-
-/* Muestra la flecha y habilita el botón en pantallas pequeñas */
-@media (max-width: 991px) {
-  .accordion-button::after {
-    display: inline-block;
-  }
-
-  .accordion-button {
-    pointer-events: auto;
-    opacity: 1;
-  }
-}
+/* TARJETAS PERFILES HASTA AQUÍ */
 
 @media (width < 1200px) {
   .primero {
@@ -393,13 +347,21 @@ h5 {
   }
 }
 
-@media(max-width: 992px){
+@media(width < 992px){
   .presentacionInicial{
     flex-direction: column;
     gap: 20px;
   }
   main {
     padding: 6%;
+  }
+
+  /* Muestra la flecha y habilita el botón en pantallas pequeñas */
+  .accordion-button {
+    pointer-events: auto;
+    &::after {
+      display: block;
+    }
   }
 }
 

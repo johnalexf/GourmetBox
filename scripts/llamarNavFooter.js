@@ -22,8 +22,6 @@ function insertarHTMLPrincipal(url, palabraFiltro){
             texto = data.slice(inicio, (fin + palabraFiltro.length + 1)); // Extraer
         } 
         document.getElementById(palabraFiltro).innerHTML = texto;
-        console.log(typeof(texto))
-        console.log(texto)
     })
     .catch(error => console.error(`Error al cargar el ${palabraFiltro}footer:`, error));
 }
