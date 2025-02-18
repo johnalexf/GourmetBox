@@ -52,7 +52,7 @@ main {
   }
 }
 
-
+/* Estilos del contenedor del titulo y la presentación inicial */
 .titulo {
   max-width: 600px;
   margin: auto;
@@ -78,7 +78,6 @@ main {
   margin: auto;
 }
 
-
 .imgNosotros {
   text-align: center;
 
@@ -87,7 +86,6 @@ main {
     mask-image: linear-gradient(white 75%, transparent);
   }
 }
-
 
 .textoNosotros {
   align-content: center;
@@ -105,11 +103,14 @@ main {
 }
 
 /* Estilos para los acordeones */
+.accordion-item{
+  height: 100%;
+}
+
 .accordion-body p {
   font-size: 18px;
-  word-spacing: 2px;
-  word-spacing: 0.2px;
-  letter-spacing: 0.5px;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Oculta la flecha y desactiva el botón en pantallas grandes */
