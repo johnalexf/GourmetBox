@@ -38,7 +38,12 @@ body, main {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+@media(max-width:672px){
+    .hero-content {
+        padding: 1rem 0.6rem;
+    }
 }
 
 .Suscripcion {
@@ -53,13 +58,11 @@ body, main {
 }
 
 /* Ajuste para pantallas más grandes (computadoras) */
-@media (min-width: 920px) {
+@media (min-width: 1050px) {
     .Suscripcion {
         grid-template-columns: repeat(3, 1fr);
-        /* Solo 2 columnas en pantallas grandes */
+        /* Solo 3 columnas en pantallas grandes */
         max-width: 90%;
-        background-color: #fffef4;
-
     }
 }
 
@@ -116,15 +119,11 @@ body, main {
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-
-
 }
 
 /* Lista  */
 .objeto ul{
     list-style-type: disc;
-    padding: 12px;
-    margin: 10px 0;
 }
 
 .Texto-Objeto li{
@@ -141,14 +140,14 @@ body, main {
     /* Opción: Añade negrita para resaltar */
 }
 
-.imagen-contenedor img {
-    max-width: 100%;
-    /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto;
-    /* Mantiene la proporción de la imagen */
-    display: block;
-    /* Evita el espacio extra debajo de la imagen */
-
-
+.imagen-contenedor {
+    padding-bottom: 15px;
+    img {
+        max-width: 100%;
+        /* Asegura que la imagen no exceda el ancho del contenedor */
+        height: auto;
+        /* Mantiene la proporción de la imagen */
+        display: block;
+    }
 }
 
