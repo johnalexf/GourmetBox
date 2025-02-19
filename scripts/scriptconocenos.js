@@ -1,15 +1,11 @@
-// document.querySelectorAll('.carta-contenedor').forEach(container => {
-//     const visible = container.querySelector('.visible');
-//     const oculto = container.querySelector('.oculto');
+const tarjetas = document.querySelectorAll(".swiper-slide");
 
-//     visible.addEventListener('click', function() {
-//         container.classList.toggle('show-oculto');
-//     });
-
-//     oculto.addEventListener('click', function() {
-//         container.classList.toggle('show-oculto');
-//     });
-// });
+tarjetas.forEach( tarjeta =>{
+    const btnGirar = tarjeta.querySelector('.simboloGirar');
+    btnGirar.addEventListener('click',
+            ()=> tarjeta.classList.toggle('girar')
+        )
+});
 
 const accordions = document.querySelectorAll(".accordion-collapse");
 
@@ -40,3 +36,26 @@ checkScreenSize();
 
 // Listener para cambios de tamaño de ventana
 window.addEventListener("resize", checkScreenSize);
+
+function inicializarSwiper(){
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+        grabCursor: true,
+        // spaceBetween: 30,
+        slidesPerView: "auto", //habilita poder editar el tamaño de cada slide
+    
+        // pagination botones
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+    });
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarSwiper();
+  });
+  
