@@ -42,6 +42,7 @@ function inicializarSwiper(){
         loop: true,
         grabCursor: true,
         // spaceBetween: 30,
+        // centeredSlides: true,
         slidesPerView: "auto", //habilita poder editar el tamaño de cada slide
     
         // pagination botones
