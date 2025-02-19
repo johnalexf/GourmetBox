@@ -189,16 +189,17 @@ main {
   top: 5px;
   right: 5px;
   z-index: 1;
+  border-radius: 50%;
   cursor: pointer;
-  /* transition: filter 1s ease; */
   transition: 2s;
-  
-  /* transition: 1s; */
+}
 
-  &:hover{
-    /* filter: invert(); */
-    transform: rotate(360deg);
-  }
+.simboloGirar:hover{
+  background-color: rgba(255, 255, 255, 0.718);
+}
+
+.rotarSimbolo{
+  transform: rotate(360deg);
 }
 
 .fotoPerfil{
@@ -236,10 +237,10 @@ main {
   }
 }
 
-.girar .caraPrincipal{
+.girarTarjeta .caraPrincipal{
   transform: perspective(600px) rotateY(180deg);
 }
-.girar .caraSecundaria{
+.girarTarjeta .caraSecundaria{
   transform: perspective(600px) rotateY(360deg);
 }
 

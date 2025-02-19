@@ -3,7 +3,10 @@ const tarjetas = document.querySelectorAll(".swiper-slide");
 tarjetas.forEach( tarjeta =>{
     const btnGirar = tarjeta.querySelector('.simboloGirar');
     btnGirar.addEventListener('click',
-            ()=> tarjeta.classList.toggle('girar')
+            ()=> {
+              tarjeta.classList.toggle('girarTarjeta')
+              btnGirar.classList.toggle('rotarSimbolo')
+            }
         )
 });
 
