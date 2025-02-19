@@ -21,30 +21,59 @@ h5 {
 main{
     background-color: #FFFEF4;
 }
-.contenedorimgestatica img{
-    object-fit: cover;
-    width: 600px;
-}
 
 .carruselbanners img{
     width: 100%;
-    height: 90vh;
+    height: auto;
     object-fit: contain;
 }
 
-.contenidoMenuBanner{
-    width: 95vw;
-    height: 80vh;
-    display: grid;
-    grid-template-columns:  1fr 0.5fr ;
-    gap: 20px;
+.cintaDinamica{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    background-color: rgba(112, 52, 158, 0.790);
 }
+
+.desplazar{
+    display: flex;
+    height: 100px;
+    padding: 10px 0px;
+    align-items: center;
+    justify-content: left;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    animation: rightToLeft 14s linear 0.2s infinite normal none;
+}
+
+@keyframes rightToLeft {
+    to {
+        transform: translateX(-33.33%);
+    }
+}
+
+.textoCinta{
+    margin-right: 15px;
+}
+
+.cintaDinamica h3{
+    margin: 0;
+}
+.imagenCinta{
+    margin-right: 80px;
+    height: 100%;
+}
+.cintaDinamica img{
+    height: 100%;
+}
+
 .contenidoMenu{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     margin: auto;
     gap: 20px
-
 }
 
 .tamañoIcono{
@@ -125,13 +154,6 @@ main{
     border-radius: 30px;
 }
 
-.contenedorimgestatica{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
 .sectionMenu{
     height: 80vh;
     display: grid;
@@ -167,11 +189,7 @@ main{
     background-color: rgba(0, 0, 0, 0.100);
 }
 
-@media(width < 1200px){
-    .carruselbanners img{
-        height: 50vh;
-    }
-}
+
 
 @media screen and (max-width: 650px){
     .contenidoMenu{
@@ -183,9 +201,7 @@ main{
     .sectionMenu{
         height: 35vh;
     }
-    .carruselbanners img{
-        height: 30vh;
-    }
+    
     
 }
 
