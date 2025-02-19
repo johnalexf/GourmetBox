@@ -38,7 +38,7 @@ main{
     align-items: center;
     justify-content: left;
     overflow: hidden;
-    background-color: #703493;
+    background-color: rgb(170, 135, 193);
 }
 
 .desplazar{
@@ -64,21 +64,24 @@ main{
     padding-left: 35px;
 }
 
-.textoCinta h5{
+
+.textoCinta p{
     margin: 0;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .imagenCinta{
     padding-right: 35px;
     height: 100%;
-    border-right: 1px solid #444;
+    border-right: 1px solid #fff;
 }
 .cintaDinamica img{
     height: 100%;
 }
 
 @media(width < 500px){
-    .textoCinta h5{
+    .textoCinta p{
         font-size: 14px;
     }
     .desplazar{
