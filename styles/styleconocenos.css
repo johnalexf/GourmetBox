@@ -289,8 +289,11 @@ main {
     padding: 3%;
   }
 
+}
+
+@media (width < 350px) {
   .swiper-slide{
-    width: 270px;
+    width: 280px;
     height: 400px;
     margin: 0 10px ;
   }
