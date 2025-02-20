@@ -1,27 +1,3 @@
-/* Estilos para la pantalla después de realizar un registro 
-Para perfiles de usuario y de administrador*/
-
-:root{
-    /* ESta variable se modifica con el javascript scriptloginIngresando.js */
-    --tiempoCambioPantalla : 1000ms;
-}
-
-/* Estilos para que al hacer cambio de ventana tenga una transición mas amigable */
-.transicion-div {
-    /* opacity: 0;
-    visibility: hidden; */
-    transition: all var(--tiempoCambioPantalla) ease;
-}
-
-.transicion-div.mostrar {
-    opacity: 1;
-    visibility: visible;
-}
-
-.transicion-div.ocultar {
-    opacity: 0;
-    visibility: hidden;
-}
 
 
 label{
@@ -445,5 +421,3 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 
 }
-
-

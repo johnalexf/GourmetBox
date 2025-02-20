@@ -1,5 +1,5 @@
- export let urlProductos = "https://gourmetboxbackend-production.up.railway.app/producto/";
-//export let urlProductos = "http://localhost:8080/producto/";
+// export let urlProductos = "https://gourmetboxbackend-production.up.railway.app/producto/";
+export let urlProductos = "http://localhost:8080/producto/";
 export let urlEscribir = "";
 export let metodo = '';
 

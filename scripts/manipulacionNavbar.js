@@ -21,21 +21,29 @@ export function carritoCantidadAgregadaNavbar(){
         }else{
             cantidadCarritoIcono.style.display = "none"; 
         }
+    }else{
+        cantidadCarritoIcono.style.display = "none"; 
     }
 }
 
-
-if(localStorage.getItem('usuario')){
-    if( localStorage.getItem('usuario').length != 0 ){
-        usuarioLogiado = localStorage.getItem('usuario')
-        sesionNavbar.innerText = usuarioLogiado;
-        sesionNavbar.style.fontWeight = "bold";
-        carritoCantidadAgregadaNavbar();
+export function actualizarNombreYCantidadProductos(){
+    if(localStorage.getItem('usuario')){
+        if( localStorage.getItem('usuario').length != 0 ){
+            usuarioLogiado = localStorage.getItem('usuario')
+            sesionNavbar.innerText = usuarioLogiado;
+            sesionNavbar.style.fontWeight = "bold";
+            carritoCantidadAgregadaNavbar();
+        }else{
+            sesionNavbar.innerText = "Ingresar";
+            cantidadCarritoIcono.style.display = "none";
+        }
     }else{
         sesionNavbar.innerText = "Ingresar";
+        cantidadCarritoIcono.style.display = "none";
     }
 }
 
+actualizarNombreYCantidadProductos();
 
     
 

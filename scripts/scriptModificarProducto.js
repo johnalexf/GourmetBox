@@ -1,7 +1,7 @@
 //javascript que realiza las funciones necesarias para eliminar o modificar un producto
 import * as bd from "../scripts/scriptBD.js";
 
-//funcion que permite mostrar el modal despues de una operacion de editar usuario, modificar, crear o eliminar producto.
+//funcion que permite mostrar el modal después de una operación de editar usuario, modificar, crear o eliminar producto.
 import {mostrarModalConfirmacion} from "../scripts/scriptModificandoUsuario.js";
 
 // variable para almacenar modificaciones que se van a insertar en HTML
@@ -98,7 +98,7 @@ productosDisponibles.addEventListener('change', ()=>{
 
 
 //funcion para habilitar los inputs del formulario y ocultar botones de modificar, nuevo y eliminar
-//y muestra el boton de cancelar
+//y muestra el botón de cancelar
 function cambioEditarProducto(){
     inputsProducto.forEach(element => element.disabled = false); //habilitar inputs
     inputsProducto[0].disabled = true;
@@ -124,7 +124,7 @@ function cambioEditarProducto(){
 
 //funcion para deshabilitar los inputs del formulario,
 // mostrar botones de modificar, nuevo y eliminar
-//y oculta el boton de cancelar
+//y oculta el botón de cancelar
 function cambioNoEditarProducto(){
     inputsProducto.forEach(element => element.disabled = true);
     categoriaProducto.disabled = true;
@@ -229,7 +229,7 @@ formularioModificarCrearProducto.addEventListener('submit', (event)=>{
     
 });
 
-//Poner el nombre del archivo que se carga en seleccionar archivo en el parrafo junto 
+//Poner el nombre del archivo que se carga en seleccionar archivo en el párrafo junto 
 inputsProducto[4].addEventListener('change', function(){
    
         if(inputsProducto[4].files.length > 0){

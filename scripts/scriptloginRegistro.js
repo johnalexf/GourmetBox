@@ -1,6 +1,6 @@
 //Este javascript permite darle dinamismo a los div de iniciar sesión y registro 
 //Ademas permite realizar el registro de un nuevo usuario, haciendo las respectivas
-//validaciones de los campos requeridos y almacenándolos en baseDatos.json
+//validaciones de los campos requeridos y almacenándolos en la base de datos
 
 //javascript que realiza las funciones necesarias para eliminar o modificar un usuario
 import * as bd from "../scripts/scriptBD.js";
