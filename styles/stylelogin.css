@@ -10,13 +10,16 @@
 }
 
 body {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 main {
+    flex: 1;
     background-color: #FFFEF4;
     position: relative;
 }
@@ -156,6 +159,16 @@ h5 {
     width: 20px;
 }
 
+/* este es el fondo se le puede colocar la imagen*/
+.bodyLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    background-color: rgb(255, 255, 255);
+    /* este es el fondo se le puede colocar la imagen*/
+    transform: 0.5s;
+}
 
 .bodyLogin button {
     width: 200px;
@@ -172,16 +185,7 @@ h5 {
 }
 
 
-/* este es el fondo se le puede colocar la imagen*/
-.bodyLogin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 700px;
-    background-color: rgb(255, 255, 255);
-    /* este es el fondo se le puede colocar la imagen*/
-    transform: 0.5s;
-}
+
 
 
 /* contiene toda la estructura */

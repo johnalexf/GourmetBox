@@ -10,15 +10,20 @@
 /* Estilos para la pantalla después de realizar un registro 
 Para perfiles de usuario y de administrador*/
 
+:root{
+    /* ESta variable se modifica con el javascript scriptloginIngresando.js */
+    --tiempoCambioPantalla : 1000ms;
+}
+
 label{
     font-size: 17px;
 }
 
 /* Estilos para que al hacer cambio de ventana tenga una transición mas amigable */
 .transicion-div {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.9s ease, visibility 0.9s ease;
+    /* opacity: 0;
+    visibility: hidden; */
+    transition: all var(--tiempoCambioPantalla) ease;
 }
 
 .transicion-div.mostrar {
