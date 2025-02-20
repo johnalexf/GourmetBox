@@ -117,8 +117,11 @@ lado a otro suave */
 /* posición de los títulos e input y botón */
 .contieneFormularios form {
     width: 100%;
+    height: 100%;
+    margin: auto 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     /* tamaño de espaciado entre elementos */
 }
@@ -128,8 +131,8 @@ lado a otro suave */
     position: absolute;
     width: 100%;
     padding: 50px;
-    transition: 0.5s;
-    transition-delay: 0.25s;
+    transition: 0.5s ease-in-out;
+    /* transition-delay: 0.2s; */
     align-self: center;
 
     input {
@@ -159,13 +162,11 @@ lado a otro suave */
 /* cuando se realize click el formulario de ingreso sale hacia la izq */
 .contieneFormularios.active .formularioIngreso {
     left: -100%;
-    transition-delay: 0s;
 }
 
 /* cuando se realize click el formulario de registro sale hacia la der */
 .contieneFormularios.active .formularioRegistro {
     left: 0;
-    transition-delay: 0.25s;
 }
 
 .divContrasena {
@@ -213,7 +214,7 @@ lado a otro suave */
 #realizarIngreso,
 #realizarRegistro {
     padding-left: 0px;
-    margin: auto;
+    margin: 0 auto;
     width: 150px;
     height: 40px;
     font-weight: bold;
@@ -235,60 +236,94 @@ lado a otro suave */
 }
 
 /* cuando la pantalla es pequeña  */
-@media (max-width: 991px) {
+@media (max-width: 900px) {
 
-    /* se le asigna una tamaño al contenedor */
+    :root{
+        --alturaContainerLogin : 700px;
+        --alturaFormularios : 560px;
+        --alturaContenedoresZonaGris: calc(var(--alturaContainerLogin) - var(--alturaFormularios));
+    }
+
     .containerLogin {
-        max-width: 400px;
-        height: 680px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 450px;
+        height: var(--alturaContainerLogin);
     }
 
-    /* se alienan los contenedore externos */
-    .containerLogin .zonagris {
-        top: 0;
+    .zonagris {
         height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    /* se asigna tamaño a los formularios */
-    .contieneFormularios {
+    .zonagris .ingreso,
+    .zonagris .registro {
         width: 100%;
-        height: 560px;
+        height: var(--alturaContenedoresZonaGris);
+    }
+
+    .contieneFormularios,
+    .contieneFormularios .formularioIngreso,
+    .contieneFormularios .formularioRegistro {
+        width: 100%;
+        height: var(--alturaFormularios);
+    }
+
+    /* se le otorga al formulario ingreso una posición a la izq arriba */
+    .contieneFormularios .formularioIngreso {
+        left: 0;
         top: 0;
     }
 
-    /* los  botones de ingreso y registro se
-    posicionan en forma abosluta
-    y se les asigna un espacio*/
-    .zonagris .registro,
-    .zonagris .ingreso {
-        position: absolute;
-        width: 100%;
-        height: 120px;
-        bottom: 0;
-    }
-
-    /* la posicion de la seccion ingreso sera
-   ajustada arriba no a laizq */
-    .ingreso {
-        position: absolute;
-        top: 0;
+    /* se le otorga al formulario registro una posición a la izquierda abajo*/
+    .contieneFormularios .formularioRegistro {
+        left: 0;
+        top: 100%; 
     }
 
     /* se desplaza de arriba a abajo 120px */
     .contieneFormularios.active {
         left: 0;
-        top: 120px;
+        top: var(--alturaContenedoresZonaGris);
+    }
+
+    /* cuando se realize click el formulario de ingreso sale hacia arriba */
+    .contieneFormularios.active .formularioIngreso {
+        left: 0;
+        top: -100%;
+    }
+
+    /* cuando se realize click el formulario de registro sale hacia arriba */
+    .contieneFormularios.active .formularioRegistro {
+        left: 0;
+        top: 0;
     }
 
 }
 
 
-@media (width < 450px) {
+@media (width < 500px) {
+    
+    :root{
+        --alturaContainerLogin : 630px;
+        --alturaFormularios : 500px;
+        --alturaContenedoresZonaGris: calc(var(--alturaContainerLogin) - var(--alturaFormularios));
+    }
+
+    .bodyLogin {
+        width: 100%;
+    }
+
     .containerLogin {
-        width: 90%;
+        width: 95%;
+    }
+
+    .contieneFormularios .formularioIngreso,
+    .contieneFormularios .formularioRegistro {
+        padding: 20px 7%;
+    }
+
+    .contieneFormularios form{
+        gap: 15px;
     }
 }
 
