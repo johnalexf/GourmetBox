@@ -2,6 +2,7 @@
 //divBodyLogin contiene toda la estructura de formularios de registro y de login
 //divUsuarioRegistrado es la clase de los dos tipos de perfiles, las traemos en un arreglo, donde
 //el indice 0 es el perfil de un usuario, y el indice 1 es el perfil de un administrador
+//ademas permite darle dinamismo a los div de iniciar sesión y registro 
 
 //importar la funcion para mostrar la cantidad de productos agregados si la tiene
 //y el nombre del usuario
@@ -9,16 +10,37 @@ import {
     actualizarNombreYCantidadProductos
   } from "./manipulacionNavbar.js";
 
+// contieneFormulario contiene los dos formularios de ingreso y de registro
+const contieneFormulario = document.querySelector(".contieneFormularios");
+
+/* variables para modificar los estilos de las ventanas de los formularios login y registro */
+// Botones para hacer el cambio de formulario
+const loginBotonCambioVentana = document.querySelector("#ingresoBotonCambioVentana");
+const registroBotonCambioVentana = document.querySelector("#registroBotonCambioVentana");
+
 //ventana de ingreso y registro de usuario
 let divBodyLogin = document.querySelector(".bodyLogin");
 // lista de las ventanas de un usuario registrado, 0 => usuario normal 1=> usuario administrador
 let divUsuarioRegistrado = document.querySelectorAll(".divUsuarioRegistrado");
 
-const tiempoCambioPantalla = 800;
+// tiempo de cambio de pantalla de login a perfil o viceversa
+const tiempoCambioPantalla = 800;//en mili segundos
 document.documentElement.style.setProperty('--tiempoCambioPantalla', tiempoCambioPantalla + 'ms');
 
 //div del dinamismo del repartidor de gourmet box
 let divViaje = document.querySelector(".viaje");
+
+// Cuando oprima el botón de registro para cambio de ventana, activa la funcionalidad de los contenedores para hacer el cambio de formularios
+registroBotonCambioVentana.onclick = function(){
+  contieneFormulario.classList.add('active');
+}
+
+// Cuando oprima el botón de login para cambio de ventana, desactiva la funcionalidad de los contenedores para hacer el cambio de formularios
+loginBotonCambioVentana.onclick = cambioVentanaALogin;
+
+export function cambioVentanaALogin(){
+  contieneFormulario.classList.remove('active');
+}
 
 // funcion para mostrar perfil ya sea de usuario o de administrador
 export function cambiarAPerfil(indice) {

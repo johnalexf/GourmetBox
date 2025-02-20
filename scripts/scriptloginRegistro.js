@@ -1,18 +1,17 @@
-//Este javascript permite darle dinamismo a los div de iniciar sesión y registro 
-//Ademas permite realizar el registro de un nuevo usuario, haciendo las respectivas
+//Javascript que permite realizar el registro de un nuevo usuario, haciendo las respectivas
 //validaciones de los campos requeridos y almacenándolos en la base de datos
 
 //javascript que realiza las funciones necesarias para eliminar o modificar un usuario
 import * as bd from "../scripts/scriptBD.js";
-import { datosUsuario } from "./scriptloginIngresando.js";
 
-/* variables para modificar los estilos de las ventanas de los formularios login y registro */
-// Botones para hacer el cambio de formulario
-const loginBotonCambioVentana = document.querySelector("#ingresoBotonCambioVentana");
-const registroBotonCambioVentana = document.querySelector("#registroBotonCambioVentana");
+import { cambioVentanaALogin } from "./scriptLoginCambioVisual.js";
 
-// contieneFormulario contiene los dos formularios de ingreso y de registro
-const contieneFormulario = document.querySelector(".contieneFormularios");
+//Formulario de registro
+let formularioRegistro = document.getElementById('formularioR');
+
+//iconos de los campos de contraseñas para poder mostrarla
+let iconoContrasenaR = document.getElementById('iconoContrasenaR');
+let iconoConfirmarContrasena = document.getElementById('iconoConfirmarContrasena');
 
 // Variables para manipular ventanas emergentes
 const modalMensajeExitoso = document.getElementById("modalMensajeExitoso");
@@ -26,36 +25,11 @@ const terminos = document.getElementById("terminosCondiciones");
 //espacio de texto que va mostrar el nombre del usuario en el modal de registro exitoso
 let nombreUsuarioRegistrado = document.getElementById("nombreUsuarioRegistrado");
 
-//Formulario de registro
-let formularioRegistro = document.getElementById('formularioR');
-
-//iconos de los campos de contraseñas para poder mostrar la misma
-let iconoContrasenaR = document.getElementById('iconoContrasenaR');
-let iconoConfirmarContrasena = document.getElementById('iconoConfirmarContrasena');
-
-//en el localStorage.getItem('seRegistro') guardamos el nombre del usuario correctamente registrado
-//para asi mostrar en el modal el mensaje personalizado
-function mostrarModalRegistroExitoso(){
-  let seRegistro = localStorage.getItem('seRegistro');
-  if ( seRegistro != undefined && seRegistro.length > 0) {
-    nombreUsuarioRegistrado.innerText = seRegistro;
-    modalMensajeExitoso.style.display = 'flex'; 
-    formularioRegistro.reset();
-  }
-}
-mostrarModalRegistroExitoso();
-
-
-// Cuando oprima el botón de registro para cambio de ventana, activa la funcionalidad de los contenedores para hacer el cambio de formularios
-registroBotonCambioVentana.onclick = function(){
-    contieneFormulario.classList.add('active');
-}
-
-// Cuando oprima el botón de login para cambio de ventana, desactiva la funcionalidad de los contenedores para hacer el cambio de formularios
-loginBotonCambioVentana.onclick = cambioVentanaALogin;
-
-function cambioVentanaALogin(){
-  contieneFormulario.classList.remove('active');
+/* expresiones para validar correo y Contrasena */
+const expresiones = {
+  contrasena: /^(?=.*[A-Z])(?=.*[0-9]).{6,}$/,
+  correoE: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,3}(\.[a-zA-Z]{2,3})?$/,
+  telefono: /^[36][0-9]{9,}$/
 }
 
 //código para mostrar la contraseña
@@ -84,7 +58,6 @@ iconoConfirmarContrasena.addEventListener("click",()=>{
   }
 });
 
-
 // mostrar términos y condiciones
 terminos.addEventListener("click", () => {
   modalTerminos.style.display = "flex";
@@ -94,20 +67,6 @@ terminos.addEventListener("click", () => {
 cerrarTerminos.addEventListener("click", () => {
   modalTerminos.style.display = "none";
 });
-
-// Cerrar la ventana bienvenido cuando se haga clic en la "X"
-cerrarModalExitoso.onclick = function() {
-  modalMensajeExitoso.style.display = "none";
-  localStorage.setItem('seRegistro',"");
-}
-
-//Código para validación de datos de correo y contraseña
-/* expresiones para validar correo y Contrasena */
-const expresiones = {
-  contrasena: /^(?=.*[A-Z])(?=.*[0-9]).{6,}$/,
-  correoE: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,3}(\.[a-zA-Z]{2,3})?$/,
-  telefono: /^[36][0-9]{9,}$/
-}
 
 //funcion que realiza validación del valor de usuario, si contiene espacio
 //entre palabras se muestra un mensaje.
@@ -123,7 +82,8 @@ function validarUsuario(){
 //método de escucha sobre cambios en el input de usuario para verificar que cumpla la expresión
 formularioRegistro.usuarioR.addEventListener('input',validarUsuario)
 
-//método de escucha para cuando hay cambios en el input de correo y después de un submit activa el mensaje correspondiente
+//método de escucha para cuando hay cambios en el input de correo y 
+// después de un submit activa el mensaje correspondiente
 formularioRegistro.correo.addEventListener('input', function(){
   
   let validoCorreo = expresiones.correoE.test(formularioRegistro.correo.value);
@@ -138,7 +98,8 @@ formularioRegistro.correo.addEventListener('input', function(){
   }
 });
 
-//método de escucha cuando hay cambios en el input de teléfono y verificar que cumpla la condición al momento de dar enviar
+//método de escucha cuando hay cambios en el input de teléfono y 
+// verificar que cumpla la condición al momento de dar enviar
 formularioRegistro.telefono.addEventListener('input', function(){
   
   if(!expresiones.telefono.test(formularioRegistro.telefono.value)){
@@ -150,7 +111,6 @@ formularioRegistro.telefono.addEventListener('input', function(){
     formularioRegistro.telefono.setCustomValidity("");
   }
 });
-
 
 function verificarContrasenaAdecuada(){
   if(expresiones.contrasena.test(formularioRegistro.contrasenaR.value)){
@@ -199,11 +159,6 @@ formularioRegistro.addEventListener('submit', async function(event) {
 
     if(!usuarioRepetido){
        //reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) 
-       let seRegistro = formularioRegistro.nombreR.value;
-       localStorage.setItem('seRegistro', seRegistro);
-       nombreUsuarioRegistrado.innerText = seRegistro;
-       modalMensajeExitoso.style.display = 'flex'; 
-       
        //creando usuario en la base de datos
         await bd.reescribirOCrearUsuario(
             "0",
@@ -215,7 +170,8 @@ formularioRegistro.addEventListener('submit', async function(event) {
             "0",
             false
           );
-          formularioRegistro.reset();
+          localStorage.setItem('seRegistro', formularioRegistro.nombreR.value);
+          mostrarModalRegistroExitoso();
           cambioVentanaALogin();
     }else{
       formularioRegistro.usuarioR.setCustomValidity('El usuario ya existe.');
@@ -224,12 +180,23 @@ formularioRegistro.addEventListener('submit', async function(event) {
    
 });
    
+//en el localStorage.getItem('seRegistro') guardamos el nombre del usuario correctamente registrado
+//para asi mostrar en el modal el mensaje personalizado si se recarga la pagina
+function mostrarModalRegistroExitoso(){
+  let seRegistro = localStorage.getItem('seRegistro');
+  if ( seRegistro && seRegistro.length > 0) {
+    nombreUsuarioRegistrado.innerText = seRegistro;
+    modalMensajeExitoso.style.display = 'flex'; 
+    formularioRegistro.reset();
+  }
+}
 
-  // Desplazamiento suave al formulario
-  // Usamos scrollIntoView para hacer el scroll hacia el div "formulario"
+// Cerrar la ventana bienvenido cuando se haga clic en la "X"
+cerrarModalExitoso.onclick = function() {
+  modalMensajeExitoso.style.display = "none";
+  localStorage.setItem('seRegistro',"");
+}
 
-contieneFormulario.scrollIntoView({
-  behavior: 'smooth',
-  block: 'start'
-});
+mostrarModalRegistroExitoso();
+ 
 
