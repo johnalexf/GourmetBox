@@ -4,8 +4,7 @@ import {carritoCantidadAgregadaNavbar} from './manipulacionNavbar.js';
 //javascript que realiza las funciones necesarias para traer todos los productos
 import * as bd from "../scripts/scriptBD.js";
 
-const menu = await bd.obtenerBaseDatos();
-console.log(menu);
+let menu;
 
 // variables que contienen el div de cada categoría de comida
 let desayunos = document.querySelector('#desayunos');
@@ -97,10 +96,22 @@ function actualizarMenu() {
     desayunos.innerHTML=desayunosHTML;
     almuerzos.innerHTML=almuerzosHTML;
     postres.innerHTML=postresHTML;
+    desayunos.classList.add('contenidoMenu');
+    almuerzos.classList.add('contenidoMenu');
+    postres.classList.add('contenidoMenu');
     //contenidoMenu.innerHTML = contenidoMenuHTML;
 }
 
-actualizarMenu();
+async function usarMenu() {
+    menu = await bd.obtenerBaseDatos(); // Espera a que se resuelva la promesa
+    if(menu){
+        actualizarMenu();
+    }else{
+        console.log("Error al obtener los datos, falla de comunicación con el servidor")
+    }
+}
+
+usarMenu();
 
 // Se exporta la función ya que este javascript se esta llamando como tipo modulo,
 //al ser de este tipo las variables y funciones no están de manera global
