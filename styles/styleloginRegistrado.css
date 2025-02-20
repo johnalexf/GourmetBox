@@ -1,22 +1,9 @@
-/* Paleta de colores
-#FFFEF4
-#D6CB4F
-#71B344
-#869639
-#6A5BC7
-#70349E
-*/
-
 /* Estilos para la pantalla después de realizar un registro 
 Para perfiles de usuario y de administrador*/
 
 :root{
     /* ESta variable se modifica con el javascript scriptloginIngresando.js */
     --tiempoCambioPantalla : 1000ms;
-}
-
-label{
-    font-size: 17px;
 }
 
 /* Estilos para que al hacer cambio de ventana tenga una transición mas amigable */
@@ -34,6 +21,11 @@ label{
 .transicion-div.ocultar {
     opacity: 0;
     visibility: hidden;
+}
+
+
+label{
+    font-size: 17px;
 }
 
 /* Clase para el contenedor de toda la ilustración del perfil  */

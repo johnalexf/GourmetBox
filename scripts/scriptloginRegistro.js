@@ -8,13 +8,11 @@ import { datosUsuario } from "./scriptloginIngresando.js";
 
 /* variables para modificar los estilos de las ventanas de los formularios login y registro */
 // Botones para hacer el cambio de formulario
-const loginBotonCambioVentana = document.querySelector(".ingresoBotonCambioVentana");
-const registroBotonCambioVentana = document.querySelector(".registroBotonCambioVentana");
+const loginBotonCambioVentana = document.querySelector("#ingresoBotonCambioVentana");
+const registroBotonCambioVentana = document.querySelector("#registroBotonCambioVentana");
 
 // contieneFormulario contiene los dos formularios de ingreso y de registro
 const contieneFormulario = document.querySelector(".contieneFormularios");
-//bodyLogin contiene toda la estructura de formularios de registro y de login
-const bodyLogin = document.querySelector(".bodyLogin");
 
 // Variables para manipular ventanas emergentes
 const modalMensajeExitoso = document.getElementById("modalMensajeExitoso");
@@ -51,7 +49,6 @@ mostrarModalRegistroExitoso();
 // Cuando oprima el botón de registro para cambio de ventana, activa la funcionalidad de los contenedores para hacer el cambio de formularios
 registroBotonCambioVentana.onclick = function(){
     contieneFormulario.classList.add('active');
-    bodyLogin.classList.add('active');
 }
 
 // Cuando oprima el botón de login para cambio de ventana, desactiva la funcionalidad de los contenedores para hacer el cambio de formularios
@@ -59,7 +56,6 @@ loginBotonCambioVentana.onclick = cambioVentanaALogin;
 
 function cambioVentanaALogin(){
   contieneFormulario.classList.remove('active');
-  bodyLogin.classList.remove('active');
 }
 
 //código para mostrar la contraseña

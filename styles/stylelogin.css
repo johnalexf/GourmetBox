@@ -9,115 +9,6 @@
 
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-main {
-    flex: 1;
-    background-color: #FFFEF4;
-    position: relative;
-}
-
-.viaje {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    bottom: 0px;
-    z-index: 0;
-}
-
-.viajeCity {
-    display: flex;
-    flex-direction: row;
-    animation: RightToLeft 20s infinite linear;
-}
-
-@keyframes RightToLeft {
-    from {
-        transform: translateX(0%);
-    }
-
-    to {
-        transform: translateX(-75%);
-    }
-}
-
-
-.contieneViaje #city {
-    width: 100%;
-    height: 300px;
-    opacity: 20%;
-}
-
-
-.contieneViaje #casa {
-    position: absolute;
-    width: 23%;
-    bottom: 0px;
-    left: -10px;
-    animation: adiosCasita 10s ease-in infinite;
-}
-
-@keyframes adiosCasita {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    60% {
-        transform: translateX(-90%);
-        /* Rebote hacia atrás */
-    }
-
-    70% {
-        transform: translateX(-80%);
-        /* Rebote más pequeño */
-    }
-
-    80% {
-        transform: translateX(-75%);
-        /* Otro pequeño rebote */
-    }
-
-    100% {
-        transform: translateX(0);
-        /* Regreso a la posición inicial */
-        opacity: 1;
-    }
-}
-
-.contieneViaje #moto {
-    position: absolute;
-    bottom: -20px;
-    width: 150px;
-    /* transform: translateY(0%); */
-    animation: moverDerecha 10s ease-in-out infinite;
-}
-
-@keyframes moverDerecha {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: 100%;
-    }
-}
-
-
-
 h1,
 h2,
 h3,
@@ -128,151 +19,99 @@ h5 {
     font-style: normal;
 }
 
-#nombreUsuarioRegistrado {
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.ingreso h2,
-.registro h2 {
-    padding-bottom: 12px;
-    font-size: 25px;
-}
-
-.terminos {
+body {
     display: flex;
-    gap: 20px;
-    padding-left: 40px;
-    color: #2d09fa;
-    transition: 0.25s;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #FFFEF4;
 }
 
-.terminos label {
-    text-decoration: underline;
+main {
+    flex: 1;
+    position: relative;
 }
 
-.terminos label:hover {
-    scale: 106%;
-}
-
-.terminos input {
-    width: 20px;
-}
-
-/* este es el fondo se le puede colocar la imagen*/
-.bodyLogin {
+main, .bodyLogin {
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 700px;
-    background-color: rgb(255, 255, 255);
-    /* este es el fondo se le puede colocar la imagen*/
-    transform: 0.5s;
+    justify-content: center;
 }
-
-.bodyLogin button {
-    width: 200px;
-    height: 40px;
-    font-weight: 700;
-    border-radius: 15px;
-    /* border: 2px solid #70349E; */
-    background-color: rgba(105, 91, 199, 0.534);
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4)
-}
-
-.bodyLogin button:hover {
-    background-color: rgba(105, 91, 199, 0.534);
-}
-
-
-
-
 
 /* contiene toda la estructura */
 .containerLogin {
-    position: absolute;
+    position: relative;
+    display: flex;
     width: 800px;
-    height: 500px;
-    margin: 20px;
+    height: 550px;
+    align-items: center;
 }
 
 /* este contenedor funciona como estructura 
 de los títulos y botones de ingreso y registro */
 .zonagris {
-    position: relative;
-    top: 40px;
     width: 100%;
     height: 420px;
     display: flex;
-    background-image: url("../img/zonagris.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #e8ddee;
     text-align: center;
     border-radius: 15px;
 }
 
-/* se le da direccion y posicionamiento a titulos 
-y botones */
+.zonagris h2 {
+    padding-bottom: 12px;
+    font-size: 25px;
+}
+
+.zonagris button {
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    background-color: rgba(105, 91, 199, 0.534);
+    border-radius: 15px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+        background-color: white;
+    }
+}
+
 .zonagris .ingreso,
 .zonagris .registro {
     position: relative;
     width: 50%;
-    height: 110%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* se le da propiedad de estar sobrepuesto a todo
-el tamaño del container este seccion correra de un
+el tamaño del container este sección correrá de un
 lado a otro suave */
 .contieneFormularios {
     position: absolute;
+    width: 50%;
+    height: 100%;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 110%;
-    background: rgb(248, 247, 245);
     z-index: 1000;
+
     display: flex;
     justify-content: center;
-    transition: 0.5s ease-in-out;
-    overflow: hidden;
-    /* tapa el texto fuera del contenedor */
     text-align: center;
+    overflow: hidden;
+    
+    background: rgb(248, 247, 245);
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.375);
+    transition: 0.5s ease-in-out;
 }
 
-/* se le da el efecto de deslizarse cuando se oprime
-el boton de registro o ingreso */
-.contieneFormularios.active {
-    left: 50%;
-}
-
-/* se le da el cambio de color al dar en los botones
-de ingreso o registro */
-.bodyLogin.active {
-    background: rgba(239, 238, 239, 0.432);
-}
-
-/* se le otorga al formulario ingreso una posicion a la izq
-con sus elementos centrados y transiciones suaves */
-.contieneFormularios .formularioIngreso {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding: 50px;
-    transition: 0.5s;
-    transition-delay: 0.25s;
-    align-self: center;
-}
-
-/* posicion de los titulos e input y boton */
-.contieneFormularios .formularioIngreso form,
-.contieneFormularios .formularioRegistro form {
+/* posición de los títulos e input y botón */
+.contieneFormularios form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -280,38 +119,49 @@ con sus elementos centrados y transiciones suaves */
     /* tamaño de espaciado entre elementos */
 }
 
-/* cuando se realize click el formulario de ingreso
-sale hacia la izq */
+.contieneFormularios .formularioIngreso,
+.contieneFormularios .formularioRegistro {
+    position: absolute;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    align-self: center;
+
+    input {
+        height: 35px;
+        padding-left: 20px;
+        border: 1px solid rgba(105, 91, 199, 0.534);
+        border-radius: 10px;
+    }
+}
+
+/* se le otorga al formulario ingreso una posición a la izq */
+.contieneFormularios .formularioIngreso {
+    left: 0;
+}
+
+/* se le otorga al formulario registro una posición a la der*/
+.contieneFormularios .formularioRegistro {
+    left: 100%; 
+}
+
+/* se le da el efecto de deslizarse con javascript
+ cuando se oprime el botón de registro o ingreso */
+ .contieneFormularios.active {
+    left: 50%;
+}
+
+/* cuando se realize click el formulario de ingreso sale hacia la izq */
 .contieneFormularios.active .formularioIngreso {
     left: -100%;
     transition-delay: 0s;
 }
 
-/* se le otorga al formulario registro una posicion a la der
-con sus elementos centrados y transiciones suaves */
-.contieneFormularios .formularioRegistro {
-    position: absolute;
-    left: 100%;
-    width: 100%;
-    padding: 50px;
-    transition: 0.5s;
-    transition-delay: 0s;
-    align-self: center;
-}
-
-/* cuando se realize click el formulario de registro
-sale hacia la der */
+/* cuando se realize click el formulario de registro sale hacia la der */
 .contieneFormularios.active .formularioRegistro {
     left: 0;
     transition-delay: 0.25s;
-}
-
-.formularioIngreso input,
-.formularioRegistro input {
-    height: 35px;
-    border: 1px solid rgba(105, 91, 199, 0.534);
-    border-radius: 10px;
-    padding-left: 20px;
 }
 
 .divContrasena {
@@ -330,10 +180,29 @@ sale hacia la der */
     color: #76767684;
     top: 4px;
     right: 10px;
+
+    &:hover{
+        color: #70349E;
+    }
 }
 
-.divContrasena i:hover {
-    color: #70349E;
+.terminos {
+    display: flex;
+    gap: 20px;
+    padding-left: 40px;
+    color: #2d09fa;
+    transition: 0.25s;
+}
+
+.terminos label {
+    text-decoration: underline;
+    &:hover {
+        scale: 106%;
+    }
+}
+
+.terminos input {
+    width: 20px;
 }
 
 /* Estilos para los botones  */
@@ -353,6 +222,12 @@ sale hacia la der */
 #realizarIngreso:hover,
 #realizarRegistro:hover {
     background-color: rgba(242, 240, 249, 0.534);
+}
+
+/* Estilo del nombre que aparece en el modal después de hacer un registro */
+#nombreUsuarioRegistrado {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /* cuando la pantalla es pequeña  */
