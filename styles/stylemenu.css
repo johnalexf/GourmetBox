@@ -39,8 +39,8 @@ main{
     align-items: center;
     justify-content: left;
     overflow: hidden;
-    border-top: 3px solid #70349E;
-    border-bottom: 3px solid #70349E;
+    /* border-top: 1px solid #70349E; */
+    /* border-bottom: 1px solid #70349E; */
     /* background-color: rgb(170, 135, 193); */
 }
 
@@ -77,7 +77,7 @@ main{
 .imagenCinta{
     padding-right: 35px;
     height: 100%;
-    border-right: 3px solid #70349E;
+    border-right: 1px solid #70349E;
 }
 .cintaDinamica img{
     height: 100%;
