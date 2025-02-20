@@ -40,6 +40,10 @@ main, .bodyLogin {
     justify-content: center;
 }
 
+.bodyLogin{
+    padding: 10px 0;
+}
+
 /* contiene toda la estructura */
 .containerLogin {
     position: relative;
