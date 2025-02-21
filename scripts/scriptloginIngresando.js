@@ -8,6 +8,8 @@ import * as bd from "../scripts/scriptBD.js";
 //javascript que cambia la vista de login a perfil o viceversa
 import * as visual from "../scripts/scriptLoginCambioVisual.js";
 
+import {actualizarProductosLocal} from "../scripts/scriptModificarProducto.js";
+
 let formularioIngreso = document.getElementById("formulario");
 let iconoContrasenaLogin = document.getElementById("iconoContrasenaLogin");
 
@@ -53,6 +55,7 @@ function mostrarDatosPerfilUsuario() {
 }
 
 function mostrarDatosPerfilAdministrador() {
+  actualizarProductosLocal();
   formularioInfoAdmin.aliasAdministrador.value = datosUsuario.userName;
   formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombreUsuario;
   formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;

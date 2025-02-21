@@ -11,7 +11,7 @@ import {
   datosUsuario,
 } from "../scripts/scriptloginIngresando.js";
 
-
+import { mostrarModalConfirmacion } from "../scripts/scriptModalesLogin.js"
 
 let botonGuardarCambiosPerfilUsuario = document.getElementById(
   "guardarCambiosPerfilUsuario"
@@ -195,7 +195,7 @@ botonGuardarEditarPerfil.addEventListener("click", async () => {
       contrasenaEditarPerfil.value = "";
     }
     modalContrasenaEditarPerfil.style.display = "none";
-    mostrarModalConfirmacion(0, "");
+    mostrarModalConfirmacion("Tu Perfil se ha editado correctamente", "");
   } else {
     contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta");
     contrasenaEditarPerfil.reportValidity();
@@ -203,19 +203,4 @@ botonGuardarEditarPerfil.addEventListener("click", async () => {
 });
 
 
-
-let mensajesSegunConfirmacion = [
-    "Tu Perfil se ha editado correctamente",
-    "Se ha borrado el producto",
-    "Se ha editado el producto",
-    "Se ha guardado el producto",
-];
-
-export function mostrarModalConfirmacion(index, texto) {
-    swal(
-      "Operacion Exitosa",
-      mensajesSegunConfirmacion[index] + " " + texto,
-      "success"
-    );
-}
   

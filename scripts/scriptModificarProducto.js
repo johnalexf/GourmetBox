@@ -2,10 +2,9 @@
 import * as bd from "../scripts/scriptBD.js";
 
 //funcion que permite mostrar el modal después de una operación de editar usuario, modificar, crear o eliminar producto.
-import {mostrarModalConfirmacion} from "../scripts/scriptModificandoUsuario.js";
+import * as modal from "../scripts/scriptModalesLogin.js";
 
-// variable para almacenar modificaciones que se van a insertar en HTML
-let html = "";
+let productos;
 
 //variable que contiene el formulario y después se obtienen todos los inputs para modificar su contenido interno
 //dependiendo del select escogido, ademas también se usan para guardar un nuevo producto dependiendo del caso
@@ -21,13 +20,8 @@ let productosDisponibles = document.getElementById('productosDisponibles');
 //variable que contiene el select de categoría de producto
 let categoriaProducto = document.getElementById('categoriaProducto');
 
-
-//variables para mostrar ventana emergente con una vista previa del producto seleccionado o el nuevo creado y aceptar o cancelar cambios
-let botonCancelarCambios = document.getElementById('cancelarCambios');
-let botonAceptarCambios = document.getElementById('aceptarCambios');
-let divProducto = document.querySelector('.producto');
-let modalVistaPrevia = document.getElementById('modalVistaPrevia');
-let cerrarVistaPrevia = document.getElementById('cerrarVistaPrevia');
+//variable para guardar la imagen de forma de texto
+let imagen;
 
 //variables para cada uno de los botones de modificar o crear producto
 let divUrlProducto = document.querySelector('.divUrlProducto');
@@ -39,24 +33,29 @@ let botonEliminarProducto = document.getElementById('botonEliminarProducto');
 //variable de control la cual diferencia si se va sobrescribir o crear un producto nuevo
 let reescribirProducto = false;
 
-//variables para el modal de eliminar producto
-let modalEliminarProducto = document.getElementById('modalEliminarProducto');
+//variable con mensajes predeterminados de cada uno de los inputs
+let mensajeAlerta = ["Escribe el nombre del plato",
+    "Escribe que contiene el plato",
+    "Escribe el precio del producto",
+    "Carga una imagen"
+];
+
+// botón modal vista preliminar 
+let botonAceptarCambios = document.getElementById('aceptarCambios');
+// botón modal eliminar producto
 let botonAceptarEliminar = document.getElementById('botonAceptarEliminar');
-let botonCancelarEliminar = document.getElementById('botonCancelarEliminar');
-let botonCerrarModalEliminarProducto = document.getElementById('cerrarModalEliminarProducto');
-
-//variable para guardar la imagen de forma de texto
-let imagen;
 
 
+async function traerProductos() {
+    productos = await bd.obtenerBaseDatos();
+    console.log(productos);
+}
 
-//función para cargar la información del producto seleccionado en cada uno de sus correspondientes input
-async function mostrarProductoEnFormulario() {
+//función para cargar la información del producto seleccionado 
+// en cada uno de sus correspondientes input
+function mostrarProductoEnFormulario() {
 
-            html = "";
-            let productos = await bd.obtenerBaseDatos();
-            console.log(productos);
-
+            let html = "";
             if(indiceSeleccionado ==0){
                 indiceSeleccionado = productos[0].id_producto;
             }else if(indiceSeleccionado == -1){
@@ -82,20 +81,19 @@ async function mostrarProductoEnFormulario() {
 
             //ya que traemos la imagen de la base de datos, no requerimos cargar una imagen
             //de igual forma si el usuario desea cargar una nueva, lo puede hacer
-            inputsProducto[4].required = false; 
-                          
-       
+            inputsProducto[4].required = false;                    
 }
 
-//se llama para que cuando el usuario ingrese por primera vez, se muestre el contenido del primer producto
-mostrarProductoEnFormulario();
+export async function actualizarProductosLocal() {
+    await traerProductos();
+    mostrarProductoEnFormulario();
+}
 
 //si hay un cambio en el select de productosDisponibles, se actualiza el contenido del formulario
 productosDisponibles.addEventListener('change', ()=>{
     indiceSeleccionado = productosDisponibles.value;
      mostrarProductoEnFormulario();
 })
-
 
 //funcion para habilitar los inputs del formulario y ocultar botones de modificar, nuevo y eliminar
 //y muestra el botón de cancelar
@@ -169,6 +167,7 @@ botonNuevoProducto.addEventListener('click',()=>{
     pNombreUrlImagen.textContent = "no se ha cargado un archivo";
     cambioEditarProducto();
 
+    // asignación de mensajes de alerta para los inputs
     for(let i=1; i<=mensajeAlerta.length ; i++){
         inputsProducto[i].setCustomValidity(mensajeAlerta[i-1]);
     }
@@ -182,26 +181,17 @@ botonCancelarEdicionProducto.addEventListener('click', ()=>{
 })
 
 botonEliminarProducto.addEventListener('click', ()=>{
-    modalEliminarProducto.style.display = "flex";
-    //bd.eliminarProducto(inputsProducto[0].value);
+    modal.mostrarModalEliminarProducto();
 })
 
 botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
     bd.eliminarProducto(inputsProducto[0].value);
     indiceSeleccionado = 0;
-    mostrarModalConfirmacion(1,inputsProducto[1].value);
-    mostrarProductoEnFormulario();
-    cerrarModalEliminarProducto();
+    actualizarProductosLocal();
+    modal.mostrarModalConfirmacion("Se ha borrado el producto",inputsProducto[1].value);
+    modal.cerrarModalEliminarProducto();
 })
-
-botonCerrarModalEliminarProducto.addEventListener( 'click', cerrarModalEliminarProducto);
-
-botonCancelarEliminar.addEventListener('click', cerrarModalEliminarProducto);
-
-function cerrarModalEliminarProducto(){
-    modalEliminarProducto.style.display = "none";
-}
 
 
 formularioModificarCrearProducto.addEventListener('submit', (event)=>{
@@ -240,10 +230,11 @@ inputsProducto[4].addEventListener('change', function(){
 
 })
 
-//Cuando el usuario oprima en cargar, se actualiza el contenido de divProducto dentro del modal y se muestra
+//Cuando el usuario oprima en cargar, se actualiza el contenido de divProducto
+//  dentro del modal y se muestra
 function vistaPreliminar() {
     console.log("entra en vista previa")
-    html = "";
+    let html = "";
     html =  `<div class="contenedorImagenCard"><img src="${imagen}" alt=""></div>
             <div class="contenedorTituloCard">
             <h5> ${inputsProducto[1].value} </h5>
@@ -254,17 +245,13 @@ function vistaPreliminar() {
               <button class="botonCardMenu"><i class="bi bi-cart4 iconoBotonCard"></i></button>
              </div>
              `;
-    divProducto.innerHTML = html;
-    modalVistaPrevia.style.display = 'flex';
+    
+    modal.mostrarModalVistaPreliminar(html);
 }
 
-//funcion llamada con el botón de cerrar de vista previa del producto
-cerrarVistaPrevia.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
-
-botonCancelarCambios.addEventListener('click', ()=>{ modalVistaPrevia.style.display = 'none';});
 
 botonAceptarCambios.addEventListener('click', async ()=>{
-     modalVistaPrevia.style.display = 'none';
+     modal.cerrarModalVistaPreliminar();
      await cargarProducto();
      ;});
 
@@ -284,22 +271,16 @@ async function cargarProducto (){
      if (respuesta){
         if(!reescribirProducto){
             indiceSeleccionado = -1;
-            mostrarModalConfirmacion(3, inputsProducto[1].value);
+            modal.mostrarModalConfirmacion("Se ha guardado el producto", inputsProducto[1].value);
         }else{
-            mostrarModalConfirmacion(2 , inputsProducto[1].value);
+            modal.mostrarModalConfirmacion("Se ha editado el producto", inputsProducto[1].value);
         }
-        mostrarProductoEnFormulario();
-        modalVistaPrevia.style.display = 'none';
+        actualizarProductosLocal();
+        // modalVistaPrevia.style.display = 'none';
         cambioNoEditarProducto();
     }
 }
 
-
-//Lineas de código para poder cambiar el mensaje predeterminado de cada uno de los inputs
-let mensajeAlerta = ["Escribe el nombre del plato",
-                    "Escribe que contiene el plato",
-                    "Escribe el precio del producto",
-                    "Carga una imagen"];
 
 formularioModificarCrearProducto.addEventListener('input', (event)=>{
     // console.log(event.target.id);
@@ -328,15 +309,3 @@ formularioModificarCrearProducto.addEventListener('input', (event)=>{
         }
     }
 })
-
-
-
-
-// let clave = "John12/&%";
-// console.log(clave);
-// console.log(bd.encrypt_data(clave));
-
-
-
-
-
