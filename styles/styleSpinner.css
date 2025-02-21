@@ -5,6 +5,7 @@
     border: 8px solid rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     border-left-color: #70349ece;
+    border-right-color: #70349ece;
 
     animation: spin 1s ease infinite;
 }
