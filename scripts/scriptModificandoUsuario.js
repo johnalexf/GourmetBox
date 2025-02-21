@@ -11,7 +11,7 @@ import {
   datosUsuario,
 } from "../scripts/scriptloginIngresando.js";
 
-import { mostrarModalConfirmacion } from "../scripts/scriptModalesLogin.js"
+import * as modal from "../scripts/scriptModalesLogin.js"
 
 let botonGuardarCambiosPerfilUsuario = document.getElementById(
   "guardarCambiosPerfilUsuario"
@@ -140,65 +140,80 @@ iconoContrasenaEditarPerfil.addEventListener("click", () => {
 
 //boton dentro del modal de confirmar contraseña para editar perfil
 botonGuardarEditarPerfil.addEventListener("click", async () => {
+  modal.modalCargando();
+
   let contrasena = contrasenaEditarPerfil.value;
   let contrasenaAVerificar = bd.encrypt_data(contrasena);
-  if (
-    await bd.confirmarContrasenaParaEditarPerfil(
-      datosUsuario.userName,
-      contrasenaAVerificar
-    )
-  ) {
-    if (tipoUsuario) {
-      //
-      //await bd.reescribirOCrearUsuario(
-      bd.reescribirOCrearUsuario(
-        datosUsuario.id,
-        aliasAdministrador.value,
-        nombreAdministrador.value,
-        correoAdministrador.value,
-        telefonoAdministrador.value,
-        contrasenaAVerificar,
-        tipoUsuario,
-        true
-      );
+  let respuesta;
+  try{
+    if (
+      await bd.confirmarContrasenaParaEditarPerfil(
+        datosUsuario.userName,
+        contrasenaAVerificar
+      )
+    ) {
+      if (tipoUsuario) {
+        respuesta =  await bd.reescribirOCrearUsuario(
+                          datosUsuario.id,
+                          aliasAdministrador.value,
+                          nombreAdministrador.value,
+                          correoAdministrador.value,
+                          telefonoAdministrador.value,
+                          contrasenaAVerificar,
+                          tipoUsuario,
+                          true
+                        );
 
-      datosUsuario.userName = aliasAdministrador.value;
-      datosUsuario.nombreUsuario = nombreAdministrador.value;
-      datosUsuario.correo = correoAdministrador.value;
-      datosUsuario.telefono = telefonoAdministrador.value;
-      // datosUsuario.suscripcionId =
-      // datosUsuario.esAdministrador = tipoUsuario;
-      localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+        if(respuesta.status == "ok"){
+          datosUsuario.userName = aliasAdministrador.value;
+          datosUsuario.nombreUsuario = nombreAdministrador.value;
+          datosUsuario.correo = correoAdministrador.value;
+          datosUsuario.telefono = telefonoAdministrador.value;
+          localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+          contrasenaEditarPerfil.value = "";
+          normalizarVistaEdicionPerfilAdmin();
+        }
+  
+      } else {
+        respuesta = await bd.reescribirOCrearUsuario(
+                        datosUsuario.id,
+                        aliasUsuario.value,
+                        nombreUsuario.value,
+                        correoUsuario.value,
+                        telefonoUsuario.value,
+                        contrasenaAVerificar,
+                        tipoUsuario,
+                        true
+        );
 
-      contrasenaEditarPerfil.value = "";
-      normalizarVistaEdicionPerfilAdmin();
+        if(respuesta.status == "ok"){
+          datosUsuario.userName = aliasUsuario.value;
+          datosUsuario.nombreUsuario = nombreUsuario.value;
+          datosUsuario.correo = correoUsuario.value;
+          datosUsuario.telefono = telefonoUsuario.value;
+          localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+
+          normalizarVistaEdicionPerfilUsuario();
+          contrasenaEditarPerfil.value = "";
+        }
+        
+      }
+      if(respuesta.status == "ok"){
+        modalContrasenaEditarPerfil.style.display = "none";
+        modal.mostrarModalConfirmacion("Tu Perfil se ha editado correctamente", "");
+      }else{
+        modal.cerrarModalCargando();
+        modal.modalError();
+      }
     } else {
-      //await bd.reescribirOCrearUsuario(
-      bd.reescribirOCrearUsuario(
-        datosUsuario.id,
-        aliasUsuario.value,
-        nombreUsuario.value,
-        correoUsuario.value,
-        telefonoUsuario.value,
-        contrasenaAVerificar,
-        tipoUsuario,
-        true
-      );
-
-      datosUsuario.userName = aliasUsuario.value;
-      datosUsuario.nombreUsuario = nombreUsuario.value;
-      datosUsuario.correo = correoUsuario.value;
-      datosUsuario.telefono = telefonoUsuario.value;
-      localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
-
-      normalizarVistaEdicionPerfilUsuario();
-      contrasenaEditarPerfil.value = "";
+      await modal.cerrarModalCargando();
+      contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta");
+      contrasenaEditarPerfil.reportValidity();
     }
-    modalContrasenaEditarPerfil.style.display = "none";
-    mostrarModalConfirmacion("Tu Perfil se ha editado correctamente", "");
-  } else {
-    contrasenaEditarPerfil.setCustomValidity("La contraseña no es correcta");
-    contrasenaEditarPerfil.reportValidity();
+  }catch{
+    console.log("entro en catch")
+    modal.cerrarModalCargando();
+    modal.modalError();
   }
 });
 

@@ -47,8 +47,15 @@ let botonAceptarEliminar = document.getElementById('botonAceptarEliminar');
 
 
 async function traerProductos() {
-    productos = await bd.obtenerBaseDatos();
-    console.log(productos);
+    try{
+        modal.modalCargando();
+        productos = await bd.obtenerBaseDatos();
+        console.log(productos);
+        modal.cerrarModalCargando();
+    }catch{
+        modal.cerrarModalCargando();
+        modal.modalError();
+    }
 }
 
 //función para cargar la información del producto seleccionado 

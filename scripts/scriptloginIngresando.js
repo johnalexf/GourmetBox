@@ -50,6 +50,7 @@ function mostrarPerfil(){
 }
 
 function mostrarDatosPerfilUsuario() {
+  modal.cerrarModalCargando();
   formularioInfoUsuario.aliasUsuario.value = datosUsuario.userName;
   formularioInfoUsuario.nombreUsuario.value = datosUsuario.nombreUsuario;
   formularioInfoUsuario.correoUsuario.value = datosUsuario.correo;
@@ -127,7 +128,7 @@ formularioIngreso.addEventListener("submit",
     try{
       [usuarioExiste, contrasenaCorrecta, datosUsuario] =
         await bd.verificarContrasena(usuario, contrasenaAVerificar);
-
+      
       if (usuarioExiste) {
         if (contrasenaCorrecta) {
           localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
@@ -136,17 +137,20 @@ formularioIngreso.addEventListener("submit",
           mostrarPerfil();
           formularioIngreso.reset();
         } else {
+          await modal.cerrarModalCargando();
           formularioIngreso.contrasena.setCustomValidity(
             "La contraseña no es correcta"
           );
           formularioIngreso.contrasena.reportValidity();
         }
       } else {
+        await modal.cerrarModalCargando();
         formularioIngreso.usuario.setCustomValidity("El usuario no existe");
         formularioIngreso.usuario.reportValidity();
       }
+      
     }catch{
-      modal.cerrarModalCargando();
+      await modal.cerrarModalCargando();
       modal.modalError();
     }
 });

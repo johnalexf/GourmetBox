@@ -6,6 +6,8 @@ import * as bd from "../scripts/scriptBD.js";
 
 import { cambioVentanaALogin } from "./scriptLoginCambioVisual.js";
 
+import * as modal from "./scriptModalesLogin.js";
+
 //Formulario de registro
 let formularioRegistro = document.getElementById('formularioR');
 
@@ -149,6 +151,7 @@ formularioRegistro.validarContrasena.addEventListener('input',verificarContrasen
 
 
 formularioRegistro.addEventListener('submit', async function(event) {
+    modal.modalCargando();
     event.preventDefault();
     validarUsuario();
     
@@ -156,26 +159,37 @@ formularioRegistro.addEventListener('submit', async function(event) {
     let usuario = formularioRegistro.usuarioR.value;
     usuarioRepetido = await bd.verificarSiUsuarioExiste(usuario);
 
-
-    if(!usuarioRepetido){
-       //reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) 
-       //creando usuario en la base de datos
-        await bd.reescribirOCrearUsuario(
-            "0",
-            formularioRegistro.usuarioR.value,
-            formularioRegistro.nombreR.value,
-            formularioRegistro.correo.value,
-            formularioRegistro.telefono.value,
-            bd.encrypt_data(formularioRegistro.contrasenaR.value),
-            "0",
-            false
+    if(usuarioRepetido != undefined){
+      if(!usuarioRepetido){
+        //reescribirOCrearUsuario(usuario,rol,nombre,correo,telefono,contrasena,Reescribir) 
+        //creando usuario en la base de datos
+          let respuesta = await bd.reescribirOCrearUsuario(
+              "0",
+              formularioRegistro.usuarioR.value,
+              formularioRegistro.nombreR.value,
+              formularioRegistro.correo.value,
+              formularioRegistro.telefono.value,
+              bd.encrypt_data(formularioRegistro.contrasenaR.value),
+              "0",
+              false
           );
-          localStorage.setItem('seRegistro', formularioRegistro.nombreR.value);
-          mostrarModalRegistroExitoso();
-          cambioVentanaALogin();
+          await modal.cerrarModalCargando();
+          if(respuesta.status == "ok"){
+            localStorage.setItem('seRegistro', formularioRegistro.nombreR.value);
+            mostrarModalRegistroExitoso();
+            cambioVentanaALogin();
+          }else{
+            modal.modalError();
+          }
+      }else{
+        await modal.cerrarModalCargando();
+        setTimeout(formularioRegistro.usuarioR.setCustomValidity('El usuario ya existe.'),300);
+        formularioRegistro.usuarioR.reportValidity();
+      }
+      
     }else{
-      formularioRegistro.usuarioR.setCustomValidity('El usuario ya existe.');
-      formularioRegistro.usuarioR.reportValidity();
+      await modal.cerrarModalCargando();
+      modal.modalError();
     }
    
 });

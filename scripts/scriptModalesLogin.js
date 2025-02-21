@@ -53,6 +53,10 @@ export function modalCargando(){
         allowOutsideClick: false, // Evita que el usuario cierre la alerta haciendo clic fuera
         didOpen: () => {
           Swal.showLoading(); // Muestra un indicador de carga
+        },
+         // Asigna un ID único
+        customClass: {
+            container: 'mi-alerta-carga'
         }
       });
 }
@@ -66,6 +70,13 @@ export function modalError(){
       });
 }
 
-export function cerrarModalCargando(){
-    Swal.close();
+// Cierra el Sweet Alert específico por su ID
+const alertaCarga = document.querySelector('.mi-alerta-carga');
+export async function cerrarModalCargando() {
+    Swal.close(alertaCarga);
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+      }, 300);
+    });
 }

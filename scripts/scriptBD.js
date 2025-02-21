@@ -116,65 +116,61 @@ export async function reescribirOCrearProducto(id,nombre,descripcion,categoria,p
 export let urlUsuario = "http://localhost:8080/usuario/";
 
 //funcion para agregar un nuevo producto o reescribirlo
-export function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, contrasena, esAdministrador, Reescribir) {
-    
-    const xhr = new XMLHttpRequest();
-    let url;
-    //Funcion con AJAX
-    if (Reescribir) {
-        url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}`;
-        console.log(url);
-        xhr.open('PUT', url, true);
-    } else {
-        url = urlUsuario + "crear";
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-    }
+export async function reescribirOCrearUsuario(id, usuario, nombre, correo, telefono, contrasena, esAdministrador, Reescribir) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        let url;
 
-    xhr.onload = function () {
-        if (this.status === 200) {
-            try {
-                let response;
-                    if(Reescribir){
+        if (Reescribir) {
+            url = `${urlUsuario}editar/${id}?nombre=${nombre}&telefono=${telefono}&correo=${correo}`;
+            console.log(url);
+            xhr.open('PUT', url, true);
+        } else {
+            url = urlUsuario + "crear";
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+        }
+
+        xhr.onload = function () {
+            if (this.status === 200) {
+                try {
+                    let response;
+                    if (Reescribir) {
                         response = JSON.parse(this.responseText);
-                    }else{
+                    } else {
                         response = this.responseText;
                     }
-                    
-                console.log('Respuesta del servidor:', response);
-            } catch (error) {
-                console.error('Error al parsear la respuesta:', error);
-            }
-        } else {
-            console.error('Error:', this.statusText, 'Código de estado:', this.status);
-            // Mostrar un mensaje de error al usuario basado en el código de estado
-            if (this.status === 404) {
-                alert('Usuario no encontrado');
+
+                    console.log('Respuesta del servidor:', response);
+                    resolve({ status: "ok", data: response }); // Resuelve la promesa con un objeto
+                } catch (error) {
+                    console.error('Error al parsear la respuesta:', error);
+                    resolve({ status: "error", message: error.message }); // Resuelve con un objeto de error
+                }
             } else {
-                alert('Ocurrió un error al procesar la solicitud');
+                console.error('Error:', this.statusText, 'Código de estado:', this.status);
+                resolve({ status: "error", message: this.statusText }); // Resuelve con un objeto de error
             }
+        };
+
+        xhr.onerror = function () {
+            console.error('Error de red');
+            resolve({ status: "error", message: "Error de red" }); // Resuelve con un objeto de error
+        };
+
+        if (!Reescribir) {
+            xhr.send(JSON.stringify({
+                user_name: usuario,
+                nombre_usuario: nombre,
+                correo: correo,
+                telefono: telefono,
+                contrasena: contrasena,
+                es_administrador: false
+            }));
+        } else {
+            xhr.send();
         }
-    };
-
-
-    xhr.onerror = function () {
-        console.error('Error de red');
-    };
-
-
-    if (!Reescribir) {
-        xhr.send(JSON.stringify({
-            user_name: usuario,
-            nombre_usuario: nombre,
-            correo: correo,
-            telefono: telefono,
-            contrasena: contrasena,
-            es_administrador: false
-        }));
-    } else {
-        xhr.send();
-    }
-
+    });
 }
 
 //No funciono con fetch para hacer PUT o POST

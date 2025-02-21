@@ -5,7 +5,7 @@
 .modal1 {
     display: none;
     position: fixed;  /*Mantiene la pantalla fija asi se haga scroll  */
-    z-index: 2000;
+    z-index: 1040;
     top: 0;
     left: 0;
     width: 100%;
