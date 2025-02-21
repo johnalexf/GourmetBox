@@ -107,7 +107,13 @@ async function usarMenu() {
     if(menu){
         actualizarMenu();
     }else{
-        console.log("Error al obtener los datos, falla de comunicación con el servidor")
+        console.log("Error al obtener los datos, falla de comunicación con el servidor");
+        Swal.fire({
+            icon: 'error',
+            title: '¡Lo sentimos!',
+            text: 'En estos momentos no podemos comunicarnos con el servidor. Inténtalo de nuevo más tarde.',
+            confirmButtonText: 'Aceptar'
+          });
     }
 }
 

@@ -57,8 +57,6 @@ export function modalCargando(){
       });
 }
 
-// modalCargando();
-
 export function modalError(){
     Swal.fire({
         icon: 'error',
@@ -67,5 +65,3 @@ export function modalError(){
         confirmButtonText: 'Aceptar'
       });
 }
-
-modalError();
