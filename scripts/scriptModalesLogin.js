@@ -65,3 +65,7 @@ export function modalError(){
         confirmButtonText: 'Aceptar'
       });
 }
+
+export function cerrarModalCargando(){
+    Swal.close();
+}

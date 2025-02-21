@@ -10,6 +10,8 @@ import * as visual from "../scripts/scriptLoginCambioVisual.js";
 
 import {actualizarProductosLocal} from "../scripts/scriptModificarProducto.js";
 
+import * as modal from "./scriptModalesLogin.js";
+
 let formularioIngreso = document.getElementById("formulario");
 let iconoContrasenaLogin = document.getElementById("iconoContrasenaLogin");
 
@@ -112,6 +114,7 @@ iconoContrasenaLogin.addEventListener("click", () => {
 // si son correctas muestra el div de perfil y oculta el de formularios de ingreso
 formularioIngreso.addEventListener("submit", 
   async function (event) {
+    modal.modalCargando();
     event.preventDefault();
 
     let usuarioExiste = false;
@@ -121,26 +124,31 @@ formularioIngreso.addEventListener("submit",
       formularioIngreso.contrasena.value
     );
 
-    [usuarioExiste, contrasenaCorrecta, datosUsuario] =
-      await bd.verificarContrasena(usuario, contrasenaAVerificar);
+    try{
+      [usuarioExiste, contrasenaCorrecta, datosUsuario] =
+        await bd.verificarContrasena(usuario, contrasenaAVerificar);
 
-    if (usuarioExiste) {
-      if (contrasenaCorrecta) {
-        localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
-        localStorage.setItem("usuario", datosUsuario.userName);
-        tipoUsuario = +datosUsuario.esAdministrador;
-        mostrarPerfil();
-        formularioIngreso.reset();
+      if (usuarioExiste) {
+        if (contrasenaCorrecta) {
+          localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+          localStorage.setItem("usuario", datosUsuario.userName);
+          tipoUsuario = +datosUsuario.esAdministrador;
+          mostrarPerfil();
+          formularioIngreso.reset();
+        } else {
+          formularioIngreso.contrasena.setCustomValidity(
+            "La contraseña no es correcta"
+          );
+          formularioIngreso.contrasena.reportValidity();
+        }
       } else {
-        formularioIngreso.contrasena.setCustomValidity(
-          "La contraseña no es correcta"
-        );
-        formularioIngreso.contrasena.reportValidity();
+        formularioIngreso.usuario.setCustomValidity("El usuario no existe");
+        formularioIngreso.usuario.reportValidity();
       }
-    } else {
-      formularioIngreso.usuario.setCustomValidity("El usuario no existe");
-      formularioIngreso.usuario.reportValidity();
-  }
+    }catch{
+      modal.cerrarModalCargando();
+      modal.modalError();
+    }
 });
 
 //fin de lineas de código para validar el formulario de ingreso
