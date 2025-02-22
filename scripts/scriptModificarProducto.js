@@ -197,10 +197,12 @@ botonEliminarProducto.addEventListener('click', ()=>{
 
 botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
+    modal.cerrarModalEliminarProducto();
+    modal.modalCargando();
     bd.eliminarProducto(inputsProducto[0].value);
     indiceSeleccionado = 0;
     await actualizarProductosLocal();
-    modal.cerrarModalEliminarProducto();
+    await modal.cerrarModalCargando();
     modal.mostrarModalConfirmacion("Se ha borrado el producto",inputsProducto[1].value);
     
 })
@@ -263,8 +265,10 @@ function vistaPreliminar() {
 
 
 botonAceptarCambios.addEventListener('click', async ()=>{
+     modal.modalCargando();
      modal.cerrarModalVistaPreliminar();
      await cargarProducto();
+     await modal.cerrarModalCargando();
      ;});
 
 
