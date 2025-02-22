@@ -1,5 +1,4 @@
 
-
 label{
     font-size: 17px;
 }
@@ -7,29 +6,24 @@ label{
 /* Clase para el contenedor de toda la ilustración del perfil  */
 .divUsuarioRegistrado {
     display: none;
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 100px;
-    height: auto;
-    width: 100%; */
+    width: 100%;
 }
 
-/* Titulos principales, Perfil, Modificar o editar producto */
+/* Títulos principales, Perfil, Modificar o editar producto */
 .tituloPerfil,
 .modificarProducto h2 {
     text-align: center;
     color: #70349E;
 }
 
-.modificarProducto {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
 .tituloPerfil h1 {
     padding-top: 20px;
     font-size: 45px;
+}
+
+.modificarProducto {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .modificarProducto h2 {
@@ -41,10 +35,11 @@ label{
 .suscripcionYPLatos,
 .botonesPerfil,
 .inputsProducto {
+    /* width: 100%; */
     margin: auto;
     margin-bottom: 0px;
     padding: 10px;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 20px;
     display: grid;
     gap: 10px;
@@ -96,11 +91,38 @@ label{
     grid-template-columns: 1fr 5fr;
 }
 
+
 .divUrlProducto p {
     margin: auto;
     padding-left: 0px;
-
+    overflow: hidden;
 }
+
+/* Estilo adicional para el label de Cargar Imagen  */
+.divUrlProducto i {
+    line-height: 0px;
+    margin: 0px;
+    font-size: 32px;
+}
+
+.divUrlProducto label {
+    padding-left: 5px;
+    width: 30px;
+    color: #1010104d;
+}
+
+#urlProducto {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+    width: 50px;
+}
+
+#urlProducto:hover {
+    cursor: pointer;
+}
+
 
 /* Estilos para todos los botones que no están representados
 con un símbolo*/
@@ -117,7 +139,6 @@ con un símbolo*/
     border-radius: 50px;
     border: 2px solid #70349E;
     background-color: #ababdb;
-    /* color: white; */
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -156,21 +177,6 @@ con un símbolo*/
     color: rgb(231, 99, 99);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0);
 
-}
-
-
-
-/* Estilo adicional para el label de Cargar Imagen  */
-.divUrlProducto i {
-    line-height: 0px;
-    margin: 0px;
-    font-size: 32px;
-}
-
-.divUrlProducto label {
-    padding-left: 5px;
-    width: 30px;
-    color: #1010104d;
 }
 
 
@@ -217,19 +223,8 @@ con un símbolo*/
     padding: 0px;
 }
 
-#urlProducto {
-    opacity: 0;
-    z-index: -1;
-    position: absolute;
-    left: 0px;
-    width: 50px;
-}
 
-#urlProducto:hover {
-    cursor: pointer;
-}
-
-/* Estilos necesarios para que el select de categoría y el label usado como boton de Url
+/* Estilos necesarios para que el select de categoría y el label usado como botón de Url
  se asemeje a los estilos de un input desactivado  */
 .inputsProducto select:disabled,
 .divUrlProducto {
@@ -253,7 +248,7 @@ con un símbolo*/
 
 }
 
-/* Se oculta el label y input titulo ya que estos aparecerán cuando se de en la opción de 
+/* Se oculta el label e input titulo ya que estos aparecerán cuando se de en la opción de 
 modificar o crear desapareciendo el select de productos disponibles*/
 /* botones que no se muestran desde el inicio de sesión de un administrador */
 .modificarProducto label:nth-of-type(2),
@@ -337,17 +332,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (width < 900px) {
-    .divUsuarioRegistrado {
-        height: auto;
-    }
-
-    .datosPerfil,
-    .suscripcionYPLatos,
-    .botonesPerfil,
-    .inputsProducto {
-        max-width: 500px;
-    }
-
     .vistaIdYBotones input {
         width: 100px;
     }
@@ -355,16 +339,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /* Cambio de distribución para imagen en celular */
-@media (width < 600px) {
-    .divUsuarioRegistrado {
-        height: auto;
-    }
-
-    .datosPerfil,
-    .suscripcionYPLatos,
-    .botonesPerfil,
+@media (width < 500px) {
+    /* .datosPerfil, */
+    /* .suscripcionYPLatos, */
+    /* .botonesPerfil, */
     .inputsProducto {
-        max-width: auto;
+        /* width: 350px; */
         margin: 4%;
         padding-bottom: 4%;
     }
@@ -418,6 +398,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .suscripcionYPLatos {
         gap: 20px;
+    }
+
+    .cardPlato, .cardSuscripcion {
+        /* margin: auto; */
+        width: 290px;
+        height: 320px;
     }
 
 }
