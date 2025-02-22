@@ -199,6 +199,7 @@ botonGuardarEditarPerfil.addEventListener("click", async () => {
         
       }
       if(respuesta.status == "ok"){
+        await modal.cerrarModalCargando();
         modalContrasenaEditarPerfil.style.display = "none";
         modal.mostrarModalConfirmacion("Tu Perfil se ha editado correctamente", "");
       }else{

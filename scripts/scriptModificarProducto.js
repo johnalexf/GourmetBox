@@ -53,7 +53,7 @@ async function traerProductos() {
         console.log(productos);
         await modal.cerrarModalCargando();
     }catch{
-        modal.cerrarModalCargando();
+        await modal.cerrarModalCargando();
         modal.modalError();
     }
 }
@@ -61,7 +61,7 @@ async function traerProductos() {
 //función para cargar la información del producto seleccionado 
 // en cada uno de sus correspondientes input
 function mostrarProductoEnFormulario() {
-
+    try{
             let html = "";
             if(indiceSeleccionado ==0){
                 indiceSeleccionado = productos[0].id_producto;
@@ -88,7 +88,11 @@ function mostrarProductoEnFormulario() {
 
             //ya que traemos la imagen de la base de datos, no requerimos cargar una imagen
             //de igual forma si el usuario desea cargar una nueva, lo puede hacer
-            inputsProducto[4].required = false;                    
+            inputsProducto[4].required = false;
+    }catch{
+        modal.cerrarModalCargando();
+        modal.modalError();
+    }                
 }
 
 export async function actualizarProductosLocal() {
@@ -195,9 +199,10 @@ botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
     bd.eliminarProducto(inputsProducto[0].value);
     indiceSeleccionado = 0;
-    actualizarProductosLocal();
-    modal.mostrarModalConfirmacion("Se ha borrado el producto",inputsProducto[1].value);
+    await actualizarProductosLocal();
     modal.cerrarModalEliminarProducto();
+    modal.mostrarModalConfirmacion("Se ha borrado el producto",inputsProducto[1].value);
+    
 })
 
 
@@ -276,14 +281,13 @@ async function cargarProducto (){
                                     );
     console.log(respuesta);
      if (respuesta){
+        await actualizarProductosLocal();
         if(!reescribirProducto){
             indiceSeleccionado = -1;
             modal.mostrarModalConfirmacion("Se ha guardado el producto", inputsProducto[1].value);
         }else{
             modal.mostrarModalConfirmacion("Se ha editado el producto", inputsProducto[1].value);
         }
-        actualizarProductosLocal();
-        // modalVistaPrevia.style.display = 'none';
         cambioNoEditarProducto();
     }
 }
