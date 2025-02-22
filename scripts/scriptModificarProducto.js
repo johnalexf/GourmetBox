@@ -51,7 +51,7 @@ async function traerProductos() {
         modal.modalCargando();
         productos = await bd.obtenerBaseDatos();
         console.log(productos);
-        modal.cerrarModalCargando();
+        await modal.cerrarModalCargando();
     }catch{
         modal.cerrarModalCargando();
         modal.modalError();

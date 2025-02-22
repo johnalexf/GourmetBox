@@ -31,26 +31,26 @@ export let botonCerrarSesionUsuario = document.getElementById(
 );
 
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
-export function cargarDatosUsuario() {
+function mostrarPerfil() {
   if (localStorage.getItem("usuario")) {
     if (localStorage.getItem("usuario").length != 0) {
-      datosUsuario = JSON.parse(localStorage.getItem("datosUsuario"));
-      tipoUsuario = +datosUsuario.esAdministrador;
-      mostrarPerfil();
+      cargarDatosUsuario();
+      visual.cambiarAPerfil(tipoUsuario);
+      tipoUsuario == 1 ? actualizarProductosLocal() : null
+      modal.cerrarModalCargando();
     }
   }
 }
 
-function mostrarPerfil(){
+export function cargarDatosUsuario(){
+  datosUsuario = JSON.parse(localStorage.getItem("datosUsuario"));
+  tipoUsuario = +datosUsuario.esAdministrador;
   tipoUsuario == 1 ?
   mostrarDatosPerfilAdministrador():
   mostrarDatosPerfilUsuario()
-
-  visual.cambiarAPerfil(tipoUsuario);
 }
 
 function mostrarDatosPerfilUsuario() {
-  modal.cerrarModalCargando();
   formularioInfoUsuario.aliasUsuario.value = datosUsuario.userName;
   formularioInfoUsuario.nombreUsuario.value = datosUsuario.nombreUsuario;
   formularioInfoUsuario.correoUsuario.value = datosUsuario.correo;
@@ -58,14 +58,13 @@ function mostrarDatosPerfilUsuario() {
 }
 
 function mostrarDatosPerfilAdministrador() {
-  actualizarProductosLocal();
   formularioInfoAdmin.aliasAdministrador.value = datosUsuario.userName;
   formularioInfoAdmin.nombreAdministrador.value = datosUsuario.nombreUsuario;
   formularioInfoAdmin.correoAdministrador.value = datosUsuario.correo;
   formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
 }
 
-cargarDatosUsuario();
+mostrarPerfil();
 
 botonCerrarSesionAdmin.addEventListener("click", cerrarSesion);
 botonCerrarSesionUsuario.addEventListener("click", cerrarSesion);
@@ -133,7 +132,6 @@ formularioIngreso.addEventListener("submit",
         if (contrasenaCorrecta) {
           localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
           localStorage.setItem("usuario", datosUsuario.userName);
-          tipoUsuario = +datosUsuario.esAdministrador;
           mostrarPerfil();
           formularioIngreso.reset();
         } else {
