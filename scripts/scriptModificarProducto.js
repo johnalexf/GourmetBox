@@ -49,6 +49,7 @@ let botonAceptarEliminar = document.getElementById('botonAceptarEliminar');
 async function traerProductos() {
     try{
         modal.modalCargando();
+        console.log(productos);
         productos = await bd.obtenerBaseDatos();
         console.log(productos);
         await modal.cerrarModalCargando();
@@ -199,12 +200,17 @@ botonAceptarEliminar.addEventListener('click', async function(){
     //await bd.eliminarProducto(inputsProducto[0].value)
     modal.cerrarModalEliminarProducto();
     modal.modalCargando();
-    bd.eliminarProducto(inputsProducto[0].value);
-    indiceSeleccionado = 0;
-    await actualizarProductosLocal();
-    await modal.cerrarModalCargando();
-    modal.mostrarModalConfirmacion("Se ha borrado el producto",inputsProducto[1].value);
-    
+    let nombreProductoAEliminar = inputsProducto[1].value;
+    let respuesta = await bd.eliminarProducto(inputsProducto[0].value);
+    if (respuesta.status == "ok"){
+        indiceSeleccionado = 0;
+        await actualizarProductosLocal();
+        await modal.cerrarModalCargando();
+        modal.mostrarModalConfirmacion("Se ha borrado el producto",nombreProductoAEliminar);
+    }else{
+        await modal.cerrarModalCargando();
+        modal.modalError();
+    }
 })
 
 
@@ -268,12 +274,12 @@ botonAceptarCambios.addEventListener('click', async ()=>{
      modal.modalCargando();
      modal.cerrarModalVistaPreliminar();
      await cargarProducto();
-     await modal.cerrarModalCargando();
      ;});
 
 
 async function cargarProducto (){
      //reescribirOCrearProducto(id,nombre,descripción,categoria,precio,urlImg,Reescribir)
+     let nombreProductoACargar = inputsProducto[1].value;
      let respuesta = await bd.reescribirOCrearProducto(
                                         inputsProducto[0].value,
                                         inputsProducto[1].value,
@@ -288,9 +294,9 @@ async function cargarProducto (){
         await actualizarProductosLocal();
         if(!reescribirProducto){
             indiceSeleccionado = -1;
-            modal.mostrarModalConfirmacion("Se ha guardado el producto", inputsProducto[1].value);
+            modal.mostrarModalConfirmacion("Se ha guardado el producto", nombreProductoACargar);
         }else{
-            modal.mostrarModalConfirmacion("Se ha editado el producto", inputsProducto[1].value);
+            modal.mostrarModalConfirmacion("Se ha editado el producto", nombreProductoACargar);
         }
         cambioNoEditarProducto();
     }

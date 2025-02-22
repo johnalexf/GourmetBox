@@ -30,28 +30,33 @@ export async function obtenerBaseDatos() {
 }
 
 //borrar un usuario por el id
-export function eliminarProducto(id) {
+export async function eliminarProducto(id) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        const url = urlProductos + 'borrar/' + id;
 
-    const xhr = new XMLHttpRequest();
-    const url = urlProductos + 'borrar/' + id;
+        xhr.open('DELETE', url, true);
 
-    xhr.open('DELETE', url, true);
+        xhr.onload = function () {
+            if (this.status === 200) {
+                console.log(`Producto con id ${id} borrado correctamente.`);
+                resolve({ status: "ok" }); // Resuelve la promesa con un objeto de éxito
+            } else if (this.status === 404) {
+                console.error(`Error borrando al producto: no encontrado`);
+                resolve({ status: "error", message: "Producto no encontrado" }); // Resuelve con un objeto de error
+            } else {
+                console.error(`Error borrando al producto: ${this.statusText}`);
+                resolve({ status: "error", message: this.statusText }); // Resuelve con un objeto de error
+            }
+        };
 
-    xhr.onload = function() {
-        if (this.status === 200) {
-            console.log(`Producto con id ${id} borrado correctamente.`);
-        } else if (this.status === 404) {
-            console.error(`Error borrando al producto: no encontrado`);
-        } else {
-            console.error(`Error borrando al producto: ${this.statusText}`);
-        }
-    };
+        xhr.onerror = function () {
+            console.error('Error de red:', this.statusText);
+            resolve({ status: "error", message: "Error de red" }); // Resuelve con un objeto de error
+        };
 
-    xhr.onerror = function() {
-        console.error('Error de red:', this.statusText);
-    };
-
-    xhr.send();
+        xhr.send();
+    });
 }
 
 //funcion para agregar un nuevo producto o reescribirlo
