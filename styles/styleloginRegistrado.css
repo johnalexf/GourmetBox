@@ -337,15 +337,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Cambio de distribución para imagen en celular */
 @media (width < 500px) {
-    /* .datosPerfil, */
-    /* .suscripcionYPLatos, */
-    /* .botonesPerfil, */
-    .inputsProducto {
-        /* width: 350px; */
-        margin: 4%;
-        padding-bottom: 4%;
-    }
-
     .datosPerfil,
     .suscripcionYPLatos,
     .inputsProducto {
