@@ -159,7 +159,7 @@ function encontrarIndiceListaObjetos(id) {
 export function disminuirProducto(id) {
     indiceListaCompras = encontrarIndiceListaObjetos(id);
     if (listaCompras[indiceListaCompras].cantidad == 1) {
-        eliminarProducto(indiceListaCompras);
+        eliminarProducto(id);
     } else {
         listaCompras[indiceListaCompras].cantidad -= 1;
         actualizarCarrito();
