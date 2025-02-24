@@ -6,7 +6,7 @@ label{
 .divUsuarioRegistrado {
     display: none;
     width: 100%;
-    background-color: #fffef4b0;
+    background-color: #fffef4a0;
 }
 
 /* Títulos principales, Perfil, Modificar o editar producto */
@@ -71,9 +71,11 @@ label{
 .datosPerfil label,
 .inputsProducto label,
 .parrafoImagen {
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
     padding-left: 20px;
+    /* background-color: #fffef4; */
+    margin-right:  auto;
 }
 
 /* Estilos para los input y select de los formularios */
@@ -84,6 +86,7 @@ label{
     box-sizing: border-box;
     padding: 5px 10px;
     border-radius: 10px;
+    background-color: #fffef4;
 }
 
 .divUrlProducto {
