@@ -102,12 +102,10 @@ label{
 .divUrlProducto p {
     margin: auto;
     padding-left: 0px;
+    overflow: hidden;
+    text-align: center;
 }
 
-#nombreUrlImagen{
-    height: 100%;
-    overflow: hidden;
-}
 
 /* Estilo adicional para el label de Cargar Imagen  */
 .divUrlProducto i {
@@ -263,6 +261,7 @@ con un símbolo*/
  se asemeje a los estilos de un input   */
 .inputsProducto select,
 .divUrlProducto {
+    
     border-width: 1.6px;
     border-style: inset;
 
@@ -371,7 +370,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .datosPerfil label,
     .inputsProducto label,
-    .inputsProducto p:nth-of-type(1) {
+    .inputsProducto>p {
         padding-top: 10px;
         padding-left: 5px;
     }
@@ -383,11 +382,6 @@ input[type="number"]::-webkit-inner-spin-button {
     .divUrlProducto label {
         padding-top: 0px;
         padding-bottom: 0px;
-    }
-
-    .divUrlProducto p {
-        text-align: center;
-        /* padding-right: 15px; */
     }
 
     .datosPerfil input,
