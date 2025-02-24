@@ -86,7 +86,6 @@ label{
     box-sizing: border-box;
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: #fffef4;
 }
 
 .divUrlProducto {
@@ -239,12 +238,17 @@ con un símbolo*/
     padding: 0px;
 }
 
+.divUsuarioRegistrado input:disabled{
+    background-color: #fffef4;
+}
+
 
 /* Estilos necesarios para que el select de categoría y el label usado como botón de Url
  se asemeje a los estilos de un input desactivado  */
 .inputsProducto select:disabled,
 .divUrlProducto {
-    background-color: #efefef4d;
+    background-color: #fffef4;
+    /* background-color: #efefef4d; */
     border-color: #7676764d;
 }
 
