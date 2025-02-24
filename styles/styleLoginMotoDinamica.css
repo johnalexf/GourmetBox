@@ -1,7 +1,7 @@
 .viaje {
-    position: absolute;
     width: 100%;
-    height: auto;
+    display: flex;
+    position: fixed;
     overflow: hidden;
     bottom: 0px;
     z-index: -1;
@@ -9,82 +9,58 @@
 
 .viajeCity {
     display: flex;
-    flex-direction: row;
-    animation: RightToLeft 20s infinite linear;
+    align-items: center;
+    justify-content: left;
+    animation: RightToLeft 10s infinite linear;
 }
 
 @keyframes RightToLeft {
-    from {
-        transform: translateX(0%);
-    }
-
     to {
-        transform: translateX(-75%);
+        transform: translateX(-25%);
     }
 }
 
-
-.contieneViaje #city {
-    width: 100%;
+.contieneViaje .city {
     height: 300px;
-    opacity: 20%;
+    opacity: 30%;
 }
-
 
 .contieneViaje #casa {
     position: absolute;
-    width: 23%;
+    width: 300px;
     bottom: 0px;
-    left: -10px;
-    animation: adiosCasita 10s ease-in infinite;
+    left: 0px;
+    opacity: 0;
+    animation: adiosCasita 10s ease-out infinite;
 }
 
 @keyframes adiosCasita {
-    0% {
-        transform: translateX(0);
+    25%{
+        transform: translateX(0%);
         opacity: 1;
     }
-
-    50% {
+    100% {
         transform: translateX(-100%);
         opacity: 0;
     }
+}
 
-    60% {
-        transform: translateX(-90%);
-        /* Rebote hacia atrás */
-    }
-
-    70% {
-        transform: translateX(-80%);
-        /* Rebote más pequeño */
-    }
-
-    80% {
-        transform: translateX(-75%);
-        /* Otro pequeño rebote */
-    }
-
-    100% {
-        transform: translateX(0);
-        /* Regreso a la posición inicial */
-        opacity: 1;
+@media(width < 900px){
+    .contieneViaje #casa {
+        display: none;
     }
 }
 
 .contieneViaje #moto {
     position: absolute;
-    bottom: -20px;
+    bottom: 0px;
+    left: -150px;
     width: 150px;
     /* transform: translateY(0%); */
-    animation: moverDerecha 10s ease-in-out infinite;
+    animation: moverDerecha 10s ease-in infinite;
 }
 
 @keyframes moverDerecha {
-    0% {
-        left: 0;
-    }
-
     100% {
         left: 100%;
     }

@@ -82,4 +82,23 @@ export function cambiarALogin(indice) {
   actualizarNombreYCantidadProductos();
 }
 
+const footer = document.querySelector('#footer'); // Selecciona tu footer
+
+/* creación de constante para que al momento de ver un identificador de una sección
+en la ventana, cambie a position absolute divViaje, Y posteriormente 
+con observer.observe(footer) le indicamos que sea con respecto al footer */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log('El footer está visible en la pantalla');
+      divViaje.style.position = 'absolute';
+    }else{
+      divViaje.style.position = '';
+    }
+
+  });
+});
+
+observer.observe(footer);
+
 
