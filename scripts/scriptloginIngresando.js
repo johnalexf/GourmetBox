@@ -31,12 +31,12 @@ export let botonCerrarSesionUsuario = document.getElementById(
 );
 
 // si existe la variable usuario y tiene contenido, mostramos la vista de perfil y ocultamos la de formularios de registro o ingreso
-function mostrarPerfil() {
+async function mostrarPerfil() {
   if (localStorage.getItem("usuario")) {
     if (localStorage.getItem("usuario").length != 0) {
       cargarDatosUsuario();
       visual.cambiarAPerfil(tipoUsuario);
-      tipoUsuario == 1 ? actualizarProductosLocal() : null
+      tipoUsuario == 1 ? await actualizarProductosLocal() : null
       modal.cerrarModalCargando();
     }
   }
@@ -64,7 +64,7 @@ function mostrarDatosPerfilAdministrador() {
   formularioInfoAdmin.telefonoAdministrador.value = datosUsuario.telefono;
 }
 
-mostrarPerfil();
+await mostrarPerfil();
 
 botonCerrarSesionAdmin.addEventListener("click", cerrarSesion);
 botonCerrarSesionUsuario.addEventListener("click", cerrarSesion);
@@ -132,7 +132,7 @@ formularioIngreso.addEventListener("submit",
         if (contrasenaCorrecta) {
           localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
           localStorage.setItem("usuario", datosUsuario.userName);
-          mostrarPerfil();
+          await mostrarPerfil();
           formularioIngreso.reset();
         } else {
           await modal.cerrarModalCargando();
