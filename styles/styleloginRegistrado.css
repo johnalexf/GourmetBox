@@ -1,27 +1,16 @@
-main{
-    border: 5px solid black;
-}
-
 label{
     font-size: 17px;
 }
 
 /* Clase para el contenedor de toda la ilustración del perfil  */
 .divUsuarioRegistrado {
-    border: 5px solid blue;
     display: none;
     width: 100%;
-
-    form{
-        border: 5px solid red;
-
-    }
 }
 
 /* Títulos principales, Perfil, Modificar o editar producto */
 .tituloPerfil,
 .modificarProducto h2 {
-    border: 5px solid red;
     text-align: center;
     color: #70349E;
 }
@@ -32,7 +21,6 @@ label{
 }
 
 .modificarProducto {
-    border: 5px solid red;
     padding-top: 50px;
     padding-bottom: 50px;
 }
