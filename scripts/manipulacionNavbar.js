@@ -45,5 +45,16 @@ export function actualizarNombreYCantidadProductos(){
 
 actualizarNombreYCantidadProductos();
 
+// Funcion para cerrar navbar cuando se hace click por fuera de este
+document.addEventListener('click', function (event) {
+    const navbar = document.querySelector('.navbar-collapse');
+    const target = event.target;
+  
+    if (!navbar.contains(target) && navbar.classList.contains('show')) {
+      const toggler = document.querySelector('.navbar-toggler');
+      toggler.click();
+    }
+  });
+
     
 
