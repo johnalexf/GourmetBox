@@ -260,7 +260,7 @@ function vistaPreliminar() {
             <h5> ${inputsProducto[1].value} </h5>
             </div>
             <div class="contenedorDescripcionCard"><p>${inputsProducto[2].value}</p></div>
-            <div class="contenedorPrecioCard"><p> <b>${parseInt(inputsProducto[3].value).toLocaleString()} COP</b> </p></div>
+            <div class="contenedorPrecioCard"><p> <b>${parseInt(inputsProducto[3].value).toLocaleString('es-CO')} COP</b> </p></div>
             <div class="contenedorBotonCard">
               <button class="botonCardMenu"><i class="bi bi-cart4 iconoBotonCard"></i></button>
              </div>

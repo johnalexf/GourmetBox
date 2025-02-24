@@ -65,7 +65,7 @@ function productos() {
             <img src="${producto.url}" >
             <div class="productoCarritoInfo">
                 <h5>${producto.nombre}</h5>
-                <p> $${producto.subtotal.toLocaleString()} </p>
+                <p> $${producto.subtotal.toLocaleString('es-CO')} </p>
                 <div class="productoCantidad"> 
                     <div class="cantidad"> 
                         <i class="bi bi-dash-square-fill" onclick = "disminuirProducto(${producto.id})"></i>
@@ -101,7 +101,7 @@ export function mostrarProducto(id) {
             </div>
             
             <div class="contenedorPrecioCard"></div>
-                <p> <b>$  ${parseInt(listaCompras[indiceListaCompras].precio).toLocaleString()}  COP</b> </p>
+                <p> <b>$  ${parseInt(listaCompras[indiceListaCompras].precio).toLocaleString('es-CO')}  COP</b> </p>
             </div>
             `
             modalVistaProducto.style.display = "flex";
@@ -128,7 +128,7 @@ function resumenDeCompra() {
             <tr>
                 <td>${producto.nombre}</td>
                 <td>${producto.cantidad}</td>
-                <td>$${producto.subtotal.toLocaleString()}</td>
+                <td>$${producto.subtotal.toLocaleString('es-CO')}</td>
             </tr>
         `;
         
@@ -138,8 +138,8 @@ function resumenDeCompra() {
 
     // Actualizamos el HTML
     document.getElementById("resumenItems").innerHTML = resumenHTML;
-    document.getElementById("totalProductos").innerText = `$${subtotalProductos.toLocaleString()}`;
-    document.getElementById("totalPagar").innerText = `$${totalPagar.toLocaleString()}`;
+    document.getElementById("totalProductos").innerText = `$${subtotalProductos.toLocaleString('es-CO')}`;
+    document.getElementById("totalPagar").innerText = `$${totalPagar.toLocaleString('es-CO')}`;
 
 }
 // fin funcion resumenDeCompra();

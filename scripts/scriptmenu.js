@@ -65,7 +65,7 @@ function actualizarMenu() {
             <p>${producto.descripcion_producto}</p>
             </div>
             <div class="contenedorPrecioCard">
-            <p> <b>$  ${producto.precio_producto.toLocaleString()}  COP</b> </p>
+            <p> <b>$  ${producto.precio_producto.toLocaleString('es-CO')}  COP</b> </p>
             </div>
             <!-- contenedor boton de la card -->
             <div class="contenedorBotonCard">
