@@ -42,9 +42,9 @@ export function cerrarModalVistaPreliminar(){
 }
 
 //funcion llamada con el botón de cerrar de vista previa del producto
-cerrarVistaPrevia.addEventListener('click',cerrarModalVistaPreliminar());
+cerrarVistaPrevia.addEventListener('click',cerrarModalVistaPreliminar);
 
-botonCancelarCambios.addEventListener('click',cerrarModalVistaPreliminar());
+botonCancelarCambios.addEventListener('click',cerrarModalVistaPreliminar);
 
 export function modalCargando(){
     Swal.fire({
