@@ -288,6 +288,9 @@ es necesario crear un div interno el cual permite centrarlos */
     td:not(:first-child), th{
         text-align: center;
     }
+    th{
+        font-weight: bold;
+    }
 }
 
 .resumenCompra .totales p {
