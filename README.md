@@ -50,7 +50,7 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
 
 *   **Navegación:** Utiliza los enlaces y menús para explorar las diferentes secciones de la página web.
 *   **Panel de administración:** Para acceder al panel de administración, sigue las instrucciones en el repositorio del backend: [https://github.com/johnalexf/gourmetBoxBackEnd](https://github.com/johnalexf/gourmetBoxBackEnd)
-*   **Configuración del backend local:** En el archivo `scriptBD.js`, modifica las primeras líneas para ajustar la dirección de ubicación de tu backend local.
+*   **Configuración conexión al backend local:** En el archivo `scriptBD.js`, modifica las primeras líneas para ajustar la dirección de ubicación de tu backend local.
 
 ## Colaboradores
 
