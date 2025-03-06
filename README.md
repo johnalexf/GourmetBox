@@ -41,10 +41,11 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
 1.  Clona este repositorio:
 
     ```bash
-    git clone [https://github.com/johnalexf/GourmetBox.git](https://github.com/johnalexf/GourmetBox.git)
+    git clone [https://github.com/johnalexf/GourmetBox.git]
     ```
-
-2.  Abre el archivo `index.html` en tu navegador web. Si utilizas Visual Studio Code, puedes usar la extensión Live Server para iniciar un servidor local.
+    (https://github.com/johnalexf/GourmetBox.git)
+    
+3.  Abre el archivo `index.html` en tu navegador web. Si utilizas Visual Studio Code, puedes usar la extensión Live Server para iniciar un servidor local.
 
 ## Uso
 
